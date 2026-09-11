@@ -23,7 +23,7 @@ website:
     A cross-basin analysis of how California groundwater agencies measure,
     account for, and act on interconnected surface water, multi-benefit land
     repurposing, and community outcomes under SGMA.
-  site-url: ""
+  site-url: "https://jacksoncoldiron.github.io/groundwater-accounting-portfolio/"
   favicon: assets/icons/favicon.svg
   search:
     location: navbar

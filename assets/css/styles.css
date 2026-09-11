@@ -1248,14 +1248,49 @@ main.content > section:first-child { margin-top: 0; }
 }
 
 /* ==========================================================================
+   Scrolly panel tokens — shared by every pinned scrollytelling section
+   --------------------------------------------------------------------------
+   Every scrollytelling section on the site (the ISW accounting-chain scene
+   and the .gw-pinned scenes used for Research, Headline Findings and each
+   chapter's Key Findings) is built the same way: a short outer wrapper
+   controls how long a step stays pinned while the reader scrolls, and a
+   sticky inner panel — sized to fill the viewport below the fixed navbar —
+   is what's actually visible. The panel is intentionally taller than its
+   content needs, with more padding below the content than above, so the
+   content sits in the upper-middle of the screen instead of jammed against
+   the top with dead space underneath. These tokens are the one place that
+   relationship is tuned; individual scenes should not redeclare it.
+
+   Two sticky-stage recipes read these tokens instead of hardcoding their
+   own numbers:
+     .gw-pinned__stage  text-led panels (Research, Headline Findings, Key
+                        Findings — grid layout, a translating text track)
+     .isw-stage         the figure-led ISW panel (flex layout, a fixed
+                        cross-section beside a translating text rail)
+   Both fill the same viewport-height envelope; only the padding balance and
+   internal layout (grid vs. flex) differ by content type. A future graphic
+   panel should reuse these tokens rather than pick its own height/padding.
+   ========================================================================== */
+
+:root {
+  --scrolly-nav-offset: 5rem;   /* clears the fixed navbar */
+  --scrolly-pad-top:    9vh;    /* less padding above… */
+  --scrolly-pad-bottom: 17vh;   /* …than below, so content reads upper-middle */
+}
+
+@media (max-width: 860px) {
+  :root { --scrolly-nav-offset: 4rem; --scrolly-pad-top: 6vh; --scrolly-pad-bottom: 12vh; }
+}
+
+/* ==========================================================================
    ISW scrollytelling scene  (isw.qmd + assets/js/isw-figure.js)
    --------------------------------------------------------------------------
-   One compact pinned scene: a fixed cross-section on the left, a vertically
+   Graphic-heavy panel: a fixed cross-section on the left, a vertically
    translating numbered track on the right whose active entry always sits in
-   the same slot. The visible scene is roughly the height of the figure; the
-   scroll distance comes from the tall .isw-scrolly wrapper, not from a tall
-   visible column. No internal scroll box — ordinary page scroll drives it.
-   With no JS the whole thing collapses to a plain stacked list.
+   the same slot. The panel fills the viewport (see scrolly panel tokens,
+   above); the scroll distance comes from the tall .isw-scrolly wrapper, not
+   from a tall visible column. No internal scroll box — ordinary page scroll
+   drives it. With no JS the whole thing collapses to a plain stacked list.
    ========================================================================== */
 
 .isw-lede {
@@ -1265,11 +1300,17 @@ main.content > section:first-child { margin-top: 0; }
   color: var(--ink);
 }
 
-.isw-scrolly { position: relative; height: 420vh; margin-top: 1.5rem; }
+.isw-scrolly { position: relative; height: 470vh; margin-top: 1.5rem; }
 
 .isw-stage {
   position: sticky;
-  top: 4rem;
+  top: var(--scrolly-nav-offset);
+  height: calc(100vh - var(--scrolly-nav-offset));
+  min-height: 420px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: var(--scrolly-pad-top) 0 var(--scrolly-pad-bottom);
 }
 .isw-scene {
   display: grid;
@@ -1278,7 +1319,7 @@ main.content > section:first-child { margin-top: 0; }
   align-items: center;
   width: 100%;
   max-width: 980px;
-  margin-inline: auto;
+  margin: auto;
 }
 
 .isw-figwrap { margin: 0; }
@@ -1402,7 +1443,7 @@ main.content > section:first-child { margin-top: 0; }
 
 /* No-JS / reduced fallback: plain stacked list, nothing pinned or clipped. */
 .isw-scrolly:not(.is-live) { height: auto; }
-.isw-scrolly:not(.is-live) .isw-stage { position: static; height: auto; display: block; }
+.isw-scrolly:not(.is-live) .isw-stage { position: static; height: auto; min-height: 0; padding: 0; display: block; }
 .isw-scrolly:not(.is-live) .isw-scene { align-items: start; }
 .isw-scrolly:not(.is-live) .isw-rail { overflow: visible; }
 .isw-scrolly:not(.is-live) .isw-rail::before,
@@ -1414,7 +1455,7 @@ main.content > section:first-child { margin-top: 0; }
 
 @media (scripting: none) {
   .isw-scrolly { height: auto; }
-  .isw-stage { position: static; }
+  .isw-stage { position: static; height: auto; min-height: 0; padding: 0; }
   .isw-scene { align-items: start; }
   .isw-rail { overflow: visible; height: auto; }
   .isw-rail::before, .isw-rail::after { display: none; }
@@ -1432,7 +1473,7 @@ main.content > section:first-child { margin-top: 0; }
 }
 
 @media (max-width: 860px) {
-  .isw-scrolly { height: calc(100vh + 240vh); }
+  .isw-scrolly { height: calc(100vh + 290vh); }
   .isw-scene {
     grid-template-columns: 1fr;
     gap: .75rem;
@@ -1446,18 +1487,24 @@ main.content > section:first-child { margin-top: 0; }
 }
 
 /* ==========================================================================
-   Pinned scene  (assets/js/pinned-scene.js)
+   Pinned scene — text-heavy scrolly panel  (assets/js/pinned-scene.js)
    --------------------------------------------------------------------------
    A viewport-locked stack: page scroll through the tall .gw-pinned wrapper
    advances one step at a time, the active step held in a fixed slot, an
    optional number that flips only at a step boundary. Used by the Overview
-   Research and Headline Findings sections and each chapter's Key Findings.
+   Research and Headline Findings sections and each chapter's Key Findings —
+   the site's text-led scrolly panel (see the shared scrolly panel tokens
+   above .isw-scrolly). The sticky stage fills the viewport below the navbar
+   and pads content toward its upper-middle rather than top-aligning it; the
+   outer wrapper's --runway is sized independently so a step's dwell time on
+   screen doesn't shrink just because the panel got taller. Progress dots
+   stay pinned to the bottom of the viewport regardless of that padding.
    Without JS, or under reduced motion, .is-live is never set and the whole
    thing is a plain stacked list.
    ========================================================================== */
 
 .gw-pinned { position: relative; margin: 1.75rem 0 0; }
-.gw-pinned.is-live { height: var(--runway, 340vh); }
+.gw-pinned.is-live { height: var(--runway, 390vh); }
 
 .gw-pinned--prose    { --scene-bg: var(--wash-blue); }
 .gw-pinned--headlines { --scene-bg: var(--wash-sage); }
@@ -1465,8 +1512,11 @@ main.content > section:first-child { margin-top: 0; }
 
 .gw-pinned.is-live .gw-pinned__stage {
   position: sticky;
-  top: 5rem;
-  height: var(--stage-h, clamp(300px, 46vh, 440px));
+  top: var(--scrolly-nav-offset);
+  height: var(--stage-h, calc(100vh - var(--scrolly-nav-offset)));
+  min-height: 420px;
+  box-sizing: border-box;
+  padding: var(--scrolly-pad-top) 0 var(--scrolly-pad-bottom);
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   column-gap: 2rem;
@@ -1521,13 +1571,11 @@ main.content > section:first-child { margin-top: 0; }
 .gw-pinned__step.gw-headline h3 { max-width: none; margin-top: 0; }
 .gw-pinned .gw-headlines { border-top: 0; }
 
-.gw-pinned__progress {
-  grid-column: 1 / -1;
-  align-self: end;
+.gw-pinned.is-live .gw-pinned__progress {
+  position: absolute;
+  left: 0; bottom: 1.5rem;
   display: flex; gap: .5rem;
 }
-.gw-pinned--prose .gw-pinned__progress,
-.gw-pinned--keyfindings .gw-pinned__progress { grid-column: 1; }
 .gw-pinned__dot {
   width: 9px; height: 9px; padding: 0; border-radius: 50%;
   border: 1px solid var(--isw); background: transparent; cursor: pointer;
@@ -1545,11 +1593,11 @@ main.content > section:first-child { margin-top: 0; }
 }
 @media (scripting: none) {
   .gw-pinned { height: auto; }
-  .gw-pinned__stage { position: static; height: auto; display: block; }
+  .gw-pinned__stage { position: static; height: auto; min-height: 0; padding: 0; display: block; }
 }
 
 @media (max-width: 700px) {
-  .gw-pinned.is-live .gw-pinned__stage { grid-template-columns: minmax(0, 1fr); top: 4rem; }
+  .gw-pinned.is-live .gw-pinned__stage { grid-template-columns: minmax(0, 1fr); }
   .gw-pinned__num { grid-row: auto; }
 }
 

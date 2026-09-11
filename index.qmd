@@ -107,7 +107,7 @@ page-layout: custom
 :::
 
 ```{=html}
-<div class="gw-pinned gw-pinned--prose" data-pinned style="--runway: 190vh">
+<div class="gw-pinned gw-pinned--prose" data-pinned style="--runway: 240vh">
   <div class="gw-pinned__stage">
     <div class="gw-pinned__viewport">
       <ol class="gw-pinned__track">
@@ -207,7 +207,7 @@ page-layout: custom
 ```{=html}
 <h2 class="gw-eyebrow">Headline findings</h2>
 
-<div class="gw-pinned gw-pinned--headlines" data-pinned style="--runway: 300vh">
+<div class="gw-pinned gw-pinned--headlines" data-pinned style="--runway: 350vh">
   <div class="gw-pinned__stage">
     <span class="gw-pinned__num" aria-hidden="true">01</span>
     <div class="gw-pinned__viewport">

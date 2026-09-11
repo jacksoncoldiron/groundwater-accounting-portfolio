@@ -138,7 +138,7 @@ the step the reviewed document sets do not take.
 :::
 
 ```{=html}
-<div class="gw-pinned gw-pinned--keyfindings" data-pinned style="--runway: 320vh">
+<div class="gw-pinned gw-pinned--keyfindings" data-pinned style="--runway: 370vh">
   <div class="gw-pinned__stage">
     <span class="gw-pinned__num" aria-hidden="true">01</span>
     <div class="gw-pinned__viewport">

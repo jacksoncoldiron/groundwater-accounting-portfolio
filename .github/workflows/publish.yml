@@ -20,22 +20,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Install Python dependencies
-        run: python -m pip install openpyxl pyyaml
-
-      # Regenerates data/processed, _variables.yml and _partials from the
-      # source workbooks, so published counts can never drift from the data.
-      - name: Build processed data
-        run: python scripts/build_data.py
-
+      # data/processed, _variables.yml and _partials are generated locally by
+      # `python scripts/build_data.py` from source_materials/ (the raw
+      # workbooks), which is intentionally gitignored and never published.
+      # CI renders the site from the already-committed generated output, so
+      # it does not need Python or the source workbooks at all.
       - uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Render site
         run: quarto render
+
+      - name: Disable Jekyll processing
+        run: touch _site/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3
         with:
