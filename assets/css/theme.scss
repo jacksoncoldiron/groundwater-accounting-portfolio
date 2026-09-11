@@ -1,0 +1,69 @@
+/*-- scss:defaults --*/
+// Bootstrap variable overrides so Quarto's own chrome (navbar, footer, search)
+// inherits the design system rather than shipping default Bootstrap.
+
+$font-family-sans-serif: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !default;
+$font-family-monospace: "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace !default;
+
+$body-bg:            #F2EDE1;
+$body-color:         #544E3E;
+$link-color:         #556472;
+$link-hover-color:   #3A3628;
+
+$font-size-root:     17px;
+$line-height-base:   1.65;
+
+$headings-font-family:  $font-family-serif;
+$headings-font-weight:  500;
+$headings-color:        #3A3628;
+
+$border-color:       #CAC6B9;
+$border-radius:      2px;
+$border-radius-sm:   2px;
+$border-radius-lg:   3px;
+
+$navbar-bg:               #F7F2E8;
+$navbar-fg:               #4A4437;
+$navbar-hl:               #556472;
+$navbar-padding-y:        0;
+
+$footer-bg:          #544E3E;
+$footer-fg:          #E6E0D0;
+
+$grid-gutter-width:  2rem;
+
+/*-- scss:rules --*/
+// Rules live in assets/css/styles.css so they are editable without a SCSS
+// rebuild step. This block only neutralises Bootstrap defaults that would
+// otherwise fight the design system.
+
+.navbar {
+  border-bottom: 1px solid #CAC6B9;
+  border-top: 3px solid #73808C; /* slate blue -- a brand mark on every page */
+  box-shadow: none;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.navbar-brand {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+#quarto-content > * {
+  padding-top: 0;
+}
+
+main.content {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.page-columns {
+  display: block !important;
+}
+
+#title-block-header {
+  display: none;
+}

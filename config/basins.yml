@@ -1,0 +1,201 @@
+# Canonical basin registry
+# ---------------------------------------------------------------------------
+# This file is the single source of truth for which basins exist, which are
+# analyzed, and how they are labelled everywhere on the site.
+#
+# RULES
+#   - `status: active`  -> counts toward public statistics, appears in explorer
+#                          filters, and may appear in cross-basin conclusions.
+#   - `status: planned` -> registered and shown as "analysis in progress".
+#                          NEVER counted, never rendered as zero findings, and
+#                          never treated as an absence finding.
+#   - `include_in_analysis` is the hard gate the build pipeline enforces.
+#   - Adding a basin = add a block here + add coded findings rows. No page
+#     logic should need to change.
+#
+# METADATA PROVENANCE
+#   Every descriptive field below is drawn from Phase2_CrossBasin_Synthesis.docx
+#   or Phase2_Findings.xlsx. `source_ref` records where. Do not add a
+#   descriptive value that cannot be traced to a source document.
+# ---------------------------------------------------------------------------
+
+schema_version: 1
+
+basins:
+  - id: merced
+    slug: merced
+    name: Merced Subbasin
+    short_name: Merced
+    workbook_value: Merced          # exact `Subbasin` string in the findings workbook
+    status: active
+    include_in_analysis: true
+    region: San Joaquin Valley
+    order: 1
+    gsas:
+      - code: MSGSA
+        name: Merced Subbasin GSA
+      - code: MIUGSA
+        name: Merced Irrigation-Urban GSA
+      - code: TIWD GSA-1
+        name: Turner Island Water District GSA-1
+        note: >-
+          Named in the synthesis as having no instrument in the reviewed
+          document set; no findings are coded to it.
+    profile:
+      isw_model:
+        value: MercedWRM
+        detail: >-
+          Quasi-3D numerical model on the IWFM 2015 platform, calibrated
+          against ET, groundwater levels, and streamflow.
+        source_ref: "Synthesis §1.1 (GSP §2.3.2, p. 2-207 [PDF 298])"
+      accounting_platform:
+        value: Groundwater Accounting Platform
+        detail: ET data source is OpenET.
+        source_ref: "Synthesis §2.5"
+      mlrp_structure:
+        value: MSGSA holds the Department of Conservation block grant directly
+        detail: >-
+          $8.89M DOC MLRP block grant awarded 16 June 2023 and held by MSGSA,
+          alongside a locally funded Proposition 218 Phase 1 Land Repurposing
+          Program.
+        source_ref: "Synthesis §2.1 (GSP §6.2.2, p. 6-8 [PDF 469])"
+      key_characteristic: >-
+        The only basin in the reviewed set that measures water savings on
+        repurposed parcels with the same instrument it uses for compliance.
+      key_characteristic_source_ref: "Synthesis §2.2 Comparison"
+
+  - id: east-turlock
+    slug: east-turlock
+    name: East Turlock Subbasin
+    short_name: East Turlock
+    workbook_value: East Turlock
+    status: active
+    include_in_analysis: true
+    region: San Joaquin Valley
+    order: 2
+    scope_note: >-
+      Findings are coded to the East Turlock GSA within the Turlock Subbasin.
+      Where a document covers the whole Turlock Subbasin, the finding is coded
+      at SUBBASIN level.
+    gsas:
+      - code: ETSGSA
+        name: East Turlock Subbasin GSA
+      - code: WTSGSA
+        name: West Turlock Subbasin GSA
+        note: >-
+          Runs no land repurposing program; the DOC grant was awarded to the
+          Subbasin as a whole (Synthesis §2.1).
+    profile:
+      isw_model:
+        value: C2VSimTM
+        detail: >-
+          Quasi-3D finite element model on the IWFM 2015 platform — the same
+          model class as Merced — calibrated October 1991 to September 2015.
+        source_ref: "Synthesis §1.1 (GSP §5.1.2, p. 5-3 [PDF 278])"
+      accounting_platform:
+        value: Groundwater Accounting Platform
+        detail: ET data source is LandIQ, with CalETa for the historical baseline.
+        source_ref: "Synthesis §2.5"
+      mlrp_structure:
+        value: ETSGSA runs the program under a subbasin-wide award
+        detail: >-
+          ETSGSA applied on behalf of both GSAs; DOC awarded the Subbasin
+          $8.89M. Grant closes 31 March 2027.
+        source_ref: "Synthesis §2.1 (WY 2025 Annual Report §8.2.5, pp. 8-34 to 8-35)"
+      key_characteristic: >-
+        The only basin with an ISW-specific, quantitative undesirable-result
+        definition set per river.
+      key_characteristic_source_ref: "Synthesis §1.2 (GSP Table 6-20, p. 6-76 [PDF 450])"
+
+  - id: salinas-valley
+    slug: salinas-valley
+    name: Salinas Valley — 180/400-Foot Aquifer Subbasin
+    short_name: Salinas Valley
+    workbook_value: Salinas Valley
+    status: active
+    include_in_analysis: true
+    region: Central Coast
+    order: 3
+    gsas:
+      - code: SVBGSA
+        name: Salinas Valley Basin GSA
+      - code: MCWD GSA
+        name: Marina Coast Water District GSA
+    profile:
+      isw_model:
+        value: SVIHM
+        detail: >-
+          USGS-owned numerical model built on MODFLOW-OWHM v2. Produces a
+          paired-simulation depletion estimate and mapped ISW locations, but
+          the compliance criterion runs on shallow-well elevation readings
+          rather than model output.
+        source_ref: "Synthesis §1.1 (Amendment 1 Table 5-7, PDF p192)"
+      accounting_platform:
+        value: No accounting platform identified in the reviewed documents
+        detail: >-
+          Recorded as an absence in the reviewed document set, not as a
+          statement that none exists.
+        source_ref: "Synthesis §2.5 and §3.3.4 Comparison"
+      mlrp_structure:
+        value: MLRP grant held outside the GSA
+        detail: >-
+          SVBGSA is one of five partners on another organization's grant —
+          identified in the synthesis as a finding in its own right.
+        source_ref: "Synthesis Chapter 2 scope note and §2.1"
+      key_characteristic: >-
+        The only basin with direct field measurement of stream depletion, and
+        the only one whose formal representation of a disadvantaged-community
+        director is qualified by a supermajority voting rule.
+      key_characteristic_source_ref: "Synthesis §1.4 and §3.1.3"
+
+  # -------------------------------------------------------------------------
+  # PLANNED — registered so that map schema, filters, and copy are ready.
+  # These MUST NOT appear in counts, comparisons, or absence findings.
+  # To activate: set status -> active, include_in_analysis -> true, add coded
+  # findings rows with the matching `workbook_value`, populate `profile`, then
+  # run scripts/build_data.py and work through notes/narrative_review.md.
+  # -------------------------------------------------------------------------
+  - id: colusa
+    slug: colusa
+    name: Colusa Subbasin
+    short_name: Colusa
+    workbook_value: Colusa
+    status: planned
+    include_in_analysis: false
+    region: Sacramento Valley
+    order: 4
+    profile: {}
+
+  - id: yolo
+    slug: yolo
+    name: Yolo Subbasin
+    short_name: Yolo
+    workbook_value: Yolo
+    status: planned
+    include_in_analysis: false
+    region: Sacramento Valley
+    order: 5
+    profile: {}
+
+# ---------------------------------------------------------------------------
+# GSA display names for codes that appear in the workbook but are not a GSA.
+# Used so the explorer can label these honestly rather than as agencies.
+# ---------------------------------------------------------------------------
+gsa_labels:
+  SUBBASIN:
+    label: Subbasin-level
+    kind: scope
+    description: >-
+      The finding applies to the subbasin as a whole rather than to a single
+      GSA.
+  NON-GSA:
+    label: Non-GSA entity
+    kind: other
+    description: >-
+      The finding is attributed to an organization that is not a GSA.
+  COMMENTER:
+    label: Public commenter
+    kind: other
+    description: >-
+      The finding comes from a public comment letter rather than an agency
+      document.

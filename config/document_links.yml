@@ -1,0 +1,166 @@
+# Document link overrides
+# ---------------------------------------------------------------------------
+# Public URLs for the source documents cited in the Findings Explorer.
+#
+# HOW THIS WORKS
+#   The build reads the document registry in the `Legend` sheet of the findings
+#   workbook first, then applies this file ON TOP of it. An entry here wins.
+#   Nothing else on the site ever produces a document link -- URLs are never
+#   inferred or constructed.
+#
+# HOW TO USE IT
+#   Fill in the `url:` for any document below. Leave it as `null` to publish no
+#   link for that document. Then run:
+#
+#       python3 scripts/build_data.py && quarto render
+#
+#   Keys are the exact `Document` string from the findings workbook. They are
+#   pre-filled with every document that currently has at least one finding, so
+#   you only need to paste URLs.
+#
+#   `suppress: true` blocks a Legend link you know to be wrong without editing
+#   the workbook.
+#
+# NOTE ON THE TWO WITHHELD LINKS
+#   The Turlock GSP Appendix K and L rows in the Legend carry Salinas Valley
+#   URLs. They are marked `suppress: true` below. Replace the `url:` with the
+#   correct link and set `suppress: false` to publish them.
+# ---------------------------------------------------------------------------
+
+schema_version: 1
+
+documents:
+
+  # Salinas Valley · Periodic Evaluation · 52 findings
+  "180-400 GSP 5-Year Periodic Evaluation (Jan 2025)":
+    url: "https://svbgsa.org/wp-content/uploads/2025/01/180400-PE-Outline_20250102_v2.pdf"
+
+  # Salinas Valley · GSP Amendment · 28 findings
+  "180-400 GSP Amendment 1 — Main Document":
+    url: "https://svbgsa.org/wp-content/uploads/2025/01/180-400-GSP-Amendment-1-Document_compressed.pdf"
+
+  # Salinas Valley · Technical Memorandum · 5 findings
+  "180-400 Groundwater Dependent Ecosystems (GDEs) Identification & Mapping (June 2026)":
+    url: "https://svbgsa.org/wp-content/uploads/2026/07/June-2026-180400-GDE-Memo-CCWG.pdf"
+
+  # Salinas Valley · Technical Memorandum · 2 findings
+  "180-400 Somavia Road Recharge Evaluation":
+    url: "https://svbgsa.org/wp-content/uploads/2026/06/2026-Somavia-Recharge-Evaluation.pdf"
+
+  # East Turlock · Rules and Regulations · 1 finding
+  "ETSGSA Credit Calculation Policy":
+    url: null          # TODO
+
+  # East Turlock · MLRP Program Material · 6 findings
+  "ETSGSA MLRP 2026 Application":
+    url: null          # TODO
+
+  # East Turlock · MLRP Program Material · 5 findings
+  "ETSGSA MLRP Implementation Monitoring Plan":
+    url: null          # TODO
+
+  # East Turlock · MLRP Program Material · 3 findings
+  "ETSGSA MLRP Implementation Standards":
+    url: null          # TODO
+
+  # East Turlock · MLRP Program Material · 2 findings
+  "ETSGSA MLRP Incentive Payment Procedures":
+    url: null          # TODO
+
+  # East Turlock · MLRP Program Material · 6 findings
+  "ETSGSA MLRP Outreach and Engagement Plan":
+    url: null          # TODO
+
+  # East Turlock · MLRP Program Material · 4 findings
+  "ETSGSA MLRP Technical Memorandum":
+    url: null          # TODO
+
+  # East Turlock · Rules and Regulations · 15 findings
+  "ETSGSA Rules and Regulations Phase 2":
+    url: null          # TODO
+
+  # Merced · Rules and Regulations · 7 findings
+  "MIUGSA Rules and Regulations (Oct 2023)":
+    url: null          # TODO
+
+  # Merced · Rules and Regulations · 21 findings
+  "MSGSA Rules and Regulations (July 2026)":
+    url: null          # TODO
+
+  # Merced · GSP · 32 findings
+  "Merced GSP 2025":
+    url: "https://sgma.water.ca.gov/portal/gsp/preview/9"
+
+  # Merced · not in Legend registry · 2 findings
+  "Merced GSP 2025 / WY 2025 Annual Report":
+    url: null          # TODO
+
+  # Merced · Periodic Evaluation · 5 findings
+  "Merced GSP Periodic Evaluation 2025":
+    url: null          # TODO
+
+  # Merced · MLRP Program Material · 14 findings
+  "Merced MLRP RFP and Application":
+    url: null          # TODO
+
+  # Merced · not in Legend registry · 1 finding
+  "Merced MLRP RFP and Application / MSGSA Rules and Regulations (July 2026)":
+    url: null          # TODO
+
+  # Merced · Annual Report · 5 findings
+  "Merced WY 2025 Annual Report":
+    url: null          # TODO
+
+  # Salinas Valley · Agency Correspondence · 8 findings
+  "SVBGSA Response to DWR (180-400, April 2026)":
+    url: "https://svbgsa.org/wp-content/uploads/2026/05/180-400-SVBGSA-Response-to-DWR-2026-04-30.pdf"
+
+  # Salinas Valley · ISW Report · 2 findings
+  "Salinas 180-400 ISW Report":
+    url: null          # TODO
+
+  # Salinas Valley · GSP Appendix · 8 findings
+  "Salinas GSP Appendix 11G — Public Review Comments":
+    url: "https://sgma.water.ca.gov/portal/gsp/preview/29"
+
+  # Salinas Valley · GSP · 6 findings
+  "Salinas Valley 180/400 Foot Aquifer Subbasin GSP (2020)":
+    url: "https://sgma.water.ca.gov/portal/gsp/preview/29"
+
+  # East Turlock · GSP Appendix · 1 finding
+  "Turlock GSP Appendix F-10 — Email Distribution Report":
+    url: null          # TODO
+
+  # East Turlock · GSP Appendix · 3 findings
+  "Turlock GSP Appendix F-13 — Stakeholder Survey Results":
+    url: null          # TODO
+
+  # East Turlock · GSP Appendix · 18 findings
+  "Turlock GSP Appendix F-15 — Public Comment Summary":
+    url: null          # TODO
+
+  # East Turlock · GSP Appendix · 1 finding
+  "Turlock GSP Appendix F-2 — Stakeholder Gap Analysis":
+    url: null          # TODO
+
+  # East Turlock · GSP Appendix · 17 findings
+  "Turlock GSP Appendix K — ETSGSA Groundwater Demand Reduction Plan":
+    url: null          # TODO — Legend link points at Salinas Valley; supply the correct one
+    suppress: true     # set false once `url` above is correct
+
+  # East Turlock · GSP Appendix · 1 finding
+  "Turlock GSP Appendix L — First Amendment to inter-GSA MOA":
+    url: null          # TODO — Legend link points at Salinas Valley; supply the correct one
+    suppress: true     # set false once `url` above is correct
+
+  # East Turlock · GSP · 27 findings
+  "Turlock Subbasin GSP 2024":
+    url: "https://sgma.water.ca.gov/portal/gsp/preview/110"
+
+  # East Turlock · Annual Report · 14 findings
+  "Turlock WY 2025 Annual Report":
+    url: null          # TODO
+
+  # East Turlock · Well Mitigation Plan · 3 findings
+  "Turlock Well Mitigation Plan 2025":
+    url: null          # TODO

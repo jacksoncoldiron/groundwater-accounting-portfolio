@@ -1,0 +1,65 @@
+---
+pagetitle: "Study Area Map"
+description: "An interactive map of the analyzed subbasins, the relevant GSA boundaries, and the major rivers, authored in ArcGIS Online."
+page-layout: custom
+---
+
+```{=html}
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+```
+
+::: {.gw-wide .gw-section .gw-section--tight}
+
+```{=html}
+<h1 class="gw-eyebrow">Study Area Map</h1>
+```
+
+::: gw-prose
+The analysis compares three California groundwater subbasins chosen for
+contrast rather than representativeness. This map orients the reader
+geographically; the analytical work lives in the chapter pages and the
+[Findings Explorer](findings.qmd).
+:::
+
+```{=html}
+<div class="gw-map gw-map--full">
+  <div class="gw-map__frame">
+    <!-- MAP_STUDY_AREA_EMBED
+         Replace this entire .gw-map__pending block with the public ArcGIS
+         embed iframe (or a public web-map URL wrapped in an iframe). The
+         container is already responsive; the iframe will fill it. -->
+    <div class="gw-map__pending">
+      <p><span class="gw-placeholder-token">MAP_STUDY_AREA_EMBED</span></p>
+      <p>The Study Area map is authored in ArcGIS Online and will be embedded
+      here. It shows the analyzed subbasins, the relevant GSA boundaries, and
+      the major rivers, with popups linking into the filtered findings
+      explorer.</p>
+    </div>
+  </div>
+  <div class="gw-map__cap">
+    <p><strong>Study area.</strong> {{< var basin_list >}} — three subbasins
+    chosen for contrast rather than representativeness: two in the San Joaquin
+    Valley sharing an accounting platform, one on the Central Coast with a
+    different hydrogeology, a different governance structure, and a land
+    repurposing grant held outside the groundwater agency. Colusa and Yolo are
+    registered as near-term additions and are not yet analyzed.</p>
+  </div>
+</div>
+```
+
+:::
+
+::: {.gw-wide .gw-section .gw-section--tight}
+
+```{=html}
+<h2 class="gw-eyebrow">The subbasins</h2>
+```
+
+{{< include _partials/basins.html >}}
+
+:::
+
+```{=html}
+</main>
+```

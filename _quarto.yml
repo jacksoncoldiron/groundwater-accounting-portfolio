@@ -1,0 +1,80 @@
+project:
+  type: website
+  output-dir: _site
+  # Only these files are site pages. The notes/, source_materials/ and
+  # handoff markdown at the repo root are project documentation, not content.
+  render:
+    - index.qmd
+    - isw.qmd
+    - mlrp.qmd
+    - community.qmd
+    - map.qmd
+    - findings.qmd
+    - methods.qmd
+  resources:
+    - data/processed/*.json
+    - data/interactive/*.json
+    - downloads/**
+    - assets/**
+
+website:
+  title: "Accounting for Groundwater"
+  description: >-
+    A cross-basin analysis of how California groundwater agencies measure,
+    account for, and act on interconnected surface water, multi-benefit land
+    repurposing, and community outcomes under SGMA.
+  site-url: ""
+  favicon: assets/icons/favicon.svg
+  search:
+    location: navbar
+    type: overlay
+  navbar:
+    logo: assets/icons/mark.svg
+    title: "Accounting&nbsp;for&nbsp;Groundwater"
+    collapse-below: lg
+    left:
+      - href: index.qmd
+        text: Overview
+      - href: isw.qmd
+        text: Interconnected Surface Water
+      - href: mlrp.qmd
+        text: Land Repurposing
+      - href: community.qmd
+        text: Community
+      - href: map.qmd
+        text: Map
+      - href: findings.qmd
+        text: Explore Findings
+      - href: methods.qmd
+        text: Methods & Evidence
+  page-footer:
+    left: |
+      Based on a landscape analysis conducted for the California Department of
+      Water Resources Groundwater Accounting project. This site is an
+      independent portfolio adaptation and is not a DWR publication.
+    right: |
+      [Methods & Evidence](methods.qmd) · [Explore Findings](findings.qmd)
+  back-to-top-navigation: false
+
+format:
+  html:
+    theme:
+      - assets/css/theme.scss
+    css: assets/css/styles.css
+    toc: false
+    anchor-sections: true
+    link-external-newwindow: true
+    link-external-icon: false
+    smooth-scroll: true
+    email-obfuscation: javascript
+    lang: en
+    include-in-header:
+      - text: |
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+execute:
+  freeze: false
+  echo: false
+  warning: false

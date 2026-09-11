@@ -1,0 +1,337 @@
+---
+pagetitle: "Methods & Evidence"
+description: "How the analysis was done, what evidence is in scope, what it cannot support, and the searchable literature database behind it."
+page-layout: custom
+---
+
+```{=html}
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+```
+
+::: {.gw-wide .gw-section .gw-section--tight}
+
+```{=html}
+<h1 class="gw-eyebrow">Methods &amp; Evidence</h1>
+```
+
+::: gw-prose
+## How this was done, and what it can and cannot support
+
+A desktop analysis of {{< var documents_total >}} planning and policy documents
+across {{< var active_basins >}} subbasins, read alongside {{< var literature_total >}} academic papers, and coded into {{< var findings_total >}} structured findings.
+:::
+
+```{=html}
+<div class="gw-tabs" role="tablist" aria-label="Methods sections">
+  <button class="gw-tab" role="tab" id="tab-methods"     aria-controls="panel-methods"     aria-selected="true">Methods</button>
+  <button class="gw-tab" role="tab" id="tab-streams"     aria-controls="panel-streams"     aria-selected="false">Evidence streams</button>
+  <button class="gw-tab" role="tab" id="tab-limitations" aria-controls="panel-limitations" aria-selected="false">Limitations</button>
+  <button class="gw-tab" role="tab" id="tab-credits"     aria-controls="panel-credits"     aria-selected="false">Credits &amp; role</button>
+  <button class="gw-tab" role="tab" id="tab-report"      aria-controls="panel-report"      aria-selected="false">Full report</button>
+</div>
+```
+
+:::
+
+<!-- ===================================================================== -->
+
+::: {#panel-methods .gw-tabpanel role="tabpanel" aria-labelledby="tab-methods" tabindex="0"}
+::: {.gw-page .gw-section .gw-section--tight}
+::: gw-prose
+
+### The research question
+
+Under SGMA an agency must define what unsustainable looks like, measure whether
+it is happening, and act when it is. This analysis asks a narrower question of
+each step: **which number actually becomes the quantity a decision is made on**,
+and what happens to the more sophisticated numbers that do not.
+
+### Why these subbasins
+
+{{< var basin_list >}} were selected for contrast rather than representativeness. Two sit in the San Joaquin Valley and share an accounting platform; the third sits on the Central Coast with different hydrogeology, a different governance structure, and a land repurposing grant held outside the groundwater agency. The differences are what make the comparison informative.
+
+{{< var planned_basin_list >}} are registered as near-term additions. No evidence from either has been reviewed, and neither contributes to any count, comparison, or conclusion on this site.
+
+### Document collection and desktop review
+
+For each subbasin the review assembled the adopted Groundwater Sustainability
+Plan and any amendments, the most recent periodic evaluation and annual report,
+GSA rules and regulations, land repurposing program instruments, technical
+memoranda and ISW studies, relevant GSP appendices, agency correspondence, and
+public comment letters.
+
+### Literature review
+
+{{< var literature_total >}} papers were reviewed across three topical areas —
+groundwater accounting methods, land-use alternatives, and community
+considerations. Each was assessed not for its conclusions but for the
+**method it demonstrates**: what it measured, at what scale, using what data,
+and whether an operational crediting or accounting program was involved.
+
+### Coding and classification
+
+Each finding was recorded with its subbasin, agency, document, chapter,
+section, and the specific question it answers, together with a verbatim
+quotation and the section or page it came from. Findings were classified as
+**positive**, **absence**, or **ambiguous**, and rated for relevance to a
+groundwater accounting platform and to DWR recommendations.
+
+Quotations were checked against the source document where a quotation exists; {{< var quotes_verified >}} are marked verified.
+
+### Cross-basin comparison
+
+The comparison is structural rather than interpretive. The same {{< var comparison_questions_total >}} questions were put to each subbasin's document set; {{< var comparison_questions_all_basins >}} of them were answered for all three, and {{< var comparison_questions_multi_basin >}} for two or more. A comparison row is one of those questions, and a cell is what that basin's documents actually said.
+
+**No maturity score, traffic light, or ranking is assigned anywhere on this
+site.** A cell reports the coded finding type and nothing more.
+
+### How to read an absence
+
+The single most important distinction in this analysis is between *not found in
+the reviewed documents* and *does not exist*. An absence finding records the
+first. It can arise for at least four different reasons, and the site keeps
+them apart:
+
+- the practice is genuinely absent from a document set that is otherwise complete;
+- the relevant document was not available to review;
+- the program exists but has not yet produced results;
+- the question was never coded for that basin at all — which is a statement
+  about the analysis, not about the basin.
+
+:::
+:::
+:::
+
+<!-- ===================================================================== -->
+
+::: {#panel-streams .gw-tabpanel role="tabpanel" aria-labelledby="tab-streams" tabindex="0" hidden="hidden"}
+::: {.gw-page .gw-section .gw-section--tight}
+::: gw-prose
+
+### What evidence is actually in scope
+
+The analysis draws on {{< var active_streams >}} active evidence streams. A third is registered in the site's data model so it can be added later, but nothing from it has been reviewed.
+
+:::
+
+{{< include _partials/evidence_streams.html >}}
+
+::: gw-prose
+
+#### Why a stream is registered before it is reviewed
+
+The evidence model, the explorer filters, and the citation format are built to
+accept a new stream without redesign. Registering a planned stream makes that
+capability explicit and auditable — but the site's rule is that a planned
+stream contributes **zero** records, appears in no count, and is described only
+as planned. Board-meeting evidence, if it is ever added, would also have to
+remain distinguishable from adopted plans and rules in every citation: what was
+said in a meeting is not what an agency adopted.
+
+:::
+:::
+:::
+
+<!-- ===================================================================== -->
+
+::: {#panel-limitations .gw-tabpanel role="tabpanel" aria-labelledby="tab-limitations" tabindex="0" hidden="hidden"}
+::: {.gw-page .gw-section .gw-section--tight}
+::: gw-prose
+
+### What this analysis cannot support
+
+#### The document sets are not equally complete
+
+This is the limitation that matters most, because it is the one most easily
+misread as a finding. Some absences recorded for one subbasin are gaps in
+document *availability* — an MLRP plan, a siting-tool specification, and a
+demand-management framework were not available to review. Some absences
+recorded for another reflect *architecture that has not yet produced results*:
+no projects implemented, a monitoring plan still in draft, a program plan not
+yet final.
+
+An absence tested against a rule that is in force is a much stronger finding
+than an absence recorded against a program that has not started. The site
+preserves that difference; a reader comparing cells across a row should too.
+
+#### Comparisons rest on different numbers of basins
+
+Not every question was coded for every subbasin. {{< var comparison_questions_all_basins >}} of {{< var comparison_questions_total >}} questions were answered for all three; several comparisons rest on two. Where a question was not coded for a basin the site says exactly that, and does not treat it as an absence.
+
+#### This is a desktop analysis
+
+Findings describe what the reviewed documents say. No interviews were
+conducted, no agency staff were asked to confirm or correct an interpretation,
+and no independent measurement was made. A practice that exists but is not
+documented in the reviewed material would appear here as an absence.
+
+#### The evidence is a point in time
+
+Documents were reviewed as they stood in mid-2026. Plans are amended, annual
+reports are published, monitoring networks change, and grant programs end —
+several of the findings here turn on facts that are explicitly dated.
+
+#### Spatial data is not part of this analysis
+
+No geographic analysis was performed. Maps on this site are contextual and
+authored separately in ArcGIS Online. Land repurposing project locations in
+particular are documented inconsistently across the three subbasins, which is
+itself recorded as a limitation rather than smoothed over.
+
+:::
+:::
+:::
+
+<!-- ===================================================================== -->
+
+::: {#panel-credits .gw-tabpanel role="tabpanel" aria-labelledby="tab-credits" tabindex="0" hidden="hidden"}
+::: {.gw-page .gw-section .gw-section--tight}
+::: gw-prose
+
+### Project role
+
+This site is an independent portfolio adaptation of a landscape analysis
+conducted for the California Department of Water Resources Groundwater
+Accounting project. The underlying cross-basin synthesis and the coded findings
+database are the author's own work within that project.
+
+The work covered:
+
+- desktop review of Groundwater Sustainability Plans, amendments, periodic
+  evaluations, annual reports, GSA rules, land repurposing program instruments,
+  technical studies, and public comment letters across
+  {{< var active_basins >}} subbasins;
+- a review of {{< var literature_total >}} academic papers across groundwater
+  accounting methods, land-use alternatives, and community considerations;
+- structured coding and classification of {{< var findings_total >}} findings,
+  including verbatim quotation capture and verification against source
+  documents;
+- cross-basin comparison and synthesis;
+- identification of implications for a groundwater accounting platform and for
+  DWR recommendations;
+- design and development of this public interactive adaptation.
+
+::: {.gw-callout}
+<p class="gw-callout__label">Attribution</p>
+
+This is a portfolio project. It is not a DWR publication, does not carry DWR
+branding, and its interpretations are the author's own. Where the analysis was
+conducted as part of a wider project team, the site does not claim sole
+authorship of that project's work.
+:::
+
+### Illustration credits
+
+New diagrams on this site are original responsive web graphics built for this
+adaptation.
+
+::: {.gw-callout .gw-callout--placeholder}
+<p class="gw-callout__label">Reserved for authorized illustrations</p>
+
+Selected graphics from *Well, Well, Well: An Introduction to Groundwater
+Recovery* by Sara Soroka and Travis Rennacker may be reused here with
+permission. **No such illustration is currently in use on this site.** When
+assets are supplied, each will carry a figure-level credit and be listed here
+in the form:
+
+> Illustration by Sara Soroka. Originally created for *Well, Well, Well: An
+> Introduction to Groundwater Recovery* by Sara Soroka and Travis Rennacker.
+> Used with permission.
+:::
+
+### Sources and tools
+
+The analysis rests on publicly available planning and policy documents
+published by the groundwater sustainability agencies named throughout, and on
+published academic literature. This site is a static Quarto website; all
+filtering and search run in the browser over data processed from the coding
+workbooks at build time.
+
+:::
+:::
+:::
+
+<!-- ===================================================================== -->
+
+::: {#panel-report .gw-tabpanel role="tabpanel" aria-labelledby="tab-report" tabindex="0" hidden="hidden"}
+::: {.gw-page .gw-section .gw-section--tight}
+::: gw-prose
+
+### The full technical report
+
+This site is a condensed, visual adaptation. The complete cross-basin synthesis
+carries the full argument, every citation, and the per-section literature
+review that the chapter pages summarize.
+
+::: {.gw-callout .gw-callout--placeholder}
+<p class="gw-callout__label">Download link pending</p>
+
+<p><span class="gw-placeholder-token">REPORT_DOWNLOAD_URL</span></p>
+
+The complete technical report will be linked here as a PDF for browser
+readability. Replace the placeholder in `methods.qmd` and place the file in
+`downloads/`.
+:::
+
+The coding workbooks behind both databases are not offered as downloads.
+Their content is surfaced in full through [Explore Findings](findings.qmd),
+where every record keeps its quotation and source location.
+
+:::
+:::
+:::
+
+```{=html}
+<script>
+/* Tab panels. Full keyboard support: arrow keys move between tabs, Home and
+   End jump to the ends, and the selected panel is the only one in the
+   accessibility tree. Panels are plain sections, so a direct link such as
+   methods.html#limitations still reveals the right one. */
+(function () {
+  var tablist = document.querySelector('.gw-tabs');
+  if (!tablist) return;
+  var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
+
+  function select(tab, focus) {
+    tabs.forEach(function (t) {
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.setAttribute('tabindex', on ? '0' : '-1');
+      if (panel) panel.hidden = !on;
+    });
+    if (focus) tab.focus();
+    history.replaceState(null, '', '#' + tab.getAttribute('aria-controls').replace('panel-', ''));
+  }
+
+  tabs.forEach(function (tab, i) {
+    tab.setAttribute('tabindex', tab.getAttribute('aria-selected') === 'true' ? '0' : '-1');
+    tab.addEventListener('click', function () { select(tab, false); });
+    tab.addEventListener('keydown', function (e) {
+      var next = null;
+      if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+      else if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+      else if (e.key === 'Home') next = tabs[0];
+      else if (e.key === 'End') next = tabs[tabs.length - 1];
+      if (next) { e.preventDefault(); select(next, true); }
+    });
+  });
+
+  /* Deep links: #literature, #panel-literature, or a fragment inside a panel. */
+  function openFromHash() {
+    var hash = window.location.hash.slice(1);
+    if (!hash) return;
+    var target = document.getElementById('panel-' + hash) || document.getElementById(hash);
+    if (!target) return;
+    var panel = target.closest ? target.closest('.gw-tabpanel') : null;
+    if (!panel) return;
+    var tab = document.getElementById(panel.id.replace('panel-', 'tab-'));
+    if (tab) select(tab, false);
+  }
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+})();
+</script>
+</main>
+```

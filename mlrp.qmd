@@ -1,0 +1,323 @@
+---
+pagetitle: "Land Repurposing"
+description: "When farmland is repurposed, what is actually measured, verified, credited, and monitored — compared across the analyzed subbasins."
+page-layout: custom
+---
+
+```{=html}
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+```
+
+::: {.gw-page .gw-section .gw-section--tight}
+
+```{=html}
+<p class="gw-eyebrow">Chapter 2 · Multi-benefit Land Repurposing</p>
+```
+
+```{=html}
+<div class="gw-chapter-head gw-chapter-head--mlrp">
+```
+{{< include _partials/chapter-icon-mlrp.html >}}
+```{=html}
+<h1 class="gw-chapter-title">When land is repurposed, what is actually measured?</h1>
+</div>
+```
+
+::: {.gw-chapter-intro}
+::: {.gw-chapter-intro__body}
+
+::: gw-prose
+Multi-benefit land repurposing is meant to do several things at once: use less
+water, and deliver habitat, community, and economic benefits alongside. Each of
+those claims implies a measurement. The question this chapter asks is which of
+them are actually made, when, and whether the answer enters the accounting
+system at all.
+
+The {{< var active_basins_word >}} programs differ less in what they fund than
+in when they count: one measures repurposed parcels after implementation and
+treats the result as enforceable, one estimates savings beforehand and never
+checks back, one keeps its measurement outside the subbasin's accounting
+entirely.
+:::
+
+:::
+
+```{=html}
+<figure class="chapter-photo chapter-photo--land">
+  <div class="chapter-photo__frame">
+    <img src="assets/photos/optimized/mlrp.jpg" alt="Aerial view of a river corridor dividing tilled farmland from green irrigated fields." style="object-position: 50% 50%" loading="lazy">
+  </div>
+  <figcaption class="chapter-photo__cap">
+    <span class="chapter-photo__cap-rule" aria-hidden="true"></span>
+    <span class="chapter-photo__cap-label">Multi-benefit Land Repurposing</span>
+  </figcaption>
+</figure>
+```
+
+:::
+
+:::
+
+::: {.gw-band .gw-band--sage}
+::: {.gw-wide}
+
+```{=html}
+<h2 class="gw-eyebrow">The Accounting Lifecycle</h2>
+
+<figure class="gw-figure">
+  <div class="gw-figure__body" style="background:var(--surface)">
+    <p id="mlrp-chain-summary" class="gw-sr-summary">
+      An eight-stage lifecycle: select or prioritise a parcel, fund the
+      intervention, change the land use, measure water use, verify delivered
+      savings, address allocation and leakage, measure co-benefits, and monitor
+      durability over time. Across the reviewed programs the first three stages
+      are well specified and the later stages thin out sharply.
+    </p>
+    <ol class="gw-chain" style="--accent: var(--mlrp)" role="img" aria-labelledby="mlrp-chain-summary">
+      <li class="gw-chain__step">
+        <span class="gw-chain__n">01</span>
+        <span class="gw-chain__label">Select parcel</span>
+        <span class="gw-chain__note">Scoring rubrics and siting criteria, with thresholds not always published.</span>
+      </li>
+      <li class="gw-chain__step">
+        <span class="gw-chain__n">02</span>
+        <span class="gw-chain__label">Fund intervention</span>
+        <span class="gw-chain__note">All three run on Department of Conservation money. Who holds the grant differs.</span>
+      </li>
+      <li class="gw-chain__step">
+        <span class="gw-chain__n">03</span>
+        <span class="gw-chain__label">Change land use</span>
+        <span class="gw-chain__note">Incentive agreement, per-acre payment, or outright purchase.</span>
+      </li>
+      <li class="gw-chain__step">
+        <span class="gw-chain__n">04</span>
+        <span class="gw-chain__label">Measure water use</span>
+        <span class="gw-chain__note">Evapotranspiration in some form in all three — but at different times.</span>
+      </li>
+      <li class="gw-chain__step" style="border-top-color: var(--community)">
+        <span class="gw-chain__n">05</span>
+        <span class="gw-chain__label">Verify savings</span>
+        <span class="gw-chain__note">The missing middle. Estimated before, measured after, or not measured at all.</span>
+      </li>
+      <li class="gw-chain__step" style="border-top-color: var(--community)">
+        <span class="gw-chain__n">06</span>
+        <span class="gw-chain__label">Allocation &amp; leakage</span>
+        <span class="gw-chain__note">Whether the entitlement to pump moves, is suspended, or ceases to exist.</span>
+      </li>
+      <li class="gw-chain__step" style="border-top-color: var(--community)">
+        <span class="gw-chain__n">07</span>
+        <span class="gw-chain__label">Measure co-benefits</span>
+        <span class="gw-chain__note">Named and sometimes scored or priced in every program. Measured as delivered outcomes in none.</span>
+      </li>
+      <li class="gw-chain__step">
+        <span class="gw-chain__n">08</span>
+        <span class="gw-chain__label">Monitor durability</span>
+        <span class="gw-chain__note">Grant funding ends in 2027; monitoring obligations run longer.</span>
+      </li>
+    </ol>
+  </div>
+  <figcaption class="gw-caption">
+    Stages 5 through 7 are where a repurposing program becomes an accounting
+    instrument rather than a grant — exactly where the three programs are
+    thinnest and most different from one another.
+    <a href="findings.html?chapter=2.%20MLRP">See all {{< var mlrp_findings >}} land repurposing findings &rarr;</a>
+  </figcaption>
+</figure>
+```
+
+:::
+:::
+
+::: {.gw-wide .gw-section}
+```{=html}
+<h2 class="gw-eyebrow">Key Findings</h2>
+```
+
+::: gw-prose
+## What the cross-basin comparison surfaces
+:::
+
+```{=html}
+<div class="gw-pinned gw-pinned--keyfindings" data-pinned style="--runway: 320vh">
+  <div class="gw-pinned__stage">
+    <span class="gw-pinned__num" aria-hidden="true">01</span>
+    <div class="gw-pinned__viewport">
+      <ol class="gw-pinned__track">
+        <li class="gw-pinned__step" data-num="01"><h3>[NEEDS COPY — key finding 1]</h3><p>Placeholder. A detailed cross-basin finding drawing on the synthesis and the literature.</p></li>
+        <li class="gw-pinned__step" data-num="02"><h3>[NEEDS COPY — key finding 2]</h3><p>Placeholder.</p></li>
+        <li class="gw-pinned__step" data-num="03"><h3>[NEEDS COPY — key finding 3]</h3><p>Placeholder.</p></li>
+        <li class="gw-pinned__step" data-num="04"><h3>[NEEDS COPY — key finding 4]</h3><p>Placeholder.</p></li>
+        <li class="gw-pinned__step" data-num="05"><h3>[NEEDS COPY — key finding 5]</h3><p>Placeholder.</p></li>
+      </ol>
+    </div>
+    <div class="gw-pinned__progress" role="group" aria-label="Jump to item">
+      <button type="button" class="gw-pinned__dot" aria-label="Finding 1"></button>
+      <button type="button" class="gw-pinned__dot" aria-label="Finding 2"></button>
+      <button type="button" class="gw-pinned__dot" aria-label="Finding 3"></button>
+      <button type="button" class="gw-pinned__dot" aria-label="Finding 4"></button>
+      <button type="button" class="gw-pinned__dot" aria-label="Finding 5"></button>
+    </div>
+  </div>
+</div>
+<script type="module" src="assets/js/pinned-scene.js"></script>
+```
+:::
+
+::: {.gw-wide .gw-section}
+
+```{=html}
+<h2 class="gw-eyebrow">Breakdown by Subbasin</h2>
+```
+
+::: gw-prose
+## Where each subbasin's documents are clear, ambiguous, or silent
+
+Every entry is a question the analysis put to that subbasin's document set,
+reporting what the documents actually said — as a coded finding type, never as a
+score. Selecting an entry opens the evidence behind it.
+:::
+
+```{=html}
+<div class="gw-breakdown gw-loading" id="mlrp-breakdown" data-chapter="2. MLRP">Loading the subbasin breakdown&hellip;</div>
+<script type="module" src="assets/js/breakdown.js"></script>
+```
+
+::: gw-caption
+The document sets are not equally complete. Several Salinas Valley absences are
+gaps in document availability; several East Turlock absences reflect programs
+that have not yet produced results. Cells in the same row are not equally
+weighted evidence.
+:::
+
+```{=html}
+<h3 class="gw-eyebrow" style="margin-top:3rem">All three subbasins at a glance</h3>
+<div id="mlrp-matrix" class="gw-loading">Loading the comparison&hellip;</div>
+```
+
+:::
+
+::: {.gw-band .gw-band--deep}
+::: {.gw-page}
+
+```{=html}
+<h2 class="gw-eyebrow" style="color:var(--mlrp-light)">Connection to Accounting</h2>
+```
+
+::: gw-prose
+### Implementing findings into the Groundwater Accounting Platform
+
+Changing the land use and changing the entitlement to pump are separate
+decisions, and a program can do the first without the second. Across the three
+programs the entitlement variously stays with the landowner and can move, is
+suspended for the paid term with no transfer mechanism in existence, or ceases
+to exist because the land was bought outright.
+
+None of the three publishes reporting on the allocation status of repurposed
+parcels — so none could detect movement even where movement is permitted.
+:::
+
+```{=html}
+<!-- PLACEHOLDER treatment. Richer options to workshop: a toggle between what a
+     platform could credit today vs. what needs a new measurement; a per-stage
+     "what the platform would need to add" list linking into filtered findings. -->
+<div class="gw-contrast">
+  <div class="gw-contrast__card gw-contrast__card--now">
+    <h3>What a platform could credit now</h3>
+    <p>An estimated or measured evapotranspiration reduction on a repurposed
+    parcel, where the program produces one.</p>
+  </div>
+  <div class="gw-contrast__card gw-contrast__card--gap">
+    <h3>What it cannot yet see</h3>
+    <p>Whether the entitlement moved, whether a co-benefit was delivered, and
+    whether the saving held after the grant closed.</p>
+  </div>
+</div>
+<p style="margin-top:1.5rem">
+  <a class="gw-btn" href="findings.html?chapter=2.%20MLRP&amp;section=2.3%20Allocation%20and%20Leakage">Evidence on allocation and leakage &rarr;</a>
+</p>
+```
+
+:::
+:::
+
+::: {.gw-page .gw-section}
+```{=html}
+<h2 class="gw-eyebrow">Beyond</h2>
+
+<div class="gw-draft-banner">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+  <span><strong>Draft — not yet published.</strong> No GSA board-meeting evidence
+  has been reviewed. This section is scaffolding for a future WaterOne.ai
+  evidence stream; nothing here implies any meeting has been analyzed.</span>
+</div>
+```
+
+::: gw-prose
+Explore how other subbasins are thinking about these topics, from information
+gathered from GSA board meetings via the WaterOne.ai platform.
+:::
+
+```{=html}
+<div class="gw-locator gw-loading" id="mlrp-beyond" data-beyond="mlrp">Loading&hellip;</div>
+<script type="module" src="assets/js/beyond-map.js"></script>
+```
+:::
+
+::: {.gw-page .gw-section}
+```{=html}
+<h2 class="gw-eyebrow">Further Exploration</h2>
+```
+
+::: {.gw-prose .gw-further__lead}
+Open questions this chapter raises and does not answer. Select one to see why it
+matters.
+:::
+
+```{=html}
+<!-- PLACEHOLDER presentation. Ideas to workshop: a word/phrase cloud sized by
+     how often each question surfaced in the coding; a constellation the reader
+     connects; a "pick a thread" chooser routing into a filtered findings view. -->
+<div class="gw-further gw-loading" id="mlrp-further" data-further="mlrp">Loading&hellip;</div>
+<script type="module" src="assets/js/further.js"></script>
+```
+:::
+
+::: {.gw-page .gw-section .gw-section--tight}
+
+```{=html}
+<h2 class="gw-eyebrow">Geography</h2>
+```
+
+```{=html}
+<div class="gw-map gw-map--land">
+  <div class="gw-map__frame">
+    <!-- MAP_MLRP_EMBED — optional second map. Replace this block with the
+         public ArcGIS embed when the data support a meaningful comparison. -->
+    <div class="gw-map__pending">
+      <p><span class="gw-placeholder-token">MAP_MLRP_EMBED</span></p>
+      <p>An optional land repurposing map is reserved for this container.</p>
+    </div>
+  </div>
+  <div class="gw-map__cap">
+    <p><strong>A limitation, not an omission.</strong> Project-location data
+    are documented inconsistently across the three subbasins. Forcing them onto
+    one map would imply a spatial comparability the source documents do not
+    support, so this map will only be published if the data can carry it.</p>
+  </div>
+</div>
+```
+
+::: gw-caption
+The remaining narrative sections — financing, ET product choice, co-benefit
+quantification, dust, post-grant funding — are still being written. The coded
+evidence is already searchable in the
+[Findings Explorer](findings.qmd?chapter=2.%20MLRP).
+:::
+
+:::
+
+```{=html}
+<script type="module" src="assets/js/figures.js"></script>
+</main>
+```

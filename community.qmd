@@ -1,0 +1,344 @@
+---
+pagetitle: "Community"
+description: "Representative, procedural and distributional equity in groundwater governance, and how a threshold becomes a household consequence."
+page-layout: custom
+---
+
+```{=html}
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+```
+
+::: {.gw-page .gw-section .gw-section--tight}
+
+```{=html}
+<p class="gw-eyebrow">Chapter 3 · Community Considerations</p>
+```
+
+```{=html}
+<div class="gw-chapter-head gw-chapter-head--community">
+```
+{{< include _partials/chapter-icon-community.html >}}
+```{=html}
+<h1 class="gw-chapter-title">Who is represented, who can participate, and who bears the consequences?</h1>
+</div>
+```
+
+::: {.gw-chapter-intro}
+::: {.gw-chapter-intro__body}
+
+::: gw-prose
+These are three different questions, and a groundwater agency can answer them
+independently of one another. Treating community equity as a single variable —
+something an agency either has or lacks — hides exactly the differences that
+matter for how an accounting platform should be designed.
+
+Representative and procedural equity move independently across the
+{{< var active_basins_word >}} subbasins reviewed here. Distributional equity —
+which residents bear dewatering risk — is the gap shared by all three, and not
+for want of data: every basin holds the well-completion records, published
+thresholds, and community boundaries the analysis would need.
+:::
+
+::: gw-caption
+One basin's supermajority voting rule qualifies its otherwise strongest formal
+representation — but no reviewed document records a failed vote, so this is
+architecture that permits an outcome, not evidence that the outcome occurred.
+:::
+
+:::
+
+```{=html}
+<figure class="chapter-photo chapter-photo--community">
+  <div class="chapter-photo__frame">
+    <img src="assets/photos/optimized/community.jpg" alt="A farmworker in a wide-brimmed hat bent over inspecting rows of a green field crop." style="object-position: 50% 45%" loading="lazy">
+  </div>
+  <figcaption class="chapter-photo__cap">
+    <span class="chapter-photo__cap-rule" aria-hidden="true"></span>
+    <span class="chapter-photo__cap-label">Community Considerations</span>
+  </figcaption>
+</figure>
+```
+
+:::
+
+:::
+
+::: {.gw-wide .gw-section}
+
+```{=html}
+<h2 class="gw-eyebrow">The Accounting Lifecycle</h2>
+```
+
+::: gw-prose
+## What a number on a page does to a well
+
+A minimum threshold is a groundwater elevation. A domestic well is a pipe of a
+known depth at a known location. Connecting the two is arithmetic — and it is
+the step the reviewed document sets do not take.
+:::
+
+```{=html}
+<figure class="gw-figure">
+  <div class="gw-figure__body" style="background:var(--community-wash);border-color:var(--community-light)">
+    <p id="household-summary" class="gw-sr-summary">
+      A five-stage chain from a groundwater threshold to a household
+      consequence: the adopted threshold, the water level or exposure it
+      permits, the depth of a domestic well or the vulnerability of a small
+      water system, the expected household consequence, and the mitigation
+      response. Across the reviewed subbasins the chain is broken between the
+      third and fourth stages: mitigation instruments engage only after a
+      household has already lost water.
+    </p>
+    <ol class="gw-chain" style="--accent: var(--community)" role="img" aria-labelledby="household-summary">
+      <li class="gw-chain__step">
+        <span class="gw-chain__n">01</span>
+        <span class="gw-chain__label">Groundwater threshold</span>
+        <span class="gw-chain__note">An adopted elevation below which an undesirable result is declared.</span>
+      </li>
+      <li class="gw-chain__step">
+        <span class="gw-chain__n">02</span>
+        <span class="gw-chain__label">Water level permitted</span>
+        <span class="gw-chain__note">The decline the threshold allows before anything is triggered.</span>
+      </li>
+      <li class="gw-chain__step">
+        <span class="gw-chain__n">03</span>
+        <span class="gw-chain__label">Well depth &amp; vulnerability</span>
+        <span class="gw-chain__note">Well-completion records exist in every basin.</span>
+      </li>
+      <li class="gw-chain__step" style="border-top-color: var(--community); border-style: dashed">
+        <span class="gw-chain__n">04</span>
+        <span class="gw-chain__label">Expected household consequence</span>
+        <span class="gw-chain__note">Not found in the reviewed documents. No basin publishes which residents its thresholds would leave exposed.</span>
+      </li>
+      <li class="gw-chain__step">
+        <span class="gw-chain__n">05</span>
+        <span class="gw-chain__label">Mitigation response</span>
+        <span class="gw-chain__note">All three instruments engage only after a household has lost water.</span>
+      </li>
+    </ol>
+  </div>
+  <figcaption class="gw-caption">
+    Stage 4 is arithmetic over data every basin already holds. Skipping it
+    turns mitigation from a prospective protection into a reactive one.
+    <a href="findings.html?chapter=3.%20Community%20Considerations&amp;section=3.3.1%20Dry%20Well%20Mitigation">Evidence on dry-well mitigation &rarr;</a>
+  </figcaption>
+</figure>
+```
+
+:::
+
+::: {.gw-wide .gw-section}
+```{=html}
+<h2 class="gw-eyebrow">Key Findings</h2>
+```
+
+::: gw-prose
+## What the cross-basin comparison surfaces
+:::
+
+```{=html}
+<div class="gw-pinned gw-pinned--keyfindings" data-pinned style="--runway: 320vh">
+  <div class="gw-pinned__stage">
+    <span class="gw-pinned__num" aria-hidden="true">01</span>
+    <div class="gw-pinned__viewport">
+      <ol class="gw-pinned__track">
+        <li class="gw-pinned__step" data-num="01"><h3>[NEEDS COPY — key finding 1]</h3><p>Placeholder. A detailed cross-basin finding drawing on the synthesis and the literature.</p></li>
+        <li class="gw-pinned__step" data-num="02"><h3>[NEEDS COPY — key finding 2]</h3><p>Placeholder.</p></li>
+        <li class="gw-pinned__step" data-num="03"><h3>[NEEDS COPY — key finding 3]</h3><p>Placeholder.</p></li>
+        <li class="gw-pinned__step" data-num="04"><h3>[NEEDS COPY — key finding 4]</h3><p>Placeholder.</p></li>
+        <li class="gw-pinned__step" data-num="05"><h3>[NEEDS COPY — key finding 5]</h3><p>Placeholder.</p></li>
+      </ol>
+    </div>
+    <div class="gw-pinned__progress" role="group" aria-label="Jump to item">
+      <button type="button" class="gw-pinned__dot" aria-label="Finding 1"></button>
+      <button type="button" class="gw-pinned__dot" aria-label="Finding 2"></button>
+      <button type="button" class="gw-pinned__dot" aria-label="Finding 3"></button>
+      <button type="button" class="gw-pinned__dot" aria-label="Finding 4"></button>
+      <button type="button" class="gw-pinned__dot" aria-label="Finding 5"></button>
+    </div>
+  </div>
+</div>
+<script type="module" src="assets/js/pinned-scene.js"></script>
+```
+:::
+
+::: {.gw-wide .gw-section}
+
+```{=html}
+<h2 class="gw-eyebrow">Breakdown by Subbasin</h2>
+```
+
+::: gw-prose
+## The three dimensions, and how each subbasin does on them
+
+Representative, procedural, and distributional equity are three different
+questions. An agency can answer them independently, so the comparison keeps them
+apart rather than collapsing them into a single verdict.
+:::
+
+```{=html}
+<figure class="gw-figure">
+  <div class="gw-figure__body" style="background:var(--surface)">
+    <p id="equity-summary" class="gw-sr-summary">
+      Three independent dimensions of equity. Representative equity asks who
+      holds a seat and a vote. Procedural equity asks who can participate,
+      appeal, understand and influence a decision. Distributional equity asks
+      who bears the benefits, burdens and consequences. Across the reviewed
+      subbasins the first two vary independently and the third is a shared gap.
+    </p>
+    <div class="gw-triad" role="img" aria-labelledby="equity-summary">
+      <div class="gw-triad__item">
+        <h3>Representative</h3>
+        <p class="gw-triad__q">Who has a seat, and a vote?</p>
+        <p>Formal representation can be granted on paper and qualified in
+        practice — by a voting rule, by the durability of the instrument that
+        created the seat, or by whether the body advises or decides.</p>
+      </div>
+      <div class="gw-triad__item">
+        <h3>Procedural</h3>
+        <p class="gw-triad__q">Who can participate, appeal, and understand?</p>
+        <p>Standing, fees, appeal windows, whether a board must state its
+        reasons, and language access. The literature treats several of these as
+        cheap and specific fixes.</p>
+      </div>
+      <div class="gw-triad__item">
+        <h3>Distributional</h3>
+        <p class="gw-triad__q">Who bears the benefits and the burdens?</p>
+        <p>Which households sit above a threshold that would dry their well.
+        The literature calls this the most computable of the three — and it is
+        the one least often computed.</p>
+      </div>
+    </div>
+  </div>
+  <figcaption class="gw-caption">
+    These are not stages of a maturity ladder. An agency can score well on one
+    and poorly on another, and across the reviewed subbasins they do.
+  </figcaption>
+</figure>
+```
+
+```{=html}
+<div class="gw-breakdown gw-loading" id="community-breakdown" data-chapter="3. Community Considerations">Loading the subbasin breakdown&hellip;</div>
+<script type="module" src="assets/js/breakdown.js"></script>
+```
+
+::: gw-caption
+A stage marked **not found in reviewed documents** means the analyst searched
+that basin's document set and did not find it — not that the practice does not
+exist. Document sets are not equally complete.
+:::
+
+```{=html}
+<h3 class="gw-eyebrow" style="margin-top:3rem">All three subbasins at a glance</h3>
+<div id="community-matrix" class="gw-loading">Loading the comparison&hellip;</div>
+```
+
+```{=html}
+<h3 class="gw-eyebrow" style="margin-top:3rem">Community-facing tools</h3>
+```
+
+::: gw-prose
+The analysis checked each subbasin's documents for {{< var tools_checked_word >}} named community-facing tools — the products a resident, rather than a grower or a compliance officer, would actually use.
+
+Three of them — CalEnviroScreen, the Drinking Water Tool, and the Aquifer Risk Map — appear in none of the reviewed document sets. The dry well portal is the only state tool any basin points residents toward.
+:::
+
+{{< include _partials/tools.html >}}
+
+::: gw-caption
+Tools named in the literature consolidation and searched for across the reviewed policy and planning documents. A tool's absence from a document set is a finding about those documents, not about the tool.
+[See the evidence on decision-support integration &rarr;](findings.qmd?chapter=3.%20Community%20Considerations&section=3.3.4%20Data%20%E2%86%92%20Decision-Support%20Integration)
+:::
+
+:::
+
+::: {.gw-band .gw-band--deep}
+::: {.gw-page}
+
+```{=html}
+<h2 class="gw-eyebrow" style="color:var(--community-light)">Connection to Accounting</h2>
+```
+
+::: gw-prose
+### Implementing findings into the Groundwater Accounting Platform
+
+Placeholder. The community-facing implications for a groundwater accounting
+platform are still being written from the synthesis — the throughline is that
+the distributional question is the most computable of the three and the least
+often computed, over data every basin already holds.
+:::
+
+```{=html}
+<!-- PLACEHOLDER treatment. Richer options to workshop: a toggle between a
+     grower/compliance view and a resident view of the same accounting data; a
+     small "who sees what" diagram; a prospective vs. reactive mitigation timeline. -->
+<div class="gw-contrast">
+  <div class="gw-contrast__card gw-contrast__card--now">
+    <h3>What a platform shows now</h3>
+    <p>Grower- and compliance-facing accounting: allocations, pumping, and
+    threshold status.</p>
+  </div>
+  <div class="gw-contrast__card gw-contrast__card--gap">
+    <h3>What a resident cannot see</h3>
+    <p>Whether a published threshold would leave their well exposed, computed
+    prospectively rather than confirmed after a failure.</p>
+  </div>
+</div>
+<p style="margin-top:1.5rem">
+  <a class="gw-btn" href="findings.html?chapter=3.%20Community%20Considerations&amp;section=3.3.1%20Dry%20Well%20Mitigation">Evidence on dry-well mitigation &rarr;</a>
+</p>
+```
+
+:::
+:::
+
+::: {.gw-page .gw-section}
+```{=html}
+<h2 class="gw-eyebrow">Beyond</h2>
+
+<div class="gw-draft-banner">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+  <span><strong>Draft — not yet published.</strong> No GSA board-meeting evidence
+  has been reviewed. This section is scaffolding for a future WaterOne.ai
+  evidence stream; nothing here implies any meeting has been analyzed.</span>
+</div>
+```
+
+::: gw-prose
+Explore how other subbasins are thinking about these topics, from information
+gathered from GSA board meetings via the WaterOne.ai platform.
+:::
+
+```{=html}
+<div class="gw-locator gw-loading" id="community-beyond" data-beyond="community">Loading&hellip;</div>
+<script type="module" src="assets/js/beyond-map.js"></script>
+```
+:::
+
+::: {.gw-page .gw-section .gw-section--tight}
+```{=html}
+<h2 class="gw-eyebrow">Further Exploration</h2>
+```
+
+::: {.gw-prose .gw-further__lead}
+Open questions this chapter raises and does not answer. Select one to see why it
+matters.
+:::
+
+```{=html}
+<!-- PLACEHOLDER presentation. Ideas to workshop: a word/phrase cloud sized by
+     how often each question surfaced in the coding; a constellation the reader
+     connects; a "pick a thread" chooser routing into a filtered findings view. -->
+<div class="gw-further gw-loading" id="community-further" data-further="community">Loading&hellip;</div>
+<script type="module" src="assets/js/further.js"></script>
+```
+
+The coded evidence is already searchable in the
+[Findings Explorer](findings.qmd?chapter=3.%20Community%20Considerations).
+:::
+
+```{=html}
+<script type="module" src="assets/js/figures.js"></script>
+</main>
+```

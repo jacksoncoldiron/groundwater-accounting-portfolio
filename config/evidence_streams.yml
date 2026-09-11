@@ -1,0 +1,121 @@
+# Evidence-stream registry
+# ---------------------------------------------------------------------------
+# Each stream is an independent body of evidence with its own ingestion
+# adapter (scripts/ingest_*.py) and its own provenance shape. The public site
+# reads this file to decide what to describe as reviewed.
+#
+# RULE: a stream with `status: planned` must never be described publicly as
+# analyzed, and must never contribute to counts. It exists here so the
+# architecture and the Methods page can accommodate it without a redesign.
+# ---------------------------------------------------------------------------
+
+schema_version: 1
+
+streams:
+  - id: policy_planning
+    name: Policy & Planning Documents
+    short_name: Policy & Planning
+    status: active
+    order: 1
+    adapter: scripts/ingest_findings.py
+    source_files:
+      - source_materials/Phase2_Findings.xlsx
+    description: >-
+      Groundwater Sustainability Plans, plan amendments, periodic evaluations,
+      annual reports, GSA rules and regulations, land-repurposing program
+      instruments, technical memoranda and ISW studies, GSP appendices, agency
+      correspondence, and public comment letters.
+    citation_note: >-
+      Findings from this stream cite the specific document and the section or
+      PDF page recorded by the analyst.
+    provenance_fields:
+      - evidence_id
+      - evidence_stream
+      - source_type
+      - source_title
+      - source_url
+      - subbasin
+      - gsa
+      - verification_status
+
+  - id: academic_literature
+    name: Academic Literature
+    short_name: Literature
+    status: active
+    order: 2
+    adapter: scripts/ingest_literature.py
+    source_files:
+      - source_materials/Literature_Review_DesktopAnalysis_Results.xlsx
+    description: >-
+      Peer-reviewed and grey-literature studies reviewed across three topical
+      areas — groundwater accounting methods, land-use alternatives, and
+      community considerations — and assessed for the accounting method each
+      demonstrates.
+    citation_note: >-
+      Entries carry the full bibliographic citation recorded by the analyst.
+    provenance_fields:
+      - evidence_id
+      - evidence_stream
+      - source_sheet
+      - citation
+      - verification_status
+
+  # -------------------------------------------------------------------------
+  # PLANNED. Not reviewed. Must not be presented as analyzed anywhere public.
+  # -------------------------------------------------------------------------
+  - id: gsa_board_meetings
+    name: GSA Board Meetings
+    short_name: Board Meetings
+    status: planned
+    order: 3
+    adapter: scripts/ingest_meetings.py     # documented stub — no implementation
+    source_files: []
+    description: >-
+      A potential future stream of GSA board-meeting evidence. The intake
+      workflow is not yet defined and no meeting material has been reviewed.
+    public_disclosure: >-
+      Describe only as a planned extension of the evidence model. Do not imply
+      any meeting has been reviewed, coded, or verified.
+    # Fields the adapter contract should preserve WHEN AVAILABLE. This is an
+    # interface definition, not a claim that such data exists or that any
+    # particular provider will supply it.
+    provenance_fields:
+      - evidence_id
+      - evidence_stream
+      - subbasin
+      - gsa
+      - meeting_date
+      - meeting_title
+      - agenda_item
+      - speaker
+      - speaker_role
+      - transcript_excerpt
+      - excerpt_start_time
+      - excerpt_end_time
+      - recording_url
+      - transcript_url
+      - minutes_url
+      - verification_status
+      - related_finding_ids
+    notes: >-
+      A candidate host for meeting recordings and transcripts has been
+      mentioned (Waterone.ai), but no API, export format, or access method has
+      been established. The adapter must be written against whatever export
+      actually becomes available. Do not build a scraper against an assumed
+      interface.
+
+# ---------------------------------------------------------------------------
+# Shared provenance contract every adapter must satisfy.
+# ---------------------------------------------------------------------------
+provenance_contract:
+  required:
+    evidence_id: Stable unique identifier, prefixed by stream.
+    evidence_stream: Must match a stream id above.
+    source_type: Kind of source (GSP, Annual Report, journal article, ...).
+    source_title: Human-readable title of the specific source.
+  optional:
+    source_url: Only when supplied by the analyst. Never inferred or constructed.
+    source_date: Publication or adoption date when recorded.
+    subbasin: Basin id from config/basins.yml when the evidence is basin-specific.
+    gsa: Agency code when the evidence is agency-specific.
+    verification_status: Analyst's verification state for a quoted passage.

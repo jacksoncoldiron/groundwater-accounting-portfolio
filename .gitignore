@@ -1,0 +1,17 @@
+_site/
+.quarto/
+_freeze/
+__pycache__/
+*.pyc
+.DS_Store
+.Rhistory
+
+/.quarto/
+
+**/*.quarto_ipynb
+
+# Authoritative inputs to the data pipeline. Kept out of version control:
+# large binaries and the unpublished cross-basin synthesis / raw coded
+# workbooks. The processed JSON the site actually consumes is tracked under
+# data/processed/. See scripts/build_data.py.
+source_materials/

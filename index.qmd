@@ -1,0 +1,464 @@
+---
+# Without an explicit `title:`, Quarto falls back to the site title
+# ("Accounting for Groundwater") for this homepage and then strips any body
+# heading whose text matches it -- silently deleting the hero's own <h1>.
+# Setting a distinct title here (hidden via CSS same as every other page)
+# avoids that collision.
+title: "Overview"
+pagetitle: "From Measurement to Management under SGMA"
+description: "How three California subbasins measure, account for, and act on interconnected surface water, land repurposing, and community outcomes under SGMA."
+page-layout: custom
+---
+
+```{=html}
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="gw-hero">
+  <svg class="gw-hero__strata" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path d="M0,42 C160,22 300,58 460,40 S780,16 940,36 1120,52 1200,44 L1200,90 L0,90 Z" fill="#E2D2C3" opacity=".55"/>
+    <path d="M0,58 C180,42 320,72 500,58 S800,38 980,54 1140,66 1200,60 L1200,90 L0,90 Z" fill="#D7D8CC" opacity=".6"/>
+    <path d="M0,74 C200,62 340,84 520,74 S820,58 1010,70 1150,78 1200,74 L1200,90 L0,90 Z" fill="#C9D1D6" opacity=".7"/>
+  </svg>
+  <div class="gw-page gw-hero__inner">
+    <h1>Accounting for Groundwater</h1>
+    <p class="gw-hero__sub">From measurement to management under SGMA</p>
+    <p class="gw-hero__lede">
+      California's groundwater sustainability agencies model stream depletion to
+      local streams, estimate water saved by retiring farmland, and identify the
+      communities their decisions affect. This analysis dives in further to
+      investigate how these ideas are tracked, reported, and routed into
+      management.
+    </p>
+  </div>
+</header>
+
+<main id="main">
+```
+
+::: {.gw-page .gw-section .gw-section--tight}
+
+```{=html}
+<div class="gw-metrics">
+  <div class="gw-metrics__track">
+    <button type="button" class="gw-metric" aria-pressed="false"
+      data-label="Coded Findings"
+      data-detail="Findings drawn from the reviewed policy and planning documents, coded across interconnected surface water, land repurposing, and community considerations.">
+      <span class="gw-metric__num">{{< var findings_total >}}</span>
+      <span class="gw-metric__cap">
+        <span class="gw-metric__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h5M8 12.5l1.8 1.8L14 10"/><path d="M8 16.5h8"/></svg>
+        </span>
+        <span class="gw-metric__label">Coded Findings</span>
+      </span>
+    </button>
+    <button type="button" class="gw-metric" aria-pressed="false"
+      data-label="Policy &amp; Planning Documents"
+      data-detail="Groundwater Sustainability Plans, annual reports, rules, program instruments, and related materials reviewed across the subbasins.">
+      <span class="gw-metric__num">{{< var documents_total >}}</span>
+      <span class="gw-metric__cap">
+        <span class="gw-metric__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12M6 8a2 2 0 1 1 0-4h10a2 2 0 0 1 2 2v2"/><path d="M6 14h12M6 14a2 2 0 1 0 0 4h10a2 2 0 0 0 2-2v-2"/></svg>
+        </span>
+        <span class="gw-metric__label">Policy &amp; Planning Documents</span>
+      </span>
+    </button>
+    <button type="button" class="gw-metric" aria-pressed="false"
+      data-label="Literature Sources"
+      data-detail="Academic and applied research reviewed to identify accounting methods, measurement approaches, and practices that transfer to a groundwater accounting platform.">
+      <span class="gw-metric__num">{{< var literature_total >}}</span>
+      <span class="gw-metric__cap">
+        <span class="gw-metric__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6c-1.6-1.1-3.7-1.5-6-1.5v13c2.3 0 4.4.4 6 1.5 1.6-1.1 3.7-1.5 6-1.5v-13c-2.3 0-4.4.4-6 1.5Z"/><path d="M12 6v13"/></svg>
+        </span>
+        <span class="gw-metric__label">Literature Sources</span>
+      </span>
+    </button>
+    <button type="button" class="gw-metric" aria-pressed="false"
+      data-label="Subbasins Reviewed"
+      data-detail="The California groundwater subbasins included in the current cross-basin analysis.">
+      <span class="gw-metric__num">{{< var active_basins >}}</span>
+      <span class="gw-metric__cap">
+        <span class="gw-metric__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5c1-2 3-3.5 5-2.5s2 3 4 3 3.5-3 5.5-2 3 4 1.5 6.5-5 4-7.5 2.5-4.5 0-6.5-1.5-3-4-2-6Z"/><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/></svg>
+        </span>
+        <span class="gw-metric__label">Subbasins Reviewed</span>
+      </span>
+    </button>
+  </div>
+  <button type="button" class="gw-metrics__nav gw-metrics__nav--prev" aria-label="Scroll metrics left" hidden>&larr;</button>
+  <button type="button" class="gw-metrics__nav gw-metrics__nav--next" aria-label="Scroll metrics right" hidden>&rarr;</button>
+  <p class="gw-metrics__detail" hidden></p>
+</div>
+
+<script type="module" src="assets/js/metrics.js"></script>
+```
+
+:::
+
+::: {.gw-band .gw-band--blue}
+::: {.gw-page}
+
+```{=html}
+<h2 class="gw-eyebrow">The Research</h2>
+```
+
+::: gw-prose
+### How do local agencies account for water under land use alternatives, and how do they involve communities?
+:::
+
+```{=html}
+<div class="gw-pinned gw-pinned--prose" data-pinned style="--runway: 190vh">
+  <div class="gw-pinned__stage">
+    <div class="gw-pinned__viewport">
+      <ol class="gw-pinned__track">
+        <li class="gw-pinned__step" data-num="01">
+          <p>Under the Sustainable Groundwater Management Act, an agency must
+          define what unsustainable looks like, measure whether it is happening,
+          and act when it is. Each of those steps needs a defined method and
+          number. These methods and numbers do not need to be the same across
+          basins.</p>
+        </li>
+        <li class="gw-pinned__step" data-num="02">
+          <p>This analysis starts by combing through the literature to get a
+          sense of what documented approaches already exist. It gives an idea of
+          the scientific ways in which depletion of surface water from pumping is
+          quantified, benefits of land repurposing are evaluated, and community
+          considerations are equitably incorporated.</p>
+        </li>
+        <li class="gw-pinned__step" data-num="03">
+          <p>Then the analysis looks toward policy and planning documents at the
+          local level to find out whether these approaches are being adopted into
+          management — and if not, what is happening instead.</p>
+        </li>
+        <li class="gw-pinned__step" data-num="04">
+          <p>Comparing and contrasting these findings between the literature and
+          policy, as well as across groundwater subbasins, sheds light on the
+          current practices and gaps that exist within groundwater accounting
+          frameworks.</p>
+        </li>
+      </ol>
+    </div>
+    <div class="gw-pinned__progress" role="group" aria-label="Jump to item">
+      <button type="button" class="gw-pinned__dot" aria-label="Paragraph 1"></button>
+      <button type="button" class="gw-pinned__dot" aria-label="Paragraph 2"></button>
+      <button type="button" class="gw-pinned__dot" aria-label="Paragraph 3"></button>
+      <button type="button" class="gw-pinned__dot" aria-label="Paragraph 4"></button>
+    </div>
+  </div>
+</div>
+<script type="module" src="assets/js/pinned-scene.js"></script>
+```
+
+:::
+:::
+
+::: {.gw-page .gw-section}
+
+```{=html}
+<h2 class="gw-eyebrow">Three domains</h2>
+```
+
+```{=html}
+<div class="gw-chapters">
+  <a class="gw-chapter-card chapter-isw" href="isw.html">
+    <span class="gw-chapter-card__figure" aria-hidden="true">
+```
+{{< include _partials/chapter-icon-isw.html >}}
+```{=html}
+    </span>
+    <span class="gw-chapter-card__n">Chapter 1</span>
+    <h3>Interconnected Surface Water</h3>
+    <p>How information moves from pumping, through a hydrologic model, to a
+    sustainability threshold — and where that chain breaks.</p>
+    <span class="gw-chapter-card__go">Read the chapter &rarr;</span>
+  </a>
+  <a class="gw-chapter-card chapter-mlrp" href="mlrp.html">
+    <span class="gw-chapter-card__figure" aria-hidden="true">
+```
+{{< include _partials/chapter-icon-mlrp.html >}}
+```{=html}
+    </span>
+    <span class="gw-chapter-card__n">Chapter 2</span>
+    <h3>Land Repurposing</h3>
+    <p>When farmland comes out of production, what is actually measured,
+    verified, credited, and monitored afterwards.</p>
+    <span class="gw-chapter-card__go">Read the chapter &rarr;</span>
+  </a>
+  <a class="gw-chapter-card chapter-community" href="community.html">
+    <span class="gw-chapter-card__figure" aria-hidden="true">
+```
+{{< include _partials/chapter-icon-community.html >}}
+```{=html}
+    </span>
+    <span class="gw-chapter-card__n">Chapter 3</span>
+    <h3>Community</h3>
+    <p>Representation, procedural access, and who bears the consequences —
+    three kinds of equity that move independently.</p>
+    <span class="gw-chapter-card__go">Read the chapter &rarr;</span>
+  </a>
+</div>
+```
+
+:::
+
+::: {.gw-band .gw-band--sage}
+::: {.gw-page}
+
+```{=html}
+<h2 class="gw-eyebrow">Headline findings</h2>
+
+<div class="gw-pinned gw-pinned--headlines" data-pinned style="--runway: 300vh">
+  <div class="gw-pinned__stage">
+    <span class="gw-pinned__num" aria-hidden="true">01</span>
+    <div class="gw-pinned__viewport">
+      <ol class="gw-pinned__track gw-headlines">
+
+        <li class="gw-pinned__step gw-headline" data-num="01">
+          <h3>Measurement is more sophisticated than accounting</h3>
+          <p>All three subbasins run numerical groundwater–surface water models of
+          the same generation, and all three produce a pumping-attributable
+          depletion figure. In every case the compliance loop closes on a
+          groundwater-level proxy instead — not on any measured or modeled
+          depletion quantity. None attaches a numeric uncertainty range to an ISW
+          figure.</p>
+          <p class="gw-headline__meta">
+            <span>Chapter 1 · Interconnected Surface Water</span>
+            <a href="findings.html?chapter=1.%20ISW&amp;section=1.8%20Gaps%20and%20Uncertainty">See the evidence &rarr;</a>
+          </p>
+        </li>
+
+        <li class="gw-pinned__step gw-headline" data-num="02">
+          <h3>Verification is the missing middle of land repurposing</h3>
+          <p>The three programs differ less in what they fund than in when they
+          count. One measures water use on repurposed parcels after implementation
+          and treats the result as enforceable. One estimates savings beforehand
+          and never compares the estimate to anything after. One holds its
+          measurement outside the accounting system entirely. None runs a paired
+          comparison of expected against measured savings on an enrolled parcel.</p>
+          <p class="gw-headline__meta">
+            <span>Chapter 2 · Land Repurposing</span>
+            <a href="findings.html?chapter=2.%20MLRP&amp;section=2.2%20Verification%20triggers">See the evidence &rarr;</a>
+          </p>
+        </li>
+
+        <li class="gw-pinned__step gw-headline" data-num="03">
+          <h3>Allocation rules decide whether a saving stays saved</h3>
+          <p>Changing the land use and changing the entitlement to pump are
+          separate design decisions. Across the three programs the entitlement
+          variously stays with the landowner and can move, is suspended for the
+          paid term with no transfer mechanism, or ceases to exist because the land
+          was bought outright. None of the three publishes reporting on the
+          allocation status of repurposed parcels, so none could detect movement
+          even where movement is permitted.</p>
+          <p class="gw-headline__meta">
+            <span>Chapter 2 · Land Repurposing</span>
+            <a href="findings.html?chapter=2.%20MLRP&amp;section=2.3%20Allocation%20and%20Leakage">See the evidence &rarr;</a>
+          </p>
+        </li>
+
+        <li class="gw-pinned__step gw-headline" data-num="04">
+          <h3>Community equity is not one variable</h3>
+          <p>Representative, procedural, and distributional equity move
+          independently. The subbasin with the strongest formal representation
+          qualifies it with a supermajority voting rule; the two without a
+          comparable seat differ from each other on fees, standing, and appeal
+          timelines. Distributional outcomes are the gap shared by all three — and
+          not for want of data. Every basin holds the well records, published
+          thresholds, and community boundaries the analysis would need.</p>
+          <p class="gw-headline__meta">
+            <span>Chapter 3 · Community</span>
+            <a href="findings.html?chapter=3.%20Community%20Considerations&amp;section=3.1.3%20Procedural%20%2F%20Distributional%20%2F%20Representative">See the evidence &rarr;</a>
+          </p>
+        </li>
+
+        <li class="gw-pinned__step gw-headline" data-num="05">
+          <h3>The literature–practice gap runs both ways</h3>
+          <p>For several outcomes — per-well depletion attribution, ecological
+          co-benefit quantification, domestic-well impact estimation — methods
+          exist in the literature and appear nowhere in the reviewed document sets.
+          But not every gap is an unused method. For field-scale dust accounting
+          and for a unit of community benefit, the literature is empty too: those
+          would have to be built rather than adopted.</p>
+          <p class="gw-headline__meta">
+            <span>Cross-cutting</span>
+            <a href="findings.html?db=literature">Explore the literature &rarr;</a>
+          </p>
+        </li>
+
+      </ol>
+    </div>
+    <div class="gw-pinned__progress" role="group" aria-label="Jump to item">
+      <button type="button" class="gw-pinned__dot" aria-label="Finding 1"></button>
+      <button type="button" class="gw-pinned__dot" aria-label="Finding 2"></button>
+      <button type="button" class="gw-pinned__dot" aria-label="Finding 3"></button>
+      <button type="button" class="gw-pinned__dot" aria-label="Finding 4"></button>
+      <button type="button" class="gw-pinned__dot" aria-label="Finding 5"></button>
+    </div>
+  </div>
+</div>
+<script type="module" src="assets/js/pinned-scene.js"></script>
+```
+
+::: gw-caption
+The three document sets are not equally complete — some Salinas Valley
+absences are gaps in document availability, some East Turlock absences reflect
+programs that have not yet produced results. Across this site, "not found in
+reviewed documents" means exactly that, never that a practice does not exist.
+:::
+
+:::
+:::
+
+::: {.gw-page .gw-section}
+
+```{=html}
+<h2 class="gw-eyebrow">Study area</h2>
+```
+
+```{=html}
+<div class="gw-map">
+  <div class="gw-map__frame">
+    <!-- MAP_STUDY_AREA_EMBED
+         Replace this entire .gw-map__pending block with the public ArcGIS
+         embed iframe (or a public web-map URL wrapped in an iframe). The
+         container is already responsive; the iframe will fill it. -->
+    <div class="gw-map__pending">
+      <p><span class="gw-placeholder-token">MAP_STUDY_AREA_EMBED</span></p>
+      <p>The Study Area map is authored in ArcGIS Online and will be embedded
+      here. It shows the analyzed subbasins, the relevant GSA boundaries, and
+      the major rivers, with popups linking into the filtered findings
+      explorer.</p>
+    </div>
+  </div>
+  <div class="gw-map__cap">
+    <p><strong>Study area.</strong> {{< var basin_list >}} — three subbasins
+    chosen for contrast rather than representativeness: two in the San Joaquin
+    Valley sharing an accounting platform, one on the Central Coast with a
+    different hydrogeology, a different governance structure, and a land
+    repurposing grant held outside the groundwater agency.
+    <a href="map.html">Open the full map &rarr;</a></p>
+  </div>
+</div>
+```
+
+{{< include _partials/basins.html >}}
+
+:::
+
+::: {.gw-band .gw-band--deep}
+::: {.gw-page}
+
+```{=html}
+<h2 class="gw-eyebrow" style="color:var(--sand)">Analysis Pipeline</h2>
+```
+
+```{=html}
+<figure class="gw-figure gw-pipeline">
+  <div class="gw-figure__body">
+    <div class="gw-flow" role="img" aria-labelledby="workflow-summary">
+      <p id="workflow-summary" class="gw-sr-summary">
+        Workflow diagram in three labelled bands. Information Sources: an academic
+        literature review and a review of basin policy and planning documents feed
+        the analysis; a third source, GSA board meetings, is registered but not
+        yet reviewed. Information Extraction: structured finding extraction records
+        each finding with its document, section, quotation, and source location,
+        applying the same {{< var comparison_questions_total >}}-question comparison frame to every subbasin; findings
+        are then classified and their quotations verified. Synthesis: the coded
+        findings are compared across basins and turned into implications for the
+        groundwater accounting platform and for DWR.
+      </p>
+
+      <div class="gw-pipeline__group">
+        <span class="gw-pipeline__glabel">Information Sources</span>
+        <div class="gw-pipeline__row gw-pipeline__row--3">
+          <div class="gw-pipeline__node">
+            <span class="gw-pipeline__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6c-1.6-1.1-3.7-1.5-6-1.5v13c2.3 0 4.4.4 6 1.5 1.6-1.1 3.7-1.5 6-1.5v-13c-2.3 0-4.4.4-6 1.5Z"/><path d="M12 6v13"/></svg></span>
+            <strong>Academic literature</strong>
+            <span>Methods demonstrated in the published literature</span>
+          </div>
+          <div class="gw-pipeline__node">
+            <span class="gw-pipeline__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></span>
+            <strong>Policy &amp; planning documents</strong>
+            <span>Plans, amendments, rules, evaluations, annual reports, program instruments, comments</span>
+          </div>
+          <div class="gw-pipeline__node gw-pipeline__node--planned">
+            <span class="gw-pipeline__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="2.5"/><circle cx="16" cy="9" r="2"/><path d="M4 18c0-2.8 2.2-5 5-5s5 2.2 5 5M14 17c.3-2 1.9-3.5 4-3.5s3.7 1.5 4 3.5"/></svg></span>
+            <strong>GSA board meetings</strong>
+            <span>Registered as a future source. Not yet reviewed — contributes nothing to this site.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gw-pipeline__arrow" aria-hidden="true">&darr;</div>
+
+      <div class="gw-pipeline__group">
+        <span class="gw-pipeline__glabel">Information Extraction</span>
+        <div class="gw-pipeline__row gw-pipeline__row--1">
+          <div class="gw-pipeline__node">
+            <strong>Structured finding extraction</strong>
+            <span>Each finding is recorded with its document, section, direct
+            quotation, and source location. The same {{< var comparison_questions_total >}}-question
+            comparison frame is applied to every subbasin — {{< var comparison_questions_all_basins >}}
+            questions answered for all three, the rest for two or more — so adding
+            a subbasin means answering the same questions again, not redesigning
+            the analysis.</span>
+          </div>
+        </div>
+        <div class="gw-pipeline__arrow" aria-hidden="true">&darr;</div>
+        <div class="gw-pipeline__row gw-pipeline__row--2">
+          <div class="gw-pipeline__node">
+            <strong>Classification</strong>
+            <span>Positive, absence, or ambiguous; relevance to the accounting platform and to DWR recommendations</span>
+          </div>
+          <div class="gw-pipeline__node">
+            <strong>Quote verification</strong>
+            <span>Quotations checked against the source document</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gw-pipeline__arrow" aria-hidden="true">&darr;</div>
+
+      <div class="gw-pipeline__group">
+        <span class="gw-pipeline__glabel">Synthesis</span>
+        <div class="gw-pipeline__row gw-pipeline__row--2">
+          <div class="gw-pipeline__node">
+            <strong>Cross-basin comparison</strong>
+            <span>The same question asked of each subbasin, compared answer by answer</span>
+          </div>
+          <div class="gw-pipeline__node">
+            <strong>Platform and policy implications</strong>
+            <span>What the pattern implies for a groundwater accounting platform and for DWR guidance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</figure>
+```
+
+:::
+:::
+
+::: {.gw-page .gw-section}
+
+::: gw-prose
+```{=html}
+<h2 class="gw-eyebrow">Go deeper</h2>
+```
+
+The three chapter pages lead with the cross-basin insight and explain it visually. The underlying evidence — all {{< var findings_total >}} findings and {{< var literature_total >}} papers — is searchable directly, each with its direct quotation and source location attached.
+
+```{=html}
+<p style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem">
+  <a class="gw-btn" href="findings.html">Explore the findings database &rarr;</a>
+  <a class="gw-btn" href="methods.html">Methods and limitations &rarr;</a>
+</p>
+```
+:::
+
+:::
+
+```{=html}
+</main>
+```

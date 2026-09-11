@@ -1,0 +1,81 @@
+---
+pagetitle: "Explore Findings"
+description: "Search the coded policy and planning findings and the academic literature review behind the analysis."
+page-layout: custom
+---
+
+```{=html}
+<a class="skip-link" href="#dataset-panels">Skip to the database</a>
+<main id="main">
+```
+
+::: {.gw-wide .gw-section .gw-section--tight}
+
+```{=html}
+<h1 class="gw-eyebrow">Explore Findings</h1>
+
+<div class="gw-dataset-switch" role="tablist" aria-label="Evidence collection">
+  <button type="button" role="tab" data-db="policy" aria-selected="true">Policy &amp; Planning Findings</button>
+  <button type="button" role="tab" data-db="literature" aria-selected="false">Literature Review</button>
+</div>
+```
+
+:::
+
+::: {.gw-wide .gw-section .gw-section--tight #dataset-panels}
+
+```{=html}
+<div id="panel-policy" class="gw-dataset-panel">
+  <details class="gw-about">
+    <summary>About these findings</summary>
+    <div class="gw-about__body">
+      <p><strong>Positive finding</strong> — the reviewed documents describe or measure this.</p>
+      <p><strong>Not found in reviewed documents</strong> — the analyst searched and did not find this. Not a finding that the practice doesn't exist.</p>
+      <p><strong>Ambiguous</strong> — the reviewed documents are unclear or internally inconsistent.</p>
+      <p>Findings are numbered by row ID in the coding workbook (<code>F-165</code> and so on). Source links are published only where the workbook supplies a URL. Quote verification has three states: verified, unverified, and not applicable (the documented state for an absence finding).</p>
+    </div>
+  </details>
+
+  <div id="findings-explorer">
+    <div class="gw-loading">Loading the findings database&hellip;</div>
+  </div>
+
+  <noscript>
+    <div class="gw-empty">
+      <strong>The findings explorer needs JavaScript</strong>
+      <p>Filtering and search run entirely in your browser.</p>
+    </div>
+  </noscript>
+</div>
+
+<div id="panel-literature-db" class="gw-dataset-panel" hidden>
+  <details class="gw-about">
+    <summary>About this literature</summary>
+    <div class="gw-about__body">
+      <p>Papers indexed by the method each demonstrates, drawn from three review areas with different schemas — a field a sheet never collected reads as such, not as an absence.</p>
+      <p>One paper reviewed under two areas appears once, with both associations preserved.</p>
+    </div>
+  </details>
+
+  <div id="literature-explorer">
+    <div class="gw-loading">Loading the literature database&hellip;</div>
+  </div>
+
+  <noscript>
+    <div class="gw-empty">
+      <strong>The literature explorer needs JavaScript</strong>
+      <p>Filtering and search run entirely in your browser.</p>
+    </div>
+  </noscript>
+</div>
+
+<script type="module" src="assets/js/findings.js"></script>
+<script type="module" src="assets/js/literature.js"></script>
+<script type="module" src="assets/js/findings-page.js"></script>
+```
+
+:::
+
+```{=html}
+</main>
+```
