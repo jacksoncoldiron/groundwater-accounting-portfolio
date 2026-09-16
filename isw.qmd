@@ -17,10 +17,10 @@ editor:
 <p class="gw-eyebrow">Chapter 1 · Interconnected Surface Water</p>
 ```
 
-```{=html}
 <div class="gw-chapter-head gw-chapter-head--isw">
-```
+
 {{< include _partials/chapter-icon-isw.html >}}
+
 ```{=html}
 <h1 class="gw-chapter-title">How does a pumping impact become a management decision?</h1>
 </div>
@@ -30,11 +30,11 @@ editor:
 :::: gw-chapter-intro__body
 ::: gw-prose
 Interconnected surface water is one of the biggest challenges for
-accounting under SGMA. Pumping groundwater affects depletion of a stream,
-either by drawing water from the surface water directly or intercepting
-the water that would feed into the stream. The effects are usually lagged
-and highly dependent on the material and properties of the aquifer
-system, which are usually inferred rather than observed.
+accounting under SGMA. Pumping groundwater affects depletion of a
+stream, either by drawing water from the surface water directly or
+intercepting the water that would feed into the stream. The effects are
+usually lagged and highly dependent on the material and properties of
+the aquifer system, which are usually inferred rather than observed.
 
 Tracking this phenomenon and turning it into compliance takes a chain of
 steps — the most important link being where measurement stops and
@@ -42,8 +42,9 @@ accounting begins.
 
 All {{< var active_basins_word >}} subbasins run numerical
 groundwater–surface water models, and all three produce a depletion
-figure attributable to pumping. However, in each case the compliance loop
-is connected to a groundwater-level proxy and not the depletion figure.
+figure attributable to pumping. However, in each case the compliance
+loop is connected to a groundwater-level proxy and not the depletion
+figure.
 :::
 ::::
 
@@ -304,17 +305,9 @@ is connected to a groundwater-level proxy and not the depletion figure.
 :::
 ::::
 
-
-::: {.gw-wide .gw-section}
+:::: {.gw-wide .gw-section}
 ```{=html}
 <h2 class="gw-eyebrow">Key Findings</h2>
-```
-
-::: gw-prose
-## The biggest gaps this chapter surfaces
-:::
-
-```{=html}
 <div class="gw-pinned gw-pinned--keyfindings" data-pinned style="--runway: 370vh">
   <div class="gw-pinned__stage">
     <span class="gw-pinned__num" aria-hidden="true">01</span>
@@ -365,9 +358,9 @@ is connected to a groundwater-level proxy and not the depletion figure.
 </div>
 <script type="module" src="assets/js/pinned-scene.js"></script>
 ```
-:::
+::::
 
-::: {.gw-wide .gw-section}
+::::: {.gw-wide .gw-section}
 ```{=html}
 <h2 class="gw-eyebrow">Breakdown by Subbasin</h2>
 ```
@@ -375,9 +368,9 @@ is connected to a groundwater-level proxy and not the depletion figure.
 ::: gw-prose
 ## Where each subbasin's documents are clear, ambiguous, or silent
 
-Every entry is a question the analysis put to that subbasin's document set,
-reporting what the documents actually said — as a coded finding type, never as a
-score. Selecting an entry opens the evidence behind it.
+Every entry is a question the analysis put to that subbasin's document
+set, reporting what the documents actually said — as a coded finding
+type, never as a score. Selecting an entry opens the evidence behind it.
 :::
 
 ```{=html}
@@ -386,9 +379,9 @@ score. Selecting an entry opens the evidence behind it.
 ```
 
 ::: gw-caption
-A stage marked **not found in reviewed documents** means the analyst searched
-that basin's document set and did not find it — not that the practice does not
-exist. Document sets are not equally complete.
+A stage marked **not found in reviewed documents** means the analyst
+searched that basin's document set and did not find it — not that the
+practice does not exist. Document sets are not equally complete.
 :::
 
 ```{=html}
@@ -396,7 +389,7 @@ exist. Document sets are not equally complete.
 <div id="isw-tracks" class="gw-loading">Loading basin tracks&hellip;</div>
 <script type="module" src="assets/js/figures.js"></script>
 ```
-:::
+:::::
 
 ::::: {.gw-band .gw-band--dark}
 :::: gw-page
@@ -407,15 +400,17 @@ exist. Document sets are not equally complete.
 ::: gw-prose
 ### Implementing findings into the Groundwater Accounting Platform
 
-A platform that reports a modelled depletion volume is reporting a number no
-basin currently uses to decide anything. A platform that reports the
-groundwater-level proxy is reporting the operative quantity — but one that, by
-the agencies' own account, cannot separate depletion caused by pumping from
-depletion caused by a dry year or by upstream reservoir operations.
+A platform that reports a modelled depletion volume is reporting a
+number no basin currently uses to decide anything. A platform that
+reports the groundwater-level proxy is reporting the operative quantity
+— but one that, by the agencies' own account, cannot separate depletion
+caused by pumping from depletion caused by a dry year or by upstream
+reservoir operations.
 
 The literature has built tools for the missing step: methods that rank
-individual wells by their effect on streamflow, and methods that attribute
-depletion to specific wells. None appears in the reviewed document sets.
+individual wells by their effect on streamflow, and methods that
+attribute depletion to specific wells. None appears in the reviewed
+document sets.
 :::
 
 ```{=html}
@@ -442,7 +437,7 @@ depletion to specific wells. None appears in the reviewed document sets.
 ::::
 :::::
 
-::: {.gw-page .gw-section}
+:::: {.gw-page .gw-section}
 ```{=html}
 <h2 class="gw-eyebrow">Beyond</h2>
 
@@ -455,24 +450,25 @@ depletion to specific wells. None appears in the reviewed document sets.
 ```
 
 ::: gw-prose
-Explore how other subbasins are thinking about these topics, from information
-gathered from GSA board meetings via the WaterOne.ai platform.
+Explore how other subbasins are thinking about these topics, from
+information gathered from GSA board meetings via the WaterOne.ai
+platform.
 :::
 
 ```{=html}
 <div class="gw-locator gw-loading" id="isw-beyond" data-beyond="isw">Loading&hellip;</div>
 <script type="module" src="assets/js/beyond-map.js"></script>
 ```
-:::
+::::
 
-::: {.gw-page .gw-section .gw-section--tight}
+:::: {.gw-page .gw-section .gw-section--tight}
 ```{=html}
 <h2 class="gw-eyebrow">Further Exploration</h2>
 ```
 
 ::: {.gw-prose .gw-further__lead}
-Open questions this chapter raises and does not answer. Select one to see why it
-matters.
+Open questions this chapter raises and does not answer. Select one to
+see why it matters.
 :::
 
 ```{=html}
@@ -486,6 +482,6 @@ matters.
 
 The coded evidence is already searchable in the [Findings
 Explorer](findings.qmd?chapter=1.%20ISW).
-:::
+::::
 
 </main>

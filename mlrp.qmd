@@ -132,22 +132,15 @@ entirely.
 ::: {.gw-wide .gw-section}
 ```{=html}
 <h2 class="gw-eyebrow">Key Findings</h2>
-```
-
-::: gw-prose
-## What the cross-basin comparison surfaces
-:::
-
-```{=html}
-<div class="gw-pinned gw-pinned--keyfindings" data-pinned style="--runway: 370vh">
+<div class="gw-pinned gw-pinned--keyfindings" data-pinned>
   <div class="gw-pinned__stage">
     <span class="gw-pinned__num" aria-hidden="true">01</span>
     <div class="gw-pinned__viewport">
       <ol class="gw-pinned__track">
-        <li class="gw-pinned__step" data-num="01"><h3>[NEEDS COPY — key finding 1]</h3><p>Placeholder. A detailed cross-basin finding drawing on the synthesis and the literature.</p></li>
-        <li class="gw-pinned__step" data-num="02"><h3>[NEEDS COPY — key finding 2]</h3><p>Placeholder.</p></li>
-        <li class="gw-pinned__step" data-num="03"><h3>[NEEDS COPY — key finding 3]</h3><p>Placeholder.</p></li>
-        <li class="gw-pinned__step" data-num="04"><h3>[NEEDS COPY — key finding 4]</h3><p>Placeholder.</p></li>
+        <li class="gw-pinned__step" data-num="01"><h3>Water-savings math built for irrigated fields overstates what fallowed land actually saves</h3><p>ET-minus-precipitation methods assume a parcel that stops irrigating also stops transpiring<sup><a href="#mlrp-ref-1">1</a></sup> — but fallowed and transitioning land keeps transpiring from residual soil moisture and volunteer vegetation, which skews the calculated saving above the real one. GSAs handle this inconsistently: some apply the method anyway and report the overestimate once it's measured<sup><a href="#mlrp-ref-2">2</a></sup>, others sidestep the problem by declining to track ET on repurposed parcels at all<sup><a href="#mlrp-ref-3">3</a></sup>. Neither resolves the underlying bias, and no bounding or correction method exists for either approach — or a future DWR standard — to adopt.</p></li>
+        <li class="gw-pinned__step" data-num="02"><h3>Where the retired entitlement goes is a basin-scale exposure, not a program detail</h3><p>Resolving leakage — pumping that moves elsewhere after land is repurposed — is a precursor to claiming co-benefits<sup><a href="#mlrp-ref-4">4</a></sup>, yet there is no shared protocol for doing so. Some GSAs pay landowners and temporarily rescind their allocation while enrolled, which limits leakage<sup><a href="#mlrp-ref-5">5</a></sup>; others let landowners keep — and even transfer — the retained allocation to other parcels<sup><a href="#mlrp-ref-6">6</a></sup><sup>,</sup><sup><a href="#mlrp-ref-7">7</a></sup>. The latter design is more exposed: nothing stops the pumping it retires from resurfacing elsewhere in the basin.</p></li>
+        <li class="gw-pinned__step" data-num="03"><h3>The literature has methods for co-benefits that no program has adopted</h3><p>Methods for quantifying land repurposing's co-benefits to ecosystems, disadvantaged communities, and water quality are well documented in the literature<sup><a href="#mlrp-ref-8">8</a></sup><sup>,</sup><sup><a href="#mlrp-ref-9">9</a></sup><sup>,</sup><sup><a href="#mlrp-ref-10">10</a></sup><sup>,</sup><sup><a href="#mlrp-ref-11">11</a></sup>, but GSAs don't measure them consistently: some score them arbitrarily at the application stage<sup><a href="#mlrp-ref-12">12</a></sup>, others price them into incentive rates without quantifying an outcome<sup><a href="#mlrp-ref-13">13</a></sup>, and one has identified a literature-based method without adopting it<sup><a href="#mlrp-ref-14">14</a></sup>. The literature-to-practice gap is the finding itself — rigorous methods exist, but a standardized approach local agencies can actually implement does not.</p></li>
+        <li class="gw-pinned__step" data-num="04"><h3>Dust is named everywhere and measured nowhere</h3><p>There is universal awareness that dust is a hazard of land retirement, and that repurposing has the potential to mitigate it<sup><a href="#mlrp-ref-15">15</a></sup><sup>,</sup><sup><a href="#mlrp-ref-16">16</a></sup><sup>,</sup><sup><a href="#mlrp-ref-17">17</a></sup>. Across the three basins it's named but not measured<sup><a href="#mlrp-ref-18">18</a></sup>, treated as landowner liability<sup><a href="#mlrp-ref-19">19</a></sup>, named as an unmeasured co-benefit<sup><a href="#mlrp-ref-19">19</a></sup>, or not mentioned at all<sup><a href="#mlrp-ref-20">20</a></sup>. The literature itself is light on approaches that could fill this gap — recent work quantifies fallowed-land dust risk at the regional scale but stops short of a per-parcel or per-acre method tied to land repurposing<sup><a href="#mlrp-ref-21">21</a></sup><sup>,</sup><sup><a href="#mlrp-ref-22">22</a></sup><sup>,</sup><sup><a href="#mlrp-ref-23">23</a></sup>.</p></li>
         <li class="gw-pinned__step" data-num="05"><h3>[NEEDS COPY — key finding 5]</h3><p>Placeholder.</p></li>
       </ol>
     </div>
@@ -315,6 +308,39 @@ evidence is already searchable in the
 [Findings Explorer](findings.qmd?chapter=2.%20MLRP).
 :::
 
+:::
+
+::: {.gw-page}
+```{=html}
+<details class="gw-refs" style="margin-top:1rem">
+  <summary style="cursor:pointer;color:var(--ink-muted)">Notes and sources for the key findings above</summary>
+  <ol style="margin-top:.75rem;padding-left:1.25rem">
+    <li id="mlrp-ref-1">Zipper et al. 2024</li>
+    <li id="mlrp-ref-2">Merced Annual Report &sect;3.3, p. 3-9 [PDF 54]</li>
+    <li id="mlrp-ref-3">Turlock Rules and Regulations Phase 2, &sect;4.04, pp. 14&ndash;15 [PDF 14&ndash;15]</li>
+    <li id="mlrp-ref-4">Bryant et al., 2020</li>
+    <li id="mlrp-ref-5">Turlock East Rules and Regulations Phase 2, Article V, p. 25 [PDF 29]</li>
+    <li id="mlrp-ref-6">Merced MLRP Development Project Application, p. 6 [PDF 14]</li>
+    <li id="mlrp-ref-7">Merced GSP &sect;6.2.3, p. 6-11 [PDF 472]</li>
+    <li id="mlrp-ref-8">Howard et al., 2013</li>
+    <li id="mlrp-ref-9">Rohde et al., 2024</li>
+    <li id="mlrp-ref-10">Pauloo et al., 2020</li>
+    <li id="mlrp-ref-11">Fernandez-Bou et al. 2022</li>
+    <li id="mlrp-ref-12">Merced MLRP Development Project Application, &ldquo;Ecological&rdquo; scoring category, p. 14 [PDF 22]</li>
+    <li id="mlrp-ref-13">Turlock East Incentive Payment Procedures, Table 1, pp. 6&ndash;7 [PDF 6&ndash;7]</li>
+    <li id="mlrp-ref-14">Salinas Valley GDE Identification and Mapping report, PDF p. 19 (threshold method); Periodic Evaluation &sect;2.7.2, PDF p. 79 (confirms not adopted)</li>
+    <li id="mlrp-ref-15">Merced MLRP Development Project RFP, Background, pp. 2&ndash;3 [PDF 3&ndash;4] &mdash; &ldquo;When improperly managed, idle fields can emit dust and worsen air quality&hellip; Multibenefit Land Repurposing is a beneficial alternative that aims to reduce potential negative impacts.&rdquo;</li>
+    <li id="mlrp-ref-16">East Turlock Implementation Standards, Rewilding, Requirements/General, p. 2 [PDF 2]</li>
+    <li id="mlrp-ref-17">Fern&aacute;ndez-Bou et al., 2025</li>
+    <li id="mlrp-ref-18">Merced MLRP Development Project RFP &mdash; dust/air quality appears as an unmeasured checkbox item in the community benefit scoring criteria (in addition to note 15); no particulate metric, emissions factor, monitoring requirement, or baseline/threshold appears in any Merced program document.</li>
+    <li id="mlrp-ref-19">East Turlock Implementation Standards &mdash; Rewilding, Requirements/General, p. 2 [PDF 2] (landowner liability for dust harm; perimeter hedgerow as optional wind buffer); Vegetated Cover standard lists &ldquo;Decreased particulate and other air emissions&rdquo; among its objectives with no measurement method attached.</li>
+    <li id="mlrp-ref-20">Salinas Valley 2020 GSP, Amendment 1, Periodic Evaluation, Response to DWR, Ecosystem Report, and WY 2025 Annual Report &mdash; word-boundary searches for &ldquo;dust,&rdquo; &ldquo;PM10,&rdquo; &ldquo;particulate,&rdquo; and &ldquo;air quality&rdquo; return zero hits across all six documents.</li>
+    <li id="mlrp-ref-21">Adebiyi et al., 2025</li>
+    <li id="mlrp-ref-22">Ayres et al., 2022</li>
+    <li id="mlrp-ref-23">Becker et al., 2022</li>
+  </ol>
+</details>
+```
 :::
 
 ```{=html}

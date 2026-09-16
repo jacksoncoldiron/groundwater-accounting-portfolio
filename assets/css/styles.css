@@ -1300,7 +1300,7 @@ main.content > section:first-child { margin-top: 0; }
   color: var(--ink);
 }
 
-.isw-scrolly { position: relative; height: 470vh; margin-top: 1.5rem; }
+.isw-scrolly { position: relative; height: var(--runway, 470vh); margin-top: 1.5rem; }
 
 .isw-stage {
   position: sticky;
@@ -1392,17 +1392,15 @@ main.content > section:first-child { margin-top: 0; }
   transition: transform .14s linear;
 }
 
+/* Opacity is set per-frame by isw-figure.js (see scrollyOpacity in
+   scrolly-core.js) so it tracks scroll position exactly, with no CSS
+   transition lag between the two. This is just the pre-JS/no-JS baseline. */
 .isw-rail__step,
 .isw-rail__break {
   padding: .7rem 0;
   opacity: .1;
-  transition: opacity .4s ease;
 }
-.isw-rail__step.is-near,
-.isw-rail__break.is-near { opacity: .32; }
 .isw-rail__step.is-active { opacity: 1; }
-.isw-rail__break.is-active,
-.isw-rail__break.is-near { opacity: .85; }
 
 .isw-rail__n {
   font: 700 .72rem/1 var(--font-mono);
@@ -1473,7 +1471,9 @@ main.content > section:first-child { margin-top: 0; }
 }
 
 @media (max-width: 860px) {
-  .isw-scrolly { height: calc(100vh + 290vh); }
+  /* No fixed height override here: --runway is sized by isw-figure.js from
+     the measured stage height, which already reflects the mobile layout
+     below, so it stays correct at any viewport width on its own. */
   .isw-scene {
     grid-template-columns: 1fr;
     gap: .75rem;
@@ -1495,10 +1495,12 @@ main.content > section:first-child { margin-top: 0; }
    Research and Headline Findings sections and each chapter's Key Findings —
    the site's text-led scrolly panel (see the shared scrolly panel tokens
    above .isw-scrolly). The sticky stage fills the viewport below the navbar
-   and pads content toward its upper-middle rather than top-aligning it; the
-   outer wrapper's --runway is sized independently so a step's dwell time on
-   screen doesn't shrink just because the panel got taller. Progress dots
-   stay pinned to the bottom of the viewport regardless of that padding.
+   and pads content toward its upper-middle rather than top-aligning it. The
+   outer wrapper's --runway is computed at runtime by pinned-scene.js from
+   the step count (see scrolly-core.js) rather than authored per page, so a
+   step's dwell time on screen doesn't shrink just because the panel got
+   taller. Progress dots stay pinned to the bottom of the viewport regardless
+   of that padding.
    Without JS, or under reduced motion, .is-live is never set and the whole
    thing is a plain stacked list.
    ========================================================================== */
@@ -1506,9 +1508,22 @@ main.content > section:first-child { margin-top: 0; }
 .gw-pinned { position: relative; margin: 1.75rem 0 0; }
 .gw-pinned.is-live { height: var(--runway, 390vh); }
 
-.gw-pinned--prose    { --scene-bg: var(--wash-blue); }
+/* --pinned-anchor: where (0 = top, 1 = bottom) along the sticky viewport a
+   step's heading is held while active. Center (.5) suits the numberless
+   prose scene and the short, single-line headline cards; the key-findings
+   scene pins a large fixed number at the top of the stage, so its anchor
+   sits high too — see the JS translateY math in pinned-scene.js, which
+   reads this custom property instead of hardcoding the viewport centre. */
+.gw-pinned { --pinned-anchor: .5; }
+
+.gw-pinned--prose     { --scene-bg: var(--wash-blue); }
 .gw-pinned--headlines { --scene-bg: var(--wash-sage); }
-.gw-pinned--keyfindings { --scene-bg: var(--surface); }
+.gw-pinned--keyfindings {
+  --scene-bg: var(--bg);       /* plain page background — no colored band wraps this scene */
+  --pinned-anchor: .24;         /* hold headings high, beside the fixed number */
+  --scrolly-pad-top: 4vh;       /* keyfindings needs less top clearance than other scrolly panels: */
+  --scrolly-pad-bottom: 8vh;    /* the number anchors content near the top, not the upper-middle */
+}
 
 .gw-pinned.is-live .gw-pinned__stage {
   position: sticky;
@@ -1522,9 +1537,14 @@ main.content > section:first-child { margin-top: 0; }
   column-gap: 2rem;
   row-gap: 1rem;
   align-items: stretch;
+  /* Explicit start: default ("normal") stretches auto-sized rows to fill
+     any leftover height in the (tall) stage, which is invisible in the
+     two-column desktop layout (a single row) but opens a large empty gap
+     between the number and the text in the single-column mobile layout,
+     where the number and viewport are stacked as two separate rows. */
+  align-content: start;
 }
-.gw-pinned--prose.is-live .gw-pinned__stage,
-.gw-pinned--keyfindings.is-live .gw-pinned__stage { grid-template-columns: minmax(0, 1fr); }
+.gw-pinned--prose.is-live .gw-pinned__stage { grid-template-columns: minmax(0, 1fr); }
 
 .gw-pinned__num {
   grid-row: 1 / -1;
@@ -1537,10 +1557,11 @@ main.content > section:first-child { margin-top: 0; }
 }
 .gw-pinned:not(.is-live) .gw-pinned__num { display: none; }
 
-.gw-pinned__viewport { position: relative; overflow: hidden; }
+.gw-pinned__viewport { position: relative; overflow: hidden; background: transparent; }
 .gw-pinned.is-live .gw-pinned__viewport::before,
 .gw-pinned.is-live .gw-pinned__viewport::after {
-  content: ""; position: absolute; left: 0; right: 0; height: 20%;
+  content: ""; position: absolute; left: 0; right: 0;
+  height: clamp(2rem, 7vh, 4.5rem);
   z-index: 2; pointer-events: none;
 }
 .gw-pinned.is-live .gw-pinned__viewport::before { top: 0; background: linear-gradient(var(--scene-bg), transparent); }
@@ -1553,9 +1574,11 @@ main.content > section:first-child { margin-top: 0; }
   transition: transform .14s linear;
 }
 
+/* Opacity is set per-frame by pinned-scene.js (see scrollyOpacity in
+   scrolly-core.js) so it tracks scroll position exactly, with no CSS
+   transition lag between the two. This is just the pre-JS baseline. */
 .gw-pinned__step { padding: .85rem 0; }
-.gw-pinned.is-live .gw-pinned__step { opacity: .12; transition: opacity .4s ease; }
-.gw-pinned.is-live .gw-pinned__step.is-near { opacity: .4; }
+.gw-pinned.is-live .gw-pinned__step { opacity: .12; }
 .gw-pinned.is-live .gw-pinned__step.is-active { opacity: 1; }
 
 .gw-pinned--prose .gw-pinned__step p {
@@ -1597,8 +1620,19 @@ main.content > section:first-child { margin-top: 0; }
 }
 
 @media (max-width: 700px) {
-  .gw-pinned.is-live .gw-pinned__stage { grid-template-columns: minmax(0, 1fr); }
+  .gw-pinned.is-live .gw-pinned__stage {
+    grid-template-columns: minmax(0, 1fr);
+    /* Number row sized to its own content; the viewport row (whose own
+       content is absolutely positioned, so it has no natural height) takes
+       all the remaining space instead of collapsing to zero. */
+    grid-template-rows: auto minmax(0, 1fr);
+  }
   .gw-pinned__num { grid-row: auto; }
+  /* The number now sits in its own row above the (shorter) viewport row,
+     rather than sharing the full stage height beside it on desktop, so the
+     anchor needs to sit further down its own box to keep the heading clear
+     of the top clipping edge. */
+  .gw-pinned--keyfindings { --pinned-anchor: .34; }
 }
 
 /* ==========================================================================

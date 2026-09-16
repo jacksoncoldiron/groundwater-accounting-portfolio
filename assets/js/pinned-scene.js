@@ -7,16 +7,23 @@
 
    Page-scroll progress through the tall .gw-pinned wrapper is mapped to a
    continuous position along the numbered .gw-pinned__track, which is
-   translated so the active step always sits in the same slot (the vertical
-   centre of the clipped viewport). The nearest step is .is-active (full
-   opacity); its immediate neighbour is .is-near (faint). An optional
-   .gw-pinned__num flips only at a step boundary, so the number "holds" until
-   the next step is fully in view.
+   translated so the active step always sits in the same slot — a fixed
+   fraction down the clipped viewport (the scene's --pinned-anchor custom
+   property, read from CSS rather than hardcoded), level with the fixed
+   .gw-pinned__num. Each step's opacity follows a broad plateau curve from
+   scrolly-core.js — faded,
+   fade in, full opacity for a long stretch, fade out, faded — rather than a
+   binary on/off switch, and the number only flips once the incoming step has
+   actually entered that plateau (see scrollyPickActive). The wrapper's own
+   scroll runway is sized from the step count so every scene gets the same
+   generous per-step scroll distance without a page hardcoding --runway.
 
    With no JavaScript, or under prefers-reduced-motion, the .is-live class is
    never added and CSS renders a plain stacked list — nothing pinned or
    clipped. See the .gw-pinned:not(.is-live) rules in styles.css.
    ========================================================================== */
+
+import { scrollyOpacity, scrollyPickActive, scrollyRunwayVh } from './scrolly-core.js';
 
 function initScene(scene) {
   const stage = scene.querySelector('.gw-pinned__stage');
@@ -30,6 +37,25 @@ function initScene(scene) {
 
   const dots = [...scene.querySelectorAll('.gw-pinned__dot')];
   scene.classList.add('is-live');
+
+  // The CSS fallback (var(--runway, ...)) sizes the sticky stage correctly
+  // the instant is-live lands, so it's safe to measure it here and replace
+  // --runway with a value sized to the actual step count.
+  const sizeRunway = () => {
+    if (!window.innerHeight || !stage.offsetHeight) return;
+    const stageVh = (stage.offsetHeight / window.innerHeight) * 100;
+    scene.style.setProperty('--runway', `${scrollyRunwayVh(steps.length, stageVh)}vh`);
+  };
+  sizeRunway();
+
+  // Read once (and again on resize, where breakpoints can change it) rather
+  // than on every scroll frame — this doesn't change mid-scroll.
+  let anchorFraction = 0.5;
+  const readAnchor = () => {
+    const raw = parseFloat(getComputedStyle(scene).getPropertyValue('--pinned-anchor'));
+    anchorFraction = Number.isFinite(raw) ? raw : 0.5;
+  };
+  readAnchor();
 
   const centreOf = (el) => el.offsetTop + el.offsetHeight / 2;
   let lastActive = -1;
@@ -47,10 +73,14 @@ function initScene(scene) {
     const hiI = Math.min(loI + 1, steps.length - 1);
     const t = fpos - loI;
     const centre = centreOf(steps[loI]) + (centreOf(steps[hiI]) - centreOf(steps[loI])) * t;
-    track.style.transform = `translateY(${viewport.clientHeight / 2 - centre}px)`;
+    track.style.transform = `translateY(${viewport.clientHeight * anchorFraction - centre}px)`;
 
-    const activeI = Math.round(fpos);
-    if (activeI !== lastActive) {
+    steps.forEach((el, i) => {
+      el.style.opacity = scrollyOpacity(Math.abs(i - fpos));
+    });
+
+    const activeI = scrollyPickActive(fpos, steps.length, lastActive);
+    if (activeI !== lastActive && activeI >= 0) {
       lastActive = activeI;
       steps.forEach((el, i) => el.classList.toggle('is-active', i === activeI));
       dots.forEach((d, i) => {
@@ -63,14 +93,12 @@ function initScene(scene) {
       }
       scene.dataset.step = String(activeI);
     }
-    steps.forEach((el, i) => {
-      el.classList.toggle('is-near', i !== activeI && Math.abs(i - fpos) < 1);
-    });
   };
 
   const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
+  const onResize = () => { sizeRunway(); readAnchor(); onScroll(); };
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll, { passive: true });
+  window.addEventListener('resize', onResize, { passive: true });
 
   const scrollToStep = (i) => {
     const runway = scene.offsetHeight - stage.offsetHeight;
