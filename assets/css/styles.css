@@ -270,10 +270,17 @@ section.gw-chapter-title { margin: 0; padding: 0; border: 0; }
      reader sees establishes water as part of the palette, not an afterthought. */
   background:
     linear-gradient(155deg, var(--wash-blue) 0%, var(--surface) 42%, var(--bg) 100%);
-  /* Extra breathing room above the title so it clears the navbar's slate ribbon. */
-  padding-block: clamp(3.75rem, 6vw, 6rem) 3.25rem;
+  padding-bottom: 3.25rem;
   position: relative;
   overflow: hidden;
+}
+/* Extra breathing room above the title so it clears the fixed navbar, which
+   overlaps the top of this padding rather than sitting above it in flow.
+   Specificity has to beat theme.scss's `#quarto-content > * { padding-top: 0 }`
+   reset (an ID selector), which otherwise wins over a plain .gw-hero rule
+   regardless of source order and silently zeroes this out. */
+#quarto-content > .gw-hero {
+  padding-top: clamp(6rem, 9vw, 9rem);
 }
 
 /* Restrained strata motif — decorative only, hidden from AT */
@@ -628,10 +635,11 @@ section.gw-chapter-title { margin: 0; padding: 0; border: 0; }
   .gw-chain__step::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -.72rem; transform: translateX(-50%); }
 }
 
-/* Boustrophedon "snake" — the ISW basin-track stage cards, 4 / 4 / 2, laid out
-   as one path that reads left→right, then right→left, then left→right.
-   Grid placement (grid-column / grid-row) is set per-card in figures.js;
-   data-link picks the connector arrow. */
+/* Boustrophedon "snake" — the per-basin track stage cards inside each
+   chapter's Breakdown by Subbasin tab, 4 / 4 / 2, laid out as one path that
+   reads left→right, then right→left, then left→right. Grid placement
+   (grid-column / grid-row) is set per-card in breakdown.js; data-link picks
+   the connector arrow. --accent / --accent-text are set inline per chapter. */
 .gw-snake {
   list-style: none; margin: 0; padding: 0;
   display: grid;
@@ -657,8 +665,8 @@ section.gw-chapter-title { margin: 0; padding: 0; border: 0; }
 
 .gw-snake__step::after {
   position: absolute; z-index: 1;
-  color: var(--isw-text); font-weight: 700; font-size: 1rem; line-height: 1;
-  background: var(--wash-blue); padding: .05rem;
+  color: var(--accent-text, var(--isw-text)); font-weight: 700; font-size: 1rem; line-height: 1;
+  background: var(--surface); padding: .05rem;
 }
 .gw-snake__step[data-link="right"]::after { content: "\2192"; right: -.85rem; top: 50%; transform: translateY(-50%); }
 .gw-snake__step[data-link="left"]::after  { content: "\2190"; left: -.85rem; top: 50%; transform: translateY(-50%); }
@@ -998,8 +1006,8 @@ main.content > section:first-child { margin-top: 0; }
 
 .quarto-title-block, #title-block-header { display: none; }
 
-/* Quarto search overlay */
-.aa-DetachedSearchButton { border-radius: 2px; border-color: var(--border); background: var(--bg); }
+/* Quarto search overlay — a light pill against the navbar's own light-blue wash */
+.aa-DetachedSearchButton { border-radius: 2px; border-color: var(--border); background: var(--surface); }
 
 @media print {
   .gw-filters, #quarto-header, .nav-footer { display: none; }
@@ -1209,16 +1217,18 @@ main.content > section:first-child { margin-top: 0; }
   color: var(--ink-strong);
   font-variant-numeric: lining-nums tabular-nums;
 }
-/* Icon sits to the left of the label, both centred under the number. */
+/* Icon sits to the left of the label, both centred under the number. Kept to
+   one line even for the longest label ("Policy & Planning Documents") —
+   wrap only as a last resort on very narrow cards, never a routine layout. */
 .gw-metric__cap {
   display: flex; align-items: center; justify-content: center;
-  gap: .5rem; flex-wrap: wrap;
+  gap: .4rem; flex-wrap: wrap;
 }
 .gw-metric__icon { color: var(--isw); display: inline-flex; flex: none; }
-.gw-metric__icon svg { width: 34px; height: 34px; display: block; }
+.gw-metric__icon svg { width: 26px; height: 26px; display: block; }
 .gw-metric__label {
-  font-size: .82rem; letter-spacing: .04em; text-transform: uppercase;
-  font-weight: 600; color: var(--ink-muted);
+  font-size: .72rem; letter-spacing: .03em; text-transform: uppercase;
+  font-weight: 600; color: var(--ink-muted); white-space: nowrap;
 }
 
 .gw-metrics__nav {
@@ -1750,6 +1760,7 @@ main.content > section:first-child { margin-top: 0; }
   background: var(--isw-wash); border-left: 3px solid var(--isw-light);
   font-size: .9rem;
 }
+.gw-breakdown__snake { margin: 0 0 2rem; }
 .gw-breakdown__list { margin: 0; }
 .gw-breakdown__stage {
   font: 700 .74rem/1.35 var(--font-body); letter-spacing: .08em; text-transform: uppercase;

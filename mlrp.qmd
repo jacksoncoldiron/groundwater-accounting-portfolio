@@ -63,7 +63,7 @@ entirely.
 ::: {.gw-wide}
 
 ```{=html}
-<h2 class="gw-eyebrow">The Accounting Lifecycle</h2>
+<h2 class="gw-eyebrow">2.1 The Accounting Lifecycle</h2>
 
 <figure class="gw-figure">
   <div class="gw-figure__body" style="background:var(--surface)">
@@ -131,16 +131,16 @@ entirely.
 
 ::: {.gw-wide .gw-section}
 ```{=html}
-<h2 class="gw-eyebrow">Key Findings</h2>
+<h2 class="gw-eyebrow">2.2 Key Findings</h2>
 <div class="gw-pinned gw-pinned--keyfindings" data-pinned>
   <div class="gw-pinned__stage">
     <span class="gw-pinned__num" aria-hidden="true">01</span>
     <div class="gw-pinned__viewport">
       <ol class="gw-pinned__track">
-        <li class="gw-pinned__step" data-num="01"><h3>Water-savings math built for irrigated fields overstates what fallowed land actually saves</h3><p>ET-minus-precipitation methods assume a parcel that stops irrigating also stops transpiring<sup><a href="#mlrp-ref-1">1</a></sup> — but fallowed and transitioning land keeps transpiring from residual soil moisture and volunteer vegetation, which skews the calculated saving above the real one. GSAs handle this inconsistently: some apply the method anyway and report the overestimate once it's measured<sup><a href="#mlrp-ref-2">2</a></sup>, others sidestep the problem by declining to track ET on repurposed parcels at all<sup><a href="#mlrp-ref-3">3</a></sup>. Neither resolves the underlying bias, and no bounding or correction method exists for either approach — or a future DWR standard — to adopt.</p></li>
-        <li class="gw-pinned__step" data-num="02"><h3>Where the retired entitlement goes is a basin-scale exposure, not a program detail</h3><p>Resolving leakage — pumping that moves elsewhere after land is repurposed — is a precursor to claiming co-benefits<sup><a href="#mlrp-ref-4">4</a></sup>, yet there is no shared protocol for doing so. Some GSAs pay landowners and temporarily rescind their allocation while enrolled, which limits leakage<sup><a href="#mlrp-ref-5">5</a></sup>; others let landowners keep — and even transfer — the retained allocation to other parcels<sup><a href="#mlrp-ref-6">6</a></sup><sup>,</sup><sup><a href="#mlrp-ref-7">7</a></sup>. The latter design is more exposed: nothing stops the pumping it retires from resurfacing elsewhere in the basin.</p></li>
-        <li class="gw-pinned__step" data-num="03"><h3>The literature has methods for co-benefits that no program has adopted</h3><p>Methods for quantifying land repurposing's co-benefits to ecosystems, disadvantaged communities, and water quality are well documented in the literature<sup><a href="#mlrp-ref-8">8</a></sup><sup>,</sup><sup><a href="#mlrp-ref-9">9</a></sup><sup>,</sup><sup><a href="#mlrp-ref-10">10</a></sup><sup>,</sup><sup><a href="#mlrp-ref-11">11</a></sup>, but GSAs don't measure them consistently: some score them arbitrarily at the application stage<sup><a href="#mlrp-ref-12">12</a></sup>, others price them into incentive rates without quantifying an outcome<sup><a href="#mlrp-ref-13">13</a></sup>, and one has identified a literature-based method without adopting it<sup><a href="#mlrp-ref-14">14</a></sup>. The literature-to-practice gap is the finding itself — rigorous methods exist, but a standardized approach local agencies can actually implement does not.</p></li>
-        <li class="gw-pinned__step" data-num="04"><h3>Dust is named everywhere and measured nowhere</h3><p>There is universal awareness that dust is a hazard of land retirement, and that repurposing has the potential to mitigate it<sup><a href="#mlrp-ref-15">15</a></sup><sup>,</sup><sup><a href="#mlrp-ref-16">16</a></sup><sup>,</sup><sup><a href="#mlrp-ref-17">17</a></sup>. Across the three basins it's named but not measured<sup><a href="#mlrp-ref-18">18</a></sup>, treated as landowner liability<sup><a href="#mlrp-ref-19">19</a></sup>, named as an unmeasured co-benefit<sup><a href="#mlrp-ref-19">19</a></sup>, or not mentioned at all<sup><a href="#mlrp-ref-20">20</a></sup>. The literature itself is light on approaches that could fill this gap — recent work quantifies fallowed-land dust risk at the regional scale but stops short of a per-parcel or per-acre method tied to land repurposing<sup><a href="#mlrp-ref-21">21</a></sup><sup>,</sup><sup><a href="#mlrp-ref-22">22</a></sup><sup>,</sup><sup><a href="#mlrp-ref-23">23</a></sup>.</p></li>
+        <li class="gw-pinned__step" data-num="01"><h3>Water Savings Calculation</h3><p>ET-minus-precipitation methods assume a parcel that stops irrigating also stops transpiring<sup><a href="#mlrp-ref-1">1</a></sup> — but fallowed and transitioning land keeps transpiring from residual soil moisture and volunteer vegetation, which skews the calculated saving above the real one. GSAs handle this inconsistently: some apply the method anyway and report the overestimate once it's measured<sup><a href="#mlrp-ref-2">2</a></sup>, others sidestep the problem by declining to track ET on repurposed parcels at all<sup><a href="#mlrp-ref-3">3</a></sup>. Neither resolves the underlying bias, and no bounding or correction method exists for either approach — or a future DWR standard — to adopt.</p></li>
+        <li class="gw-pinned__step" data-num="02"><h3>Leakage</h3><p>Resolving leakage — pumping that moves elsewhere after land is repurposed — is a precursor to claiming co-benefits<sup><a href="#mlrp-ref-4">4</a></sup>, yet there is no shared protocol for doing so. Some GSAs pay landowners and temporarily rescind their allocation while enrolled, which limits leakage<sup><a href="#mlrp-ref-5">5</a></sup>; others let landowners keep — and even transfer — the retained allocation to other parcels<sup><a href="#mlrp-ref-6">6</a></sup><sup>,</sup><sup><a href="#mlrp-ref-7">7</a></sup>. The latter design is more exposed: nothing stops the pumping it retires from resurfacing elsewhere in the basin.</p></li>
+        <li class="gw-pinned__step" data-num="03"><h3>Benefits Beyond Water Savings</h3><p>Methods for quantifying land repurposing's co-benefits to ecosystems, disadvantaged communities, and water quality are well documented in the literature<sup><a href="#mlrp-ref-8">8</a></sup><sup>,</sup><sup><a href="#mlrp-ref-9">9</a></sup><sup>,</sup><sup><a href="#mlrp-ref-10">10</a></sup><sup>,</sup><sup><a href="#mlrp-ref-11">11</a></sup>, but GSAs don't measure them consistently: some score them arbitrarily at the application stage<sup><a href="#mlrp-ref-12">12</a></sup>, others price them into incentive rates without quantifying an outcome<sup><a href="#mlrp-ref-13">13</a></sup>, and one has identified a literature-based method without adopting it<sup><a href="#mlrp-ref-14">14</a></sup>. The literature-to-practice gap is the finding itself — rigorous methods exist, but a standardized approach local agencies can actually implement does not.</p></li>
+        <li class="gw-pinned__step" data-num="04"><h3>Dust</h3><p>There is universal awareness that dust is a hazard of land retirement, and that repurposing has the potential to mitigate it<sup><a href="#mlrp-ref-15">15</a></sup><sup>,</sup><sup><a href="#mlrp-ref-16">16</a></sup><sup>,</sup><sup><a href="#mlrp-ref-17">17</a></sup>. Across the three basins it's named but not measured<sup><a href="#mlrp-ref-18">18</a></sup>, treated as landowner liability<sup><a href="#mlrp-ref-19">19</a></sup>, named as an unmeasured co-benefit<sup><a href="#mlrp-ref-19">19</a></sup>, or not mentioned at all<sup><a href="#mlrp-ref-20">20</a></sup>. The literature itself is light on approaches that could fill this gap — recent work quantifies fallowed-land dust risk at the regional scale but stops short of a per-parcel or per-acre method tied to land repurposing<sup><a href="#mlrp-ref-21">21</a></sup><sup>,</sup><sup><a href="#mlrp-ref-22">22</a></sup><sup>,</sup><sup><a href="#mlrp-ref-23">23</a></sup>.</p></li>
         <li class="gw-pinned__step" data-num="05"><h3>[NEEDS COPY — key finding 5]</h3><p>Placeholder.</p></li>
       </ol>
     </div>
@@ -160,7 +160,7 @@ entirely.
 ::: {.gw-wide .gw-section}
 
 ```{=html}
-<h2 class="gw-eyebrow">Breakdown by Subbasin</h2>
+<h2 class="gw-eyebrow">2.3 Breakdown by Subbasin</h2>
 ```
 
 ::: gw-prose
@@ -179,14 +179,9 @@ score. Selecting an entry opens the evidence behind it.
 ::: gw-caption
 The document sets are not equally complete. Several Salinas Valley absences are
 gaps in document availability; several East Turlock absences reflect programs
-that have not yet produced results. Cells in the same row are not equally
-weighted evidence.
+that have not yet produced results — not every "not found" carries the same
+weight.
 :::
-
-```{=html}
-<h3 class="gw-eyebrow" style="margin-top:3rem">All three subbasins at a glance</h3>
-<div id="mlrp-matrix" class="gw-loading">Loading the comparison&hellip;</div>
-```
 
 :::
 
@@ -194,7 +189,7 @@ weighted evidence.
 ::: {.gw-page}
 
 ```{=html}
-<h2 class="gw-eyebrow" style="color:var(--mlrp-light)">Connection to Accounting</h2>
+<h2 class="gw-eyebrow" style="color:var(--mlrp-light)">2.4 Connection to Accounting</h2>
 ```
 
 ::: gw-prose
@@ -236,7 +231,7 @@ parcels — so none could detect movement even where movement is permitted.
 
 ::: {.gw-page .gw-section}
 ```{=html}
-<h2 class="gw-eyebrow">Beyond</h2>
+<h2 class="gw-eyebrow">2.5 Beyond</h2>
 
 <div class="gw-draft-banner">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
@@ -259,7 +254,7 @@ gathered from GSA board meetings via the WaterOne.ai platform.
 
 ::: {.gw-page .gw-section}
 ```{=html}
-<h2 class="gw-eyebrow">Further Exploration</h2>
+<h2 class="gw-eyebrow">2.6 Further Exploration</h2>
 ```
 
 ::: {.gw-prose .gw-further__lead}
@@ -279,7 +274,7 @@ matters.
 ::: {.gw-page .gw-section .gw-section--tight}
 
 ```{=html}
-<h2 class="gw-eyebrow">Geography</h2>
+<h2 class="gw-eyebrow">2.7 Geography</h2>
 ```
 
 ```{=html}
@@ -344,6 +339,5 @@ evidence is already searchable in the
 :::
 
 ```{=html}
-<script type="module" src="assets/js/figures.js"></script>
 </main>
 ```

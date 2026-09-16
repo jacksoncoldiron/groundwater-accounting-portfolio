@@ -67,7 +67,7 @@ architecture that permits an outcome, not evidence that the outcome occurred.
 ::: {.gw-wide .gw-section}
 
 ```{=html}
-<h2 class="gw-eyebrow">The Accounting Lifecycle</h2>
+<h2 class="gw-eyebrow">3.1 The Accounting Lifecycle</h2>
 ```
 
 ::: gw-prose
@@ -130,7 +130,7 @@ the step the reviewed document sets do not take.
 
 ::: {.gw-wide .gw-section}
 ```{=html}
-<h2 class="gw-eyebrow">Key Findings</h2>
+<h2 class="gw-eyebrow">3.2 Key Findings</h2>
 ```
 
 ::: gw-prose
@@ -166,7 +166,7 @@ the step the reviewed document sets do not take.
 ::: {.gw-wide .gw-section}
 
 ```{=html}
-<h2 class="gw-eyebrow">Breakdown by Subbasin</h2>
+<h2 class="gw-eyebrow">3.3 Breakdown by Subbasin</h2>
 ```
 
 ::: gw-prose
@@ -230,11 +230,6 @@ exist. Document sets are not equally complete.
 :::
 
 ```{=html}
-<h3 class="gw-eyebrow" style="margin-top:3rem">All three subbasins at a glance</h3>
-<div id="community-matrix" class="gw-loading">Loading the comparison&hellip;</div>
-```
-
-```{=html}
 <h3 class="gw-eyebrow" style="margin-top:3rem">Community-facing tools</h3>
 ```
 
@@ -257,7 +252,7 @@ Tools named in the literature consolidation and searched for across the reviewed
 ::: {.gw-page}
 
 ```{=html}
-<h2 class="gw-eyebrow" style="color:var(--community-light)">Connection to Accounting</h2>
+<h2 class="gw-eyebrow" style="color:var(--community-light)">3.4 Connection to Accounting</h2>
 ```
 
 ::: gw-prose
@@ -295,7 +290,7 @@ often computed, over data every basin already holds.
 
 ::: {.gw-page .gw-section}
 ```{=html}
-<h2 class="gw-eyebrow">Beyond</h2>
+<h2 class="gw-eyebrow">3.5 Beyond</h2>
 
 <div class="gw-draft-banner">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
@@ -318,7 +313,7 @@ gathered from GSA board meetings via the WaterOne.ai platform.
 
 ::: {.gw-page .gw-section .gw-section--tight}
 ```{=html}
-<h2 class="gw-eyebrow">Further Exploration</h2>
+<h2 class="gw-eyebrow">3.6 Further Exploration</h2>
 ```
 
 ::: {.gw-prose .gw-further__lead}
@@ -339,6 +334,5 @@ The coded evidence is already searchable in the
 :::
 
 ```{=html}
-<script type="module" src="assets/js/figures.js"></script>
 </main>
 ```

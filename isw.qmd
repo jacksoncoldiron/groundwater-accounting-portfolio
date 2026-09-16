@@ -62,10 +62,10 @@ figure.
 :::::
 ::::::
 
-:::: {.gw-band .gw-band--blue}
+:::: {.gw-band}
 ::: gw-wide
 ```{=html}
-<h2 class="gw-eyebrow">The Accounting Lifecycle</h2>
+<h2 class="gw-eyebrow">1.1 The Accounting Lifecycle</h2>
 <p class="isw-lede">Scroll to see how the accounting chain operates for interconnected surface water — and where that chain breaks down.</p>
 
 <section class="isw-scrolly" aria-label="The interconnected surface water accounting chain, step by step">
@@ -307,7 +307,7 @@ figure.
 
 :::: {.gw-wide .gw-section}
 ```{=html}
-<h2 class="gw-eyebrow">Key Findings</h2>
+<h2 class="gw-eyebrow">1.2 Key Findings</h2>
 <div class="gw-pinned gw-pinned--keyfindings" data-pinned style="--runway: 370vh">
   <div class="gw-pinned__stage">
     <span class="gw-pinned__num" aria-hidden="true">01</span>
@@ -362,7 +362,7 @@ figure.
 
 ::::: {.gw-wide .gw-section}
 ```{=html}
-<h2 class="gw-eyebrow">Breakdown by Subbasin</h2>
+<h2 class="gw-eyebrow">1.3 Breakdown by Subbasin</h2>
 ```
 
 ::: gw-prose
@@ -384,17 +384,12 @@ searched that basin's document set and did not find it — not that the
 practice does not exist. Document sets are not equally complete.
 :::
 
-```{=html}
-<h3 class="gw-eyebrow" style="margin-top:3rem">All three subbasins at a glance</h3>
-<div id="isw-tracks" class="gw-loading">Loading basin tracks&hellip;</div>
-<script type="module" src="assets/js/figures.js"></script>
-```
 :::::
 
 ::::: {.gw-band .gw-band--dark}
 :::: gw-page
 ```{=html}
-<h2 class="gw-eyebrow" style="color:var(--sand)">Connection to Accounting</h2>
+<h2 class="gw-eyebrow" style="color:var(--sand)">1.4 Connection to Accounting</h2>
 ```
 
 ::: gw-prose
@@ -439,7 +434,7 @@ document sets.
 
 :::: {.gw-page .gw-section}
 ```{=html}
-<h2 class="gw-eyebrow">Beyond</h2>
+<h2 class="gw-eyebrow">1.5 Beyond</h2>
 
 <div class="gw-draft-banner">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
@@ -463,7 +458,7 @@ platform.
 
 :::: {.gw-page .gw-section .gw-section--tight}
 ```{=html}
-<h2 class="gw-eyebrow">Further Exploration</h2>
+<h2 class="gw-eyebrow">1.6 Further Exploration</h2>
 ```
 
 ::: {.gw-prose .gw-further__lead}

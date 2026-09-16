@@ -165,9 +165,12 @@ async function init() {
   const basinsById = Object.fromEntries((basinData?.basins || []).map((b) => [b.id, b]));
 
   // Every option below is derived from the processed data. Adding a basin or
-  // a document adds an option automatically. The six filters someone reaches
-  // for first stay in view; Section and the two relevance ratings sit behind
-  // "More filters" so the panel doesn't out-scroll the results.
+  // a document adds an option automatically. Chapter, Subbasin, Finding type,
+  // and Section — the coded subsection of the chapter (e.g. "Financing",
+  // "Allocation and Leakage") — are what someone reaches for first and stay
+  // in view. GSA, Document, Quote verification, and the two relevance
+  // ratings sit behind "More filters" so the panel doesn't out-scroll the
+  // results.
   const filters = [
     {
       param: 'chapter', legend: 'Chapter',
@@ -187,28 +190,28 @@ async function init() {
       match: (r, sel) => sel.has(r.finding_type),
     },
     {
-      param: 'gsa', legend: 'GSA or scope',
-      options: facets.gsas.map((g) => ({ value: g.value, label: g.label, count: g.count })),
-      match: (r, sel) => sel.has(r.gsa),
-    },
-    {
-      param: 'document', legend: 'Source document',
-      options: facets.documents.map((d) => ({ value: d.value, label: d.value, count: d.count })),
-      match: (r, sel) => sel.has(r.source_title),
-    },
-    {
-      param: 'verified', legend: 'Quote verification',
-      options: facets.verification.map((v) => ({
-        value: v.value, label: VERIFICATION_LABEL[v.value] || v.value, count: v.count,
-      })),
-      match: (r, sel) => sel.has(r.verification_status),
-    },
-    {
-      param: 'section', legend: 'Section', advanced: true,
+      param: 'section', legend: 'Section',
       options: Object.values(facets.sections).flat()
         .map((s) => ({ value: s.value, label: s.value, count: s.count }))
         .sort((a, b) => a.value.localeCompare(b.value)),
       match: (r, sel) => sel.has(r.section),
+    },
+    {
+      param: 'gsa', legend: 'GSA or scope', advanced: true,
+      options: facets.gsas.map((g) => ({ value: g.value, label: g.label, count: g.count })),
+      match: (r, sel) => sel.has(r.gsa),
+    },
+    {
+      param: 'document', legend: 'Source document', advanced: true,
+      options: facets.documents.map((d) => ({ value: d.value, label: d.value, count: d.count })),
+      match: (r, sel) => sel.has(r.source_title),
+    },
+    {
+      param: 'verified', legend: 'Quote verification', advanced: true,
+      options: facets.verification.map((v) => ({
+        value: v.value, label: VERIFICATION_LABEL[v.value] || v.value, count: v.count,
+      })),
+      match: (r, sel) => sel.has(r.verification_status),
     },
     {
       param: 'gap', legend: 'Relevance to GAP', advanced: true,
