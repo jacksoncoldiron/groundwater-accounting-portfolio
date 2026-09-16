@@ -1537,12 +1537,6 @@ main.content > section:first-child { margin-top: 0; }
   column-gap: 2rem;
   row-gap: 1rem;
   align-items: stretch;
-  /* Explicit start: default ("normal") stretches auto-sized rows to fill
-     any leftover height in the (tall) stage, which is invisible in the
-     two-column desktop layout (a single row) but opens a large empty gap
-     between the number and the text in the single-column mobile layout,
-     where the number and viewport are stacked as two separate rows. */
-  align-content: start;
 }
 .gw-pinned--prose.is-live .gw-pinned__stage { grid-template-columns: minmax(0, 1fr); }
 
