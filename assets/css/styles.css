@@ -1406,6 +1406,12 @@ main.content > section:first-child { margin-top: 0; }
   display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   gap: 3rem; align-items: start;
 }
+/* Start the first step level with the middle of the figure: the figure column
+   is 1.35/2.35 of the row and the diagram is 496/648 as tall as it is wide. */
+@media (min-width: 861px) {
+  .gw-steps-scene { container-type: inline-size; }
+  .gw-steps-scene .gw-steps-scene__steps { padding-top: max(1rem, calc((100cqi - 3rem) * 1.35 / 2.35 * 496 / 648 / 2 + 1rem - 10rem)); }
+}
 .gw-steps-scene__figure {
   position: sticky; top: var(--sticky-top);
   padding-top: 1rem;
@@ -1414,33 +1420,46 @@ main.content > section:first-child { margin-top: 0; }
 .gw-steps-scene__figure svg { display: block; width: 100%; height: auto; }
 .gw-steps-scene__steps { list-style: none; margin: 0; padding: 0 0 22vh; }
 .gw-step {
-  max-width: none; margin: 0; padding: 1.4rem 1.4rem 1.5rem;
-  min-height: 42vh; box-sizing: border-box;
+  max-width: none; margin: 0; padding: 1.35rem 1.4rem 3.4rem;
+  box-sizing: border-box;
   border-radius: 14px;
-  --wave-h: 84px; --wave-back: var(--mlrp-light); --wave-front: var(--wave-isw);
+  --wave-h: 56px; --wave-back: var(--mlrp-light); --wave-front: var(--wave-isw);
   transition: opacity .3s ease, background .3s ease;
   scroll-margin-top: var(--sticky-top);
 }
-.gw-step + .gw-step { margin-top: 1rem; }
+.gw-step + .gw-step { margin-top: 24vh; }
 .gw-steps-scene.is-live .gw-step { opacity: .38; }
 .gw-steps-scene.is-live .gw-step.is-active {
   opacity: 1; background: rgba(247, 242, 232, .78);
 }
 .gw-step__n { font: 600 .78rem/1 var(--font-mono); letter-spacing: .08em; color: var(--isw-text); }
 .gw-step__t { font-size: 1.45rem; margin: .45rem 0 .55rem; }
-.gw-step p { margin: 0; font-size: 1.02rem; color: var(--ink); max-width: 40ch; }
+.gw-step p { margin: 0; font-size: 1.02rem; color: var(--ink); max-width: none; }
 .gw-step--break { --wave-back: var(--sand); --wave-front: var(--wave-community); }
 .gw-steps-scene.is-live .gw-step--break.is-active { background: rgba(240, 229, 218, .88); }
 .gw-step--break .gw-step__n, .gw-step--break .gw-step__t { color: var(--community-text); }
 
 .isw-figwrap svg { display: block; width: 100%; height: auto; }
+/* Diagram labels: bold, larger, with a halo in the panel colour so they stay
+   legible where they cross a line or texture. */
+.isw-lbl {
+  font: 700 16px/1 var(--font-body); fill: #2c2b1c;
+  paint-order: stroke; stroke: var(--wash-blue); stroke-width: 4px; stroke-linejoin: round;
+}
+.isw-lbl--sm { font-size: 13px; fill: #5a5649; }
+.isw-lbl--light { fill: #f4f6f7; stroke: #2a3640; stroke-width: 3px; stroke-opacity: .55; font-size: 16.5px; }
+@media (max-width: 860px) {
+  .isw-lbl, .isw-lbl--light { font-size: 21px; }
+  .isw-lbl--sm { font-size: 17px; }
+}
 .fig-stage { transition: opacity .35s ease; }
 .isw-figwrap[data-active] .fig-stage { opacity: .22; }
-.isw-figwrap[data-active="pumping"]     .fig-stage--pumping,
+.isw-figwrap[data-active="system"]      .fig-stage--system,
+.isw-figwrap[data-active="response"]    .fig-stage--pumping,
 .isw-figwrap[data-active="response"]    .fig-stage--response,
 .isw-figwrap[data-active="model"]       .fig-stage--model,
-.isw-figwrap[data-active="attribution"] .fig-stage--attribution,
-.isw-figwrap[data-active="break"]       .fig-stage--attribution,
+.isw-figwrap[data-active="model"]       .fig-stage--system,
+.isw-figwrap[data-active="model"]       .fig-stage--pumping,
 .isw-figwrap[data-active="break"]       .fig-stage--threshold,
 .isw-figwrap[data-active="threshold"]   .fig-stage--threshold,
 .isw-figwrap[data-active="compliance"]  .fig-stage--compliance,
@@ -1458,7 +1477,7 @@ main.content > section:first-child { margin-top: 0; }
   }
   .gw-steps-scene__figure svg { max-height: 34vh; margin: 0 auto; width: auto; max-width: 100%; }
   .isw-phase { justify-content: center; margin-top: .4rem; }
-  .gw-step { min-height: 0; padding: 1.4rem 1.1rem; }
+  .gw-step { padding: 1.3rem 1.1rem 3.2rem; }
   .gw-step + .gw-step { margin-top: 18vh; }
   .gw-steps-scene__steps { padding: 4vh 0 12vh; }
 }

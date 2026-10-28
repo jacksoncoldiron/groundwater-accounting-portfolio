@@ -364,26 +364,21 @@ at dawn.
 
 ## S2 · The accounting chain  *(sticky figure + scrolling steps)*
 
-### ISW-DIAGRAM-EYEBROW `[eyebrow]`
+### ISW-DIAGRAM-EYEBROW `[eyebrow]` *(screen-reader only)*
 The accounting chain
 
-### ISW-DIAGRAM-LEDE `[lede]`
-Seven steps connect a pumping well to a management decision. The chain holds
-through modelling — and breaks where compliance switches to a proxy.
-
 ### ISW-DIAGRAM-DESC `[figure-desc]`
-A shallow cutaway of a stream and the ground beneath it. A thick band of
-vegetation sits over a thicker band of brown sediment; below them is one
-continuous saturated aquifer. The boundary between the brown sediment and the
-blue aquifer is the water table. A broad, shallow stream sits in a low bowl on
-the left, and the water table meets it, so shallow groundwater and the stream are
-one connected system. A monitoring well stands beside the stream; a deeper
-pumping well stands away from it. Pumping pulls the water table down into a cone
-of depression and reduces the groundwater that would otherwise reach the stream;
-the gap from the pre-pumping water table is the stream depletion attributable to
-pumping. A model can estimate that depletion, but the compliance test runs
-instead on a groundwater level at the monitoring well — a proxy — checked against
-a threshold. That substitution is where the chain breaks.
+A shallow cutaway of a stream and the ground beneath it: a band of vegetation
+over brown sediment, and below them one continuous saturated aquifer whose upper
+surface is the water table. The water table meets the stream at its bank, so
+stream and aquifer are one connected system. A dashed line shows where the water
+table would sit without pumping. A deeper pumping well draws the water table down
+into a cone, and arrows show water moving out of the stream and through the
+aquifer toward the well — stream depletion. A monitoring well stands beside the
+stream. A model can estimate the depletion by comparing runs with and without
+pumping, but the compliance test runs instead on a groundwater level at the
+monitoring well — a proxy — checked against a threshold. That substitution is
+where the chain breaks.
 
 ### ISW-DIAGRAM-FIG-TITLE `[figure-desc]`
 Cutaway of pumping, the water table, and stream depletion
@@ -395,7 +390,6 @@ Cutaway of pumping, the water table, and stream depletion
 - Saturated aquifer
 - Pumping well
 - Monitoring well
-- pumping-attributable depletion
 - weak feedback
 
 ### ISW-RAIL-PHASE-LABELS `[card]`
@@ -403,25 +397,27 @@ Cutaway of pumping, the water table, and stream depletion
 - Accounting chain
 
 ### ISW-RAIL-01 `[card]`
-- **Title:** Pumping
-- **Body:** Wells pump at different depths. Models see averaged demand spread
-  across grid cells, not individual wells.
+- **Title:** A connected stream and aquifer
+- **Body:** Where the water table reaches the streambed, the stream and the
+  shallow aquifer behave as one system. Water moves between them in whichever
+  direction the water levels allow — feeding the stream from the aquifer, or
+  seeping from the stream into it — and the balance shifts with season and water
+  year.
 
 ### ISW-RAIL-02 `[card]`
-- **Title:** Hydrologic response
-- **Body:** The water table falls and less groundwater reaches the stream —
-  lagged, attenuated, and mixed with every other driver of streamflow.
+- **Title:** Pumping and hydrologic response
+- **Body:** A pumping well draws the water table down into a cone around it.
+  Less groundwater reaches the stream and more stream water seeps into the
+  aquifer — depletion that arrives lagged, attenuated, and mixed with every
+  other driver of streamflow.
 
 ### ISW-RAIL-03 `[card]`
-- **Title:** Measurement & model
-- **Body:** Every basin runs a numerical model. Three report a
-  pumping-attributable estimate; three report net stream–aquifer exchange from
-  all causes and call it depletion.
-
-### ISW-RAIL-04 `[card]`
-- **Title:** Attribution
-- **Body:** Runs with and without pumping isolate pumping's share — at basin,
-  reach or zone scale. No basin attributes depletion to individual wells.
+- **Title:** Modeling with and without pumping
+- **Body:** Depletion cannot be read from a stream gage, so it is estimated by
+  running a groundwater model twice — once with pumping, once with it switched
+  off — and taking the difference in stream–aquifer flow. Merced and Salinas
+  Valley report this figure; East Turlock, Colusa and Yolo report net exchange
+  from all causes, and Kaweah's model is not yet calibrated for streams.
 
 ### ISW-RAIL-BREAK `[card]`
 - **Title:** The chain breaks
@@ -429,17 +425,17 @@ Cutaway of pumping, the water table, and stream depletion
   groundwater-level or streamflow proxy, and no basin sets a threshold on a
   depletion volume.
 
-### ISW-RAIL-05 `[card]`
+### ISW-RAIL-04 `[card]`
 - **Title:** Sustainability threshold
 - **Body:** Five basins set ISW thresholds on groundwater elevations, mostly
   anchored to a recent drought; Kaweah sets a flow criterion on one reach.
 
-### ISW-RAIL-06 `[card]`
+### ISW-RAIL-05 `[card]`
 - **Title:** Accounting & compliance
 - **Body:** The compliance test runs on that proxy. By the agencies' own account,
   it cannot separate a pumping effect from a dry year or reservoir operations.
 
-### ISW-RAIL-07 `[card]`
+### ISW-RAIL-06 `[card]`
 - **Title:** Management response
 - **Body:** Where undesirable results were declared — East Turlock and Salinas
   Valley — no management consequence followed. The loop back to pumping stays
@@ -1711,4 +1707,6 @@ something here should come back.
 | `MTH-METHODS-WHY-BODY-2`, `CFG-BASIN-PLANNED` | No planned basins remain |
 | `COM-TRIAD-*`, `COM-HOUSEHOLD-*` | Community S2 (equity triad + threshold chain) removed so the page reaches its key findings sooner |
 | `MAP-LEDE` | Map page opens straight on the map |
+| `ISW-DIAGRAM-LEDE` | Accounting-chain intro removed so the section opens on the diagram |
+| `ISW-RAIL-04` (Attribution) and the "pumping-attributable depletion" diagram label | Attribution step removed; old 05–07 renumbered 04–06 |
 | `ISW-GAP-*` / `MLRP-GAP-*` **Issue type** lines and the old ISW/MLRP gap bodies | Key gaps → Key findings, rewritten from the Phase 2 synthesis |
