@@ -65,9 +65,9 @@ repurposing-type activity runs through other programs and partners.
 
 :::: {.gw-wide .gw-section #key-gaps}
 ```{=html}
-<h2 class="gw-eyebrow">Key gaps</h2>
-<p class="gw-section-lede">Where repurposing programs, the literature, and the accounting fall short of one another — the central takeaways of this chapter.</p>
-<div class="gw-gaps gw-loading" data-chapter="mlrp">Loading the key gaps&hellip;</div>
+<h2 class="gw-eyebrow">Key findings</h2>
+<p class="gw-section-lede">What the cross-basin comparison shows — each finding links to the subbasin-by-subbasin detail and the coded evidence behind it.</p>
+<div class="gw-gaps gw-loading" data-chapter="mlrp">Loading the key findings&hellip;</div>
 <script type="module" src="assets/js/key-gaps.js"></script>
 ```
 ::::

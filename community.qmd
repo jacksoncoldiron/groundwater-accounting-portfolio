@@ -1,6 +1,6 @@
 ---
 pagetitle: "Community"
-description: "Representative, procedural and distributional equity in groundwater governance, and how a threshold becomes a household consequence — compared across six California subbasins."
+description: "Representative, procedural and distributional equity in groundwater governance — compared across six California subbasins."
 page-layout: custom
 ---
 
@@ -46,87 +46,11 @@ and community boundaries the analysis would need.
 ::::
 :::::
 
-:::: {.gw-band .gw-band--community}
-::: gw-wide
-```{=html}
-<h2 class="gw-eyebrow">Three kinds of equity</h2>
-<p class="gw-section-lede">Representation, procedure and distribution reinforce each other but do not substitute for one another — and the reviewed plans address them very unevenly.</p>
-
-<figure class="gw-figure gw-figure--bare">
-  <p id="equity-summary" class="gw-sr-summary">
-    Three dimensions of equity. Representative equity asks who holds a seat
-    and a vote. Procedural equity asks who can participate, appeal, understand
-    and influence a decision. Distributional equity asks who bears the
-    benefits, burdens and consequences. Across the reviewed subbasins the
-    first two vary independently and the third is the least reported.
-  </p>
-  <div class="gw-triad" role="img" aria-labelledby="equity-summary">
-    <div class="gw-triad__item">
-      <h3>Representative</h3>
-      <p class="gw-triad__q">Who has a seat, and a vote?</p>
-      <p>Designated seats take three forms: a community category, agencies that serve communities, and private pumpers. In Salinas Valley a disadvantaged-community seat sits beside a supermajority rule that lets agricultural directors block fees and pumping limits.</p>
-    </div>
-    <div class="gw-triad__item">
-      <h3>Procedural</h3>
-      <p class="gw-triad__q">Who can participate, appeal, and understand?</p>
-      <p>Standing, fees, appeal windows, stated reasons and language access differ even between GSAs sharing one plan. Every technique the literature recommends appears somewhere; no reviewed document describes compensating participants.</p>
-    </div>
-    <div class="gw-triad__item">
-      <h3>Distributional</h3>
-      <p class="gw-triad__q">Who bears the benefits and the burdens?</p>
-      <p>Which households sit above a threshold that would dry their well. The literature calls this the most computable of the three; no basin reports it by community.</p>
-    </div>
-  </div>
-</figure>
-
-<h3 class="gw-subhead">From a threshold to a household</h3>
-<figure class="gw-figure gw-figure--bare">
-  <p id="household-summary" class="gw-sr-summary">
-    A five-stage chain from a groundwater threshold to a household
-    consequence: the adopted threshold, the water level it permits, the depth
-    of a domestic well, the expected household consequence, and the
-    mitigation response. Exposure counts exist in three basins but none is
-    reported by community, and most mitigation acts only after a household
-    has lost water.
-  </p>
-  <ol class="gw-chain" style="--accent: var(--community)" role="img" aria-labelledby="household-summary">
-    <li class="gw-chain__step">
-      <span class="gw-chain__n">01</span>
-      <span class="gw-chain__label">Groundwater threshold</span>
-      <span class="gw-chain__note">An adopted elevation below which an undesirable result is declared.</span>
-    </li>
-    <li class="gw-chain__step">
-      <span class="gw-chain__n">02</span>
-      <span class="gw-chain__label">Water level permitted</span>
-      <span class="gw-chain__note">The decline the threshold allows before anything is triggered.</span>
-    </li>
-    <li class="gw-chain__step">
-      <span class="gw-chain__n">03</span>
-      <span class="gw-chain__label">Well depth &amp; vulnerability</span>
-      <span class="gw-chain__note">Every basin's domestic-well data traces to state well-completion records — often missing screen depth.</span>
-    </li>
-    <li class="gw-chain__step gw-chain__step--gap">
-      <span class="gw-chain__n">04</span>
-      <span class="gw-chain__label">Expected household consequence</span>
-      <span class="gw-chain__note">Exposure counts exist in Colusa, Kaweah and (from advocates) East Turlock. None is reported by community.</span>
-    </li>
-    <li class="gw-chain__step">
-      <span class="gw-chain__n">05</span>
-      <span class="gw-chain__label">Mitigation response</span>
-      <span class="gw-chain__note">Most programs act after a household has lost water; Kaweah plans advance notice to well owners.</span>
-    </li>
-  </ol>
-  <figcaption class="gw-caption">Stage 4 is arithmetic over data every basin already holds. Skipping it keeps mitigation reactive rather than prospective.</figcaption>
-</figure>
-```
-:::
-::::
-
 :::: {.gw-wide .gw-section #key-gaps}
 ```{=html}
-<h2 class="gw-eyebrow">Key gaps</h2>
-<p class="gw-section-lede">Where community protections, the literature, and the accounting fall short of one another — the central takeaways of this chapter.</p>
-<div class="gw-gaps gw-loading" data-chapter="community">Loading the key gaps&hellip;</div>
+<h2 class="gw-eyebrow">Key findings</h2>
+<p class="gw-section-lede">What the cross-basin comparison shows — each finding links to the subbasin-by-subbasin detail and the coded evidence behind it.</p>
+<div class="gw-gaps gw-loading" data-chapter="community">Loading the key findings&hellip;</div>
 <script type="module" src="assets/js/key-gaps.js"></script>
 ```
 ::::

@@ -52,7 +52,7 @@ config). You never have to open the code or paste text into chat.
 ### Last synced
 
 Copy deck last synced: **2026-10-28** (full regeneration after the six-basin
-restructure). Site pages covered: `index`, `isw`, `mlrp`, `community`, `map`,
+restructure; key gaps → key findings pass the same day). Site pages covered: `index`, `isw`, `mlrp`, `community`, `map`,
 `findings`, `methods`, plus `_quarto.yml` and the config files that hold copy.
 
 > **What changed (2026-10-28).** Colusa, Yolo and Kaweah are now analysed
@@ -222,21 +222,20 @@ Three chapters
   How are GSAs interacting with these concepts?
 - **Link text:** Read the chapter →
 
-## Key gaps  *(new — replaces Headline findings)*
+## Key findings
 
 ### OV-GAPS-EYEBROW `[eyebrow]`
-Key gaps
+Key findings
 
 ### OV-GAPS-LEDE `[lede]`
-The central takeaways of the analysis: where the literature, the plans, and the
-accounting fall short of one another. Each opens in its chapter with the
-evidence behind it.
+The central takeaways of the analysis, chapter by chapter. Each opens in its
+chapter with the subbasin detail and evidence behind it.
 
-> The three columns list every chapter's gap titles, linked to the gap. Titles
+> The three columns list every chapter's key-finding titles, linked to the finding. Titles
 > are edited in the chapter sections (`ISW-GAP-*`, `MLRP-GAP-*`, `COM-GAP-*`).
 > Currently:
-> - **Chapter 1 · Interconnected Surface Water:** Groundwater levels stand in for modeled depletion; Attributing depletion to individual wells; Monitoring wells and pumping sit at different depths; ISW monitoring coverage depends on grants; Uncertainty in depletion estimates goes unreported; Thresholds anchored to drought, not ecological flow needs; Depletion on streams shared between subbasins
-> - **Chapter 2 · Land Repurposing:** How is the water-savings math carried out?; Where does a repurposed parcel's allocation go?; How are benefits beyond water savings tracked?
+> - **Chapter 1 · Interconnected Surface Water:** Every basin models ISW numerically — but not every model estimates depletion; Groundwater levels stand in for modeled depletion; Thresholds and undesirable results are defined on groundwater levels; Depletion volumes are not tied to thresholds — or always to pumping; Monitoring networks differ in size and depth, and grow on grants; "Significant and unreasonable" is mostly anchored to the last drought; Uncertainty in depletion estimates is rarely quantified
+> - **Chapter 2 · Land Repurposing:** Repurposing runs through several programs, each answering to a different agency; Repurposing goals are set in acre-feet, in acres, or not at all; Water savings are calculated after implementation, before it, or not at all; Benefits beyond water are named and scored, but rarely measured; Each basin decides differently where a repurposed parcel's allocation goes; Parcels are chosen top-down by suitability analysis or bottom-up by landowner interest
 > - **Chapter 3 · Community:** Domestic-well impacts are not reported by community; Help arrives after the well fails; Community benefit has no unit; A board seat is not decision authority; Language access is uneven; Water-quality thresholds cover few constituents; Accounting platforms are built for growers
 
 ### OV-GAPS-CAPTION `[caption]` ‹= six›
@@ -326,7 +325,7 @@ direct quotation and source location attached.
 > |---|---|---|
 > | S1 | Chapter kicker + question | Intro prose + photo + chapter icon |
 > | S2 | Core graphic | ISW: the accounting chain · MLRP: co-benefits matrix · Community: equity triad + threshold chain |
-> | S3 | **Key gaps** | From `config/key_gaps.yml` |
+> | S3 | **Key findings** | From `config/key_gaps.yml` |
 > | S4 | **Across the six subbasins** | From the synthesis .docx |
 > | S5 | Evidence call-to-action | One line + button |
 
@@ -446,117 +445,118 @@ Cutaway of pumping, the water table, and stream depletion
   Valley — no management consequence followed. The loop back to pumping stays
   weak.
 
-## Key gaps
+## Key findings
 
 ### ISW-GAPS-EYEBROW `[eyebrow]`
-Key gaps
+Key findings
 
 ### ISW-GAPS-LEDE `[lede]`
-Where the reviewed plans, the literature, and the accounting fall short of one
-another — the central takeaways of this chapter.
+What the cross-basin comparison shows — each finding links to the
+subbasin-by-subbasin detail and the coded evidence behind it.
 
-> Each gap shows a big number, the issue type, its DWR category tags, the body,
-> and two links: **Compare across subbasins** (opens the matching topic below)
-> and **See the coded evidence** (filtered Findings Explorer). A sidebar index of
-> gap titles follows the reader on desktop.
+> Each finding shows a big number, its headline, its DWR category tags, the
+> body, and two links: **Compare across subbasins** (opens the matching topic
+> below) and **See the coded evidence** (filtered Findings Explorer). A sidebar
+> index of finding titles follows the reader on desktop.
 
-### ISW-GAP-1 `[card]` ‹config-routed: key_gaps.yml › isw-levels-stand-in›
-- **Title:** Groundwater levels stand in for modeled depletion
-- **Issue type:** Modeling capacity
+### ISW-GAP-1 `[card]` ‹config-routed: key_gaps.yml › isw-models›
+- **Title:** Every basin models ISW numerically — but not every model estimates depletion
 - **DWR categories:** Data needs, Best management practices
 - **Body:**
-  Numerical models are the gold standard for assessing streamflow depletion,
-  and most of the GSAs analyzed use them to describe how much water moves
-  between streams and aquifers. Compliance is measured differently: most
-  basins track streamflow depletion with groundwater levels or streamflow
-  alone, and Kaweah pairs groundwater levels with an analytical model. The
-  plans give their reasons for using groundwater levels in place of modeled
-  depletion — models not yet calibrated on specific streams, gage uncertainty,
-  models too coarse to detect the expected changes, and the cost of updating
-  models every year. Colusa's model memo recommends calibrating the
-  groundwater-level proxy at the five-year update. The literature points to
-  deriving per-well depletion factors that are then applied to reported
-  pumping.
+  All six subbasins characterize interconnected surface water with a numerical
+  groundwater–surface water model, the approach the literature calls the gold
+  standard. What the models report differs. Merced and Salinas Valley isolate
+  pumping-attributable depletion by running the model with and without
+  pumping, and Kaweah — whose model is not yet calibrated for streams —
+  substitutes an analytical depletion function. East Turlock, Colusa and Yolo
+  report net stream–aquifer exchange from all causes and call it depletion,
+  and Colusa and Yolo describe their ISW results as provisional or
+  uncalibrated on most streams.
 
-### ISW-GAP-2 `[card]` ‹config-routed: key_gaps.yml › isw-per-well›
-- **Title:** Attributing depletion to individual wells
-- **Issue type:** Granularity
+### ISW-GAP-2 `[card]` ‹config-routed: key_gaps.yml › isw-levels-stand-in›
+- **Title:** Groundwater levels stand in for modeled depletion
+- **DWR categories:** Data needs, Best management practices
+- **Body:**
+  No basin uses model output as its ISW compliance measure. Five test
+  compliance on groundwater elevations at near-stream wells, and Salinas
+  Valley, Colusa and Yolo cite EDF (2018) for that proxy. The plans give their
+  reasons: models not calibrated to individual streams, uncertainty too large
+  to quantify depletion reliably, and — in Salinas Valley — the judgment that
+  annual model updates are unrealistic. Merced shows how the proxy is
+  defended: a scenario at its thresholds added 38,000 AFY of depletion, about
+  1.6% of surface outflow, which the GSP judged small enough for groundwater
+  levels to protect streams.
+
+### ISW-GAP-3 `[card]` ‹config-routed: key_gaps.yml › isw-thresholds›
+- **Title:** Thresholds and undesirable results are defined on groundwater levels
+- **DWR categories:** Best management practices
+- **Body:**
+  Five of the six basins set ISW criteria on groundwater elevations — Merced
+  by carrying over its chronic-lowering thresholds rather than setting ISW-
+  specific ones. What counts as an undesirable result varies widely: any one
+  shallow well in Salinas Valley, half of a river's wells for two consecutive
+  falls in East Turlock, the same three of twelve wells for 24 months in
+  Colusa, and more than half the wells in two or more management zones in
+  Yolo. Kaweah has not defined a basin-wide undesirable result; its self-
+  described "placeholder" criteria set one flow threshold, on one reach of the
+  Lower Kaweah River.
+
+### ISW-GAP-4 `[card]` ‹config-routed: key_gaps.yml › isw-volume-unlinked›
+- **Title:** Depletion volumes are not tied to thresholds — or always to pumping
 - **DWR categories:** Data needs, Tool development opportunity
 - **Body:**
-  GSPs outline depletion attribution at the reach or zone scale, not for
-  individual wells. Some identify the missing input as exact well locations
-  and screen depths; basins either remedy it through a voluntary well registry
-  or note the missing depth records. The literature has introduced methods
-  that attribute depletion to specific wells, though they tend to
-  underestimate depletion — and using them would require well-level inputs
-  that may not currently be available.
+  Where a basin publishes a depletion volume, it neither sets nor tests a
+  threshold. Merced estimates 504,400 AFY of pumping-attributable depletion
+  and uses none of it in its criteria. Salinas Valley's 2020 volumetric
+  threshold of 69,700 AF/yr was net exchange from all causes; a later no-
+  pumping run put pumping's share at 8,400 AF/yr, and Amendment 1 replaced the
+  volume with a groundwater-level proxy. East Turlock's annual "depletion"
+  totals — including a 28,700 AF net gain on the San Joaquin — come from no
+  with-and-without-pumping comparison, so none is attributed to pumping.
 
-### ISW-GAP-3 `[card]` ‹config-routed: key_gaps.yml › isw-depths›
-- **Title:** Monitoring wells and pumping sit at different depths
-- **Issue type:** Missing data
+### ISW-GAP-5 `[card]` ‹config-routed: key_gaps.yml › isw-coverage›
+- **Title:** Monitoring networks differ in size and depth, and grow on grants
 - **DWR categories:** Data needs
 - **Body:**
-  Four basins monitor ISW mainly with shallow-aquifer wells, while in some
-  basins most pumping is deeper. Pumping below an aquitard may affect streams
-  more slowly and weakly but can still deplete them over time, and identifying
-  that connection takes long-term monitoring at each layer. Whether a well
-  reflects stream conditions depends on its groundwater level relative to the
-  stream and its distance from it. Basins manage the uncertainty by keeping
-  the ISW network to shallow wells, limiting ISW consideration to reaches
-  outside a mapped aquitard, or treating the shallow and intermediate zones as
-  connected.
-
-### ISW-GAP-4 `[card]` ‹config-routed: key_gaps.yml › isw-coverage›
-- **Title:** ISW monitoring coverage depends on grants
-- **Issue type:** Insufficient data
-- **DWR categories:** Data needs
-- **Body:**
-  ISW networks can be built from existing wells that meet depth and distance
-  criteria, or from wells judged representative of depletion and surrounding
-  groundwater levels. Turlock chooses monitoring wells by proximity and
-  availability for data collection; Kaweah details efforts to add streamflow
-  data and shallow, stream-adjacent monitoring. Some networks rely on very few
-  sites — as few as one usable well — some key reaches have few gages, and new
-  wells and gages depend on DWR's Technical Support Services, DWR Round 1
-  Implementation grants, or additional funds not yet secured.
-
-### ISW-GAP-5 `[card]` ‹config-routed: key_gaps.yml › isw-uncertainty›
-- **Title:** Uncertainty in depletion estimates goes unreported
-- **Issue type:** Communication
-- **DWR categories:** Best management practices
-- **Body:**
-  The literature treats calculating and communicating uncertainty in depletion
-  estimates as crucial, especially when a model is used beyond the conditions
-  it was built for. Kaweah reports depletion as a likelihood range and
-  publishes model calibration statistics. The other subbasins describe
-  uncertainty qualitatively in their GSPs.
+  The wells behind the groundwater-level proxy vary widely. Salinas Valley's
+  ISW network ran on one usable well for its entire evaluation period, after a
+  second proved to be screened beneath the aquitard; Colusa uses 12 near-
+  stream wells under 200 feet deep and Yolo 17 shallow wells across five
+  zones, while East Turlock's shallow network includes wells screened hundreds
+  of feet below the water table. Depth matters because pumping is often
+  deeper: in Salinas Valley essentially all of it is below the aquitard, a
+  link to the river no study has yet measured. New ISW wells and gages are
+  mostly grant-funded, and Colusa and Yolo list remedies without dates or
+  funding.
 
 ### ISW-GAP-6 `[card]` ‹config-routed: key_gaps.yml › isw-baselines›
-- **Title:** Thresholds anchored to drought, not ecological flow needs
-- **Issue type:** Management
+- **Title:** "Significant and unreasonable" is mostly anchored to the last drought
 - **DWR categories:** Best management practices
 - **Body:**
-  SGMA leaves the definition of "significant and unreasonable" depletion to
-  each GSA. Where thresholds are set, most are tied to conditions during a
-  recent drought. Yolo instead anchors its thresholds to a 1971–2018 record
-  that includes periods of disconnection, with the stated goal of maintaining
-  conditions experienced in the past and avoiding habitat degradation from the
-  current baseline. The California Environmental Flows Framework (CEFF) sets
-  flow criteria from ecological needs across five seasonal flow components,
-  and has been paired with groundwater sustainability efforts in at least one
-  case.
+  SGMA leaves the definition of significant and unreasonable depletion to each
+  GSA, and most reach for a recent drought: Fall 2015 groundwater levels in
+  East Turlock and Colusa (plus 10 feet of "operational flexibility" in
+  Colusa), and 2015 levels plus one foot in Salinas Valley. Kaweah is the
+  exception in kind, anchoring to streamflow rather than groundwater — low
+  flows below WY 2022 levels on one reach. Yolo sets its Upper Sacramento
+  thresholds 63–65 feet below its objectives to allow for expected cuts in
+  surface-water deliveries. The literature points to an ecological
+  alternative: flow criteria set from habitat needs, as in the California
+  Environmental Flows Framework.
 
-### ISW-GAP-7 `[card]` ‹config-routed: key_gaps.yml › isw-shared-streams›
-- **Title:** Depletion on streams shared between subbasins
-- **Issue type:** Management
+### ISW-GAP-7 `[card]` ‹config-routed: key_gaps.yml › isw-uncertainty›
+- **Title:** Uncertainty in depletion estimates is rarely quantified
 - **DWR categories:** Best management practices, Tool development opportunity
 - **Body:**
-  Streams often run through more than one subbasin. The Merced River runs
-  along the Merced–Turlock boundary, and each subbasin sets different criteria
-  for it. Colusa's streams also form or cross GSA and subbasin boundaries.
-  Turlock documents the difficulty of separating its pumping effects from its
-  neighbors' on shared rivers, and plans to improve its model and reassess its
-  ISW criteria and depletion estimates.
+  The literature treats reporting uncertainty alongside a depletion estimate
+  as essential. Kaweah is the one basin to do so numerically: its 1.4 cfs
+  estimate for the Lower Kaweah carries a 90% likelihood range from 100,000
+  Monte Carlo runs, and it publishes model calibration statistics. Colusa
+  labels its ISW conclusions provisional and the other basins describe
+  uncertainty in prose; none bounds a depletion volume. Merced's 2026 Rules
+  add a numeric uncertainty buffer — but to the groundwater-level trigger, not
+  to depletion.
+
 
 ## Across the six subbasins
 
@@ -661,97 +661,106 @@ reaches — not a score of program quality. "Not found" means not found in the
 reviewed documents, not that the practice does not exist. Colusa and Yolo hold no
 MLRP grant and are not rated; their programs are compared under topic 2.10 below.
 
-## Key gaps
+## Key findings
 
 ### MLRP-GAPS-EYEBROW `[eyebrow]`
-Key gaps
+Key findings
 
 ### MLRP-GAPS-LEDE `[lede]`
-Where repurposing programs, the literature, and the accounting fall short of one
-another — the central takeaways of this chapter.
+What the cross-basin comparison shows — each finding links to the
+subbasin-by-subbasin detail and the coded evidence behind it.
 
-> Each gap shows a big number, the issue type, its DWR category tags, the body,
-> and two links: **Compare across subbasins** (opens the matching topic below)
-> and **See the coded evidence** (filtered Findings Explorer). A sidebar index of
-> gap titles follows the reader on desktop.
+> Each finding shows a big number, its headline, its DWR category tags, the
+> body, and two links: **Compare across subbasins** (opens the matching topic
+> below) and **See the coded evidence** (filtered Findings Explorer). A sidebar
+> index of finding titles follows the reader on desktop.
 
-### MLRP-GAP-1 `[card]` ‹config-routed: key_gaps.yml › mlrp-savings-math›
-- **Title:** How is the water-savings math carried out?
-- **Issue type:** Water savings calculation
-- **DWR categories:** Data needs, Best management practices, Tool development opportunity
-- **Body:**
-  Basins handle water savings from land repurposing differently. Merced
-  monitors repurposing agreements quarterly and reports approximate
-  consumptive-use reductions — but found that some fallowed and transitioning
-  land kept transpiring from residual soil moisture and vegetation, so OpenET-
-  based reductions came in lower than expected. Turlock designates repurposed
-  land as Project Areas that are excluded from consumptive-use and ET tracking
-  altogether. Kaweah publishes no savings estimate for its MLRP projects, and
-  handles fallowed fields differently in each GSA: MKGSA replaces a fallowed
-  field's measured ET with 80% of precipitation, so net consumptive use is
-  zero and the field's full allocation can be used elsewhere or banked; GKGSA
-  does not debit verified fallowed land; EKGSA credits back excess ET. Salinas
-  Valley estimates fallowing savings in advance, from average crop and cover-
-  crop water use, for planning scenarios.
-
-### MLRP-GAP-2 `[card]` ‹config-routed: key_gaps.yml › mlrp-allocations›
-- **Title:** Where does a repurposed parcel's allocation go?
-- **Issue type:** Transferred allocations
-- **DWR categories:** Best management practices, Tool development opportunity
-- **Body:**
-  When a parcel enrolls in land repurposing, what happens to its pumping
-  allocation? GSAs answer according to their basin's circumstances. Turlock
-  temporarily rescinds the allocation while a landowner is enrolled in MLRP.
-  Merced lets landowners choose, at application, whether to forfeit their
-  groundwater allocation and any credits — and under its GSP, allocations that
-  are not forfeited can be transferred, combined across parcels, and carried
-  over to future years.
-- **Open questions:**
-  - Do enrolled parcels relinquish or retire their transitional water — and
-  what about the sustainable-yield allocation?
-  - Are landowners free to use those allocations elsewhere or transfer them to
-  other properties?
-  - If pumping rights are retired for the benefit of the basin, are landowners
-  compensated for them explicitly, or does the incentive payment cover the
-  value of relinquished credits?
-
-### MLRP-GAP-3 `[card]` ‹config-routed: key_gaps.yml › mlrp-beyond-water›
-- **Title:** How are benefits beyond water savings tracked?
-- **Issue type:** Non-water benefits
+### MLRP-GAP-1 `[card]` ‹config-routed: key_gaps.yml › mlrp-programs›
+- **Title:** Repurposing runs through several programs, each answering to a different agency
 - **DWR categories:** Data needs, Best management practices
 - **Body:**
-  The literature offers ways to measure groundwater benefits beyond water:
-  ecosystem services of groundwater-dependent ecosystems, groundwater targets
-  that support ecosystems, well-failure impacts of different management
-  regimes, and the water-quality and economic effects of retiring and
-  repurposing land in buffers around disadvantaged communities. These methods
-  may not fit neatly into GSA accounting systems. In practice, Merced scores
-  regional ecological benefits and proximity to disadvantaged communities at
-  application; Turlock prices MLRP practices differently according to their
-  anticipated benefits; and Salinas presented a literature-based method (Rohde
-  et al.) for identifying and monitoring GDEs, paired with CRAM field
-  assessment — while recognizing that these methods cannot causally link
-  groundwater management to GDE benefit.
-- **Sub-gap — Dust:**
-  GSA documents and the literature both recognize dust as a problem of land
-  retirement, and repurposing as a way to mitigate it. Across basins, dust is
-  named but not measured, treated as a landowner liability, named as an
-  unmeasured co-benefit, or not mentioned at all. The literature is light here
-  too: recent work quantifies fallowed-land dust risk regionally but stops
-  short of a per-parcel method tied to repurposing.
-- **Sub-gap — Community benefit measurement:**
-  The literature supplies methods ranging from overlays that attribute
-  recharge benefits to specific communities to groundwater-level conversions
-  that count domestic-well failures prevented. In practice, Merced screens by
-  a fixed proximity buffer with no scoring behind it; Turlock developed a
-  quantified buffer standard for schools that never reached its application,
-  implementation standards or monitoring plan; Salinas uses a qualitative
-  siting consideration around water quality and drinking-water-well access.
-- **Sub-gap — Monitoring vs. measurement:**
-  The literature's own MLRP tools are prospective — they describe projected
-  outcomes rather than verifying delivered ones. Of the documents analyzed,
-  Turlock's is the one real monitoring architecture, and it confirms only that
-  a project was built and persists, not how much benefit it produced.
+  Four subbasins hold Department of Conservation MLRP block grants of $8.89–10
+  million, but the grantee varies: a GSA in Merced, the subbasin in East
+  Turlock and Kaweah, and a regional non-GSA water management group in Salinas
+  Valley. Alongside them run GSA programs — Merced's fee-funded Phase 1 Land
+  Repurposing Program, which had repurposed 14,128 acres by WY 2025, and East
+  Turlock's three-year Incentivized Fallowing Program — and Kaweah also took
+  part in DWR's LandFlex, which idled land near at-risk domestic wells. In
+  every basin the activity that idles the most land sits outside MLRP, so
+  program results reach the groundwater accounting by different routes, if at
+  all.
+
+### MLRP-GAP-2 `[card]` ‹config-routed: key_gaps.yml › mlrp-goals›
+- **Title:** Repurposing goals are set in acre-feet, in acres, or not at all
+- **DWR categories:** Data needs, Best management practices
+- **Body:**
+  Merced commits to 25,911 AF of savings over five years and measured about
+  4,655 AF in WY 2025 — roughly 10% short on an annual basis. East Turlock
+  targets 21,000 acres, 3,880 more than its own suitability analysis could
+  locate; the difference is a "Miscellaneous Repurposing" placeholder carrying
+  19% of the headline water benefit. Kaweah's MLRP targets are acres only —
+  about 238 acres of recharge basins and 65 or more of habitat — with no water
+  figure, and Salinas Valley's repurposing action names a benefit type with no
+  quantity.
+
+### MLRP-GAP-3 `[card]` ‹config-routed: key_gaps.yml › mlrp-savings-math›
+- **Title:** Water savings are calculated after implementation, before it, or not at all
+- **DWR categories:** Data needs, Best management practices, Tool development opportunity
+- **Body:**
+  Merced measures savings after implementation, parcel by parcel, with OpenET
+  through its accounting platform — and found reductions lower than expected
+  because orchard trees and wet-year soil moisture kept transpiring. East
+  Turlock estimates savings once, beforehand (2.7 AF per acre from satellite
+  ET, revised to 2.9 with its groundwater model three months later), and
+  exempts enrolled parcels from ET measurement. Kaweah computes no savings
+  figure: a fallowed field simply stops being debited, and its three GSAs each
+  treat fallow land differently. The literature finds the ET-minus-
+  precipitation method least reliable on exactly the transitioning land these
+  programs create.
+
+### MLRP-GAP-4 `[card]` ‹config-routed: key_gaps.yml › mlrp-beyond-water›
+- **Title:** Benefits beyond water are named and scored, but rarely measured
+- **DWR categories:** Data needs, Best management practices
+- **Body:**
+  Every grantee basin names ecological, community and economic benefits, and
+  none measures a delivered outcome for them inside its repurposing program.
+  Merced scores benefits at application on a points rubric with no published
+  formula; East Turlock prices them — rewilding pays $410 per acre per year
+  more than extended fallowing for an identical water obligation, which makes
+  that difference the price of habitat. Salinas Valley holds the most rigorous
+  ecological method in the study, an annually repeatable vegetation threshold
+  for groundwater-dependent ecosystems, but it is unadopted and measures
+  groundwater depth rather than repurposing.
+
+### MLRP-GAP-5 `[card]` ‹config-routed: key_gaps.yml › mlrp-allocations›
+- **Title:** Each basin decides differently where a repurposed parcel's allocation goes
+- **DWR categories:** Best management practices, Tool development opportunity
+- **Body:**
+  In Merced, enrolled landowners choose whether to give up their allocation;
+  most keep it, and because idled land is neither debited nor reduced, the
+  allocation accumulates and can be carried over or transferred. East Turlock
+  rescinds the allocation of paid parcels for the agreement term, so a
+  landowner cannot be paid not to pump and keep the right to pump. Kaweah
+  leaves the allocation portable, even between GSAs, but scales a transfer
+  leave-behind by distance and has run pilot market auctions. Salinas Valley
+  has no allocation system yet; it buys or leases the land, removing the
+  pumper rather than regulating them.
+
+### MLRP-GAP-6 `[card]` ‹config-routed: key_gaps.yml › mlrp-siting›
+- **Title:** Parcels are chosen top-down by suitability analysis or bottom-up by landowner interest
+- **DWR categories:** Best management practices, Tool development opportunity
+- **Body:**
+  East Turlock sited its program with an auditable suitability analysis —
+  named stream buffers and slope thresholds over public datasets, ground-
+  truthed with aerial imagery — and Salinas Valley is building a recharge-
+  suitability and multi-criteria decision tool with UC Davis. MKGSA uses
+  Sustainable Conservation's Groundwater Recharge Assessment Tool to pursue
+  parcels for acquisition, though its plan declares the tool advisory. Merced
+  instead relies on landowner applications, scored on a rubric whose formula
+  and award threshold are unpublished; in Colusa and Yolo, repurposing-type
+  projects are proposed and run mostly by partners such as The Nature
+  Conservancy, districts and community groups.
+
 
 ## Across the six subbasins
 
@@ -815,99 +824,24 @@ the analysis would need.
 A farmworker in a wide-brimmed hat bent over inspecting rows of a green field
 crop.
 
-## S2 · Three kinds of equity + the threshold chain
+## S2 · Three kinds of equity + the threshold chain  *(removed 2026-10-28 — see section 10)*
 
-### COM-TRIAD-EYEBROW `[eyebrow]` *(new)*
-Three kinds of equity
-
-### COM-TRIAD-LEDE `[lede]` *(new)*
-Representation, procedure and distribution reinforce each other but do not
-substitute for one another — and the reviewed plans address them very unevenly.
-
-### COM-TRIAD-DESC `[figure-desc]`
-Three dimensions of equity. Representative equity asks who holds a seat and a
-vote. Procedural equity asks who can participate, appeal, understand and
-influence a decision. Distributional equity asks who bears the benefits, burdens
-and consequences. Across the reviewed subbasins the first two vary independently
-and the third is the least reported.
-
-### COM-TRIAD-REPRESENTATIVE `[card]`
-- **Title:** Representative
-- **Question:** Who has a seat, and a vote?
-- **Body:** Designated seats take three forms: a community category, agencies
-  that serve communities, and private pumpers. In Salinas Valley a
-  disadvantaged-community seat sits beside a supermajority rule that lets
-  agricultural directors block fees and pumping limits.
-
-### COM-TRIAD-PROCEDURAL `[card]`
-- **Title:** Procedural
-- **Question:** Who can participate, appeal, and understand?
-- **Body:** Standing, fees, appeal windows, stated reasons and language access
-  differ even between GSAs sharing one plan. Every technique the literature
-  recommends appears somewhere; no reviewed document describes compensating
-  participants.
-
-### COM-TRIAD-DISTRIBUTIONAL `[card]`
-- **Title:** Distributional
-- **Question:** Who bears the benefits and the burdens?
-- **Body:** Which households sit above a threshold that would dry their well. The
-  literature calls this the most computable of the three; no basin reports it by
-  community.
-
-### COM-HOUSEHOLD-H3 `[h3]` *(was COM-HOUSEHOLD-H2)*
-From a threshold to a household
-
-### COM-HOUSEHOLD-DESC `[figure-desc]`
-A five-stage chain from a groundwater threshold to a household consequence: the
-adopted threshold, the water level it permits, the depth of a domestic well, the
-expected household consequence, and the mitigation response. Exposure counts
-exist in three basins but none is reported by community, and most mitigation acts
-only after a household has lost water.
-
-### COM-HOUSEHOLD-01 `[card]`
-- **Label:** Groundwater threshold
-- **Note:** An adopted elevation below which an undesirable result is declared.
-
-### COM-HOUSEHOLD-02 `[card]`
-- **Label:** Water level permitted
-- **Note:** The decline the threshold allows before anything is triggered.
-
-### COM-HOUSEHOLD-03 `[card]`
-- **Label:** Well depth & vulnerability
-- **Note:** Every basin's domestic-well data traces to state well-completion
-  records — often missing screen depth.
-
-### COM-HOUSEHOLD-04 `[card]` *(dashed — the gap)*
-- **Label:** Expected household consequence
-- **Note:** Exposure counts exist in Colusa, Kaweah and (from advocates) East
-  Turlock. None is reported by community.
-
-### COM-HOUSEHOLD-05 `[card]`
-- **Label:** Mitigation response
-- **Note:** Most programs act after a household has lost water; Kaweah plans
-  advance notice to well owners.
-
-### COM-HOUSEHOLD-CAPTION `[caption]`
-Stage 4 is arithmetic over data every basin already holds. Skipping it keeps
-mitigation reactive rather than prospective.
-
-## Key gaps
+## Key findings
 
 ### COM-GAPS-EYEBROW `[eyebrow]`
-Key gaps
+Key findings
 
 ### COM-GAPS-LEDE `[lede]`
-Where community protections, the literature, and the accounting fall short of
-one another — the central takeaways of this chapter.
+What the cross-basin comparison shows — each finding links to the
+subbasin-by-subbasin detail and the coded evidence behind it.
 
-> Each gap shows a big number, the issue type, its DWR category tags, the body,
-> and two links: **Compare across subbasins** (opens the matching topic below)
-> and **See the coded evidence** (filtered Findings Explorer). A sidebar index of
-> gap titles follows the reader on desktop.
+> Each finding shows a big number, its headline, its DWR category tags, the
+> body, and two links: **Compare across subbasins** (opens the matching topic
+> below) and **See the coded evidence** (filtered Findings Explorer). A sidebar
+> index of finding titles follows the reader on desktop.
 
 ### COM-GAP-1 `[card]` ‹config-routed: key_gaps.yml › comm-domestic-wells›
 - **Title:** Domestic-well impacts are not reported by community
-- **Issue type:** Management and missing data
 - **DWR categories:** Data needs, Best management practices
 - **Body:**
   The literature finds that domestic wells inside disadvantaged communities
@@ -920,7 +854,6 @@ one another — the central takeaways of this chapter.
 
 ### COM-GAP-2 `[card]` ‹config-routed: key_gaps.yml › comm-advance-notice›
 - **Title:** Help arrives after the well fails
-- **Issue type:** Procedural · platform opportunity
 - **DWR categories:** Tool development opportunity
 - **Body:**
   Most dry-well programs reviewed provide support after a household loses
@@ -933,7 +866,6 @@ one another — the central takeaways of this chapter.
 
 ### COM-GAP-3 `[card]` ‹config-routed: key_gaps.yml › comm-benefit-unit›
 - **Title:** Community benefit has no unit
-- **Issue type:** Best practice
 - **DWR categories:** Best management practices
 - **Body:**
   Turlock's GSP records community benefit within MLRP management actions as an
@@ -946,7 +878,6 @@ one another — the central takeaways of this chapter.
 
 ### COM-GAP-4 `[card]` ‹config-routed: key_gaps.yml › comm-representation›
 - **Title:** A board seat is not decision authority
-- **Issue type:** Management · best practice
 - **DWR categories:** Best management practices
 - **Body:**
   The literature finds that formal board representation predicts equity-
@@ -959,7 +890,6 @@ one another — the central takeaways of this chapter.
 
 ### COM-GAP-5 `[card]` ‹config-routed: key_gaps.yml › comm-language›
 - **Title:** Language access is uneven
-- **Issue type:** Best practice · tool opportunity
 - **DWR categories:** Best management practices, Tool development opportunity
 - **Body:**
   Turlock introduced Spanish-language access for video-based SGMA
@@ -971,7 +901,6 @@ one another — the central takeaways of this chapter.
 
 ### COM-GAP-6 `[card]` ‹config-routed: key_gaps.yml › comm-water-quality›
 - **Title:** Water-quality thresholds cover few constituents
-- **Issue type:** Best practice and missing data
 - **DWR categories:** Data needs, Best management practices
 - **Body:**
   Basins differ in which constituents carry water-quality thresholds. Merced
@@ -985,7 +914,6 @@ one another — the central takeaways of this chapter.
 
 ### COM-GAP-7 `[card]` ‹config-routed: key_gaps.yml › comm-facing-info›
 - **Title:** Accounting platforms are built for growers
-- **Issue type:** Communication
 - **DWR categories:** Best management practices, Tool development opportunity
 - **Body:**
   Research on decision-driven data systems finds that different users need
@@ -999,6 +927,7 @@ one another — the central takeaways of this chapter.
   plans do not yet point residents to them. In Salinas, the Castroville
   Community Services District is quoted asking for more outreach and
   education, specifically about seawater intrusion.
+
 
 ## Across the six subbasins
 
@@ -1042,15 +971,8 @@ Study Area Map
 The six analysed California groundwater subbasins, their GSAs, major rivers, and
 MLRP block-grant regions.
 
-### MAP-H1 `[h1]`
-Study area
-
-### MAP-LEDE `[lede]` ‹= "Merced, East Turlock, Salinas Valley, Kaweah, Colusa and Yolo"›
-`{{< var basin_list >}}` — `{{< var active_basins_word >}}` subbasins chosen for contrast
-across the Sacramento Valley, San Joaquin Valley and Central Coast. Olive marks
-subbasins inside a Department of Conservation MLRP block-grant region. Select a
-subbasin for its agencies, setting and the sustainability indicators most
-prominent in the record.
+### MAP-H1 `[h1]` *(screen-reader only)*
+Study area map
 
 ### MAP-CAPTION `[caption]`
 Boundaries: DWR Bulletin 118 subbasins and SGMA Portal GSA boundaries. Rivers:
@@ -1224,7 +1146,7 @@ Explore Findings
 Search the coded policy and planning findings and the academic literature review
 behind the analysis.
 
-### FIND-H1 `[h1]`
+### FIND-H1 `[h1]` *(screen-reader only)*
 Explore Findings
 
 ### FIND-TAB-1 `[button]`
@@ -1787,3 +1709,6 @@ something here should come back.
 | `COM-TOOLS-*`, `CFG-TOOLS` | Community-tools list removed (its per-tool coverage was checked against three basins only) |
 | `MAP-INTRO`, `MAP-PLACEHOLDER`, `MAP-ROSTER-EYEBROW` | Map page rebuilt (`MAP-LEDE`, `MAP-PANEL-*`, `MAP-PROFILE-*`) |
 | `MTH-METHODS-WHY-BODY-2`, `CFG-BASIN-PLANNED` | No planned basins remain |
+| `COM-TRIAD-*`, `COM-HOUSEHOLD-*` | Community S2 (equity triad + threshold chain) removed so the page reaches its key findings sooner |
+| `MAP-LEDE` | Map page opens straight on the map |
+| `ISW-GAP-*` / `MLRP-GAP-*` **Issue type** lines and the old ISW/MLRP gap bodies | Key gaps → Key findings, rewritten from the Phase 2 synthesis |

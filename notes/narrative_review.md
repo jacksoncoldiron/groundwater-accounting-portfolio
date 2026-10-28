@@ -273,3 +273,28 @@ irrigated acreage (all six), population / DAC counts (all six). Logos were
 found for EKGSA, GKGSA, MKGSA and MCWD; the other GSAs show initials. The
 "sustainability indicators in focus" are a reading of the record, not an
 official designation — review each.
+
+## 2026-10-28 — Key gaps → key findings (ISW, MLRP)
+
+The ISW and MLRP chapter takeaways in `config/key_gaps.yml` were rewritten as
+**key findings** from `Phase2_CrossBasin_Synthesis.docx` (topics 1.1–1.8 and
+2.1–2.10), following the analyst's outline of seven ISW and six MLRP findings.
+Community findings are unchanged. Review before publishing:
+
+- **ISW-6 (drought anchoring).** The analyst's outline names Kaweah as the
+  exception. The synthesis (§1.2) lists Kaweah's WY 2022 low flows among the
+  drought anchors, so the copy frames Kaweah as the exception *in kind* (a
+  streamflow anchor, not a groundwater level) rather than as a non-drought
+  anchor. Confirm this reading.
+- **MLRP-1 (programs).** "DWR's LandFlex" names DWR as LandFlex's agency; the
+  synthesis names the program but not its administering agency.
+- **MLRP-6 (siting).** Draws on coded findings 131, 286, 618–619, 684 and
+  Colusa/Yolo §2.10 rather than a single synthesis topic; its "Compare across
+  subbasins" link points to topic 2.4.
+- Scope words to re-check whenever a basin is added: "all six", "five of the
+  six", "every grantee basin", "no basin", "in every basin".
+- The ISW findings on per-well attribution (§1.5) and shared streams were
+  dropped from the key-findings list; the comparison section below still
+  carries them.
+- Community S2 (equity triad and threshold → household chain) was removed
+  from the page at the analyst's request.

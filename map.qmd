@@ -10,13 +10,12 @@ page-layout: custom
 <main id="main">
 ```
 
-::: {.gw-wide .gw-section .gw-section--tight}
+::: {.gw-wide .gw-section .gw-section--map}
 
 ```{=html}
-<h1 class="gw-eyebrow">Study area</h1>
-<p class="gw-section-lede">{{< var basin_list >}} — {{< var active_basins_word >}} subbasins chosen for contrast across the Sacramento Valley, San Joaquin Valley and Central Coast. Olive marks subbasins inside a Department of Conservation MLRP block-grant region. Select a subbasin for its agencies, setting and the sustainability indicators most prominent in the record.</p>
+<h1 class="gw-visually-hidden">Study area map</h1>
 
-<div class="gw-studymap" id="study-map">
+<div class="gw-studymap gw-studymap--full" id="study-map" aria-label="Map of the {{< var active_basins_word >}} analyzed subbasins. Olive marks subbasins inside a Department of Conservation MLRP block-grant region; select a subbasin for its agencies, setting and indicators in focus.">
   <div class="gw-loading">Loading the map&hellip;</div>
 </div>
 <noscript><div class="gw-empty"><strong>The map needs JavaScript.</strong></div></noscript>

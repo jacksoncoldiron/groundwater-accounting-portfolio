@@ -9,22 +9,16 @@ page-layout: custom
 <main id="main">
 ```
 
-::: {.gw-wide .gw-section .gw-section--tight}
+::: {.gw-wide .gw-section .gw-section--flush #dataset-panels}
 
 ```{=html}
-<h1 class="gw-eyebrow">Explore Findings</h1>
+<h1 class="gw-visually-hidden">Explore Findings</h1>
 
 <div class="gw-dataset-switch" role="tablist" aria-label="Evidence collection">
   <button type="button" role="tab" data-db="policy" aria-selected="true">Policy &amp; Planning Findings</button>
   <button type="button" role="tab" data-db="literature" aria-selected="false">Literature Review</button>
 </div>
-```
 
-:::
-
-::: {.gw-wide .gw-section .gw-section--tight #dataset-panels}
-
-```{=html}
 <div id="panel-policy" class="gw-dataset-panel">
   <details class="gw-about">
     <summary>About these findings</summary>

@@ -1,10 +1,10 @@
 /* ==========================================================================
-   Key gaps — the marquee takeaways of each chapter.
+   Key findings — the marquee takeaways of each chapter.
    --------------------------------------------------------------------------
    Renders config/key_gaps.yml (via data/processed/key_gaps.json) into
    <div class="gw-gaps" data-chapter="isw">. Desktop: a sticky numbered index
-   beside the gap articles, highlighting the one being read. Phones: the index
-   collapses and the articles read as a plain stack. Each gap links to the
+   beside the finding articles, highlighting the one being read. Phones: the index
+   collapses and the articles read as a plain stack. Each finding links to the
    cross-basin comparison topic it draws on and to its filtered evidence.
    ========================================================================== */
 
@@ -20,10 +20,7 @@ function gapArticle(gap, i, categories) {
   art.append(
     el('div', { class: 'gw-gap__head' },
       el('span', { class: 'gw-gap__n', 'aria-hidden': 'true', text: pad(i + 1) }),
-      el('div', {},
-        el('p', { class: 'gw-gap__issue', text: gap.issue }),
-        el('h3', { class: 'gw-gap__t', id: `${id}-t` }, el('span', { class: 'gw-visually-hidden', text: `Gap ${i + 1}: ` }), gap.title),
-      ),
+      el('h3', { class: 'gw-gap__t', id: `${id}-t` }, el('span', { class: 'gw-visually-hidden', text: `Finding ${i + 1}: ` }), gap.title),
     ),
     el('ul', { class: 'gw-gap__cats', 'aria-label': 'DWR finding categories' },
       ...(gap.categories || []).map((c) => el('li', { class: `gw-gap__cat gw-gap__cat--${c}`, text: categories[c] || c }))),
@@ -59,7 +56,7 @@ const CHAPTERS = [
   { key: 'community', n: 3, title: 'Community', page: 'community.html' },
 ];
 
-// Overview: every chapter's gaps as one compact, linked index.
+// Overview: every chapter's key findings as one compact, linked index.
 function renderSummary(root, data) {
   root.classList.remove('gw-loading');
   root.replaceChildren(...CHAPTERS.filter((c) => data.chapters[c.key]?.length).map((c) =>
@@ -85,8 +82,8 @@ async function init() {
     const gaps = data.chapters[root.dataset.chapter] || [];
     root.classList.remove('gw-loading');
 
-    const index = el('nav', { class: 'gw-gaps__index', 'aria-label': 'Key gaps in this chapter' },
-      el('p', { class: 'gw-gaps__count', text: `${gaps.length} key gaps` }),
+    const index = el('nav', { class: 'gw-gaps__index', 'aria-label': 'Key findings in this chapter' },
+      el('p', { class: 'gw-gaps__count', text: `${gaps.length} key findings` }),
       el('ol', {}, ...gaps.map((g, i) => el('li', {},
         el('a', { href: `#gap-${g.id}`, 'data-step-link': g.id },
           el('span', { class: 'gw-gaps__in', text: pad(i + 1) }),

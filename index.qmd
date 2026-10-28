@@ -169,9 +169,9 @@ ways.
 ::: {.gw-wide}
 
 ```{=html}
-<h2 class="gw-eyebrow">Key gaps</h2>
-<p class="gw-section-lede">The central takeaways of the analysis: where the literature, the plans, and the accounting fall short of one another. Each opens in its chapter with the evidence behind it.</p>
-<div class="gw-gaps-summary gw-loading">Loading the key gaps&hellip;</div>
+<h2 class="gw-eyebrow">Key findings</h2>
+<p class="gw-section-lede">The central takeaways of the analysis, chapter by chapter. Each opens in its chapter with the subbasin detail and evidence behind it.</p>
+<div class="gw-gaps-summary gw-loading">Loading the key findings&hellip;</div>
 <script type="module" src="assets/js/key-gaps.js"></script>
 <p class="gw-caption">The {{< var active_basins_word >}} document sets are not equally complete. Across this site, "not found in reviewed documents" means exactly that — never that a practice does not exist.</p>
 ```
@@ -295,7 +295,7 @@ ways.
 <h2 class="gw-eyebrow">Go deeper</h2>
 ```
 
-Each chapter leads with its key gaps, then compares the subbasins topic by topic. The underlying evidence — all {{< var findings_total >}} findings and {{< var literature_total >}} papers — is searchable directly, each with its direct quotation and source location attached.
+Each chapter leads with its key findings, then compares the subbasins topic by topic. The underlying evidence — all {{< var findings_total >}} findings and {{< var literature_total >}} papers — is searchable directly, each with its direct quotation and source location attached.
 
 ```{=html}
 <p style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem">
