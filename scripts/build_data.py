@@ -28,8 +28,13 @@ import ingest_findings
 import ingest_literature
 import ingest_meetings
 import ingest_references
+import ingest_synthesis
+import ingest_mlrp_matrix
 import render_partials
+import yaml
+
 from common import (
+    ROOT,
     PROCESSED_DIR,
     BuildReport,
     active_basins,
@@ -189,9 +194,21 @@ def main() -> int:
                 )
                 return 1
 
+    # --- analyst synthesis (topic titles feed the findings section labels) --
+    print("\nCross-basin synthesis")
+    synthesis = ingest_synthesis.ingest(report, basin_registry)
+
+    # --- MLRP co-benefits matrix + key gaps (analyst-authored) --------------
+    print("\nMLRP benefits matrix and key gaps")
+    mlrp_matrix = ingest_mlrp_matrix.ingest(report, basin_registry)
+    with open(ROOT / "config" / "key_gaps.yml") as fh:
+        key_gaps = yaml.safe_load(fh)
+    report.note("Key gaps: " + ", ".join(
+        f"{ch} {len(items)}" for ch, items in key_gaps["chapters"].items()))
+
     # --- findings ---------------------------------------------------------
     print("\nPolicy & Planning Documents")
-    findings_out = ingest_findings.ingest(report, basin_registry)
+    findings_out = ingest_findings.ingest(report, basin_registry, synthesis["section_titles"])
     findings = findings_out["records"]
 
     # --- literature -------------------------------------------------------
@@ -277,6 +294,13 @@ def main() -> int:
             ),
         })
 
+    profiles_path = ROOT / "config" / "basin_profiles.yml"
+    profiles = yaml.safe_load(profiles_path.read_text()) if profiles_path.exists() else {}
+    for b in basins_public:
+        b["map_profile"] = (profiles.get("basins") or {}).get(b["id"])
+        src = next((x for x in basin_registry["basins"] if x["id"] == b["id"]), {})
+        b["b118_number"] = src.get("b118_number")
+
     streams_public = [{
         "id": s["id"],
         "name": s["name"],
@@ -309,6 +333,7 @@ def main() -> int:
         "source_files": [
             "source_materials/Phase2_Findings.xlsx",
             "source_materials/Literature_Review_DesktopAnalysis_Results.xlsx",
+            "source_materials/Phase2_CrossBasin_Synthesis.docx",
         ],
     }
 
@@ -324,12 +349,22 @@ def main() -> int:
         "facets": literature_out["facets"],
     })
     write_json("comparison.json", comparison)
+    write_json("mlrp_matrix.json", mlrp_matrix)
+    write_json("key_gaps.json", key_gaps)
+    write_json("synthesis.json", {
+        "schema_version": SCHEMA_VERSION,
+        "basin_order": [b["id"] for b in actives],
+        "chapters": synthesis["chapters"],
+    })
     write_json("reference_context.json", {
         "tools": consolidated["tools"],
         "literature_gaps": consolidated["literature_gaps"],
     })
-    write_json("basins.json", {"basins": basins_public,
-                               "gsa_labels": basin_registry.get("gsa_labels", {})})
+    write_json("basins.json", {
+        "basins": basins_public,
+        "gsa_labels": basin_registry.get("gsa_labels", {}),
+        "profile_sources": profiles.get("sources", {}),
+    })
     write_json("evidence_streams.json", {"streams": streams_public})
     write_json("stats.json", stats)
     write_json("manifest.json", manifest)

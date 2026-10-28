@@ -193,8 +193,15 @@ async function init() {
       param: 'section', legend: 'Section',
       options: Object.values(facets.sections).flat()
         .map((s) => ({ value: s.value, label: s.value, count: s.count }))
-        .sort((a, b) => a.value.localeCompare(b.value)),
+        .sort((a, b) => a.value.localeCompare(b.value, undefined, { numeric: true })),
       match: (r, sel) => sel.has(r.section),
+    },
+    {
+      // Set only by deep links from chapter graphics (e.g. a matrix cell's
+      // cited findings); never shown as a control.
+      param: 'ids', legend: 'Cited findings', hidden: true,
+      options: [],
+      match: (r, sel) => sel.has(r.row_id),
     },
     {
       param: 'gsa', legend: 'GSA or scope', advanced: true,
@@ -269,7 +276,7 @@ async function init() {
       {
         value: 'chapter', label: 'Chapter and section',
         compare: (a, b) => (a.chapter || '').localeCompare(b.chapter || '')
-          || (a.section || '').localeCompare(b.section || '')
+          || (a.section || '').localeCompare(b.section || '', undefined, { numeric: true })
           || Number(a.row_id) - Number(b.row_id),
       },
     ],

@@ -13,6 +13,7 @@ Contract:
 
 from __future__ import annotations
 
+import re
 from collections import Counter, defaultdict
 from typing import Any
 
@@ -152,7 +153,7 @@ def _document_registry(path, report: BuildReport) -> dict[str, dict]:
     return registry
 
 
-def ingest(report: BuildReport, basin_registry: dict) -> dict[str, Any]:
+def ingest(report: BuildReport, basin_registry: dict, section_titles: dict | None = None) -> dict[str, Any]:
     path = resolve_source(SOURCE_CANDIDATES)
     report.note(f"Findings source: {path.name}")
 
@@ -216,7 +217,8 @@ def ingest(report: BuildReport, basin_registry: dict) -> dict[str, Any]:
         finding = clean_multiline(row.get("Finding"))
         quote = clean_multiline(row.get("Direct Quote"))
         notes = clean_multiline(row.get("Notes"))
-        section = clean(row.get("Section"))
+        section_source = clean(row.get("Section"))
+        section = canonical_section(section_source, section_titles or {})
         subsection = clean(row.get("Subsection"))
         chapter = clean(row.get("Chapter"))
         lit_gap = clean_multiline(row.get("Lit Review Question/Gap Addressed"))
@@ -236,7 +238,8 @@ def ingest(report: BuildReport, basin_registry: dict) -> dict[str, Any]:
             # location in the coding frame
             "chapter": chapter,
             "chapter_slug": slugify(chapter),
-            "section": section,
+            "section": section,                # canonical "1.5 Title" label
+            "section_source": section_source,  # original workbook string
             "section_slug": slugify(section),
             "subsection": subsection,          # the cross-basin comparison key
             "subsection_slug": slugify(subsection),
@@ -286,8 +289,50 @@ def ingest(report: BuildReport, basin_registry: dict) -> dict[str, Any]:
             + ("..." if len(unmatched_docs) > 3 else "")
         )
 
+    # A bare section number ("2.11") borrows the label another row gave the
+    # same number ("2.11 Caveats"), so each section filters as one value.
+    labelled = {}
+    for r in records:
+        m = _SECTION_NUM.match(r["section"] or "")
+        if m and m.group(2):
+            labelled.setdefault(m.group(1), r["section"])
+    for r in records:
+        if r["section"] in labelled:
+            r["section"] = labelled[r["section"]]
+            r["section_slug"] = slugify(r["section"])
+
     records.sort(key=lambda r: int(r["row_id"]))
     return {"records": records, "facets": _facets(records, basin_registry)}
+
+
+_SECTION_NUM = re.compile(r"^(\d+\.\d+(?:\.\d+)?)\b\s*(.*)$")
+
+
+def canonical_section(raw: str | None, titles: dict) -> str | None:
+    """One label per coded section.
+
+    The workbook writes the same section several ways ("1.5", "1.5 Per-well
+    Attribution...", "DATA SOURCES"). The explorer filter needs one value per
+    section, so the processed layer keys on the section number and labels it
+    with the synthesis heading. The original string is kept in
+    `section_source`.
+    """
+    if not raw:
+        return None
+    m = _SECTION_NUM.match(raw)
+    if m:
+        number, rest = m.group(1), m.group(2).strip()
+        title = titles.get(number) or rest
+        return f"{number} {title}".strip()
+    return raw.title() if raw.isupper() else raw
+
+
+def _section_sort(label: str):
+    """Numbered sections in numeric order (2.2 before 2.10), unnumbered last."""
+    m = _SECTION_NUM.match(label or "")
+    if not m:
+        return (1, (), label)
+    return (0, tuple(int(p) for p in m.group(1).split(".")), label)
 
 
 def _facets(records: list[dict], basin_registry: dict) -> dict:
@@ -332,7 +377,7 @@ def _facets(records: list[dict], basin_registry: dict) -> dict:
     return {
         "chapters": chapters,
         "sections": {
-            ch: [{"value": v, "count": c} for v, c in sorted(counts.items())]
+            ch: [{"value": v, "count": c} for v, c in sorted(counts.items(), key=lambda kv: _section_sort(kv[0]))]
             for ch, counts in sections_by_chapter.items()
         },
         "basins": basins,

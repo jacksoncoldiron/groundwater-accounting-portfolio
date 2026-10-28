@@ -49,9 +49,7 @@ and what happens to the more sophisticated numbers that do not.
 
 ### Why these subbasins
 
-{{< var basin_list >}} were selected for contrast rather than representativeness. Two sit in the San Joaquin Valley and share an accounting platform; the third sits on the Central Coast with different hydrogeology, a different governance structure, and a land repurposing grant held outside the groundwater agency. The differences are what make the comparison informative.
-
-{{< var planned_basin_list >}} are registered as near-term additions. No evidence from either has been reviewed, and neither contributes to any count, comparison, or conclusion on this site.
+{{< var basin_list >}} were selected for contrast rather than representativeness. They span the Sacramento Valley, the San Joaquin Valley and the Central Coast, and differ in plan structure — one joint GSP (Merced, Turlock, Colusa), three GSPs under a coordination agreement (Kaweah), one GSP adopted by partner agencies (Salinas Valley), and a single GSA (Yolo). Four are covered by a Department of Conservation MLRP block grant; Colusa and Yolo are not. The differences are what make the comparison informative.
 
 ### Document collection and desktop review
 
@@ -77,14 +75,16 @@ quotation and the section or page it came from. Findings were classified as
 **positive**, **absence**, or **ambiguous**, and rated for relevance to a
 groundwater accounting platform and to DWR recommendations.
 
-Quotations were checked against the source document where a quotation exists; {{< var quotes_verified >}} are marked verified.
+Extraction was AI-assisted: a language model was given the question outline and the documents, with instructions to answer each question with a direct quotation and citation. The analyst then checked quotations against the source documents for every subbasin — {{< var quotes_verified >}} are marked verified — and wrote the synthesis and key gaps from the coded findings. A verified quotation is accurate to its source; whether it fully answers the question it is attached to was reviewed but is not guaranteed for every row.
 
 ### Cross-basin comparison
 
-The comparison is structural rather than interpretive. The same {{< var comparison_questions_total >}} questions were put to each subbasin's document set; {{< var comparison_questions_all_basins >}} of them were answered for all three, and {{< var comparison_questions_multi_basin >}} for two or more. A comparison row is one of those questions, and a cell is what that basin's documents actually said.
+The same outline of chapters, sections and questions was put to each subbasin's document set. The cross-basin synthesis then works topic by topic: what the literature says, what each subbasin's documents say (with document and page citations), a comparison across subbasins, and the gap the topic surfaces. The chapter pages present that synthesis directly; the key gaps distil it.
 
 **No maturity score, traffic light, or ranking is assigned anywhere on this
-site.** A cell reports the coded finding type and nothing more.
+site.** The one ordinal scale — the land repurposing matrix's measurement
+states — describes how far quantification reaches for a benefit, as rated by
+the analyst, not how good a program is.
 
 ### How to read an absence
 
@@ -157,7 +157,7 @@ preserves that difference; a reader comparing cells across a row should too.
 
 #### Comparisons rest on different numbers of basins
 
-Not every question was coded for every subbasin. {{< var comparison_questions_all_basins >}} of {{< var comparison_questions_total >}} questions were answered for all three; several comparisons rest on two. Where a question was not coded for a basin the site says exactly that, and does not treat it as an absence.
+Not every topic applies to every subbasin. Colusa and Yolo hold no MLRP grant, so most land repurposing topics compare four basins. Several community comparisons rest on fewer, because the equivalent instruments — a rulebook, a comment-response matrix, a periodic evaluation — were not available for every basin. Where a basin is not covered, the site says so rather than treating it as an absence.
 
 #### This is a desktop analysis
 
@@ -174,10 +174,10 @@ several of the findings here turn on facts that are explicitly dated.
 
 #### Spatial data is not part of this analysis
 
-No geographic analysis was performed. Maps on this site are contextual and
-authored separately in ArcGIS Online. Land repurposing project locations in
-particular are documented inconsistently across the three subbasins, which is
-itself recorded as a limitation rather than smoothed over.
+No geographic analysis was performed. The map uses public DWR and USGS
+layers for orientation only. Land repurposing project locations in particular
+are documented inconsistently across the subbasins, which is itself recorded
+as a limitation rather than smoothed over.
 
 :::
 :::

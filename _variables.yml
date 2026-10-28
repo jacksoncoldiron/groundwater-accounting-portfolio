@@ -1,26 +1,26 @@
-absence_findings: '103'
-active_basins: '3'
-active_basins_word: three
+absence_findings: '226'
+active_basins: '6'
+active_basins_word: six
 active_stream_list: Policy & Planning Documents and Academic Literature
 active_streams: '2'
-ambiguous_findings: '22'
-basin_list: Merced, East Turlock and Salinas Valley
-build_date: '2026-09-11'
-community_findings: '115'
-comparison_questions_all_basins: '27'
-comparison_questions_multi_basin: '46'
-comparison_questions_total: '68'
-documents_total: '33'
-findings_total: '325'
-isw_findings: '102'
-literature_total: '58'
-literature_with_doi: '50'
-mlrp_findings: '108'
-planned_basin_list: Colusa and Yolo
-planned_basins: '2'
-positive_findings: '200'
-quotes_verified: '221'
+ambiguous_findings: '54'
+basin_list: Merced, East Turlock, Salinas Valley, Kaweah, Colusa and Yolo
+build_date: '2026-10-28'
+community_findings: '243'
+comparison_questions_all_basins: '0'
+comparison_questions_multi_basin: '57'
+comparison_questions_total: '402'
+documents_total: '69'
+findings_total: '687'
+isw_findings: '211'
+literature_total: '61'
+literature_with_doi: '52'
+mlrp_findings: '233'
+planned_basin_list: ''
+planned_basins: '0'
+positive_findings: '407'
+quotes_verified: '519'
 report_url: REPORT_DOWNLOAD_URL
-sections_total: '34'
+sections_total: '41'
 tools_checked: '9'
 tools_checked_word: nine

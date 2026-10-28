@@ -1,10 +1,7 @@
 ---
 pagetitle: "Interconnected Surface Water"
-description: "How information moves from pumping, through hydrologic response and modelling, to a sustainability threshold and a management decision."
+description: "How information moves from pumping, through hydrologic response and modelling, to a sustainability threshold and a management decision — compared across six California subbasins."
 page-layout: custom
-editor: 
-  markdown: 
-    wrap: 72
 ---
 
 ```{=html}
@@ -12,85 +9,67 @@ editor:
 <main id="main">
 ```
 
-:::::: {.gw-page .gw-section .gw-section--tight}
+::::: {.gw-page .gw-section .gw-section--tight}
 ```{=html}
 <p class="gw-eyebrow">Chapter 1 · Interconnected Surface Water</p>
-```
-
 <div class="gw-chapter-head gw-chapter-head--isw">
-
+```
 {{< include _partials/chapter-icon-isw.html >}}
-
 ```{=html}
 <h1 class="gw-chapter-title">How does a pumping impact become a management decision?</h1>
 </div>
 ```
 
-::::: gw-chapter-intro
-:::: gw-chapter-intro__body
+:::: gw-chapter-intro
+::: gw-chapter-intro__body
 ::: gw-prose
-Interconnected surface water is one of the biggest challenges for
-accounting under SGMA. Pumping groundwater affects depletion of a
-stream, either by drawing water from the surface water directly or
-intercepting the water that would feed into the stream. The effects are
-usually lagged and highly dependent on the material and properties of
-the aquifer system, which are usually inferred rather than observed.
+Pumping groundwater near a stream depletes it — by drawing surface water
+into the aquifer or by intercepting groundwater that would have fed the
+stream. The effect is lagged and depends on aquifer properties that are
+usually inferred rather than observed, which makes interconnected surface
+water (ISW) one of the hardest quantities to account for under SGMA.
 
-Tracking this phenomenon and turning it into compliance takes a chain of
-steps — the most important link being where measurement stops and
-accounting begins.
-
-All {{< var active_basins_word >}} subbasins run numerical
-groundwater–surface water models, and all three produce a depletion
-figure attributable to pumping. However, in each case the compliance
-loop is connected to a groundwater-level proxy and not the depletion
-figure.
+All {{< var active_basins_word >}} subbasins run a numerical
+groundwater–surface water model, and none uses model output directly as
+its compliance measure. Compliance runs instead on groundwater levels or
+streamflow at monitoring sites — a proxy for the depletion itself.
 :::
-::::
+:::
 
 ```{=html}
 <figure class="chapter-photo chapter-photo--water">
   <div class="chapter-photo__frame">
     <img src="assets/photos/optimized/isw-sjr.jpg" alt="Aerial view of a wide, braided river channel winding through an irrigated valley at dawn." style="object-position: 50% 45%" loading="lazy">
   </div>
-  <figcaption class="chapter-photo__cap">
-    <span class="chapter-photo__cap-rule" aria-hidden="true"></span>
-    <span class="chapter-photo__cap-label">Interconnected Surface Water</span>
-  </figcaption>
 </figure>
 ```
+::::
 :::::
-::::::
 
-:::: {.gw-band}
+:::: {.gw-band .gw-band--blue}
 ::: gw-wide
 ```{=html}
-<h2 class="gw-eyebrow">1.1 The Accounting Lifecycle</h2>
-<p class="isw-lede">Scroll to see how the accounting chain operates for interconnected surface water — and where that chain breaks down.</p>
+<h2 class="gw-eyebrow">The accounting chain</h2>
+<p class="gw-section-lede">Seven steps connect a pumping well to a management decision. The chain holds through modelling — and breaks where compliance switches to a proxy.</p>
 
-<section class="isw-scrolly" aria-label="The interconnected surface water accounting chain, step by step">
-  <div class="isw-stage">
-    <div class="isw-scene">
-      <div class="isw-figure-col">
-        <figure class="gw-figure isw-figwrap">
-          <p id="isw-plate-summary" class="gw-sr-summary">
+<section class="gw-steps-scene isw-scene" data-scroll-steps aria-label="The interconnected surface water accounting chain, step by step">
+  <div class="gw-steps-scene__figure">
+    <figure class="gw-figure isw-figwrap" data-follow>
+      <p id="isw-plate-summary" class="gw-sr-summary">
             A shallow cutaway of a stream and the ground beneath it. A thick band
             of vegetation sits over a thicker band of brown sediment; below them
             is one continuous saturated aquifer. The boundary between the brown
             sediment and the blue aquifer is the water table. A broad, shallow
             stream sits in a low bowl on the left, and the water table meets it,
             so shallow groundwater and the stream are one connected system. A
-            wide monitoring well stands beside the stream; a wider, deeper
-            pumping well stands away from it. Pumping pulls the water table down
-            into a cone of depression around the pumping well and reduces the
-            groundwater that would otherwise reach the stream; the gap from the
-            pre-pumping water table is the stream depletion attributable to
-            pumping. A numerical model produces that depletion volume, but the
-            compliance test is run instead on measured groundwater elevation at
-            the monitoring well — a proxy — checked against a threshold. That
-            substitution, from modelled depletion to groundwater-level proxy, is
-            where the chain breaks. Steps one and two are the physical response;
-            the rest are the accounting chain.
+            monitoring well stands beside the stream; a deeper pumping well
+            stands away from it. Pumping pulls the water table down into a cone
+            of depression and reduces the groundwater that would otherwise reach
+            the stream; the gap from the pre-pumping water table is the stream
+            depletion attributable to pumping. A model can estimate that
+            depletion, but the compliance test runs instead on a groundwater
+            level at the monitoring well — a proxy — checked against a
+            threshold. That substitution is where the chain breaks.
           </p>
 
           <svg class="isw-svg" viewBox="0 0 648 430" role="img" aria-labelledby="isw-fig-title isw-plate-summary" xmlns="http://www.w3.org/2000/svg">
@@ -247,236 +226,85 @@ figure.
             <text x="256" y="140" font-size="13" font-style="italic" fill="#eef2f4">Water table</text>
             <text x="252" y="352" font-size="15" fill="#e9eff2">Saturated aquifer</text>
           </svg>
-        </figure>
-      </div>
-
-      <div class="isw-rail">
-        <div class="isw-rail__phase" aria-hidden="true">
-          <span class="isw-rail__phase-label" data-for="physical">Physical response</span>
-          <span class="isw-rail__phase-label" data-for="accounting">Accounting chain</span>
-        </div>
-        <ol class="isw-rail__track">
-          <li class="isw-rail__step" data-stage="pumping">
-            <span class="isw-rail__n">01</span>
-            <h3 class="isw-rail__t">Pumping</h3>
-            <p class="isw-rail__d">Wells pump at different depths, and models see averaged demand rather than individual wells.</p>
-          </li>
-          <li class="isw-rail__step" data-stage="response">
-            <span class="isw-rail__n">02</span>
-            <h3 class="isw-rail__t">Hydrologic response</h3>
-            <p class="isw-rail__d">The water table falls and less groundwater reaches the stream, lagged and attenuated.</p>
-          </li>
-          <li class="isw-rail__step" data-stage="model">
-            <span class="isw-rail__n">03</span>
-            <h3 class="isw-rail__t">Measurement &amp; model</h3>
-            <p class="isw-rail__d">A numerical groundwater–surface-water model estimates the stream depletion.</p>
-          </li>
-          <li class="isw-rail__step" data-stage="attribution">
-            <span class="isw-rail__n">04</span>
-            <h3 class="isw-rail__t">Attribution</h3>
-            <p class="isw-rail__d">Model runs with and without pumping isolate its share — at basin or reach scale, never per well.</p>
-          </li>
-          <li class="isw-rail__break" data-stage="_break">
-            <span class="isw-rail__break-label">Chain breaks</span>
-            <p>Measurement and modelling stop here, and compliance switches to a groundwater-level proxy.</p>
-          </li>
-          <li class="isw-rail__step" data-stage="threshold">
-            <span class="isw-rail__n">05</span>
-            <h3 class="isw-rail__t">Sustainability threshold</h3>
-            <p class="isw-rail__d">The threshold tracks groundwater elevation at wells — a proxy, not the modelled volume.</p>
-          </li>
-          <li class="isw-rail__step" data-stage="compliance">
-            <span class="isw-rail__n">06</span>
-            <h3 class="isw-rail__t">Accounting &amp; compliance</h3>
-            <p class="isw-rail__d">The compliance test runs on that proxy, checked against the threshold.</p>
-          </li>
-          <li class="isw-rail__step" data-stage="management">
-            <span class="isw-rail__n">07</span>
-            <h3 class="isw-rail__t">Management response</h3>
-            <p class="isw-rail__d">A declared result brought no management consequence, and the loop back to pumping stays weak.</p>
-          </li>
-        </ol>
-      </div>
-    </div>
+    </figure>
+    <p class="isw-phase" aria-hidden="true"><span data-for="physical">Physical response</span><span data-for="accounting">Accounting chain</span></p>
   </div>
+
+  <ol class="gw-steps-scene__steps">
+    <li class="gw-step" data-step="pumping" data-phase="physical">
+      <span class="gw-step__n">01</span>
+      <h3 class="gw-step__t">Pumping</h3>
+      <p>Wells pump at different depths. Models see averaged demand spread across grid cells, not individual wells.</p>
+    </li>
+    <li class="gw-step" data-step="response" data-phase="physical">
+      <span class="gw-step__n">02</span>
+      <h3 class="gw-step__t">Hydrologic response</h3>
+      <p>The water table falls and less groundwater reaches the stream — lagged, attenuated, and mixed with every other driver of streamflow.</p>
+    </li>
+    <li class="gw-step" data-step="model" data-phase="accounting">
+      <span class="gw-step__n">03</span>
+      <h3 class="gw-step__t">Measurement &amp; model</h3>
+      <p>Every basin runs a numerical model. Three report a pumping-attributable estimate; three report net stream–aquifer exchange from all causes and call it depletion.</p>
+    </li>
+    <li class="gw-step" data-step="attribution" data-phase="accounting">
+      <span class="gw-step__n">04</span>
+      <h3 class="gw-step__t">Attribution</h3>
+      <p>Runs with and without pumping isolate pumping's share — at basin, reach or zone scale. No basin attributes depletion to individual wells.</p>
+    </li>
+    <li class="gw-step gw-step--break" data-step="break" data-phase="accounting">
+      <span class="gw-step__n">✕</span>
+      <h3 class="gw-step__t">The chain breaks</h3>
+      <p>Modelled depletion stops here. Compliance switches to a groundwater-level or streamflow proxy, and no basin sets a threshold on a depletion volume.</p>
+    </li>
+    <li class="gw-step" data-step="threshold" data-phase="accounting">
+      <span class="gw-step__n">05</span>
+      <h3 class="gw-step__t">Sustainability threshold</h3>
+      <p>Five basins set ISW thresholds on groundwater elevations, mostly anchored to a recent drought; Kaweah sets a flow criterion on one reach.</p>
+    </li>
+    <li class="gw-step" data-step="compliance" data-phase="accounting">
+      <span class="gw-step__n">06</span>
+      <h3 class="gw-step__t">Accounting &amp; compliance</h3>
+      <p>The compliance test runs on that proxy. By the agencies' own account, it cannot separate a pumping effect from a dry year or reservoir operations.</p>
+    </li>
+    <li class="gw-step" data-step="management" data-phase="accounting">
+      <span class="gw-step__n">07</span>
+      <h3 class="gw-step__t">Management response</h3>
+      <p>Where undesirable results were declared — East Turlock and Salinas Valley — no management consequence followed. The loop back to pumping stays weak.</p>
+    </li>
+  </ol>
 </section>
-<script type="module" src="assets/js/isw-figure.js"></script>
+<script type="module" src="assets/js/scroll-steps.js"></script>
 ```
 :::
 ::::
 
-:::: {.gw-wide .gw-section}
+:::: {.gw-wide .gw-section #key-gaps}
 ```{=html}
-<h2 class="gw-eyebrow">1.2 Key Findings</h2>
-<div class="gw-pinned gw-pinned--keyfindings" data-pinned style="--runway: 370vh">
-  <div class="gw-pinned__stage">
-    <span class="gw-pinned__num" aria-hidden="true">01</span>
-    <div class="gw-pinned__viewport">
-      <ol class="gw-pinned__track">
-        <li class="gw-pinned__step" data-num="01">
-          <h3>Per-well attribution stays out of reach</h3>
-          <p>Research has revealed remedies for the per-well attribution problem,
-          but the basins remain at basin- or reach-scale attribution. So far there
-          is no documentation of agencies applying, testing, or citing these
-          methods.</p>
-        </li>
-        <li class="gw-pinned__step" data-num="02">
-          <h3>Depth-specific interconnection is only partly measured</h3>
-          <p>To handle different depletion rates from wells at different depths,
-          the literature recommends using multiple methods together, especially
-          nested wells at different depths. The basins have yet to fully close the
-          gap between where interconnection is measured and where pumping happens.
-          East Turlock comes closest, using nested wells to describe conditions at
-          varying depths.</p>
-        </li>
-        <li class="gw-pinned__step" data-num="03">
-          <h3>Modeled output and uncertainty do not reach the decision</h3>
-          <p>The literature flags the importance of both turning modeled output
-          into management decisions and communicating uncertainty. The basins run
-          a compliance loop that relies on groundwater-level proxies, and they do
-          not yet adequately communicate numerical uncertainty for their ISW
-          figures.</p>
-        </li>
-        <li class="gw-pinned__step" data-num="04">
-          <h3>[NEEDS COPY — key finding 4]</h3>
-          <p>Placeholder. Add a fourth cross-basin gap from the synthesis.</p>
-        </li>
-        <li class="gw-pinned__step" data-num="05">
-          <h3>[NEEDS COPY — key finding 5]</h3>
-          <p>Placeholder. Add a fifth cross-basin gap from the synthesis.</p>
-        </li>
-      </ol>
-    </div>
-    <div class="gw-pinned__progress" role="group" aria-label="Jump to item">
-      <button type="button" class="gw-pinned__dot" aria-label="Finding 1"></button>
-      <button type="button" class="gw-pinned__dot" aria-label="Finding 2"></button>
-      <button type="button" class="gw-pinned__dot" aria-label="Finding 3"></button>
-      <button type="button" class="gw-pinned__dot" aria-label="Finding 4"></button>
-      <button type="button" class="gw-pinned__dot" aria-label="Finding 5"></button>
-    </div>
-  </div>
-</div>
-<script type="module" src="assets/js/pinned-scene.js"></script>
+<h2 class="gw-eyebrow">Key gaps</h2>
+<p class="gw-section-lede">Where the reviewed plans, the literature, and the accounting fall short of one another — the central takeaways of this chapter.</p>
+<div class="gw-gaps gw-loading" data-chapter="isw">Loading the key gaps&hellip;</div>
+<script type="module" src="assets/js/key-gaps.js"></script>
 ```
 ::::
 
-::::: {.gw-wide .gw-section}
+:::: {.gw-band #compare}
+::: gw-wide
 ```{=html}
-<h2 class="gw-eyebrow">1.3 Breakdown by Subbasin</h2>
+<h2 class="gw-eyebrow">Across the {{< var active_basins_word >}} subbasins</h2>
+<p class="gw-section-lede">Topic by topic, how each subbasin's documents handle interconnected surface water — with the cross-basin read first and the citations kept.</p>
+<div class="gw-compare gw-loading" data-chapter="isw">Loading the comparison&hellip;</div>
+<script type="module" src="assets/js/synthesis.js"></script>
 ```
-
-::: gw-prose
-## Where each subbasin's documents are clear, ambiguous, or silent
-
-Every entry is a question the analysis put to that subbasin's document
-set, reporting what the documents actually said — as a coded finding
-type, never as a score. Selecting an entry opens the evidence behind it.
 :::
-
-```{=html}
-<div class="gw-breakdown gw-loading" id="isw-breakdown" data-chapter="1. ISW">Loading the subbasin breakdown&hellip;</div>
-<script type="module" src="assets/js/breakdown.js"></script>
-```
-
-::: gw-caption
-A stage marked **not found in reviewed documents** means the analyst
-searched that basin's document set and did not find it — not that the
-practice does not exist. Document sets are not equally complete.
-:::
-
-:::::
-
-::::: {.gw-band .gw-band--dark}
-:::: gw-page
-```{=html}
-<h2 class="gw-eyebrow" style="color:var(--sand)">1.4 Connection to Accounting</h2>
-```
-
-::: gw-prose
-### Implementing findings into the Groundwater Accounting Platform
-
-A platform that reports a modelled depletion volume is reporting a
-number no basin currently uses to decide anything. A platform that
-reports the groundwater-level proxy is reporting the operative quantity
-— but one that, by the agencies' own account, cannot separate depletion
-caused by pumping from depletion caused by a dry year or by upstream
-reservoir operations.
-
-The literature has built tools for the missing step: methods that rank
-individual wells by their effect on streamflow, and methods that
-attribute depletion to specific wells. None appears in the reviewed
-document sets.
-:::
-
-```{=html}
-<!-- PLACEHOLDER treatment. Beyond the two contrast cards below, richer options
-     to workshop: an interactive toggle between "reported now" and "not
-     separable"; a small decision diagram; a per-finding "what the platform
-     would need to add" list that links into filtered findings. -->
-<div class="gw-contrast">
-  <div class="gw-contrast__card gw-contrast__card--now">
-    <h3>What a platform reports now</h3>
-    <p>The groundwater-level proxy — the operative compliance quantity in every
-    reviewed basin.</p>
-  </div>
-  <div class="gw-contrast__card gw-contrast__card--gap">
-    <h3>What it cannot yet separate</h3>
-    <p>Pumping-caused depletion from drought- or reservoir-caused depletion — and
-    the per-well contribution the literature can already estimate.</p>
-  </div>
-</div>
-<p style="margin-top:1.5rem">
-  <a class="gw-btn" href="findings.html?chapter=1.%20ISW&amp;section=1.5%20Per-well%20Attribution%20and%20the%20Cumulative%20Pumping%20Problem">Evidence on per-well attribution &rarr;</a>
-</p>
-```
-::::
-:::::
-
-:::: {.gw-page .gw-section}
-```{=html}
-<h2 class="gw-eyebrow">1.5 Beyond</h2>
-
-<div class="gw-draft-banner">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
-  <span><strong>Draft — not yet published.</strong> No GSA board-meeting evidence
-  has been reviewed. This section is scaffolding for a future WaterOne.ai
-  evidence stream; nothing here implies any meeting has been analyzed.</span>
-</div>
-```
-
-::: gw-prose
-Explore how other subbasins are thinking about these topics, from
-information gathered from GSA board meetings via the WaterOne.ai
-platform.
-:::
-
-```{=html}
-<div class="gw-locator gw-loading" id="isw-beyond" data-beyond="isw">Loading&hellip;</div>
-<script type="module" src="assets/js/beyond-map.js"></script>
-```
 ::::
 
-:::: {.gw-page .gw-section .gw-section--tight}
+::: {.gw-page .gw-section .gw-section--tight .gw-cta}
 ```{=html}
-<h2 class="gw-eyebrow">1.6 Further Exploration</h2>
+<p>Every claim on this page traces to coded findings with direct quotes and document locations.</p>
+<a class="gw-btn" href="findings.html?chapter=1.%20ISW">Explore the {{< var isw_findings >}} ISW findings &rarr;</a>
 ```
-
-::: {.gw-prose .gw-further__lead}
-Open questions this chapter raises and does not answer. Select one to
-see why it matters.
 :::
 
 ```{=html}
-<!-- PLACEHOLDER presentation. Ideas to workshop for a more engaging treatment:
-     a word/phrase cloud sized by how often each question surfaced in the coding;
-     a constellation the reader connects; a "pick a thread" chooser that routes
-     into a filtered findings view. For now: expandable question chips. -->
-<div class="gw-further gw-loading" id="isw-further" data-further="isw">Loading&hellip;</div>
-<script type="module" src="assets/js/further.js"></script>
-```
-
-The coded evidence is already searchable in the [Findings
-Explorer](findings.qmd?chapter=1.%20ISW).
-::::
-
 </main>
+```

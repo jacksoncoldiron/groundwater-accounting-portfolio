@@ -230,3 +230,46 @@ New analyst-authored claims to re-review when Colusa/Yolo activate:
   written.
 - Contrast-card claims in each "Connection to Accounting" section are provisional
   placeholders.
+
+---
+
+## 2026-10-28 — Six basins active; key gaps replace Key Findings
+
+**Active basins: 6** (Merced, East Turlock, Salinas Valley, Kaweah, Colusa,
+Yolo). Kaweah was added to `config/basins.yml`; Colusa and Yolo flipped from
+planned to active. All counts rebuilt (687 findings, 61 papers, 69 documents).
+
+What changed in scope, and what to re-review:
+
+- **Key gaps** (`config/key_gaps.yml`, rendered on every chapter and the
+  Overview) now carry the chapter takeaways. Text is from
+  `Synthesis_Gaps_DesktopAnalysis.docx` (marked "DRAFT: ACTIVE EDITS"), with
+  superscript citations removed and typos fixed — no claim rescoped. MLRP and
+  Community gaps were written before the 10/9 quote-corroboration pass the
+  source says is still in progress for those chapters; re-check them when that
+  pass is done.
+- **Cross-basin comparison** sections render `Phase2_CrossBasin_Synthesis.docx`
+  directly (scripts/ingest_synthesis.py). Any edit to the synthesis flows in on
+  the next `python3 scripts/build_data.py`.
+- **Retired three-basin claims.** The old Overview headline findings, chapter
+  Key Findings, "Connection to Accounting" contrast cards, Beyond and Further
+  Exploration scaffolds, the per-basin breakdown tracks, and the community
+  tools partial were removed. The tools partial in particular asserted
+  per-tool coverage checked against three basins only.
+- **Rewritten scoped statements** (all drawn from synthesis Comparison
+  paragraphs): ISW chain steps 03–07 and the ISW intro; MLRP intro and matrix
+  lede; Community intro, equity triad, threshold→household chain stage notes.
+- **MLRP matrix** renders `MLRP_Benefits_Matrix.xlsx` (four grantee basins +
+  literature). Its source note says the v3 PDF does not yet reflect the
+  2026-10-05 re-ratings; the site reads the workbook, so it does.
+- **Methods** now discloses AI-assisted extraction, paraphrasing the methods
+  overview in the gaps document. Confirm the wording is how you want it public.
+
+### Map profiles (`config/basin_profiles.yml`) — fields waiting on you
+
+Only facts with a source are shown. Public sources could not be confirmed for:
+average precipitation (Merced, East Turlock, Salinas Valley), crop mix and
+irrigated acreage (all six), population / DAC counts (all six). Logos were
+found for EKGSA, GKGSA, MKGSA and MCWD; the other GSAs show initials. The
+"sustainability indicators in focus" are a reading of the record, not an
+official designation — review each.

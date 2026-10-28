@@ -230,6 +230,13 @@ export function createExplorer(config) {
       chips.push({ label: `“${state.q}”`, clear: () => { state.q = ''; searchInput.value = ''; } });
     }
     for (const f of filters) {
+      if (f.hidden) {
+        // One chip for the whole deep-linked set, not one per id.
+        if (state[f.param].size) {
+          chips.push({ label: `${f.legend} (${state[f.param].size})`, clear: () => state[f.param].clear() });
+        }
+        continue;
+      }
       for (const value of state[f.param]) {
         const opt = f.options.find((o) => String(o.value) === String(value));
         chips.push({
@@ -327,7 +334,7 @@ export function createExplorer(config) {
 
   function renderFilters() {
     const onChange = () => { visible = pageSize; commit(); };
-    const primary = filters.filter((f) => !f.advanced);
+    const primary = filters.filter((f) => !f.advanced && !f.hidden);
     const advanced = filters.filter((f) => f.advanced);
 
     const panelChildren = [

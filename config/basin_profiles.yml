@@ -1,0 +1,186 @@
+# Study Area map — subbasin profiles
+# ---------------------------------------------------------------------------
+# Shown when a subbasin is selected on the map (assets/js/study-map.js).
+# Every fact carries a source. Anything that could not be tied to a source is
+# left out rather than estimated — see notes/narrative_review.md ("Map
+# profiles") for the fields still waiting on analyst input (crop mix,
+# population, precipitation for some basins).
+#
+# Fields
+#   grantee      true if the subbasin is covered by a DOC MLRP block grant
+#                (drives the map colour; Synthesis §2.1)
+#   setting      short orientation facts
+#   climate / agriculture / communities   lists of {text, source, url?}
+#   indicators   SGMA sustainability indicators most prominent in the record,
+#                each with the reason and source. Not an official designation.
+#   logos        GSA code -> image under assets/logos/ (others show initials)
+# ---------------------------------------------------------------------------
+
+sources:
+  synthesis: { label: "Cross-basin synthesis (this analysis)" }
+  b118: { label: "DWR Bulletin 118 subbasin boundaries", url: "https://gis.water.ca.gov/arcgis/rest/services/Geoscientific/i08_B118_CA_GroundwaterBasins/FeatureServer" }
+  cod: { label: "DWR critically overdrafted basins", url: "https://water.ca.gov/Programs/Groundwater-Management/Bulletin-118/Critically-Overdrafted-Basins" }
+  turlock_fact: { label: "Turlock Subbasin groundwater fact sheet" }
+  maven: { label: "Maven's Notebook, Greater Kaweah GSA meeting notes (Dec 2023)" }
+  swrcb_kaweah: { label: "State Water Board, Kaweah staff assessment (Oct 2025)" }
+  b118_2006: { label: "DWR Bulletin 118, Colusa Subbasin description (2006)" }
+  cnra_subsidence: { label: "California Natural Resources Agency (Jan 2019)" }
+  ysga_ar: { label: "YSGA Annual Report (2024)" }
+
+basins:
+  merced:
+    grantee: true
+    critically_overdrafted: true
+    logos: {}
+    climate: []
+    agriculture: []
+    communities:
+      - text: Disadvantaged-community noticing is delegated to Self-Help Enterprises and Leadership Counsel; MIUGSA holds a standing disadvantaged-community advisory seat.
+        source: synthesis
+        ref: "§3.1.1, §3.2"
+    indicators:
+      - name: Chronic lowering of groundwater levels
+        why: ISW criteria are carried over from the groundwater-level indicator; a pumping-allocation rule adjusts automatically on level triggers.
+        source: synthesis
+        ref: "§1.2, §1.8"
+      - name: Land subsidence
+        why: The July 2026 Rules tie allocation and well approval to pumping above the Corcoran Clay in subsiding zones.
+        source: synthesis
+        ref: "§1.6"
+
+  east-turlock:
+    grantee: true
+    critically_overdrafted: false
+    logos: {}
+    setting:
+      - text: West Turlock GSA covers about 60% of the subbasin and East Turlock GSA about 40%; the two wrote one GSP.
+        source: turlock_fact
+        url: "https://delhicwd.specialdistrict.org/files/fb1270079/Turlock-Groundwater-fact-sheet_English.pdf"
+    climate: []
+    agriculture:
+      - text: Cover cropping is the largest demand-reduction activity in East Turlock by acreage — roughly 25,000 acres in WY 2025.
+        source: synthesis
+        ref: "§2.10"
+    communities:
+      - text: Advocates' analysis of the GSP's own thresholds found 5.4% of evaluable domestic wells impacted.
+        source: synthesis
+        ref: "§3.1.4"
+    indicators:
+      - name: Interconnected surface water
+        why: An undesirable result was declared on two of three rivers in WY 2025.
+        source: synthesis
+        ref: "§1.8"
+      - name: Chronic lowering of groundwater levels
+        why: 2027 interim milestones were set below minimum thresholds because long-term declines were expected to continue.
+        source: synthesis
+        ref: "§1.8"
+
+  salinas-valley:
+    grantee: true
+    grantee_note: Grant held by the Greater Monterey County IRWM Group, covering the 180/400, Eastside and Langley subbasins.
+    critically_overdrafted: true
+    logos:
+      MCWD GSA: mcwd.png
+    climate: []
+    agriculture:
+      - text: Essentially all pumping is from the 180-Foot principal aquifer, below the Salinas Valley Aquitard.
+        source: synthesis
+        ref: "§1.6"
+    communities:
+      - text: Castroville Community Services District appoints the board's disadvantaged-community director, and has asked for more outreach on seawater intrusion's effects on health, water bills and home values.
+        source: synthesis
+        ref: "§3.1.1, §3.1.2"
+    indicators:
+      - name: Seawater intrusion
+        why: One of Castroville's four supply wells went offline in 2021 on chloride from seawater intrusion.
+        source: synthesis
+        ref: "§3.3.2"
+      - name: Interconnected surface water
+        why: An undesirable result was declared for WY 2022 and attributed to reservoir operations.
+        source: synthesis
+        ref: "§1.8"
+      - name: Degraded water quality
+        why: Amendment 1 tabulates about twenty constituents against drinking-water and Basin Plan standards.
+        source: synthesis
+        ref: "§3.3.2"
+
+  kaweah:
+    grantee: true
+    critically_overdrafted: true
+    logos:
+      EKGSA: ekgsa.png
+      GKGSA: gkgsa.jpg
+      MKGSA: mkgsa.jpg
+    climate:
+      - text: Rainfall differs by about seven inches a year between the western edge near Hanford and the eastern edge near Woodlake.
+        source: maven
+        url: "https://mavensnotebook.com/2023/12/13/tulare-meeting-notes-greater-kaweah-groundwater-agency-still-working-on-water-accounting/"
+    agriculture:
+      - text: Irrigated agriculture accounted for more than 94% of groundwater use in 2020.
+        source: swrcb_kaweah
+        url: "https://waterboards.ca.gov/water_issues/programs/sgma/docs/kaweah/202510-kaweah-staff-assessment.pdf"
+    communities:
+      - text: Projects and mitigation are sited at named disadvantaged communities including Seville, Okieville and Cameron Creek Colony.
+        source: synthesis
+        ref: "§3.1.1, §3.1.2"
+    indicators:
+      - name: Land subsidence
+        why: Subsidence is attributed mainly to the Lower Aquifer, below the Corcoran Clay, which sits outside the ISW analysis.
+        source: synthesis
+        ref: "§1.6"
+      - name: Chronic lowering of groundwater levels
+        why: The State Water Board's 2025 staff assessment ties overdraft to falling levels, subsidence and wells going dry.
+        source: swrcb_kaweah
+        url: "https://waterboards.ca.gov/water_issues/programs/sgma/docs/kaweah/202510-kaweah-staff-assessment.pdf"
+
+  colusa:
+    grantee: false
+    critically_overdrafted: false
+    logos: {}
+    climate:
+      - text: Annual precipitation ranges from about 17 to 27 inches, higher to the west.
+        source: b118_2006
+        url: "https://sitesreservoirproject.riptideweb.com/references/REF23/Volume%201/Ch08_Ground_H2O/CDWR_2006_Californias%20Groundwater%20Bulletin%20118_Colusa%20Subbasin.pdf"
+    agriculture:
+      - text: The Nature Conservancy's winter flooding of farmland for shorebird habitat adds an estimated 5.2 thousand acre-feet a year of net recharge.
+        source: synthesis
+        ref: "§2.10"
+    communities:
+      - text: Revised thresholds cut the projected number of impacted domestic wells from 589 to 99.
+        source: synthesis
+        ref: "§3.1.4"
+    indicators:
+      - name: Land subsidence
+        why: DWR surveys found the greatest land-surface declines in the Sacramento Valley near Arbuckle.
+        source: cnra_subsidence
+        url: "https://resources.ca.gov/Home/News/News-Releases/2019/January/Survey-Shows-Areas-of-Land-Subsidence"
+      - name: Interconnected surface water
+        why: Twelve near-stream wells carry ISW thresholds on the Sacramento River, Stony Creek and the Colusa Basin Drain.
+        source: synthesis
+        ref: "§1.2, §1.4"
+
+  yolo:
+    grantee: false
+    critically_overdrafted: false
+    logos: {}
+    climate:
+      - text: WY 2023 brought about 30 inches of precipitation, 148% of the historical average.
+        source: ysga_ar
+        url: "https://yologroundwater.specialdistrict.org/files/187dcedb7/Annual+Report+2024+FINAL.pdf"
+    agriculture:
+      - text: About 31,000 acres of managed wetlands are being added to the subbasin model; repurposing-type projects are led mostly by community groups, a Tribe, districts and the County.
+        source: synthesis
+        ref: "§2.10"
+    communities:
+      - text: Agencies serving three designated disadvantaged communities hold voting seats, and the Yocha Dehe Wintun Nation is a voting member; some Dunnigan households rely on domestic wells.
+        source: synthesis
+        ref: "§3.1.1"
+    indicators:
+      - name: Degraded water quality
+        why: Total dissolved solids carries a minimum threshold, added in response to public comment.
+        source: synthesis
+        ref: "§3.3.2"
+      - name: Interconnected surface water
+        why: Seventeen near-stream wells in five ISW Management Zones, with thresholds anchored to a 1971–2018 record.
+        source: synthesis
+        ref: "§1.2"

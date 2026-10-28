@@ -492,3 +492,34 @@ order switched from alphabetical `.sort()` to analyst appearance order. The
   wrap. Known minor: hero subtitle wraps below ~430px (one line on desktop as
   requested); Overview still emits a hidden second `<h1>` from `title:` (a
   documented Quarto workaround, pre-existing).
+
+## D-30 — Natural-scroll scenes replace pinned scrollytelling (2026-10-28)
+
+The pinned scenes translated a clipped track through a 220vh-per-step runway,
+which made reading slow and fragile. Replaced everywhere with natural page
+scroll plus sticky companions (`assets/js/scroll-steps.js`): the ISW figure
+sticks beside its steps; the key-gaps index sticks beside the gap articles.
+Nothing is hidden or clipped, so no-JS and reduced-motion need no special case.
+
+## D-31 — Synthesis as a processed data source (2026-10-28)
+
+`scripts/ingest_synthesis.py` parses the synthesis .docx (via pandoc) into
+`data/processed/synthesis.json`: chapter → topic → {literature, per-basin
+paragraph, comparison, gaps}. Basin paragraphs are matched to the registry by
+short name, so a new basin appears without page edits. Section titles from the
+synthesis also canonicalise the findings `section` facet (the workbook writes
+the same section several ways; the original is kept in `section_source`).
+
+## D-32 — MLRP matrix states read from cell fill (2026-10-28)
+
+The workbook encodes measurement state as Overview-sheet cell shading. The
+adapter reads the legend row's fills rather than hard-coding colours, and the
+site renders state as a ladder glyph + text (never colour alone).
+
+## D-33 — Map built in Leaflet from public layers (2026-10-28)
+
+The ArcGIS placeholder is replaced by a Leaflet map: DWR B118 subbasins, DWR
+SGMA Portal GSA boundaries, USGS NHD rivers (`scripts/fetch_geo.py`, output
+committed), Esri World Terrain Base tiles. Colour encodes MLRP block-grant
+coverage (Synthesis §2.1); Eastside and Langley are drawn as context because
+they share Salinas Valley's grant region.

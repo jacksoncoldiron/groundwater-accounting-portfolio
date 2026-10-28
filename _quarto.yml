@@ -13,7 +13,7 @@ project:
     - methods.qmd
   resources:
     - data/processed/*.json
-    - data/interactive/*.json
+    - data/geo/*.geojson
     - downloads/**
     - assets/**
 

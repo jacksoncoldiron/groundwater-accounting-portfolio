@@ -51,14 +51,41 @@ config). You never have to open the code or paste text into chat.
 
 ### Last synced
 
-Copy deck last synced: 2026-09-10 (batch-1 restructure complete — Phases 1–4:
-global design system, Overview rework, new Map page, the shared 7-section chapter
-template applied to ISW / Land Repurposing / Community, ISW deep edits with the
-4 / 4 / 2 "snake" layout, and an accessibility + responsive QA pass). No open
-copy changes on my side; the remaining work is the `[NEEDS COPY]` slots for
-Jackson. Site pages covered:
+> **⚠ Out of sync since 2026-10-28.** The site was restructured for six basins:
+> chapter Key Findings, Breakdown, Connection to Accounting, Beyond and Further
+> Exploration were replaced by **Key gaps** (editable in `config/key_gaps.yml`)
+> and an **Across the subbasins** comparison rendered straight from
+> `Phase2_CrossBasin_Synthesis.docx`. The MLRP lifecycle chain was replaced by
+> the co-benefits matrix (from `MLRP_Benefits_Matrix.xlsx`), and the map page
+> is now a Leaflet map with profiles in `config/basin_profiles.yml`. Entries
+> below for those sections are stale; the chapter intros, chain steps and
+> Overview copy now live in the `.qmd` files. Regenerate this deck before the
+> next copy round.
+
+Copy deck last synced: 2026-09-16 (resync after several chat-driven edits made
+directly in `.qmd`/CSS/JS between 2026-09-10 and 2026-09-16 — see Phase 3 note
+below). No open copy changes on my side; the remaining work is the
+`[NEEDS COPY]` slots for Jackson (MLRP finding 5, all of Community's Key
+Findings, Community's Connection to Accounting body, all three chapters'
+Further Exploration question sets). Site pages covered:
 `index`, `isw`, `mlrp`, `community`, `map`, `findings`, `methods`, plus
 `_quarto.yml` and shared config.
+
+> **Phase 3 note (2026-09-16).** Synced the deck to six rounds of direct
+> chat edits: (1) MLRP's Key Findings 1–4 written and a 23-item references
+> list added below the pinned scene (`MLRP-KF-1…4`, `MLRP-KF-REFERENCES`) —
+> finding 5 still needs copy; (2) the redundant "All three subbasins at a
+> glance" matrix removed from all three chapters — each subbasin's snake
+> track now opens inside its own tab in S4 instead; (3) the Key Findings
+> subheader ("The biggest gaps…" / "What the cross-basin comparison
+> surfaces") removed from ISW and MLRP only — Community kept its version;
+> (4) every chapter's top-level sections numbered N.1, N.2… (see the table
+> in section 3); (5) MLRP's Breakdown caption reworded — the old "cells in
+> the same row" line no longer made sense once the matrix was gone; (6)
+> Overview metric-card icon/label sizing, navbar color, hero top spacing,
+> and the ISW diagram's background wash were all touched but are styling
+> only, no copy changed. Nothing below is `[NEEDS COPY]` unless still
+> marked as such.
 
 > **Phase 2 note.** All three chapter pages now use the same seven sections
 > (see the table at the top of section 3). Existing components were relocated,
@@ -238,8 +265,7 @@ Three domains
 ### OV-CHAPTER-CARD-3 `[card]`
 - **Kicker:** Chapter 3
 - **Title:** Community
-- **Body:** Representation, procedural access, and who bears the consequences —
-  three kinds of equity that move independently.
+- **Body:** Representation, procedural access, and who bears the consequences. How are GSAs interacting with these concepts?
 - **Link text:** Read the chapter →
 
 ## Headline findings  *(pinned scroll scene)*
@@ -257,19 +283,18 @@ Headline findings
 - **Body:** All three subbasins run numerical groundwater–surface water models
   of the same generation, and all three produce a pumping-attributable depletion
   figure. In every case the compliance loop closes on a groundwater-level proxy
-  instead — not on any measured or modeled depletion quantity. None attaches a
-  numeric uncertainty range to an ISW figure.
+  instead — not on any measured or modeled depletion quantity. numeric uncertainty 
+  ranges on ISW figures are left out.
 - **Meta label:** Chapter 1 · Interconnected Surface Water
 - **Evidence link:** [See the evidence →](findings.html?chapter=1.%20ISW&section=1.8%20Gaps%20and%20Uncertainty)
 
 ### OV-HEADLINE-02 `[card]`
 - **Number:** 02
-- **Heading:** Verification is the missing middle of land repurposing
-- **Body:** The three programs differ less in what they fund than in when they
-  count. One measures water use on repurposed parcels after implementation and
-  treats the result as enforceable. One estimates savings beforehand and never
-  compares the estimate to anything after. One holds its measurement outside the
-  accounting system entirely. None runs a paired comparison of expected against
+- **Heading:** Differences in water savings accounting for repurposed land
+- **Body:** The three programs differ most in how they count water savings when it comes
+  to land repurposing. Some measure water use on repurposed parcels after implementation and
+  treats the result as enforceable, others estimates savings beforehand and never
+  compares the estimate to anything after. There currently are no paired comparisons of expected against
   measured savings on an enrolled parcel.
 - **Meta label:** Chapter 2 · Land Repurposing
 - **Evidence link:** [See the evidence →](findings.html?chapter=2.%20MLRP&section=2.2%20Verification%20triggers)
@@ -278,9 +303,9 @@ Headline findings
 - **Number:** 03
 - **Heading:** Allocation rules decide whether a saving stays saved
 - **Body:** Changing the land use and changing the entitlement to pump are
-  separate design decisions. Across the three programs the entitlement variously
-  stays with the landowner and can move, is suspended for the paid term with no
-  transfer mechanism, or ceases to exist because the land was bought outright.
+  separate design decisions. Across the programs the entitlement can be kept or
+  be transferred by the landowner or the entitlement is suspended for the paid term with no
+  transfer mechanism.
   None of the three publishes reporting on the allocation status of repurposed
   parcels, so none could detect movement even where movement is permitted.
 - **Meta label:** Chapter 2 · Land Repurposing
@@ -288,34 +313,19 @@ Headline findings
 
 ### OV-HEADLINE-04 `[card]`
 - **Number:** 04
-- **Heading:** Community equity is not one variable
-- **Body:** Representative, procedural, and distributional equity move
-  independently. The subbasin with the strongest formal representation qualifies
-  it with a supermajority voting rule; the two without a comparable seat differ
-  from each other on fees, standing, and appeal timelines. Distributional
-  outcomes are the gap shared by all three — and not for want of data. Every
-  basin holds the well records, published thresholds, and community boundaries
-  the analysis would need.
+- **Heading:** COMMUNITY PLACEHOLDER
+- **Body:** PLACEHOLDER
 - **Meta label:** Chapter 3 · Community
 - **Evidence link:** [See the evidence →](findings.html?chapter=3.%20Community%20Considerations&section=3.1.3%20Procedural%20%2F%20Distributional%20%2F%20Representative)
 
 ### OV-HEADLINE-05 `[card]`
 - **Number:** 05
-- **Heading:** The literature–practice gap runs both ways
-- **Body:** For several outcomes — per-well depletion attribution, ecological
-  co-benefit quantification, domestic-well impact estimation — methods exist in
-  the literature and appear nowhere in the reviewed document sets. But not every
-  gap is an unused method. For field-scale dust accounting and for a unit of
-  community benefit, the literature is empty too: those would have to be built
-  rather than adopted.
+- **Heading:** PLACEHOLDER
+- **Body:** PLACEHOLDER
 - **Meta label:** Cross-cutting
 - **Evidence link:** [Explore the literature →](findings.html?db=literature)
 
 ### OV-HEADLINES-CAPTION `[caption]`
-The three document sets are not equally complete — some Salinas Valley absences
-are gaps in document availability, some East Turlock absences reflect programs
-that have not yet produced results. Across this site, "not found in reviewed
-documents" means exactly that, never that a practice does not exist.
 
 ## Study area
 
@@ -409,23 +419,26 @@ direct quotation and source location attached.
 
 # 3 · Interconnected Surface Water page (`isw.qmd`)
 
-> **Shared chapter template (2026-09-10).** All three chapter pages (ISW, Land
-> Repurposing, Community) now follow the same seven sections, in this order.
-> Section headings (kickers) are fixed across chapters; only the content under
-> each changes.
+> **Shared chapter template (2026-09-10, section numbers added 2026-09-16).**
+> All three chapter pages (ISW, Land Repurposing, Community) follow the same
+> section order, in this order. Section headings (kickers) are fixed across
+> chapters; only the content under each changes. Each chapter's own sections
+> are now numbered N.1, N.2… (N = the chapter number) so they're easy to
+> reference — the numbers below are ISW's; MLRP uses 2.x, Community uses 3.x.
 >
 > | # | Kicker | What it holds |
 > |---|---|---|
 > | S1 | *(chapter kicker)* + the question | Intro prose + photo + chapter icon |
-> | S2 | **The Accounting Lifecycle** | The chapter's core staged graphic |
-> | S3 | **Key Findings** | Pinned scene, numbered 1–5, detailed |
-> | S4 | **Breakdown by Subbasin** | Per-basin tabs (data-driven) + the all-basins view |
-> | S5 | **Connection to Accounting** | H3 "Implementing findings into the Groundwater Accounting Platform" |
-> | S6 | **Beyond** | WaterOne.ai board-meeting scaffold — **draft, not published** |
-> | S7 | **Further Exploration** | Open questions as expandable chips — placeholder |
+> | S2 (1.1) | **The Accounting Lifecycle** | The chapter's core staged graphic |
+> | S3 (1.2) | **Key Findings** | Pinned scene, numbered 1–5, detailed |
+> | S4 (1.3) | **Breakdown by Subbasin** | Per-basin tabs (data-driven); each tab opens with that basin's snake track, then the question-by-question list — no separate "all basins" view anymore (removed 2026-09-16, see S4 below) |
+> | S5 (1.4) | **Connection to Accounting** | H3 "Implementing findings into the Groundwater Accounting Platform" |
+> | S6 (1.5) | **Beyond** | WaterOne.ai board-meeting scaffold — **draft, not published** |
+> | S7 (1.6) | **Further Exploration** | Open questions as expandable chips — placeholder |
 >
-> S4's per-basin tab content and S6's map pins are JS-rendered from data and
-> are not in this deck. `[NEEDS COPY]` marks every empty slot.
+> MLRP also has a trailing **Geography** section (2.7) the other two chapters
+> don't. S4's per-basin tab content and S6's map pins are JS-rendered from
+> data and are not in this deck. `[NEEDS COPY]` marks every empty slot.
 
 ### ISW-TITLE `[title]`
 Interconnected Surface Water
@@ -470,7 +483,10 @@ Interconnected Surface Water
 ## S2 · The Accounting Lifecycle
 
 ### ISW-DIAGRAM-EYEBROW `[eyebrow]`
-The Accounting Lifecycle
+1.1 The Accounting Lifecycle
+> Section numbering added 2026-09-16 (each chapter's top-level sections are
+> now numbered N.1, N.2… so they're easy to reference). Number the section
+> heading itself — no separate token.
 
 ### ISW-DIAGRAM-LEDE `[lede]`
 Scroll to see how the accounting chain operates for interconnected surface water
@@ -560,10 +576,11 @@ Cutaway of pumping, the water table, and stream depletion
 ## S3 · Key Findings  *(pinned scroll scene)*
 
 ### ISW-KF-EYEBROW `[eyebrow]`
-Key Findings
+1.2 Key Findings
 
-### ISW-KF-H2 `[h2]`
-The biggest gaps this chapter surfaces
+### ISW-KF-H2 `[h2]` *(removed 2026-09-16)*
+~~The biggest gaps this chapter surfaces~~
+> Removed to give the finding copy more vertical room in the pinned scene.
 
 ### ISW-KF-1 `[card]` *(step 01)*
 - **Heading:** Per-well attribution stays out of reach
@@ -601,7 +618,7 @@ The biggest gaps this chapter surfaces
 > by `assets/js/breakdown.js` from the coded data and is not editable here.
 
 ### ISW-BREAKDOWN-EYEBROW `[eyebrow]`
-Breakdown by Subbasin
+1.3 Breakdown by Subbasin
 
 ### ISW-BREAKDOWN-H2 `[h2]`
 Where each subbasin's documents are clear, ambiguous, or silent
@@ -616,17 +633,19 @@ A stage marked **not found in reviewed documents** means the analyst searched
 that basin's document set and did not find it — not that the practice does not
 exist. Document sets are not equally complete.
 
-### ISW-BREAKDOWN-ALLBASINS `[h3]`
-All three subbasins at a glance
-> Each subbasin's 10 ISW stages (1.1–1.8, Data Sources, Formal Mechanisms) are
-> laid out as a 4 / 4 / 2 boustrophedon "snake" — reads left→right, then
-> right→left, then left→right. Card labels come from the coding frame, not this
-> deck.
+### ISW-BREAKDOWN-ALLBASINS `[h3]` *(removed 2026-09-16 — merged into the tabs above)*
+~~All three subbasins at a glance~~
+> This used to be a separate section repeating the same data as the tabs above
+> in one combined matrix. It's gone — each subbasin's snake track (the same
+> 4 / 4 / 2 boustrophedon, 1.1–1.8 / Data Sources / Formal Mechanisms) now
+> opens that subbasin's own tab in S4, above the question-by-question list, so
+> there's one place per basin instead of two competing views. Rendered by
+> `assets/js/breakdown.js`; card labels come from the coding frame.
 
 ## S5 · Connection to Accounting
 
 ### ISW-CONNECTION-EYEBROW `[eyebrow]`
-Connection to Accounting
+1.4 Connection to Accounting
 
 ### ISW-CONNECTION-H3 `[h3]`
 Implementing findings into the Groundwater Accounting Platform
@@ -658,7 +677,7 @@ depletion to specific wells. None appears in the reviewed document sets.
 ## S6 · Beyond  *(draft — not published)*
 
 ### ISW-BEYOND-EYEBROW `[eyebrow]`
-Beyond
+1.5 Beyond
 
 ### ISW-BEYOND-BANNER `[callout]`
 **Draft — not yet published.** No GSA board-meeting evidence has been reviewed.
@@ -677,7 +696,7 @@ will appear on this map, each linking to the meeting it came from.
 ## S7 · Further Exploration  *(placeholder)*
 
 ### ISW-FURTHER-EYEBROW `[eyebrow]`
-Further Exploration
+1.6 Further Exploration
 
 ### ISW-FURTHER-LEAD `[body]`
 Open questions this chapter raises and does not answer. Select one to see why it
@@ -721,30 +740,31 @@ Chapter 2 · Multi-benefit Land Repurposing
 When land is repurposed, what is actually measured?
 
 ### MLRP-INTRO-1 `[body]`
-Multi-benefit land repurposing is meant to do several things at once: use less
-water, and deliver habitat, community, and economic benefits alongside. Each of
-those claims implies a measurement. The question this chapter asks is which of
-them are actually made, when, and whether the answer enters the accounting
-system at all.
+Multi-benefit land repurposing (MLRP) reimagines agricultural land facing reduced
+water availability under SGMA as an opportunity to intentionally deliver habitat, 
+community (including DAC), and economic co-benefits alongside the water savings, 
+rather than leaving it to fallow unplanned. Each of those claims benefits implies 
+a measurement. So, this chapter investigates which of these measurements are made, 
+when they are made and whether that feeds into the accounting system.
 
 ### MLRP-INTRO-2 `[body]` ‹token = "three"›
-The `{{< var active_basins_word >}}` programs differ less in what they fund than
-in when they count: one measures repurposed parcels after implementation and
-treats the result as enforceable, one estimates savings beforehand and never
-checks back, one keeps its measurement outside the subbasin's accounting
-entirely.
+The `{{< var active_basins_word >}}` programs have varying degrees of information
+regarding MLRP within their policy & planning documents. Guidance on monitoring and
+tracking benefits is still in development as our Regional Monitoring Plans and Multi-benefit
+Agricultural Land Repurposing Plans. So, findings and related gaps within this chapter
+are gleaned from the SGMA related documents that confront land repurposing, water savings
+accounting, and program monitoring. 
 
 ### MLRP-PHOTO-ALT `[alt]`
 Aerial view of a river corridor dividing tilled farmland from green irrigated
 fields.
 
 ### MLRP-PHOTO-LABEL `[caption]`
-Multi-benefit Land Repurposing
 
 ## S2 · The Accounting Lifecycle
 
 ### MLRP-LIFECYCLE-EYEBROW `[eyebrow]`
-The Accounting Lifecycle
+2.1 The Accounting Lifecycle
 
 ### MLRP-LIFECYCLE-DESC `[figure-desc]`
 An eight-stage lifecycle: select or prioritise a parcel, fund the intervention,
@@ -762,7 +782,7 @@ later stages thin out sharply.
 ### MLRP-LIFECYCLE-02 `[card]`
 - **Number:** 02
 - **Label:** Fund intervention
-- **Note:** All three run on Department of Conservation money. Who holds the
+- **Note:** All three run on Department of Conservation money, but who holds the
   grant differs.
 
 ### MLRP-LIFECYCLE-03 `[card]`
@@ -779,20 +799,20 @@ later stages thin out sharply.
 ### MLRP-LIFECYCLE-05 `[card]`
 - **Number:** 05
 - **Label:** Verify savings
-- **Note:** The missing middle. Estimated before, measured after, or not
-  measured at all.
+- **Note:** The missing piece and break in the lifecule. Somtimes estimated before, 
+  measured after, or not measured at all.
 
 ### MLRP-LIFECYCLE-06 `[card]`
 - **Number:** 06
 - **Label:** Allocation & leakage
-- **Note:** Whether the entitlement to pump moves, is suspended, or ceases to
+- **Note:** Whether the entitlement to pump can be moved, is suspended, or ceases to
   exist.
 
 ### MLRP-LIFECYCLE-07 `[card]`
 - **Number:** 07
 - **Label:** Measure co-benefits
 - **Note:** Named and sometimes scored or priced in every program. Measured as
-  delivered outcomes in none.
+  delivered outcomes in none so far.
 
 ### MLRP-LIFECYCLE-08 `[card]`
 - **Number:** 08
@@ -800,26 +820,83 @@ later stages thin out sharply.
 - **Note:** Grant funding ends in 2027; monitoring obligations run longer.
 
 ### MLRP-LIFECYCLE-CAPTION `[caption]` ‹token = 108›
-Stages 5 through 7 are where a repurposing program becomes an accounting
-instrument rather than a grant — exactly where the three programs are thinnest
-and most different from one another.
 [See all `{{< var mlrp_findings >}}` land repurposing findings →](findings.html?chapter=2.%20MLRP)
 
-## S3 · Key Findings  *(pinned scroll scene)* `[NEEDS COPY]`
+## S3 · Key Findings  *(pinned scroll scene)* — findings 1–4 written; 5 still `[NEEDS COPY]`
 
 ### MLRP-KF-EYEBROW `[eyebrow]`
-Key Findings
+2.2 Key Findings
 
-### MLRP-KF-H2 `[h2]`
-What the cross-basin comparison surfaces
+### MLRP-KF-H2 `[h2]` *(removed 2026-09-16)*
+~~What the cross-basin comparison surfaces~~
+> Removed to give the finding copy more vertical room in the pinned scene.
 
-### MLRP-KF-1…5 `[card]` `[NEEDS COPY]`
-Five numbered findings, each a heading + a detailed paragraph drawing on the
-synthesis and the literature. All five are placeholders right now. Candidate
-threads from the first build: verification is the missing middle; estimated ≠
-measured savings; allocation rules decide whether a saving stays saved;
-co-benefits are named but not measured as delivered outcomes; grant timelines
-outrun monitoring funding.
+### MLRP-KF-1 `[card]` *(step 01)*
+- **Heading:** Water Savings Calculation
+- **Body:** ET-minus-precipitation methods assume a parcel that stops irrigating also stops transpiring¹. But fallowed and transitioning land keeps transpiring from residual soil moisture and vegetation, which skews the calculated saving. GSAs handle this differently. Some apply the method anyway and report the overestimate once it's measured², others removing the parcel from ET tracking altogether³.  
+
+### MLRP-KF-2 `[card]` *(step 02)*
+- **Heading:** Leakage and Additionality
+- **Body:** Leakage is pumping that moves elsewhere after land is repurposed. It isn't necessarily lost savings. But it raises a real question. Does a parcel's claimed reduction still hold once its allocation moves elsewhere⁴? GSAs already handle this differently. Some pay landowners and temporarily rescind their allocation while enrolled⁵. Others let landowners keep and transfer the retained allocation to other parcels⁶,⁷.  
+
+### MLRP-KF-3 `[card]` *(step 03)*
+- **Heading:** Benefits Beyond Water Savings
+- **Body:** Methods for quantifying land repurposing's co-benefits to ecosystems, disadvantaged communities, and water quality are well documented in the literature⁸,⁹,¹⁰,¹¹, but GSAs don't measure them consistently. Some score them arbitrarily at the application stage¹², others price them into incentive rates without quantifying an outcome¹³, and one has identified a literature-based method without adopting it¹⁴.  
+
+### MLRP-KF-4 `[card]` *(step 04)*
+- **Heading:** Dust
+- **Body:** There is universal awareness that dust is an issue for land retirement, and that land repurposing has potential to mitigate dust impacts¹⁵,¹⁶,¹⁷. Across basins it is named but not measured ¹⁸, treated as landowner liability ¹⁹, named as unmeasured co-benefit ¹⁹, or not mentioned at all ²⁰. The literature itself is light on approaches that could fill this gap. Recent work quantifies fallowed-land dust risk at the regional scale but stops short of a per-parcel or per-acre method tied to land repurposing²¹,²²,²³. 
+
+### MLRP-KF-5 `[card]` *(step 05)* `[NEEDS COPY]`
+- **Heading:** Community Benefit Measurement
+- **Body:** The literature supplies methods from overlays that attribute recharge benefits to specific communities to groundwater-level conversions that count domestic well failures prevented²⁴,²⁵. In practice, one basin screens by a fixed proximity buffer with no scoring behind it²⁶. Another had a quantified buffer standard applied to schools, but it never reached the operative program²⁷. A third uses only a qualitative siting note²⁸. None applies CalEnviroScreen or a comparable index, despite the literature's building blocks already existing²⁹. 
+
+### MLRP-KF-REFERENCES `[caption]` *(new 2026-09-16)*
+> Collapsed by default (`<details>` "Notes and sources for the key findings
+> above"), numbered to match the superscripts in findings 1–4. IDs
+> `mlrp-ref-1`…`mlrp-ref-23` — keep numbering stable if you add/reorder
+> citations, since the superscripts in MLRP-KF-1…4 link to them by number.
+1. Zipper et al. 2024
+2. Merced Annual Report §3.3, p. 3-9 [PDF 54]
+3. Turlock Rules and Regulations Phase 2, §4.04, pp. 14–15 [PDF 14–15]
+4. Bryant et al., 2020
+5. Turlock East Rules and Regulations Phase 2, Article V, p. 25 [PDF 29]
+6. Merced MLRP Development Project Application, p. 6 [PDF 14]
+7. Merced GSP §6.2.3, p. 6-11 [PDF 472]
+8. Howard et al., 2013
+9. Rohde et al., 2024
+10. Pauloo et al., 2020
+11. Fernandez-Bou et al. 2022
+12. Merced MLRP Development Project Application, "Ecological" scoring
+    category, p. 14 [PDF 22]
+13. Turlock East Incentive Payment Procedures, Table 1, pp. 6–7 [PDF 6–7]
+14. Salinas Valley GDE Identification and Mapping report, PDF p. 19
+    (threshold method); Periodic Evaluation §2.7.2, PDF p. 79 (confirms not
+    adopted)
+15. Merced MLRP Development Project RFP, Background, pp. 2–3 [PDF 3–4] —
+    "When improperly managed, idle fields can emit dust and worsen air
+    quality… Multibenefit Land Repurposing is a beneficial alternative that
+    aims to reduce potential negative impacts."
+16. East Turlock Implementation Standards, Rewilding, Requirements/General,
+    p. 2 [PDF 2]
+17. Fernández-Bou et al., 2025
+18. Merced MLRP Development Project RFP — dust/air quality appears as an
+    unmeasured checkbox item in the community benefit scoring criteria (in
+    addition to note 15); no particulate metric, emissions factor,
+    monitoring requirement, or baseline/threshold appears in any Merced
+    program document.
+19. East Turlock Implementation Standards — Rewilding, Requirements/General,
+    p. 2 [PDF 2] (landowner liability for dust harm; perimeter hedgerow as
+    optional wind buffer); Vegetated Cover standard lists "Decreased
+    particulate and other air emissions" among its objectives with no
+    measurement method attached.
+20. Salinas Valley 2020 GSP, Amendment 1, Periodic Evaluation, Response to
+    DWR, Ecosystem Report, and WY 2025 Annual Report — word-boundary
+    searches for "dust," "PM10," "particulate," and "air quality" return
+    zero hits across all six documents.
+21. Adebiyi et al., 2025
+22. Ayres et al., 2022
+23. Becker et al., 2022
 
 ## S4 · Breakdown by Subbasin
 
@@ -828,7 +905,7 @@ outrun monitoring funding.
 > "all basins" view.
 
 ### MLRP-BREAKDOWN-EYEBROW `[eyebrow]`
-Breakdown by Subbasin
+2.3 Breakdown by Subbasin
 
 ### MLRP-BREAKDOWN-H2 `[h2]`
 Where each subbasin's documents are clear, ambiguous, or silent
@@ -838,19 +915,24 @@ Every entry is a question the analysis put to that subbasin's document set,
 reporting what the documents actually said — as a coded finding type, never as a
 score. Selecting an entry opens the evidence behind it.
 
-### MLRP-BREAKDOWN-CAPTION `[caption]`
+### MLRP-BREAKDOWN-CAPTION `[caption]` *(reworded 2026-09-16)*
 The document sets are not equally complete. Several Salinas Valley absences are
 gaps in document availability; several East Turlock absences reflect programs
-that have not yet produced results. Cells in the same row are not equally
-weighted evidence.
+that have not yet produced results — not every "not found" carries the same
+weight.
+> Was "Cells in the same row are not equally weighted evidence" — stale once
+> the matrix table (ISW-/MLRP-BREAKDOWN-ALLBASINS) was removed; there's no
+> longer a row of cells directly under this caption.
 
-### MLRP-BREAKDOWN-ALLBASINS `[h3]`
-All three subbasins at a glance
+### MLRP-BREAKDOWN-ALLBASINS `[h3]` *(removed 2026-09-16 — merged into the tabs above)*
+~~All three subbasins at a glance~~
+> Same change as ISW-BREAKDOWN-ALLBASINS: gone as a separate matrix section.
+> Each subbasin's snake track now opens that subbasin's own tab in S4.
 
 ## S5 · Connection to Accounting
 
 ### MLRP-CONNECTION-EYEBROW `[eyebrow]`
-Connection to Accounting
+2.4 Connection to Accounting
 
 ### MLRP-CONNECTION-H3 `[h3]`
 Implementing findings into the Groundwater Accounting Platform
@@ -879,7 +961,7 @@ parcels — so none could detect movement even where movement is permitted.
 ## S6 · Beyond  *(draft — not published)*
 
 ### MLRP-BEYOND-EYEBROW `[eyebrow]`
-Beyond
+2.5 Beyond
 
 ### MLRP-BEYOND-BANNER `[callout]`
 **Draft — not yet published.** No GSA board-meeting evidence has been reviewed.
@@ -893,7 +975,7 @@ gathered from GSA board meetings via the WaterOne.ai platform.
 ## S7 · Further Exploration  *(placeholder)*
 
 ### MLRP-FURTHER-EYEBROW `[eyebrow]`
-Further Exploration
+2.6 Further Exploration
 
 ### MLRP-FURTHER-LEAD `[body]`
 Open questions this chapter raises and does not answer. Select one to see why it
@@ -911,7 +993,7 @@ matters.
 ## Geography *(kept as a trailing subsection)*
 
 ### MLRP-MAP-EYEBROW `[eyebrow]`
-Geography
+2.7 Geography
 
 ### MLRP-MAP-PLACEHOLDER `[body]`
 An optional land repurposing map is reserved for this container.
@@ -1023,7 +1105,7 @@ poorly on another, and across the reviewed subbasins they do.
 ## S2 · The Accounting Lifecycle — the chain
 
 ### COM-HOUSEHOLD-EYEBROW `[eyebrow]`
-The Accounting Lifecycle
+3.1 The Accounting Lifecycle
 
 ### COM-HOUSEHOLD-H2 `[h2]`
 What a number on a page does to a well
@@ -1075,7 +1157,7 @@ mitigation from a prospective protection into a reactive one.
 ## S3 · Key Findings  *(pinned scroll scene)* `[NEEDS COPY]`
 
 ### COM-KF-EYEBROW `[eyebrow]`
-Key Findings
+3.2 Key Findings
 
 ### COM-KF-H2 `[h2]`
 What the cross-basin comparison surfaces
@@ -1094,15 +1176,18 @@ engagement activity is measured but reach is not.
 > community-facing tools list.
 
 ### COM-BREAKDOWN-EYEBROW `[eyebrow]`
-Breakdown by Subbasin
+3.3 Breakdown by Subbasin
 
 ### COM-BREAKDOWN-CAPTION `[caption]`
 A stage marked **not found in reviewed documents** means the analyst searched
 that basin's document set and did not find it — not that the practice does not
 exist. Document sets are not equally complete.
 
-### COM-BREAKDOWN-ALLBASINS `[h3]`
-All three subbasins at a glance
+### COM-BREAKDOWN-ALLBASINS `[h3]` *(removed 2026-09-16 — merged into the tabs above)*
+~~All three subbasins at a glance~~
+> Same change as ISW-BREAKDOWN-ALLBASINS: gone as a separate matrix section.
+> Each subbasin's snake track now opens that subbasin's own tab in S4, right
+> above the equity triad's per-basin detail.
 
 ### COM-TOOLS-H3 `[h3]`
 Community-facing tools
@@ -1128,7 +1213,7 @@ about those documents, not about the tool.
 ## S5 · Connection to Accounting `[NEEDS COPY]`
 
 ### COM-CONNECTION-EYEBROW `[eyebrow]`
-Connection to Accounting
+3.4 Connection to Accounting
 
 ### COM-CONNECTION-H3 `[h3]`
 Implementing findings into the Groundwater Accounting Platform
@@ -1152,7 +1237,7 @@ often computed, over data every basin already holds.
 ## S6 · Beyond  *(draft — not published)*
 
 ### COM-BEYOND-EYEBROW `[eyebrow]`
-Beyond
+3.5 Beyond
 
 ### COM-BEYOND-BANNER `[callout]`
 **Draft — not yet published.** No GSA board-meeting evidence has been reviewed.
@@ -1166,7 +1251,7 @@ gathered from GSA board meetings via the WaterOne.ai platform.
 ## S7 · Further Exploration  *(placeholder)*
 
 ### COM-FURTHER-EYEBROW `[eyebrow]`
-Further Exploration
+3.6 Further Exploration
 
 ### COM-FURTHER-LEAD `[body]`
 Open questions this chapter raises and does not answer. Select one to see why it
