@@ -156,8 +156,8 @@ ways.
     </span>
     <span class="gw-chapter-card__n">Chapter 3</span>
     <h3>Community</h3>
-    <p>Who is represented, who can participate, and who bears the
-    consequences of a groundwater decision.</p>
+    <p>Representation, procedural access, and who bears the consequences.
+    How are GSAs interacting with these concepts?</p>
     <span class="gw-chapter-card__go">Read the chapter &rarr;</span>
   </a>
 </div>
