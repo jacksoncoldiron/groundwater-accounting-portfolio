@@ -117,10 +117,10 @@ class UrlState {
  * the options narrow to those whose `parents` include a selected value of
  * the parent filter (e.g. only the sections of the selected chapter).
  */
-function selectGroup({ legend, name, options, state, onChange, dependsOn }) {
+function selectGroup({ legend, name, options, state, onChange, dependsOn, allLabel, prefix = '' }) {
   const fieldset = el('fieldset', { class: 'gw-fieldset' });
   fieldset.append(el('legend', { text: legend }));
-  const id = `${name}-select`;
+  const id = `${prefix}${name}-select`;
   const select = el('select', {
     id, class: 'gw-select gw-select--block', 'aria-label': legend,
     onchange: (e) => {
@@ -140,7 +140,7 @@ function selectGroup({ legend, name, options, state, onChange, dependsOn }) {
     }
     const current = [...state[name]][0] || '';
     select.replaceChildren(
-      el('option', { value: '', text: `All ${legend.toLowerCase()}s` }),
+      el('option', { value: '', text: allLabel || `All ${legend.toLowerCase()}s` }),
       ...visible.map((o) => el('option', {
         value: o.value, text: o.label ?? o.value, selected: String(o.value) === current || null,
       })),
@@ -152,13 +152,13 @@ function selectGroup({ legend, name, options, state, onChange, dependsOn }) {
   return fieldset;
 }
 
-function checkboxGroup({ legend, name, options, state, onChange, labelKey = 'label', hideCounts = false }) {
+function checkboxGroup({ legend, name, options, state, onChange, labelKey = 'label', hideCounts = false, prefix = '' }) {
   const fieldset = el('fieldset', { class: `gw-fieldset gw-fieldset--${name}` });
   fieldset.append(el('legend', { text: legend }));
   const selected = state[name];
 
   for (const opt of options) {
-    const id = `${name}-${String(opt.value).replace(/\W+/g, '-')}`;
+    const id = `${prefix}${name}-${String(opt.value).replace(/\W+/g, '-')}`;
     const input = el('input', {
       type: 'checkbox',
       id,
@@ -384,11 +384,11 @@ export function createExplorer(config) {
     };
     const group = (f) => {
       if (f.control === 'select') {
-        const node = selectGroup({ legend: f.legend, name: f.param, options: f.options, state, onChange, dependsOn: f.dependsOn });
+        const node = selectGroup({ legend: f.legend, name: f.param, options: f.options, state, onChange, dependsOn: f.dependsOn, allLabel: f.allLabel, prefix: paramPrefix });
         dependents.push(node);
         return node;
       }
-      return checkboxGroup({ legend: f.legend, name: f.param, options: f.options, state, onChange, hideCounts: f.hideCounts });
+      return checkboxGroup({ legend: f.legend, name: f.param, options: f.options, state, onChange, hideCounts: f.hideCounts, prefix: paramPrefix });
     };
     const primary = filters.filter((f) => !f.advanced && !f.hidden);
     const advanced = filters.filter((f) => f.advanced);

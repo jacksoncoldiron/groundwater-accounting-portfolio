@@ -114,7 +114,7 @@ It can arise for at least four reasons, and the site keeps them apart:
 
 ### What evidence is actually in scope
 
-The analysis draws on {{< var active_streams >}} active evidence streams. A third is registered in the site's data model so it can be added later, but nothing from it has been reviewed.
+The site draws on {{< var active_streams >}} evidence streams. The key findings and cross-basin comparisons are based on the policy and planning documents and the academic literature. GSA board-meeting findings from WaterOne are a newer, separate collection. They can be explored on the Explore Findings page but have not yet been worked into the chapter conclusions.
 
 :::
 
@@ -122,15 +122,14 @@ The analysis draws on {{< var active_streams >}} active evidence streams. A thir
 
 ::: gw-prose
 
-#### Why a stream is registered before it is reviewed
+#### How meeting evidence is kept separate
 
-The evidence model, the explorer filters, and the citation format are built to
-accept a new stream without redesign. Registering a planned stream makes that
-capability explicit and auditable. The site's rule is that a planned stream
-contributes **zero** records, appears in no count, and is described only as
-planned. Board-meeting evidence will also stay distinguishable from adopted
-plans and rules in every citation. What was said in a meeting is not what an
-agency adopted.
+Meeting findings record what was said in a board or committee meeting. That is
+not what an agency adopted. They have their own tab, their own labels and
+their own citations: the meeting body, date, agenda item and speaker role,
+with a link to the WaterOne recap where one is supplied. They are not counted
+in the site's statistics. Findings from subbasins outside the six case studies
+are included for context and are not part of the cross-basin analysis.
 
 :::
 :::
@@ -231,12 +230,12 @@ output, set the design direction, and decided what each page should say.
 
 Some page copy was drafted with AI assistance from the synthesis report and
 then edited by the author. Direct quotations are never generated. Every
-quotation on the site is copied exactly from the coding workbook.
+quotation on the site is copied exactly from the coding workbooks or the WaterOne export.
 
 #### Safeguards built into the site
 
 - Every count on the site is computed from the processed data at build time.
-- Quotations and source locations are carried over from the workbook without
+- Quotations and source locations are carried over from the source files without
   rewording.
 - Absence findings always read "not found in reviewed documents."
 - No score, rating or category is assigned unless it is recorded in the

@@ -1,6 +1,6 @@
 ---
 pagetitle: "Explore Findings"
-description: "Search the coded policy and planning findings and the academic literature review behind the analysis."
+description: "Search the coded policy and planning findings, information from WaterOne’s collection of GSA Board meetings, and the academic literature review behind the analysis."
 page-layout: custom
 ---
 
@@ -16,7 +16,7 @@ page-layout: custom
 
 <div class="gw-dataset-switch" role="tablist" aria-label="Evidence collection">
   <button type="button" role="tab" data-db="policy" aria-selected="true">Policy &amp; Planning Findings</button>
-  <button type="button" role="tab" data-db="meetings" aria-selected="false">WaterOne Board Meetings</button>
+  <button type="button" role="tab" data-db="meetings" aria-selected="false">WaterOne</button>
   <button type="button" role="tab" data-db="literature" aria-selected="false">Literature Review</button>
 </div>
 
@@ -44,20 +44,18 @@ page-layout: custom
 </div>
 
 <div id="panel-meetings" class="gw-dataset-panel" hidden>
-  <section class="gw-planned-stream" aria-labelledby="meetings-title">
-    <span class="gw-planned-stream__status">In progress · not yet reviewed</span>
-    <h2 id="meetings-title">GSA board meeting findings</h2>
-    <p>This collection will hold findings from GSA board meetings. Recordings, transcripts and meeting records are hosted on WaterOne. The meeting review has not started yet. No meeting evidence is included anywhere on this site, and no count, chart or conclusion depends on it.</p>
-    <p>When the review is complete, each meeting finding will record:</p>
-    <ul>
-      <li>the subbasin, GSA, meeting date and agenda item;</li>
-      <li>the speaker and their role, where attributable;</li>
-      <li>a verbatim transcript excerpt with its timestamp;</li>
-      <li>links to the recording, transcript or minutes, where supplied;</li>
-      <li>related policy and planning findings.</li>
-    </ul>
-    <p>Meeting evidence records what was said in a meeting. It is not an adopted plan or rule, and it will stay labelled that way in every filter and citation.</p>
-  </section>
+  <details class="gw-about">
+    <summary>About these meeting findings</summary>
+    <div class="gw-about__body">
+      <p>{{< var meetings_total >}} findings coded from GSA board and committee meetings hosted on WaterOne. They come from {{< var meetings_count >}} meetings across {{< var meetings_subbasins >}} subbasins. {{< var meetings_case_study >}} findings update the {{< var active_basins_word >}} case-study subbasins. The rest come from other California subbasins and are not part of the cross-basin analysis.</p>
+      <p>Meeting evidence records what was said in a meeting. It is not an adopted plan or rule. These findings are kept separate from the policy and planning findings and are not counted in the site's statistics.</p>
+      <p>Each finding links to its WaterOne meeting recap where one is supplied. Excerpts are verbatim transcript, agenda packet or minutes text unless labelled as a summary. Case-study findings link to the policy and planning findings they add to, update or contradict.</p>
+    </div>
+  </details>
+
+  <div id="meetings-explorer">
+    <div class="gw-loading">Loading the meeting findings&hellip;</div>
+  </div>
 </div>
 
 <div id="panel-literature-db" class="gw-dataset-panel" hidden>
@@ -83,6 +81,7 @@ page-layout: custom
 
 <script type="module" src="assets/js/findings.js"></script>
 <script type="module" src="assets/js/literature.js"></script>
+<script type="module" src="assets/js/meetings.js"></script>
 <script type="module" src="assets/js/findings-page.js"></script>
 ```
 

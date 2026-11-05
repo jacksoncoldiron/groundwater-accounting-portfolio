@@ -211,6 +211,14 @@ def main() -> int:
     findings_out = ingest_findings.ingest(report, basin_registry, synthesis["section_titles"])
     findings = findings_out["records"]
 
+    # --- board meetings (WaterOne) -----------------------------------------
+    meetings_on = any(s["id"] == "gsa_board_meetings" for s in streams_on)
+    meetings_out = {"records": [], "facets": {}, "labels": {}}
+    if meetings_on:
+        print("\nGSA Board Meetings")
+        meetings_out = ingest_meetings.ingest(report, basin_registry, synthesis["section_titles"])
+    meetings = meetings_out["records"]
+
     # --- literature -------------------------------------------------------
     print("\nAcademic Literature")
     literature_out = ingest_literature.ingest(report)
@@ -254,6 +262,10 @@ def main() -> int:
         "comparison_questions_total": len({f["subsection"] for f in findings if f["subsection"]}),
         "quotes_verified": sum(1 for f in findings if f["verification_status"] == "verified"),
         "absence_findings": by_type.get("absence", 0),
+        "meetings_total": len(meetings),
+        "meetings_case_study": sum(1 for m in meetings if m["scope"] == "case_study"),
+        "meetings_subbasins": len({m["subbasin"] for m in meetings if m["subbasin"]}),
+        "meetings_count": len({(m["meeting_body"], m["meeting_date"]) for m in meetings if m["meeting_date"]}),
         "findings_by_basin": dict(by_basin),
         "findings_by_chapter": dict(by_chapter),
         "findings_by_type": dict(by_type),
@@ -313,6 +325,7 @@ def main() -> int:
         "record_count": (
             len(findings) if s["id"] == "policy_planning"
             else len(literature) if s["id"] == "academic_literature"
+            else len(meetings) if s["id"] == "gsa_board_meetings"
             else 0
         ) if s["status"] == "active" else None,
     } for s in sorted(stream_registry["streams"], key=lambda s: s.get("order", 999))]
@@ -329,12 +342,13 @@ def main() -> int:
         ],
         "findings_count": len(findings),
         "literature_count": len(literature),
+        "meetings_count": len(meetings),
         "warnings": report.warnings,
         "source_files": [
             "source_materials/Phase2_Findings.xlsx",
             "source_materials/Literature_Review_DesktopAnalysis_Results.xlsx",
             "source_materials/Phase2_CrossBasin_Synthesis.docx",
-        ],
+        ] + (["source_materials/waterone_findings.csv"] if meetings_on else []),
     }
 
     print("\nWriting")
@@ -347,6 +361,12 @@ def main() -> int:
         "schema_version": SCHEMA_VERSION,
         "records": literature,
         "facets": literature_out["facets"],
+    })
+    write_json("meetings.json", {
+        "schema_version": SCHEMA_VERSION,
+        "records": meetings,
+        "facets": meetings_out["facets"],
+        "labels": meetings_out["labels"],
     })
     write_json("comparison.json", comparison)
     write_json("mlrp_matrix.json", mlrp_matrix)

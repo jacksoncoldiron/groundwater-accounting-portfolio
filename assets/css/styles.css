@@ -1003,8 +1003,8 @@ section.gw-chapter-title { margin: 0; padding: 0; border: 0; }
 
 #quarto-header .navbar { padding: .35rem 0; }
 .navbar .navbar-nav .nav-link {
-  font-size: .76rem; font-weight: 700; color: var(--ink-muted);
-  text-transform: uppercase; letter-spacing: .09em;
+  font-size: .7rem; font-weight: 400; color: var(--ink-muted);
+  text-transform: uppercase; letter-spacing: .1em;
   padding: .75rem .75rem; border-bottom: 3px solid transparent;
 }
 .navbar .navbar-nav .nav-link:hover { color: var(--ink-strong); }
@@ -1019,7 +1019,7 @@ section.gw-chapter-title { margin: 0; padding: 0; border: 0; }
 }
 @media (min-width: 992px) and (max-width: 1399px) {
   .navbar-brand-container .navbar-title { font-size: 1.22rem; }
-  .navbar .navbar-nav .nav-link { padding-inline: .5rem; letter-spacing: .06em; font-size: .7rem; }
+  .navbar .navbar-nav .nav-link { padding-inline: .5rem; letter-spacing: .07em; font-size: .66rem; }
 }
 
 #quarto-content main.content, #quarto-content .content { padding: 0; margin: 0; max-width: none; }

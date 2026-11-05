@@ -60,25 +60,27 @@ streams:
       - citation
       - verification_status
 
-  # -------------------------------------------------------------------------
-  # PLANNED. Not reviewed. Must not be presented as analyzed anywhere public.
-  # -------------------------------------------------------------------------
   - id: gsa_board_meetings
     name: GSA Board Meetings
     short_name: Board Meetings
-    status: planned
+    status: active
     order: 3
-    adapter: scripts/ingest_meetings.py     # documented stub — no implementation
-    source_files: []
+    adapter: scripts/ingest_meetings.py
+    source_files:
+      - source_materials/waterone_findings.csv
     description: >-
-      A potential future stream of GSA board-meeting evidence. The intake
-      workflow is not yet defined and no meeting material has been reviewed.
+      Findings coded from GSA board and committee meetings, drawn from
+      recordings, transcripts, agenda packets and minutes hosted on WaterOne.
+      Each finding records the meeting, agenda item, speaker role and a
+      verbatim excerpt. Findings cover the six case-study subbasins and other
+      California subbasins.
+    citation_note: >-
+      Meeting findings cite the meeting body, date and agenda item, with a
+      link to the WaterOne meeting recap where one is supplied.
     public_disclosure: >-
-      Describe only as a planned extension of the evidence model. Do not imply
-      any meeting has been reviewed, coded, or verified.
-    # Fields the adapter contract should preserve WHEN AVAILABLE. This is an
-    # interface definition, not a claim that such data exists or that any
-    # particular provider will supply it.
+      Meeting evidence records what was said in a meeting, not what an agency
+      adopted. It is kept separate from the policy and planning findings and
+      is not counted in the cross-basin statistics.
     provenance_fields:
       - evidence_id
       - evidence_stream
@@ -87,22 +89,10 @@ streams:
       - meeting_date
       - meeting_title
       - agenda_item
-      - speaker
       - speaker_role
       - transcript_excerpt
-      - excerpt_start_time
-      - excerpt_end_time
       - recording_url
-      - transcript_url
-      - minutes_url
-      - verification_status
       - related_finding_ids
-    notes: >-
-      A candidate host for meeting recordings and transcripts has been
-      mentioned (Waterone.ai), but no API, export format, or access method has
-      been established. The adapter must be written against whatever export
-      actually becomes available. Do not build a scraper against an assumed
-      interface.
 
 # ---------------------------------------------------------------------------
 # Shared provenance contract every adapter must satisfy.

@@ -298,3 +298,29 @@ Community findings are unchanged. Review before publishing:
   carries them.
 - Community S2 (equity triad and threshold → household chain) was removed
   from the page at the analyst's request.
+
+---
+
+## 2026-11-05 — GSA Board Meetings stream activated (WaterOne)
+
+`source_materials/waterone_findings.csv` (1,844 meeting findings; 477 for the
+six case-study subbasins, the rest from 53 other subbasins) is now ingested by
+`scripts/ingest_meetings.py` and shown in the Explore Findings "WaterOne" tab.
+
+Scope decisions made in code:
+- Meeting findings are **not** counted in Overview statistics or merged into
+  the policy findings explorer.
+- Non-case-study subbasins (run_mode B) are labelled "Outside case studies"
+  and do not enter any cross-basin claim.
+
+Narrative claims to re-review now that meeting evidence exists (no conclusion
+was rewritten):
+- Every key finding in `config/key_gaps.yml` is scoped to "the reviewed
+  documents". 15 case-study meeting findings are coded `contradicts` and 80
+  `updates`. Check whether any key finding is now out of date, e.g. ISW
+  "no management consequence followed" and MLRP savings figures.
+- Methods "Limitations: This is a desktop analysis" says no interviews were
+  conducted; still true, but meeting evidence now partly answers "agency staff
+  were not asked". Review wording.
+- Use of AI tab: does not yet describe how the meeting findings were coded
+  (one record is typed `ai_summary`).

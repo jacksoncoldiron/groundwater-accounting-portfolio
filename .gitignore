@@ -15,3 +15,4 @@ __pycache__/
 # workbooks. The processed JSON the site actually consumes is tracked under
 # data/processed/. See scripts/build_data.py.
 source_materials/
+~$*

@@ -50,7 +50,7 @@ and community boundaries the analysis would need.
 :::: {.gw-wide .gw-section #key-gaps}
 ```{=html}
 <h2 class="gw-eyebrow">Key findings</h2>
-<p class="gw-section-lede">What the cross-basin comparison shows. Each finding links to the subbasin-by-subbasin detail and the coded evidence behind it.</p>
+<p class="gw-section-lede">Takeaways from both the desktop analysis and internal team discussions regarding which subbasin details were most relevant and pertinent.</p>
 <div class="gw-gaps gw-loading" data-chapter="community">Loading the key findings&hellip;</div>
 <script type="module" src="assets/js/key-gaps.js"></script>
 ```

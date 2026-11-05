@@ -395,6 +395,14 @@ def main() -> int:
             "Evidence and source detail", "Full finding", "Direct quote and source location",
             "Coding location", "Analyst note", "Literature-review question or gap addressed",
             "Related findings", "No matches",
+        ]),
+        ("Meeting findings explorer (WaterOne)", "assets/js/meetings.js", [
+            "Search meeting findings", "e.g. allocation, dry well, OpenET…", "Subbasin group",
+            "Case-study subbasins", "Other subbasins", "Outside case studies", "Discussion stage",
+            "DWR category", "Relation to desktop findings", "GSA or entity", "Excerpt type",
+            "Confidence", "Not found in reviewed meetings", "Evidence and meeting detail",
+            "Quantitative detail", "Agenda item", "Speaker role", "Also discussed on",
+            "Meeting recap on WaterOne ↗", "Meeting date (newest)",
             "No records match this combination of filters. Try removing a filter or broadening the search.",
         ]),
         ("MLRP co-benefits matrix", "assets/js/mlrp-matrix.js", [

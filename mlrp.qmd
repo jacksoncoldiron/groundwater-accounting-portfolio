@@ -26,16 +26,16 @@ page-layout: custom
 Multi-benefit land repurposing (MLRP) treats farmland facing reduced water
 availability under SGMA as an opportunity to deliver habitat, community and
 economic benefits alongside water savings, rather than leaving it to fallow
-unplanned. Each of those benefits implies a measurement. This chapter asks
-which measurements are made, when, and whether they feed the accounting
-system.
+unplanned. Each of those benefits implies a measurement. This chapter works to
+uncover which measurements are made, when, and whether they feed into the
+accounting system.
 
 Four of the {{< var active_basins_word >}} subbasins are covered by a
 Department of Conservation MLRP block grant of \$8.89–10 million. They differ
-most in when they count water: after implementation, before it, or not as a
-separate figure at all. None measures a delivered outcome for the co-benefits
-it names. Colusa and Yolo hold no MLRP grant. Their repurposing-type activity
-happens through other programs and partners.
+in the timing of water savings estimates. Some do so after implementation,
+before it, or not as a separate figure at all. Colusa and Yolo do not have a
+MLRP grant and their repurposing-type activity happens through other programs
+and partners.
 :::
 :::
 
@@ -54,7 +54,7 @@ happens through other programs and partners.
 ::: gw-wide
 ```{=html}
 <h2 class="gw-eyebrow">Beyond water savings</h2>
-<p class="gw-section-lede">How far does quantification reach for each benefit a repurposing program claims? The literature quantifies most of them. In the grantee subbasins, most stop at naming or scoring a benefit before the project is built.</p>
+<p class="gw-section-lede">Land repurposing delivers benefits beyond water savings. Below are a breakdown of those potential benefits, as well as the ways in which the literature and the GSAs handle them.</p>
 
 <div id="mlrp-matrix" class="gw-mx gw-loading">Loading the co-benefits matrix&hellip;</div>
 <script type="module" src="assets/js/mlrp-matrix.js"></script>
@@ -67,7 +67,7 @@ happens through other programs and partners.
 :::: {.gw-wide .gw-section #key-gaps}
 ```{=html}
 <h2 class="gw-eyebrow">Key findings</h2>
-<p class="gw-section-lede">What the cross-basin comparison shows. Each finding links to the subbasin-by-subbasin detail and the coded evidence behind it.</p>
+<p class="gw-section-lede">Takeaways from both the desktop analysis and internal team discussions regarding which subbasin details were most relevant and pertinent.</p>
 <div class="gw-gaps gw-loading" data-chapter="mlrp">Loading the key findings&hellip;</div>
 <script type="module" src="assets/js/key-gaps.js"></script>
 ```

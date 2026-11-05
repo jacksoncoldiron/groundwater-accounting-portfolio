@@ -32,13 +32,14 @@ chapters:
       body: >-
         All six subbasins characterize interconnected surface water with a
         numerical groundwater–surface water model, the approach the literature
-        calls the gold standard. What the models report differs. Merced and
-        Salinas Valley isolate pumping-attributable depletion by running the
-        model with and without pumping. Kaweah's model is not yet calibrated for
-        streams, so it substitutes an analytical depletion function.
-        East Turlock, Colusa and Yolo report net stream–aquifer exchange from
-        all causes and call it depletion, and Colusa and Yolo describe their
-        ISW results as provisional or uncalibrated on most streams.
+        calls the gold standard. The models report slightly different outputs
+        however. Merced and Salinas Valley isolate pumping-attributable
+        depletion by running the model with and without pumping. Kaweah's
+        model is not yet calibrated for streams, so it substitutes an
+        analytical depletion function. East Turlock, Colusa and Yolo report
+        net stream–aquifer exchange from all causes and label it depletion.
+        While Colusa and Yolo describe their ISW results as provisional or
+        uncalibrated on most streams.
       topic: "1.1"
       findings: chapter=1.%20ISW&section=1.1%20Model%20Type%20and%20Sophistication
 
@@ -49,12 +50,14 @@ chapters:
         No basin uses model output as its ISW compliance measure. Five test
         compliance on groundwater elevations at near-stream wells, and Salinas
         Valley, Colusa and Yolo cite EDF (2018) for that proxy. The plans give
-        their reasons: models not calibrated to individual streams, uncertainty
+        their reasons for using groundwater levels as proxies. They mention
+        that models are not calibrated to individual streams, uncertainty is
         too large to quantify depletion reliably, and, in Salinas Valley, the
-        judgment that annual model updates are unrealistic. Merced shows how
-        the proxy is defended: a scenario at its thresholds added 38,000 AFY of
-        depletion, about 1.6% of surface outflow, which the GSP judged small
-        enough for groundwater levels to protect streams.
+        judgment that annual model updates are unrealistic. Merced defends the
+        proxy, revealing that it ran a scenario at its thresholds, which added
+        38,000 AFY of depletion (about 1.6% of surface outflow). The GSP
+        judged the depletion small enough for groundwater levels to protect
+        streams.
       topic: "1.3"
       findings: chapter=1.%20ISW&section=1.4%20Measurement%20and%20Estimation%20Methods
 
@@ -64,13 +67,14 @@ chapters:
       body: >-
         Five of the six basins set ISW criteria on groundwater elevations.
         Merced does so by carrying over its chronic-lowering thresholds rather
-        than setting ISW-specific ones. What counts as an undesirable result varies
-        widely: any one shallow well in Salinas Valley, half of a river's wells
-        for two consecutive falls in East Turlock, the same three of twelve
-        wells for 24 months in Colusa, and more than half the wells in two or
-        more management zones in Yolo. Kaweah has not defined a basin-wide
-        undesirable result; its self-described "placeholder" criteria set one
-        flow threshold, on one reach of the Lower Kaweah River.
+        than setting ISW-specific ones. What GSAs count as an undesirable
+        result varies widely: any one shallow well in Salinas Valley, half of
+        a river's wells for two consecutive falls in East Turlock, the same
+        three of twelve wells for 24 months in Colusa, and more than half the
+        wells in two or more management zones in Yolo. Kaweah has not defined
+        a basin-wide undesirable result. Its self-described "placeholder"
+        criteria set one flow threshold, on one reach of the Lower Kaweah
+        River.
       topic: "1.2"
       findings: chapter=1.%20ISW&section=1.2%20Undesirable%20Result%20Threshold
 
@@ -78,49 +82,49 @@ chapters:
       title: Depletion volumes are not tied to thresholds, or always to pumping
       categories: [data_needs, tool_development]
       body: >-
-        Where a basin publishes a depletion volume, it neither sets nor tests a
-        threshold. Merced estimates 504,400 AFY of pumping-attributable
-        depletion and uses none of it in its criteria. Salinas Valley's 2020
-        volumetric threshold of 69,700 AF/yr was net exchange from all causes;
-        a later no-pumping run put pumping's share at 8,400 AF/yr, and
-        Amendment 1 replaced the volume with a groundwater-level proxy. East
-        Turlock's annual "depletion" totals include a 28,700 AF net gain on the
-        San Joaquin. They come from no with-and-without-pumping comparison, so
-        none is attributed to pumping.
+        Published depletion volumes have not yet been used to set or test a
+        threshold. They are used as descriptive metrics only. Merced estimates
+        504,400 AFY of pumping-attributable depletion and uses none of it in
+        its criteria. Salinas Valley's 2020 volumetric threshold of 69,700
+        AF/yr was net exchange from all causes. Later, a no-pumping run put
+        pumping's share at 8,400 AF/yr, and Amendment 1 replaced the volume
+        with a groundwater-level proxy. East Turlock's annual "depletion"
+        totals include a 28,700 AF net gain on the San Joaquin. They do not
+        come from a with-and-without-pumping comparison, so none is attributed
+        to pumping.
       topic: "1.3"
       findings: chapter=1.%20ISW&section=1.3%20Volumetric%20ISW%20Depletion%20Estimates
 
     - id: isw-coverage
-      title: Monitoring networks differ in size and depth, and grow on grants
+      title: Monitoring networks differ in size and depth, and typically grow from grants
       categories: [data_needs]
       body: >-
         The wells behind the groundwater-level proxy vary widely. Salinas
         Valley's ISW network ran on one usable well for its entire evaluation
-        period, after a second proved to be screened beneath the aquitard;
+        period, after a second proved to be screened beneath the aquitard.
         Colusa uses 12 near-stream wells under 200 feet deep and Yolo 17
         shallow wells across five zones, while East Turlock's shallow network
-        includes wells screened hundreds of feet below the water table. Depth
-        matters because pumping is often deeper: in Salinas Valley essentially
-        all of it is below the aquitard, a link to the river no study has yet
-        measured. New ISW wells and gages are mostly grant-funded, and Colusa
-        and Yolo list remedies without dates or funding.
+        includes wells screened hundreds of feet below the water table. New
+        ISW wells and gages are mostly grant-funded, and Colusa and Yolo list
+        remedies without dates or funding.
       topic: "1.7"
       findings: chapter=1.%20ISW&section=1.7%20Limitations%20in%20Scope%2C%20Monitoring%2C%20Funding
 
     - id: isw-baselines
-      title: '"Significant and unreasonable" is mostly anchored to the last drought'
+      title: '"Significant and unreasonable" designations are mostly anchored to the last drought'
       categories: [best_practices]
       body: >-
-        SGMA leaves the definition of significant and unreasonable depletion to
-        each GSA, and most reach for a recent drought: Fall 2015 groundwater
-        levels in East Turlock and Colusa (plus 10 feet of "operational
-        flexibility" in Colusa), and 2015 levels plus one foot in Salinas
-        Valley. Kaweah is the exception in kind, anchoring to streamflow rather
-        than groundwater. It uses low flows below WY 2022 levels on one reach. Yolo
-        sets its Upper Sacramento thresholds 63–65 feet below its objectives to
-        allow for expected cuts in surface-water deliveries. The literature
-        points to an ecological alternative: flow criteria set from habitat
-        needs, as in the California Environmental Flows Framework.
+        SGMA leaves the definition of significant and unreasonable depletion
+        to each GSA, and most use a recent drought to make those definitions.
+        Fall 2015 groundwater levels are used in East Turlock and Colusa (plus
+        10 feet of "operational flexibility" in Colusa), and 2015 levels plus
+        one foot in Salinas Valley. Kaweah is the exception, anchoring to
+        streamflow rather than groundwater. It uses low flows below WY 2022
+        levels on one reach. Yolo sets its Upper Sacramento thresholds 63–65
+        feet below its objectives to allow for expected cuts in surface-water
+        deliveries. The literature identifies a potential ecological
+        alternative: flow criteria set from habitat needs, as in the
+        California Environmental Flows Framework.
       topic: "1.2"
       findings: chapter=1.%20ISW&section=1.2%20Undesirable%20Result%20Threshold
 
@@ -128,33 +132,32 @@ chapters:
       title: Uncertainty in depletion estimates is rarely quantified
       categories: [best_practices, tool_development]
       body: >-
-        The literature treats reporting uncertainty alongside a depletion
-        estimate as essential. Kaweah is the one basin to do so numerically:
-        its 1.4 cfs estimate for the Lower Kaweah carries a 90% likelihood
-        range from 100,000 Monte Carlo runs, and it publishes model
-        calibration statistics. Colusa labels its ISW conclusions provisional
-        and the other basins describe uncertainty in prose; none bounds a
-        depletion volume. Merced's 2026 Rules add a numeric uncertainty buffer,
-        but to the groundwater-level trigger, not to depletion.
+        The literature calls out the importance of reporting uncertainty
+        alongside a depletion estimate. Kaweah is the one basin to do so
+        numerically. The reported 1.4 cfs estimate for the Lower Kaweah
+        carries a 90% likelihood range from 100,000 Monte Carlo runs, along
+        with published model calibration statistics. Colusa labels its ISW
+        conclusions provisional and the other basins describe uncertainty in
+        prose, but none bound a depletion volume. Merced's 2026 Rules add a
+        numeric uncertainty buffer, but to the groundwater-level trigger, not
+        to depletion.
       topic: "1.8"
       findings: chapter=1.%20ISW&section=1.8%20Gaps%20and%20Uncertainty
 
   mlrp:
     - id: mlrp-programs
-      title: Repurposing happens through several programs, each answering to a different agency
+      title: Repurposing happens through several programs, each reporting to a different agency
       categories: [data_needs, best_practices]
       body: >-
         Four subbasins hold Department of Conservation MLRP block grants of
-        $8.89–10 million, but the grantee varies: a GSA in Merced, the
-        subbasin in East Turlock and Kaweah, and a regional non-GSA water
-        management group in Salinas Valley. GSA programs operate alongside them.
-        Merced's fee-funded Phase 1 Land Repurposing Program had repurposed
-        14,128 acres by WY 2025. East Turlock runs a three-year Incentivized
-        Fallowing Program. Kaweah also took part in DWR's LandFlex, which idled
-        land near at-risk domestic wells. In every basin the activity that
-        idles the most land is outside MLRP, so program
-        results reach the groundwater accounting by different routes, if at
-        all.
+        $8.89–10 million, but the grantee varies. The grantee is held by a GSA
+        in Merced, the subbasin in East Turlock and Kaweah, and a regional
+        non-GSA water management group in Salinas Valley. Other repurposing
+        programs operate alongside them. Merced's fee-funded Phase 1 Land
+        Repurposing Program had repurposed 14,128 acres by WY 2025. East
+        Turlock runs a three-year Incentivized Fallowing Program. Kaweah also
+        took part in DWR's LandFlex, which idled land near at-risk domestic
+        wells.
       topic: "2.10"
       findings: chapter=2.%20MLRP&section=2.10%20Other%20Repurposing%20Programs%20Beyond%20MLRP
 
@@ -163,13 +166,14 @@ chapters:
       categories: [data_needs, best_practices]
       body: >-
         Merced commits to 25,911 AF of savings over five years and measured
-        about 4,655 AF in WY 2025. That is roughly 10% short on an annual basis. East
-        Turlock targets 21,000 acres, 3,880 more than its own suitability
-        analysis could locate; the difference is a "Miscellaneous Repurposing"
-        placeholder carrying 19% of the headline water benefit. Kaweah's MLRP
-        targets are acres only: about 238 acres of recharge basins and 65 or
-        more of habitat, with no water figure. Salinas Valley's
-        repurposing action names a benefit type with no quantity.
+        about 4,655 AF in WY 2025. That is roughly 10% short on an annual
+        basis. East Turlock targets 21,000 acres, 3,880 more than its own
+        suitability analysis could locate with the difference designated as a
+        "Miscellaneous Repurposing" placeholder carrying 19% of the headline
+        water benefit. Kaweah's MLRP targets are acres only, targeting about
+        238 acres of recharge basins and 65 or more of habitat, with no water
+        figure identified. Salinas Valley's repurposing action names a benefit
+        type with no quantity found in the reviewed text.
       topic: "2.4"
       findings: chapter=2.%20MLRP&section=2.4%20Water%20Savings%20from%20Land%20Repurposing
 
@@ -178,15 +182,13 @@ chapters:
       categories: [data_needs, best_practices, tool_development]
       body: >-
         Merced measures savings after implementation, parcel by parcel, with
-        OpenET through its accounting platform. It found reductions lower
-        than expected because orchard trees and wet-year soil moisture kept
+        OpenET through its accounting platform. It found reductions lower than
+        expected because orchard trees and wet-year soil moisture kept
         transpiring. East Turlock estimates savings once, beforehand (2.7 AF
         per acre from satellite ET, revised to 2.9 with its groundwater model
         three months later), and exempts enrolled parcels from ET measurement.
-        Kaweah computes no savings figure: a fallowed field simply stops being
-        debited, and its three GSAs each treat fallow land differently. The
-        literature finds the ET-minus-precipitation method least reliable on
-        exactly the transitioning land these programs create.
+        For Kaweah, a fallowed field simply stops being debited, and its three
+        GSAs each treat fallow land differently.
       topic: "2.4"
       findings: chapter=2.%20MLRP&section=2.2%20Verification%20Triggers
 
@@ -212,14 +214,14 @@ chapters:
       categories: [best_practices, tool_development]
       body: >-
         In Merced, enrolled landowners choose whether to give up their
-        allocation; most keep it, and because idled land is neither debited nor
-        reduced, the allocation accumulates and can be carried over or
-        transferred. East Turlock rescinds the allocation of paid parcels for
-        the agreement term, so a landowner cannot be paid not to pump and keep
-        the right to pump. Kaweah leaves the allocation portable, even between
-        GSAs, but scales a transfer leave-behind by distance and has run pilot
-        market auctions. Salinas Valley has no allocation system yet; it buys
-        or leases the land, removing the pumper rather than regulating them.
+        allocation. Most keep it, and the allocation can accumulate and be
+        carried over or transferred. East Turlock rescinds the allocation of
+        paid parcels for the agreement term, so a landowner cannot both be
+        paid not to pump and keep the right to pump. Kaweah leaves the
+        allocation portable, even between GSAs, but scales a transfer
+        leave-behind by distance and has run pilot market auctions. Salinas Valley
+        has no allocation system yet. It buys or leases the land, removing the
+        pumper instead of regulating them.
       topic: "2.3"
       findings: chapter=2.%20MLRP&section=2.3%20Allocation%20and%20Leakage
 
@@ -227,17 +229,17 @@ chapters:
       title: Parcels are chosen top-down by suitability analysis or bottom-up by landowner interest
       categories: [best_practices, tool_development]
       body: >-
-        East Turlock sited its program with an auditable suitability analysis.
-        It used named stream buffers and slope thresholds over public datasets,
-        ground-truthed with aerial imagery. Salinas Valley is building a
-        recharge-suitability and multi-criteria decision tool with UC Davis.
-        MKGSA uses Sustainable Conservation's Groundwater Recharge Assessment
-        Tool to pursue parcels for acquisition, though its plan declares the
-        tool advisory. Merced instead relies on landowner applications, scored
-        on a rubric whose formula and award threshold are unpublished; in
-        Colusa and Yolo, repurposing-type projects are proposed and run mostly
-        by partners such as The Nature Conservancy, districts and community
-        groups.
+        East Turlock sited its program with a suitability analysis. It used
+        named stream buffers and slope thresholds layered over public
+        datasets, ground-truthed with aerial imagery. Salinas Valley is
+        building a recharge-suitability and multi-criteria decision tool with
+        UC Davis. MKGSA uses Sustainable Conservation's Groundwater Recharge
+        Assessment Tool to pursue parcels for acquisition, though its plan
+        declares the tool advisory. Merced instead relies on landowner
+        applications, scored on a rubric whose formula and award threshold are
+        unpublished. In Colusa and Yolo, repurposing-type projects are
+        proposed and run mostly by partners such as The Nature Conservancy,
+        districts and community groups.
       topic: "2.4"
       findings: chapter=2.%20MLRP&section=2.4%20Water%20Savings%20from%20Land%20Repurposing
 
