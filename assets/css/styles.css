@@ -1936,3 +1936,11 @@ i.is-river { height: 0 !important; border-width: 2px 0 0 !important; border-colo
   color: var(--ink-muted); max-width: none;
 }
 .chapter-photo__credit a { color: inherit; }
+
+/* Research-question band: the hero strata mirrored across the divider. */
+.gw-band--mirror { overflow: visible; }
+.gw-band--mirror .gw-band__strata {
+  position: absolute; top: 0; left: 0; width: 100%; height: 90px;
+  transform: scaleY(-1); opacity: .65; pointer-events: none; z-index: 0;
+}
+.gw-band--mirror > .gw-page { position: relative; z-index: 1; }

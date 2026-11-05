@@ -38,7 +38,18 @@ page-layout: custom
 <main id="main" class="gw-fullcopy">
 ```
 
-::: {.gw-band .gw-band--blue}
+::: {.gw-band .gw-band--blue .gw-band--mirror}
+
+```{=html}
+<!-- The hero's strata, flipped across the section divider: solid at the top
+     edge, waves hanging down into the band. -->
+<svg class="gw-band__strata" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  <path d="M0,42 C160,22 300,58 460,40 S780,16 940,36 1120,52 1200,44 L1200,90 L0,90 Z" fill="#E2D2C3" opacity=".55"/>
+  <path d="M0,58 C180,42 320,72 500,58 S800,38 980,54 1140,66 1200,60 L1200,90 L0,90 Z" fill="#D7D8CC" opacity=".6"/>
+  <path d="M0,74 C200,62 340,84 520,74 S820,58 1010,70 1150,78 1200,74 L1200,90 L0,90 Z" fill="#C9D1D6" opacity=".7"/>
+</svg>
+```
+
 ::: {.gw-page .gw-section .gw-section--tight}
 
 ```{=html}
