@@ -1944,3 +1944,13 @@ i.is-river { height: 0 !important; border-width: 2px 0 0 !important; border-colo
   transform: scaleY(-1); opacity: .65; pointer-events: none; z-index: 0;
 }
 .gw-band--mirror > .gw-page { position: relative; z-index: 1; }
+
+/* Cream bands: plain cream sections given a band wrapper only so they get
+   the curved top edge where they meet a coloured band above. */
+.gw-band--cream { background: var(--bg); padding-block: 0; border-bottom: 0; }
+.gw-band--flush { padding-block: .75rem; }
+/* Statistic cards sit on the pale-blue band: keep a lighter card face so the
+   hover and selected states still read. */
+.gw-band--blue .gw-metric { background: var(--surface); }
+.gw-band--blue .gw-metric:hover { background: var(--isw-wash); }
+.gw-band--blue .gw-metric[aria-pressed="true"] { background: var(--wash-blue-strong); }
