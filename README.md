@@ -193,3 +193,13 @@ subdirectory (`https://user.github.io/repo/`) as well as at a domain root.
 
 A workflow is provided at `.github/workflows/publish.yml`. In the repository
 settings, set **Pages → Source** to **GitHub Actions**.
+
+## Copy deck (Word)
+
+All visible site copy can be exported to an editable Word document:
+
+```bash
+quarto render
+pip install python-docx beautifulsoup4 pyyaml   # once
+python3 scripts/export_copy_deck.py             # writes COPY_DECK.docx
+```

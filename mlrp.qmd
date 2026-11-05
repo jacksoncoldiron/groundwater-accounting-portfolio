@@ -1,6 +1,6 @@
 ---
 pagetitle: "Land Repurposing"
-description: "When farmland is repurposed, what is actually measured, verified, credited, and monitored — compared across six California subbasins."
+description: "When farmland is repurposed, what is actually measured, verified, credited, and monitored, compared across six California subbasins."
 page-layout: custom
 ---
 
@@ -32,10 +32,10 @@ system.
 
 Four of the {{< var active_basins_word >}} subbasins are covered by a
 Department of Conservation MLRP block grant of \$8.89–10 million. They differ
-most in when they count water — after implementation, before it, or not as a
-separate figure at all — and none measures a delivered outcome for the
-co-benefits it names. Colusa and Yolo hold no MLRP grant; their
-repurposing-type activity runs through other programs and partners.
+most in when they count water: after implementation, before it, or not as a
+separate figure at all. None measures a delivered outcome for the co-benefits
+it names. Colusa and Yolo hold no MLRP grant. Their repurposing-type activity
+happens through other programs and partners.
 :::
 :::
 
@@ -44,6 +44,7 @@ repurposing-type activity runs through other programs and partners.
   <div class="chapter-photo__frame">
     <img src="assets/photos/optimized/mlrp.jpg" alt="Aerial view of a river corridor dividing tilled farmland from green irrigated fields." style="object-position: 50% 50%" loading="lazy">
   </div>
+  <figcaption class="chapter-photo__credit">Photo by Kelly on <a href="https://www.pexels.com/photo/17291140/" target="_blank" rel="noopener">Pexels</a>.</figcaption>
 </figure>
 ```
 ::::
@@ -58,7 +59,7 @@ repurposing-type activity runs through other programs and partners.
 <div id="mlrp-matrix" class="gw-mx gw-loading">Loading the co-benefits matrix&hellip;</div>
 <script type="module" src="assets/js/mlrp-matrix.js"></script>
 
-<p class="gw-caption">Measurement states are the analyst's ordinal scale — how far quantification reaches — not a score of program quality. "Not found" means not found in the reviewed documents, not that the practice does not exist. Colusa and Yolo hold no MLRP grant and are not rated; their programs are compared under topic 2.10 below.</p>
+<p class="gw-caption">Measurement states are the analyst's ordinal scale of how far quantification reaches. They are not a score of program quality. "Not found" means not found in the reviewed documents, not that the practice does not exist. Colusa and Yolo hold no MLRP grant and are not rated. Their programs are compared under topic 2.10 below.</p>
 ```
 :::
 ::::
@@ -66,7 +67,7 @@ repurposing-type activity runs through other programs and partners.
 :::: {.gw-wide .gw-section #key-gaps}
 ```{=html}
 <h2 class="gw-eyebrow">Key findings</h2>
-<p class="gw-section-lede">What the cross-basin comparison shows — each finding links to the subbasin-by-subbasin detail and the coded evidence behind it.</p>
+<p class="gw-section-lede">What the cross-basin comparison shows. Each finding links to the subbasin-by-subbasin detail and the coded evidence behind it.</p>
 <div class="gw-gaps gw-loading" data-chapter="mlrp">Loading the key findings&hellip;</div>
 <script type="module" src="assets/js/key-gaps.js"></script>
 ```
@@ -76,7 +77,7 @@ repurposing-type activity runs through other programs and partners.
 ::: gw-wide
 ```{=html}
 <h2 class="gw-eyebrow">Across the {{< var active_basins_word >}} subbasins</h2>
-<p class="gw-section-lede">Topic by topic, how each subbasin finances, verifies, credits and monitors land repurposing — with the cross-basin read first and the citations kept.</p>
+<p class="gw-section-lede">Topic by topic, how each subbasin finances, verifies, credits and monitors land repurposing. The cross-basin read comes first, with citations kept.</p>
 <div class="gw-compare gw-loading" data-chapter="mlrp">Loading the comparison&hellip;</div>
 <script type="module" src="assets/js/synthesis.js"></script>
 ```

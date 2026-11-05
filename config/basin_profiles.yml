@@ -58,7 +58,7 @@ basins:
         url: "https://delhicwd.specialdistrict.org/files/fb1270079/Turlock-Groundwater-fact-sheet_English.pdf"
     climate: []
     agriculture:
-      - text: Cover cropping is the largest demand-reduction activity in East Turlock by acreage — roughly 25,000 acres in WY 2025.
+      - text: Cover cropping is the largest demand-reduction activity in East Turlock by acreage, at roughly 25,000 acres in WY 2025.
         source: synthesis
         ref: "§2.10"
     communities:
@@ -125,7 +125,7 @@ basins:
         ref: "§3.1.1, §3.1.2"
     indicators:
       - name: Land subsidence
-        why: Subsidence is attributed mainly to the Lower Aquifer, below the Corcoran Clay, which sits outside the ISW analysis.
+        why: Subsidence is attributed mainly to the Lower Aquifer, below the Corcoran Clay, which is outside the ISW analysis.
         source: synthesis
         ref: "§1.6"
       - name: Chronic lowering of groundwater levels

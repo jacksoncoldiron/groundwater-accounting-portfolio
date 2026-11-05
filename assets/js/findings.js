@@ -67,7 +67,6 @@ function renderCard(record, { terms }, basinsById) {
   const typeLabel = FINDING_TYPE_LABEL[record.finding_type] || record.finding_type;
 
   card.append(el('div', { class: 'gw-card__tags' },
-    el('span', { class: 'gw-tag gw-tag--id', text: record.id }),
     record.chapter ? el('span', { class: CHAPTER_TAG(record.chapter), text: record.chapter.replace(/^\d+\.\s*/, '') }) : null,
     el('span', { class: 'gw-tag gw-tag--basin', text: record.basin_short_name }),
     el('span', {
@@ -110,7 +109,7 @@ function renderCard(record, { terms }, basinsById) {
   body.append(evidenceBlock('Direct quote and source location', record.direct_quote, { quote: true }));
 
   if (record.finding_type === 'absence' && !record.direct_quote) {
-    body.append(el('p', { class: 'gw-evidence__na', text: 'No quotation — this is an absence finding.' }));
+    body.append(el('p', { class: 'gw-evidence__na', text: 'No quotation. This is an absence finding.' }));
   }
 
   body.append(evidenceBlock('Coding location',
@@ -120,7 +119,7 @@ function renderCard(record, { terms }, basinsById) {
 
   body.append(el('div', { class: 'gw-evidence__block' },
     el('p', { class: 'gw-evidence__label', text: 'Finding type' }),
-    el('p', { class: 'gw-evidence__value', text: `${typeLabel} — ${FINDING_TYPE_MEANING[record.finding_type] || ''}` })
+    el('p', { class: 'gw-evidence__value', text: `${typeLabel}. ${FINDING_TYPE_MEANING[record.finding_type] || ''}` })
   ));
 
   if (record.related_findings?.length) {
@@ -173,8 +172,8 @@ async function init() {
   // results.
   const filters = [
     {
-      param: 'chapter', legend: 'Chapter',
-      options: facets.chapters.map((c) => ({ value: c.value, label: c.value, count: c.count })),
+      param: 'chapter', legend: 'Chapter', hideCounts: true,
+      options: facets.chapters.map((c) => ({ value: c.value, label: chapterLabel(c.value), count: c.count })),
       match: (r, sel) => sel.has(r.chapter),
     },
     {
@@ -190,10 +189,11 @@ async function init() {
       match: (r, sel) => sel.has(r.finding_type),
     },
     {
-      param: 'section', legend: 'Section',
-      options: Object.values(facets.sections).flat()
-        .map((s) => ({ value: s.value, label: s.value, count: s.count }))
-        .sort((a, b) => a.value.localeCompare(b.value, undefined, { numeric: true })),
+      // A dropdown rather than a long checkbox list. Selecting a chapter
+      // narrows it to that chapter's sections. A section name used in more
+      // than one chapter (e.g. "Data Sources") appears once, under each.
+      param: 'section', legend: 'Section', control: 'select', dependsOn: 'chapter',
+      options: sectionOptions(facets.sections),
       match: (r, sel) => sel.has(r.section),
     },
     {
@@ -295,6 +295,26 @@ async function init() {
       }
     }, 120);
   }
+}
+
+// Display names for the coded chapter values ("1. ISW" → full name).
+function chapterLabel(value) {
+  if (value.startsWith('1')) return 'Interconnected Surface Water';
+  if (value.startsWith('2')) return 'Land Repurposing';
+  if (value.startsWith('3')) return 'Community Considerations';
+  return value;
+}
+
+function sectionOptions(byChapter) {
+  const map = new Map();
+  for (const [chapter, list] of Object.entries(byChapter)) {
+    for (const s of list) {
+      const o = map.get(s.value) || { value: s.value, label: s.value, parents: [] };
+      o.parents.push(chapter);
+      map.set(s.value, o);
+    }
+  }
+  return [...map.values()].sort((a, b) => a.value.localeCompare(b.value, undefined, { numeric: true }));
 }
 
 const rank = (v) => ({ high: 0, medium: 1, low: 2 }[v] ?? 3);

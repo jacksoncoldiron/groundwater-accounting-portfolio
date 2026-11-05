@@ -736,6 +736,23 @@ section.gw-chapter-title { margin: 0; padding: 0; border: 0; }
 .gw-check:hover { color: var(--ink-strong); }
 .gw-check__count { margin-left: auto; font-size: .78rem; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
 .gw-check--disabled { opacity: .45; cursor: not-allowed; }
+/* Chapter names stay on one line in the filter panel. */
+.gw-fieldset--chapter .gw-check { font-size: .8rem; white-space: nowrap; }
+.gw-select--block { font-size: .84rem; text-overflow: ellipsis; }
+
+/* Planned evidence stream (e.g. GSA board meetings): a placeholder panel,
+   never presented as reviewed evidence. */
+.gw-planned-stream {
+  background: var(--surface); border: var(--rule); border-top: 3px solid var(--sage);
+  padding: 2rem 2rem 2.2rem; margin-top: 1.5rem;
+}
+.gw-planned-stream h2 { font-size: 1.5rem; margin: 0 0 .9rem; }
+.gw-planned-stream p { font-size: .98rem; color: var(--ink); max-width: 90ch; margin: 0 0 .8rem; }
+.gw-planned-stream__status {
+  display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-muted); border: 1px dashed var(--border); padding: .2rem .55rem; margin-bottom: 1rem;
+}
+.gw-planned-stream ul { margin: .4rem 0 1rem; padding-left: 1.2rem; font-size: .95rem; }
 
 /* Secondary filters, collapsed by default so the panel doesn't dominate the
    viewport before a single result is visible. */
@@ -813,9 +830,9 @@ section.gw-chapter-title { margin: 0; padding: 0; border: 0; }
   margin-bottom: .8rem;
 }
 .gw-card__tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .7rem; align-items: center; }
-.gw-card__lead { font-size: 1.02rem; color: var(--ink-strong); font-weight: 600; margin: 0 0 .45rem; line-height: 1.4; max-width: 68ch; }
+.gw-card__lead { font-size: 1.02rem; color: var(--ink-strong); font-weight: 600; margin: 0 0 .45rem; line-height: 1.45; max-width: 104ch; }
 .gw-card__cite { font-size: .84rem; color: var(--ink-muted); font-style: italic; margin: 0 0 .6rem; max-width: 68ch; line-height: 1.4; }
-.gw-card__body { margin: 0 0 .8rem; font-size: .95rem; color: var(--ink); max-width: 74ch; }
+.gw-card__body { margin: 0 0 .8rem; font-size: .95rem; color: var(--ink); max-width: 110ch; }
 .gw-card__meta {
   display: flex; flex-wrap: wrap; gap: .35rem 1.1rem;
   font-size: .82rem; color: var(--ink-muted); align-items: baseline;
@@ -986,12 +1003,24 @@ section.gw-chapter-title { margin: 0; padding: 0; border: 0; }
 
 #quarto-header .navbar { padding: .35rem 0; }
 .navbar .navbar-nav .nav-link {
-  font-size: .93rem; font-weight: 600; color: var(--ink-muted);
-  padding: .75rem .85rem; border-bottom: 3px solid transparent;
+  font-size: .76rem; font-weight: 700; color: var(--ink-muted);
+  text-transform: uppercase; letter-spacing: .09em;
+  padding: .75rem .75rem; border-bottom: 3px solid transparent;
 }
 .navbar .navbar-nav .nav-link:hover { color: var(--ink-strong); }
 .navbar .navbar-nav .nav-link.active { color: var(--ink-strong); border-bottom-color: var(--isw); }
-.navbar-brand-container .navbar-title { font-size: 1.02rem; }
+/* Site name: larger than the page links so the two read as different
+   levels. The brand never truncates; Bootstrap's ellipsis is turned off. */
+.navbar-brand-container .navbar-title { font-size: 1.42rem; font-weight: 500; color: var(--ink-strong); white-space: nowrap; }
+.navbar .navbar-brand { overflow: visible; text-overflow: clip; }
+@media (min-width: 992px) {
+  .navbar .navbar-brand-container { max-width: none; flex: none; margin-right: 1.25rem !important; }
+  .navbar .navbar-nav .nav-link { white-space: nowrap; }
+}
+@media (min-width: 992px) and (max-width: 1399px) {
+  .navbar-brand-container .navbar-title { font-size: 1.22rem; }
+  .navbar .navbar-nav .nav-link { padding-inline: .5rem; letter-spacing: .06em; font-size: .7rem; }
+}
 
 #quarto-content main.content, #quarto-content .content { padding: 0; margin: 0; max-width: none; }
 main.content > section:first-child { margin-top: 0; }
@@ -1745,8 +1774,8 @@ main.content > section:first-child { margin-top: 0; }
 .gw-smap__region { font: 700 .7rem/1.4 var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-muted); margin: .4rem 0 .35rem; }
 .gw-smap__chips { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 .8rem; }
 .gw-smap__chip { font-size: .76rem; font-weight: 600; padding: .2rem .55rem; border: 1px solid var(--border); background: var(--bg); color: var(--ink); text-decoration: none; }
-.gw-smap__chip.is-grantee { background: #676C57; border-color: #676C57; color: var(--bg); }
-.gw-smap__chip.is-other { background: var(--community-wash); border-color: #9B7251; color: var(--community-text); }
+.gw-smap__chip.is-grantee { background: #4F6B3A; border-color: #4F6B3A; color: var(--bg); }
+.gw-smap__chip.is-other { background: #F3E3C4; border-color: #B07A2E; color: #74501E; }
 .gw-smap__note { font-size: .84rem; color: var(--ink-muted); margin: .4rem 0 0; }
 .gw-smap__sec { margin-top: 1.2rem; padding-top: .9rem; border-top: var(--rule-soft); }
 .gw-smap__sec h4 { font: 700 .7rem/1 var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-muted); margin: 0 0 .65rem; }
@@ -1769,9 +1798,10 @@ a.gw-smap__src { color: var(--isw-text); }
 .gw-smap__pick button:hover { background: var(--bg); }
 .gw-smap__pick .gw-smap__code { display: inline; }
 .gw-smap__pick i, .gw-smap__legend i { display: inline-block; width: .85rem; height: .85rem; border: 2px solid; }
-i.is-grantee { background: #8E947399; border-color: #676C57; }
-i.is-other { background: #C9A98A80; border-color: #9B7251; }
-i.is-ctx { background: #8E947320; border: 1.5px dashed #676C57; }
+i.is-grantee { background: #7E9A5C99; border-color: #4F6B3A; }
+i.is-other { background: #E2B87199; border-color: #B07A2E; }
+i.is-ctx { background: #7E9A5C20; border: 1.5px dashed #4F6B3A; }
+i.is-stream { height: 0 !important; border-width: 1px 0 0 !important; border-color: #2F6F95 !important; width: 1.2rem !important; }
 i.is-river { height: 0 !important; border-width: 2px 0 0 !important; border-color: #2F6F95 !important; width: 1.2rem !important; }
 .gw-smap__legend { display: grid; gap: .3rem; background: rgba(247, 242, 232, .94); border: var(--rule); padding: .55rem .7rem; font: .76rem/1.2 var(--font-body); color: var(--ink); }
 .gw-smap__legend span { display: flex; align-items: center; gap: .45rem; }
@@ -1855,3 +1885,54 @@ i.is-river { height: 0 !important; border-width: 2px 0 0 !important; border-colo
   .gw-band::before { top: -22px; height: 23px; }
   .gw-band::after  { top: -15px; height: 16px; }
 }
+
+/* ==========================================================================
+   Overview: full-width copy
+   --------------------------------------------------------------------------
+   On the Overview, running copy outside cards and lists spans its container,
+   so the right margin matches the left. Cards and key-finding lists keep
+   their own widths.
+   ========================================================================== */
+.gw-fullcopy .gw-hero__lede,
+.gw-fullcopy .gw-prose,
+.gw-fullcopy .gw-prose > p,
+.gw-fullcopy .gw-section-lede,
+.gw-fullcopy .gw-section > p,
+.gw-fullcopy .gw-wide > p,
+.gw-fullcopy .gw-caption,
+.gw-fullcopy .gw-metrics__detail { max-width: none; }
+
+/* Research question: a single statement, set large. */
+.gw-rq {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.6vw, 2.05rem);
+  line-height: 1.3;
+  color: var(--ink-strong);
+  margin: 0;
+  max-width: none;
+  text-wrap: balance;
+}
+
+/* ==========================================================================
+   Methods & Evidence: a copy-heavy page, so slightly smaller type, longer
+   lines, and tight heading-to-copy spacing.
+   ========================================================================== */
+.gw-methods .gw-methods-head { padding-bottom: 0; }
+.gw-methods .gw-tabs { margin-bottom: 1.25rem; }
+.gw-methods .gw-tabpanel > .gw-section { padding-top: .75rem; padding-bottom: 3rem; }
+.gw-methods .gw-prose { max-width: 96ch; }
+.gw-methods .gw-prose p,
+.gw-methods .gw-prose li { font-size: .94rem; line-height: 1.6; max-width: 96ch; }
+.gw-methods .gw-prose p { margin: 0 0 .8rem; }
+.gw-methods .gw-prose ul { margin: 0 0 .9rem; }
+.gw-methods .gw-prose li { margin-bottom: .2rem; }
+.gw-methods .gw-prose h3 { font-size: 1.4rem; margin: 1.9rem 0 .5rem; }
+.gw-methods .gw-prose h3:first-child { margin-top: 0; }
+.gw-methods .gw-prose h4 { font-size: 1.08rem; margin: 1.4rem 0 .35rem; }
+.gw-methods .gw-callout { margin: 1.1rem 0; }
+
+.chapter-photo__credit {
+  margin-top: .5rem; font-size: .78rem; line-height: 1.4;
+  color: var(--ink-muted); max-width: none;
+}
+.chapter-photo__credit a { color: inherit; }

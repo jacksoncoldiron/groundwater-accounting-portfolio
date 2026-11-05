@@ -56,6 +56,7 @@ def write_variables(stats: dict, manifest: dict, basins: list[dict], streams: li
         "literature_total": _n(stats["literature_total"]),
         "active_basins": _n(stats["active_basins"]),
         "active_basins_word": _word(stats["active_basins"]),
+        "active_basins_word_cap": _word(stats["active_basins"]).capitalize(),
         "tools_checked": _n(stats.get("tools_checked", 0)),
         "tools_checked_word": _word(stats.get("tools_checked", 0)),
         "literature_with_doi": _n(stats.get("literature_with_doi", 0)),

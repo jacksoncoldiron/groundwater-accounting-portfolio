@@ -1,6 +1,6 @@
 ---
 pagetitle: "Interconnected Surface Water"
-description: "How information moves from pumping, through hydrologic response and modelling, to a sustainability threshold and a management decision — compared across six California subbasins."
+description: "How information moves from pumping, through hydrologic response and modelling, to a sustainability threshold and a management decision, compared across six California subbasins."
 page-layout: custom
 ---
 
@@ -23,16 +23,16 @@ page-layout: custom
 :::: gw-chapter-intro
 ::: gw-chapter-intro__body
 ::: gw-prose
-Pumping groundwater near a stream depletes it — by drawing surface water
-into the aquifer or by intercepting groundwater that would have fed the
-stream. The effect is lagged and depends on aquifer properties that are
-usually inferred rather than observed, which makes interconnected surface
-water (ISW) one of the hardest quantities to account for under SGMA.
+Pumping groundwater near a stream depletes it. Pumping draws surface water
+into the aquifer or intercepts groundwater that would have fed the stream.
+The effect is lagged. It depends on aquifer properties that are usually
+inferred rather than observed. This makes interconnected surface water (ISW)
+one of the hardest quantities to account for under SGMA.
 
-All {{< var active_basins_word >}} subbasins run a numerical
-groundwater–surface water model, and none uses model output directly as
-its compliance measure. Compliance runs instead on groundwater levels or
-streamflow at monitoring sites — a proxy for the depletion itself.
+All {{< var active_basins_word >}} subbasins use a numerical
+groundwater–surface water model. None uses model output directly as its
+compliance measure. Compliance is instead based on groundwater levels or
+streamflow at monitoring sites, which are a proxy for the depletion itself.
 :::
 :::
 
@@ -41,6 +41,7 @@ streamflow at monitoring sites — a proxy for the depletion itself.
   <div class="chapter-photo__frame">
     <img src="assets/photos/optimized/isw-sjr.jpg" alt="Aerial view of a wide, braided river channel winding through an irrigated valley at dawn." style="object-position: 50% 45%" loading="lazy">
   </div>
+  <figcaption class="chapter-photo__credit">Photo by Sergei on <a href="https://www.pexels.com/photo/34832623/" target="_blank" rel="noopener">Pexels</a>.</figcaption>
 </figure>
 ```
 ::::
@@ -61,11 +62,11 @@ streamflow at monitoring sites — a proxy for the depletion itself.
             connected system. A dashed line shows where the water table would
             sit without pumping. A deeper pumping well draws the water table
             down into a cone, and arrows show water moving out of the stream
-            and through the aquifer toward the well — stream depletion. A
+            and through the aquifer toward the well. This is stream depletion. A
             monitoring well stands beside the stream. A model can estimate the
             depletion by comparing runs with and without pumping, but the
-            compliance test runs instead on a groundwater level at the
-            monitoring well — a proxy — checked against a threshold. That
+            compliance test instead uses a groundwater level at the
+            monitoring well as a proxy, checked against a threshold. That
             substitution is where the chain breaks.
           </p>
 
@@ -228,17 +229,17 @@ streamflow at monitoring sites — a proxy for the depletion itself.
     <li class="gw-step" data-step="system" data-phase="physical">
       <span class="gw-step__n">01</span>
       <h3 class="gw-step__t">A connected stream and aquifer</h3>
-      <p>Where the water table reaches the streambed, the stream and the shallow aquifer behave as one system. Water moves between them in whichever direction the water levels allow — feeding the stream from the aquifer, or seeping from the stream into it — and the balance shifts with season and water year.</p>
+      <p>Where the water table reaches the streambed, the stream and the shallow aquifer behave as one system. Water moves between them in whichever direction the water levels allow. It feeds the stream from the aquifer or seeps from the stream into it. The balance shifts with season and water year.</p>
     </li>
     <li class="gw-step" data-step="response" data-phase="physical">
       <span class="gw-step__n">02</span>
       <h3 class="gw-step__t">Pumping and hydrologic response</h3>
-      <p>A pumping well draws the water table down into a cone around it. Less groundwater reaches the stream and more stream water seeps into the aquifer — depletion that arrives lagged, attenuated, and mixed with every other driver of streamflow.</p>
+      <p>A pumping well draws the water table down into a cone around it. Less groundwater reaches the stream and more stream water seeps into the aquifer. This depletion arrives lagged and attenuated. It is mixed with every other driver of streamflow.</p>
     </li>
     <li class="gw-step" data-step="model" data-phase="accounting">
       <span class="gw-step__n">03</span>
       <h3 class="gw-step__t">Modeling with and without pumping</h3>
-      <p>Depletion cannot be read from a stream gage, so it is estimated by running a groundwater model twice — once with pumping, once with it switched off — and taking the difference in stream–aquifer flow. Merced and Salinas Valley report this figure; East Turlock, Colusa and Yolo report net exchange from all causes, and Kaweah's model is not yet calibrated for streams.</p>
+      <p>Depletion cannot be read from a stream gage. It is estimated by running a groundwater model twice, once with pumping and once without, and taking the difference in stream–aquifer flow. Merced and Salinas Valley report this figure. East Turlock, Colusa and Yolo report net exchange from all causes. Kaweah's model is not yet calibrated for streams.</p>
     </li>
     <li class="gw-step gw-step--break" data-step="break" data-phase="accounting">
       <span class="gw-step__n">✕</span>
@@ -253,12 +254,12 @@ streamflow at monitoring sites — a proxy for the depletion itself.
     <li class="gw-step" data-step="compliance" data-phase="accounting">
       <span class="gw-step__n">05</span>
       <h3 class="gw-step__t">Accounting &amp; compliance</h3>
-      <p>The compliance test runs on that proxy. By the agencies' own account, it cannot separate a pumping effect from a dry year or reservoir operations.</p>
+      <p>The compliance test is based on that proxy. By the agencies' own account, it cannot separate a pumping effect from a dry year or reservoir operations.</p>
     </li>
     <li class="gw-step" data-step="management" data-phase="accounting">
       <span class="gw-step__n">06</span>
       <h3 class="gw-step__t">Management response</h3>
-      <p>Where undesirable results were declared — East Turlock and Salinas Valley — no management consequence followed. The loop back to pumping stays weak.</p>
+      <p>East Turlock and Salinas Valley declared undesirable results. No management consequence followed in either. The loop back to pumping stays weak.</p>
     </li>
   </ol>
 </section>
@@ -270,7 +271,7 @@ streamflow at monitoring sites — a proxy for the depletion itself.
 :::: {.gw-wide .gw-section #key-gaps}
 ```{=html}
 <h2 class="gw-eyebrow">Key findings</h2>
-<p class="gw-section-lede">What the cross-basin comparison shows — each finding links to the subbasin-by-subbasin detail and the coded evidence behind it.</p>
+<p class="gw-section-lede">What the cross-basin comparison shows. Each finding links to the subbasin-by-subbasin detail and the coded evidence behind it.</p>
 <div class="gw-gaps gw-loading" data-chapter="isw">Loading the key findings&hellip;</div>
 <script type="module" src="assets/js/key-gaps.js"></script>
 ```
@@ -280,7 +281,7 @@ streamflow at monitoring sites — a proxy for the depletion itself.
 ::: gw-wide
 ```{=html}
 <h2 class="gw-eyebrow">Across the {{< var active_basins_word >}} subbasins</h2>
-<p class="gw-section-lede">Topic by topic, how each subbasin's documents handle interconnected surface water — with the cross-basin read first and the citations kept.</p>
+<p class="gw-section-lede">Topic by topic, how each subbasin's documents handle interconnected surface water. The cross-basin read comes first, with citations kept.</p>
 <div class="gw-compare gw-loading" data-chapter="isw">Loading the comparison&hellip;</div>
 <script type="module" src="assets/js/synthesis.js"></script>
 ```

@@ -73,7 +73,7 @@ function topicPanel(topic, chapter, basins, chapterKey) {
   if (missing.length) {
     panel.append(el('p', { class: 'gw-compare__missing' },
       `${missing.map((b) => b.short_name).join(' and ')} ${missing.length > 1 ? 'are' : 'is'} not covered under this topic in the synthesis`,
-      chapter.scope_note ? ' — see the chapter scope note below.' : '.'));
+      chapter.scope_note ? '. See the chapter scope note below.' : '.'));
   }
 
   if (topic.literature) {

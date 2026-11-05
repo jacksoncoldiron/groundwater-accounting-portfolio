@@ -3,7 +3,7 @@
 
     python3 scripts/fetch_geo.py
 
-Writes data/geo/{subbasins,gsas,rivers}.geojson. Run it again only when a
+Writes data/geo/{subbasins,gsas,rivers,streams}.geojson. Run it again only when a
 basin is added (it reads `b118_number` from config/basins.yml) — the output is
 committed so a normal site build needs no network access.
 
@@ -11,6 +11,10 @@ Sources (all public, no authentication):
   * Subbasins — DWR Bulletin 118 groundwater basins (i08_B118_CA_GroundwaterBasins)
   * GSAs      — DWR SGMA Portal GSA boundaries (i03_Groundwater_Sustainability_Agencies)
   * Rivers    — USGS National Hydrography Dataset, small-scale flowlines (NHDPlus)
+  * Streams   — the same NHDPlus flowlines, filtered by Strahler stream order,
+                drawn as fine tributary lines beneath the named rivers
+
+    python3 scripts/fetch_geo.py --streams   # refetch only the tributary layer
 
 Geometry is generalised on the server (maxAllowableOffset) to keep the files
 small; it is for orientation, not analysis.
@@ -20,6 +24,7 @@ from __future__ import annotations
 
 import json
 import sys
+import time
 import urllib.parse
 import urllib.request
 from collections import defaultdict
@@ -43,10 +48,17 @@ RIVERS = [
 ]
 
 
-def query(url: str, params: dict) -> dict:
+def query(url: str, params: dict, tries: int = 4) -> dict:
     qs = urllib.parse.urlencode({**params, "outSR": 4326, "geometryPrecision": 4, "f": "geojson"})
-    with urllib.request.urlopen(f"{url}?{qs}", timeout=180) as res:
-        data = json.load(res)
+    for attempt in range(tries):
+        try:
+            with urllib.request.urlopen(f"{url}?{qs}", timeout=180) as res:
+                data = json.load(res)
+            break
+        except (OSError, ValueError):
+            if attempt == tries - 1:
+                raise
+            time.sleep(5 * (attempt + 1))
     if "error" in data:
         raise RuntimeError(f"{url}: {data['error']}")
     return data
@@ -65,8 +77,78 @@ def bbox(features):
     return min(xs), min(ys), max(xs), max(ys)
 
 
+# Tributaries: natural stream/river flowlines (FTYPE StreamRiver) at or above this
+# Strahler order. Lower orders add clutter without helping orientation.
+STREAM_MIN_ORDER = 4
+
+
+def fetch_streams(basins) -> None:
+    """Tributary flowlines across the whole map extent.
+
+    The NHD service times out on one large envelope, so this tiles the
+    padded extent of all analysed subbasins into 1-degree boxes and pages
+    through each. Named major rivers (RIVERS) are excluded because
+    rivers.geojson already draws them.
+    """
+    sub = json.loads((OUT / "subbasins.geojson").read_text())
+    x0, y0, x1, y1 = bbox(sub["features"])
+    pad, step = 0.45, 1.0
+    seen, feats = set(), []
+    x = x0 - pad
+    while x < x1 + pad:
+        y = y0 - pad
+        while y < y1 + pad:
+            box = f"{x},{y},{min(x + step, x1 + pad)},{min(y + step, y1 + pad)}"
+            offset = 0
+            while True:
+                data = query(NHD, {
+                    "where": f"StreamOrde >= {STREAM_MIN_ORDER} AND FTYPE = 'StreamRiver'",
+                    "geometry": box,
+                    "geometryType": "esriGeometryEnvelope", "inSR": 4326,
+                    "spatialRel": "esriSpatialRelIntersects",
+                    "outFields": "COMID,GNIS_NAME,StreamOrde", "maxAllowableOffset": 0.0015,
+                    "resultOffset": offset, "resultRecordCount": 1000,
+                })
+                batch = data.get("features", [])
+                for g in batch:
+                    p = g["properties"]
+                    if p["COMID"] in seen or (p.get("GNIS_NAME") in RIVERS) or not g.get("geometry"):
+                        continue
+                    seen.add(p["COMID"])
+                    feats.append({"type": "Feature",
+                                  "properties": {"name": p.get("GNIS_NAME"), "order": p["StreamOrde"]},
+                                  "geometry": g["geometry"]})
+                if len(batch) < 1000:
+                    break
+                offset += len(batch)
+            print(f"    tile {box}: {len(feats)} flowlines so far")
+            y += step
+        x += step
+    (OUT / "streams.geojson").write_text(json.dumps(merge_by_order(feats), separators=(",", ":")))
+
+
+def merge_by_order(feats) -> dict:
+    """One MultiLineString per stream order: the map styles by order only, so
+    per-segment features would just add file weight."""
+    parts = defaultdict(list)
+    for f in feats:
+        g = f["geometry"]
+        lines = g["coordinates"] if g["type"] == "MultiLineString" else [g["coordinates"]]
+        if f["properties"]["order"] >= STREAM_MIN_ORDER:
+            parts[f["properties"]["order"]].extend(lines)
+    return {"type": "FeatureCollection", "features": [
+        {"type": "Feature", "properties": {"order": o},
+         "geometry": {"type": "MultiLineString", "coordinates": parts[o]}}
+        for o in sorted(parts)
+    ]}
+
+
 def main() -> int:
     basins = [b for b in active_basins(load_basins()) if b.get("b118_number")]
+    if "--streams" in sys.argv:
+        fetch_streams(basins)
+        print(f"  > data/geo/streams.geojson  ({(OUT / 'streams.geojson').stat().st_size / 1024:.0f} KB)")
+        return 0
     by_number = {b["b118_number"]: b for b in basins}
     numbers = ",".join(f"'{n}'" for n in by_number)
     OUT.mkdir(parents=True, exist_ok=True)
@@ -135,7 +217,9 @@ def main() -> int:
     ]}
     (OUT / "rivers.geojson").write_text(json.dumps(rivers, separators=(",", ":")))
 
-    for name in ("subbasins", "grant_context", "gsas", "rivers"):
+    fetch_streams(basins)
+
+    for name in ("subbasins", "grant_context", "gsas", "rivers", "streams"):
         print(f"  > data/geo/{name}.geojson  ({(OUT / f'{name}.geojson').stat().st_size / 1024:.0f} KB)")
     return 0
 

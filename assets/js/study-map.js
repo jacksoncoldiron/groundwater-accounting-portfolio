@@ -6,6 +6,7 @@
      grant_context   other subbasins inside an analysed basin's grant region
      gsas            DWR-registered GSA boundaries (shown for the selection)
      rivers          major rivers, drawn prominently and labelled
+     streams         tributaries by Strahler order, fine lines under the rivers
    Basemap: Esri World Terrain Base (simple shaded relief, few labels).
 
    Selecting a subbasin opens its profile (data/processed/basins.json,
@@ -17,8 +18,10 @@
 import { el, loadData } from './explorer.js';
 
 const COLORS = {
-  grantee: '#676C57', granteeFill: '#8E9473',
-  other: '#9B7251', otherFill: '#C9A98A',
+  // Grant status: a leaf green against a warm ochre, so the two read apart
+  // at a glance while staying inside the site's earth palette.
+  grantee: '#4F6B3A', granteeFill: '#7E9A5C',
+  other: '#B07A2E', otherFill: '#E2B871',
   river: '#2F6F95', riverCase: '#F7F2E8',
 };
 
@@ -93,12 +96,13 @@ async function init() {
   const root = document.getElementById('study-map');
   if (!root || !window.L) return;
   const compact = root.hasAttribute('data-compact');
-  const [basinData, sub, ctx, gsas, rivers] = await Promise.all([
+  const [basinData, sub, ctx, gsas, rivers, streams] = await Promise.all([
     loadData('data/processed/basins.json', root),
     loadData('data/geo/subbasins.geojson', root),
     loadData('data/geo/grant_context.geojson', root),
     loadData('data/geo/gsas.geojson', root),
     loadData('data/geo/rivers.geojson', root),
+    fetch('data/geo/streams.geojson').then((r) => (r.ok ? r.json() : null)).catch(() => null),
   ]);
   if (!basinData || !sub) return;
   const L = window.L;
@@ -111,8 +115,10 @@ async function init() {
 
   const map = L.map(mapEl, { scrollWheelZoom: false, zoomSnap: 0.25, attributionControl: true });
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 13, attribution: 'Terrain: Esri, USGS, NOAA · Boundaries: DWR · Rivers: USGS NHD',
+    maxZoom: 13, attribution: 'Terrain: Esri, USGS, NOAA · Boundaries: DWR · Rivers and streams: USGS NHD',
   }).addTo(map);
+  map.createPane('streams'); map.getPane('streams').style.zIndex = 420;
+  map.getPane('streams').style.pointerEvents = 'none';
   map.createPane('rivers'); map.getPane('rivers').style.zIndex = 430;
   map.createPane('labels'); map.getPane('labels').style.zIndex = 640;
 
@@ -127,7 +133,7 @@ async function init() {
   if (ctx?.features?.length) {
     L.geoJSON(ctx, {
       style: { color: COLORS.grantee, weight: 1.2, dashArray: '4 4', fillColor: COLORS.granteeFill, fillOpacity: 0.12 },
-      onEachFeature: (f, layer) => layer.bindTooltip(`${f.properties.b118_name.replace(/^SALINAS VALLEY - /, '').toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase())} — in the same MLRP grant region, not analysed`, { sticky: true }),
+      onEachFeature: (f, layer) => layer.bindTooltip(`${f.properties.b118_name.replace(/^SALINAS VALLEY - /, '').toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase())} (in the same MLRP grant region, not analysed)`, { sticky: true }),
     }).addTo(map);
   }
 
@@ -150,6 +156,16 @@ async function init() {
       layer.on('mouseout', () => layer.setStyle(styleFor(id, id === current)));
     },
   }).addTo(map);
+
+  // Tributaries: same blue as the rivers, thinner with each step down in
+  // stream order, so the named rivers keep their weight.
+  if (streams) {
+    const weightFor = (o) => ({ 7: 1.7, 6: 1.35, 5: 1.0 }[o] ?? 0.7);
+    L.geoJSON(streams, {
+      pane: 'streams', interactive: false,
+      style: (f) => ({ color: COLORS.river, weight: weightFor(f.properties.order), opacity: f.properties.order >= 6 ? 0.9 : 0.78 }),
+    }).addTo(map);
+  }
 
   if (rivers) {
     L.geoJSON(rivers, { pane: 'rivers', style: { color: COLORS.riverCase, weight: 5.5, opacity: 0.85 }, interactive: false }).addTo(map);
@@ -184,6 +200,7 @@ async function init() {
     el('span', {}, el('i', { class: 'is-other' }), 'No MLRP block grant'),
     ctx?.features?.length ? el('span', {}, el('i', { class: 'is-ctx' }), 'Same grant region, not analysed') : null,
     el('span', {}, el('i', { class: 'is-river' }), 'River'),
+    streams ? el('span', {}, el('i', { class: 'is-stream' }), 'Tributary') : null,
   );
   legend.addTo(map);
 

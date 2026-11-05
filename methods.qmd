@@ -6,27 +6,21 @@ page-layout: custom
 
 ```{=html}
 <a class="skip-link" href="#main">Skip to content</a>
-<main id="main">
+<main id="main" class="gw-methods">
 ```
 
-::: {.gw-wide .gw-section .gw-section--tight}
+::: {.gw-page .gw-section .gw-section--tight .gw-methods-head}
 
 ```{=html}
-<h1 class="gw-eyebrow">Methods &amp; Evidence</h1>
+<h1 class="gw-visually-hidden">Methods &amp; Evidence</h1>
 ```
-
-::: gw-prose
-## How this was done, and what it can and cannot support
-
-A desktop analysis of {{< var documents_total >}} planning and policy documents
-across {{< var active_basins >}} subbasins, read alongside {{< var literature_total >}} academic papers, and coded into {{< var findings_total >}} structured findings.
-:::
 
 ```{=html}
 <div class="gw-tabs" role="tablist" aria-label="Methods sections">
   <button class="gw-tab" role="tab" id="tab-methods"     aria-controls="panel-methods"     aria-selected="true">Methods</button>
   <button class="gw-tab" role="tab" id="tab-streams"     aria-controls="panel-streams"     aria-selected="false">Evidence streams</button>
   <button class="gw-tab" role="tab" id="tab-limitations" aria-controls="panel-limitations" aria-selected="false">Limitations</button>
+  <button class="gw-tab" role="tab" id="tab-ai"          aria-controls="panel-ai"          aria-selected="false">Use of AI</button>
   <button class="gw-tab" role="tab" id="tab-credits"     aria-controls="panel-credits"     aria-selected="false">Credits &amp; role</button>
   <button class="gw-tab" role="tab" id="tab-report"      aria-controls="panel-report"      aria-selected="false">Full report</button>
 </div>
@@ -42,14 +36,24 @@ across {{< var active_basins >}} subbasins, read alongside {{< var literature_to
 
 ### The research question
 
+How do local agencies account for interconnected water systems, track water
+under land use alternatives, and involve communities?
+
 Under SGMA an agency must define what unsustainable looks like, measure whether
 it is happening, and act when it is. This analysis asks a narrower question of
-each step: **which number actually becomes the quantity a decision is made on**,
-and what happens to the more sophisticated numbers that do not.
+each step: **which number actually becomes the quantity a decision is made on?**
+It also asks what happens to the more sophisticated numbers that do not.
 
 ### Why these subbasins
 
-{{< var basin_list >}} were selected for contrast rather than representativeness. They span the Sacramento Valley, the San Joaquin Valley and the Central Coast, and differ in plan structure — one joint GSP (Merced, Turlock, Colusa), three GSPs under a coordination agreement (Kaweah), one GSP adopted by partner agencies (Salinas Valley), and a single GSA (Yolo). Four are covered by a Department of Conservation MLRP block grant; Colusa and Yolo are not. The differences are what make the comparison informative.
+{{< var basin_list >}} were selected for contrast rather than representativeness. They span the Sacramento Valley, the San Joaquin Valley and the Central Coast. They also differ in plan structure:
+
+- one joint GSP (Merced, Turlock, Colusa);
+- three GSPs under a coordination agreement (Kaweah);
+- one GSP adopted by partner agencies (Salinas Valley);
+- a single GSA (Yolo).
+
+Four are covered by a Department of Conservation MLRP block grant. Colusa and Yolo are not. These differences are what make the comparison informative.
 
 ### Document collection and desktop review
 
@@ -61,10 +65,10 @@ public comment letters.
 
 ### Literature review
 
-{{< var literature_total >}} papers were reviewed across three topical areas —
+{{< var literature_total >}} papers were reviewed across three topical areas:
 groundwater accounting methods, land-use alternatives, and community
-considerations. Each was assessed not for its conclusions but for the
-**method it demonstrates**: what it measured, at what scale, using what data,
+considerations. Each was assessed for the **method it demonstrates**, not for
+its conclusions. That means what it measured, at what scale, using what data,
 and whether an operational crediting or accounting program was involved.
 
 ### Coding and classification
@@ -75,29 +79,28 @@ quotation and the section or page it came from. Findings were classified as
 **positive**, **absence**, or **ambiguous**, and rated for relevance to a
 groundwater accounting platform and to DWR recommendations.
 
-Extraction was AI-assisted: a language model was given the question outline and the documents, with instructions to answer each question with a direct quotation and citation. The analyst then checked quotations against the source documents for every subbasin — {{< var quotes_verified >}} are marked verified — and wrote the synthesis and key gaps from the coded findings. A verified quotation is accurate to its source; whether it fully answers the question it is attached to was reviewed but is not guaranteed for every row.
+Extraction was AI-assisted. The analyst then checked quotations against the source documents for every subbasin, and {{< var quotes_verified >}} are marked verified. The analyst wrote the synthesis and key findings from the coded findings. The **Use of AI** tab explains each step.
 
 ### Cross-basin comparison
 
-The same outline of chapters, sections and questions was put to each subbasin's document set. The cross-basin synthesis then works topic by topic: what the literature says, what each subbasin's documents say (with document and page citations), a comparison across subbasins, and the gap the topic surfaces. The chapter pages present that synthesis directly; the key gaps distil it.
+The same outline of chapters, sections and questions was put to each subbasin's document set. The cross-basin synthesis then works topic by topic. It covers what the literature says, what each subbasin's documents say (with document and page citations), a comparison across subbasins, and the gap the topic surfaces. The chapter pages present that synthesis directly. The key findings distil it.
 
 **No maturity score, traffic light, or ranking is assigned anywhere on this
-site.** The one ordinal scale — the land repurposing matrix's measurement
-states — describes how far quantification reaches for a benefit, as rated by
-the analyst, not how good a program is.
+site.** There is one ordinal scale: the measurement states in the land
+repurposing matrix. It describes how far quantification reaches for a benefit,
+as rated by the analyst. It does not describe how good a program is.
 
 ### How to read an absence
 
-The single most important distinction in this analysis is between *not found in
-the reviewed documents* and *does not exist*. An absence finding records the
-first. It can arise for at least four different reasons, and the site keeps
-them apart:
+The most important distinction in this analysis is between *not found in the
+reviewed documents* and *does not exist*. An absence finding records the first.
+It can arise for at least four reasons, and the site keeps them apart:
 
 - the practice is genuinely absent from a document set that is otherwise complete;
 - the relevant document was not available to review;
 - the program exists but has not yet produced results;
-- the question was never coded for that basin at all — which is a statement
-  about the analysis, not about the basin.
+- the question was never coded for that basin. This is a statement about the
+  analysis, not about the basin.
 
 :::
 :::
@@ -123,11 +126,11 @@ The analysis draws on {{< var active_streams >}} active evidence streams. A thir
 
 The evidence model, the explorer filters, and the citation format are built to
 accept a new stream without redesign. Registering a planned stream makes that
-capability explicit and auditable — but the site's rule is that a planned
-stream contributes **zero** records, appears in no count, and is described only
-as planned. Board-meeting evidence, if it is ever added, would also have to
-remain distinguishable from adopted plans and rules in every citation: what was
-said in a meeting is not what an agency adopted.
+capability explicit and auditable. The site's rule is that a planned stream
+contributes **zero** records, appears in no count, and is described only as
+planned. Board-meeting evidence will also stay distinguishable from adopted
+plans and rules in every citation. What was said in a meeting is not what an
+agency adopted.
 
 :::
 :::
@@ -143,21 +146,21 @@ said in a meeting is not what an agency adopted.
 
 #### The document sets are not equally complete
 
-This is the limitation that matters most, because it is the one most easily
-misread as a finding. Some absences recorded for one subbasin are gaps in
-document *availability* — an MLRP plan, a siting-tool specification, and a
-demand-management framework were not available to review. Some absences
-recorded for another reflect *architecture that has not yet produced results*:
-no projects implemented, a monitoring plan still in draft, a program plan not
+This limitation matters most because it is the easiest to misread as a
+finding. Some absences recorded for one subbasin are gaps in document
+*availability*. For example, an MLRP plan, a siting-tool specification, and a
+demand-management framework were not available to review. Other absences
+reflect *architecture that has not yet produced results*. Examples include no
+projects implemented, a monitoring plan still in draft, or a program plan not
 yet final.
 
-An absence tested against a rule that is in force is a much stronger finding
-than an absence recorded against a program that has not started. The site
-preserves that difference; a reader comparing cells across a row should too.
+An absence tested against a rule in force is a much stronger finding than an
+absence recorded against a program that has not started. The site preserves
+that difference. A reader comparing cells across a row should too.
 
-#### Comparisons rest on different numbers of basins
+#### Comparisons cover different numbers of basins
 
-Not every topic applies to every subbasin. Colusa and Yolo hold no MLRP grant, so most land repurposing topics compare four basins. Several community comparisons rest on fewer, because the equivalent instruments — a rulebook, a comment-response matrix, a periodic evaluation — were not available for every basin. Where a basin is not covered, the site says so rather than treating it as an absence.
+Not every topic applies to every subbasin. Colusa and Yolo hold no MLRP grant, so most land repurposing topics compare four basins. Several community comparisons cover fewer. The equivalent instruments, such as a rulebook, a comment-response matrix, or a periodic evaluation, were not available for every basin. Where a basin is not covered, the site says so rather than treating it as an absence.
 
 #### This is a desktop analysis
 
@@ -169,8 +172,8 @@ documented in the reviewed material would appear here as an absence.
 #### The evidence is a point in time
 
 Documents were reviewed as they stood in mid-2026. Plans are amended, annual
-reports are published, monitoring networks change, and grant programs end —
-several of the findings here turn on facts that are explicitly dated.
+reports are published, monitoring networks change, and grant programs end.
+Several findings here depend on facts that are explicitly dated.
 
 #### Spatial data is not part of this analysis
 
@@ -178,6 +181,66 @@ No geographic analysis was performed. The map uses public DWR and USGS
 layers for orientation only. Land repurposing project locations in particular
 are documented inconsistently across the subbasins, which is itself recorded
 as a limitation rather than smoothed over.
+
+:::
+:::
+:::
+
+<!-- ===================================================================== -->
+
+::: {#panel-ai .gw-tabpanel role="tabpanel" aria-labelledby="tab-ai" tabindex="0" hidden="hidden"}
+::: {.gw-page .gw-section .gw-section--tight}
+::: gw-prose
+
+### How AI was used in this project
+
+AI tools supported three parts of this project: extracting findings from
+documents, building the website, and drafting site copy. The analytical
+judgments were made by the analyst. This tab describes where AI was used and
+how its output was checked.
+
+#### Finding extraction
+
+A language model was given the question outline and each subbasin's documents.
+It was instructed to answer each question with a direct quotation and a
+citation to the document and section or page. This produced the first draft
+of the coded findings.
+
+#### Verification by the analyst
+
+The analyst checked quotations against the source documents for every
+subbasin. {{< var quotes_verified >}} of {{< var findings_total >}} findings
+are marked verified. A verified quotation is accurate to its source. Whether
+it fully answers the question it is attached to was reviewed, but is not
+guaranteed for every row.
+
+#### Synthesis and conclusions
+
+The cross-basin synthesis, the key findings, and the implications for the
+Groundwater Accounting Platform and DWR were written by the analyst from the
+coded findings.
+
+#### Building this website
+
+The site was designed and built with an AI coding assistant (Claude Code)
+working under the author's direction. It wrote the data-processing scripts,
+the interactive explorers and the web graphics. The author reviewed the
+output, set the design direction, and decided what each page should say.
+
+#### Drafting site copy
+
+Some page copy was drafted with AI assistance from the synthesis report and
+then edited by the author. Direct quotations are never generated. Every
+quotation on the site is copied exactly from the coding workbook.
+
+#### Safeguards built into the site
+
+- Every count on the site is computed from the processed data at build time.
+- Quotations and source locations are carried over from the workbook without
+  rewording.
+- Absence findings always read "not found in reviewed documents."
+- No score, rating or category is assigned unless it is recorded in the
+  source materials.
 
 :::
 :::
@@ -242,11 +305,16 @@ in the form:
 
 ### Sources and tools
 
-The analysis rests on publicly available planning and policy documents
+The analysis is based on publicly available planning and policy documents
 published by the groundwater sustainability agencies named throughout, and on
-published academic literature. This site is a static Quarto website; all
-filtering and search run in the browser over data processed from the coding
-workbooks at build time.
+published academic literature. This site is a static Quarto website. All
+filtering and search happen in the browser, using data processed from the
+coding workbooks at build time.
+
+### Photography
+
+Chapter photographs are from [Pexels](https://www.pexels.com) and are used
+under the Pexels license. Each carries a credit line beneath it.
 
 :::
 :::

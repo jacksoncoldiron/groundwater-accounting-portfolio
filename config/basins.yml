@@ -91,8 +91,8 @@ basins:
       isw_model:
         value: C2VSimTM
         detail: >-
-          Quasi-3D finite element model on the IWFM 2015 platform — the same
-          model class as Merced — calibrated October 1991 to September 2015.
+          Quasi-3D finite element model on the IWFM 2015 platform, the same
+          model class as Merced. Calibrated October 1991 to September 2015.
         source_ref: "Synthesis §1.1 (GSP §5.1.2, p. 5-3 [PDF 278])"
       accounting_platform:
         value: Groundwater Accounting Platform
@@ -135,7 +135,7 @@ basins:
         detail: >-
           USGS-owned numerical model built on MODFLOW-OWHM v2. Produces a
           paired-simulation depletion estimate and mapped ISW locations, but
-          the compliance criterion runs on shallow-well elevation readings
+          the compliance criterion is based on shallow-well elevation readings
           rather than model output.
         source_ref: "Synthesis §1.1 (Amendment 1 Table 5-7, PDF p192)"
       accounting_platform:

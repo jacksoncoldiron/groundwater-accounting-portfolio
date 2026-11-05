@@ -20,7 +20,7 @@ page-layout: custom
 </div>
 <noscript><div class="gw-empty"><strong>The map needs JavaScript.</strong></div></noscript>
 
-<p class="gw-caption">Boundaries: DWR Bulletin 118 subbasins and SGMA Portal GSA boundaries. Rivers: USGS National Hydrography Dataset. Geometry is generalised for display. Profile facts cite the cross-basin synthesis or the public source linked beside them; "indicators in focus" summarise the reviewed record and are not an official DWR designation.</p>
+<p class="gw-caption">Boundaries: DWR Bulletin 118 subbasins and SGMA Portal GSA boundaries. Rivers and tributaries: USGS National Hydrography Dataset (NHDPlus), with tributaries of Strahler order 4 and above. Geometry is generalised for display. Profile facts cite the cross-basin synthesis or the public source linked beside them; "indicators in focus" summarise the reviewed record and are not an official DWR designation.</p>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script type="module" src="assets/js/study-map.js"></script>

@@ -1,11 +1,12 @@
 absence_findings: '226'
 active_basins: '6'
 active_basins_word: six
+active_basins_word_cap: Six
 active_stream_list: Policy & Planning Documents and Academic Literature
 active_streams: '2'
 ambiguous_findings: '54'
 basin_list: Merced, East Turlock, Salinas Valley, Kaweah, Colusa and Yolo
-build_date: '2026-10-28'
+build_date: '2026-11-05'
 community_findings: '243'
 comparison_questions_all_basins: '0'
 comparison_questions_multi_basin: '57'

@@ -1,6 +1,6 @@
 ---
 pagetitle: "Community"
-description: "Representative, procedural and distributional equity in groundwater governance — compared across six California subbasins."
+description: "Representative, procedural and distributional equity in groundwater governance, compared across six California subbasins."
 page-layout: custom
 ---
 
@@ -29,9 +29,9 @@ variable hides exactly the differences that matter for how an accounting
 platform should be designed.
 
 Across the {{< var active_basins_word >}} subbasins, representative and
-procedural equity vary independently. Distributional equity — which
-residents bear dewatering risk — is the least reported, and not for want of
-data: every basin holds the well-completion records, published thresholds
+procedural equity vary independently. Distributional equity asks which
+residents bear dewatering risk. It is the least reported, but not for want of
+data. Every basin holds the well-completion records, published thresholds
 and community boundaries the analysis would need.
 :::
 :::
@@ -41,6 +41,7 @@ and community boundaries the analysis would need.
   <div class="chapter-photo__frame">
     <img src="assets/photos/optimized/community.jpg" alt="A farmworker in a wide-brimmed hat bent over inspecting rows of a green field crop." style="object-position: 50% 45%" loading="lazy">
   </div>
+  <figcaption class="chapter-photo__credit">Photo by Cristian Rojas on <a href="https://www.pexels.com/photo/10041309/" target="_blank" rel="noopener">Pexels</a>.</figcaption>
 </figure>
 ```
 ::::
@@ -49,7 +50,7 @@ and community boundaries the analysis would need.
 :::: {.gw-wide .gw-section #key-gaps}
 ```{=html}
 <h2 class="gw-eyebrow">Key findings</h2>
-<p class="gw-section-lede">What the cross-basin comparison shows — each finding links to the subbasin-by-subbasin detail and the coded evidence behind it.</p>
+<p class="gw-section-lede">What the cross-basin comparison shows. Each finding links to the subbasin-by-subbasin detail and the coded evidence behind it.</p>
 <div class="gw-gaps gw-loading" data-chapter="community">Loading the key findings&hellip;</div>
 <script type="module" src="assets/js/key-gaps.js"></script>
 ```
@@ -59,7 +60,7 @@ and community boundaries the analysis would need.
 ::: gw-wide
 ```{=html}
 <h2 class="gw-eyebrow">Across the {{< var active_basins_word >}} subbasins</h2>
-<p class="gw-section-lede">Topic by topic, how each subbasin handles representation, engagement, domestic wells, water quality and community-facing data — with the cross-basin read first and the citations kept.</p>
+<p class="gw-section-lede">Topic by topic, how each subbasin handles representation, engagement, domestic wells, water quality and community-facing data. The cross-basin read comes first, with citations kept.</p>
 <div class="gw-compare gw-loading" data-chapter="community">Loading the comparison&hellip;</div>
 <script type="module" src="assets/js/synthesis.js"></script>
 ```

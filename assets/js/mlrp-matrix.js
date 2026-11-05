@@ -5,9 +5,11 @@
    workbook) into <div id="mlrp-matrix">. Rows are the co-benefits a repurposing
    program claims, each with its own icon; columns are the literature and the
    grantee subbasins. Each cell shows the analyst's measurement state twice —
-   as a five-step ladder glyph and as a text label — so state never rests on
-   colour alone. Selecting a cell opens how that benefit is quantified there
-   (data → process → metric), the caveats, and the cited findings.
+   as a five-step ladder glyph and as a text label, so state never rests on
+   colour alone. Cells show the ladder glyph only; the legend above the
+   table and each button's accessible name carry the text label. Selecting a
+   cell opens how that benefit is quantified there (data → process → metric)
+   and the cited findings.
 
    The five states are the analyst's own ordinal scale, not a score of the
    program: they describe how far quantification reaches, from "not found in
@@ -66,7 +68,6 @@ function detail(benefit, col, cell, levels) {
       d.metric ? el('p', {}, el('strong', { text: 'Output. ' }), d.metric) : null,
       d.decision ? el('p', {}, el('strong', { text: 'Decision informed. ' }), d.decision) : null,
     ) : null,
-    d.gaps ? el('div', { class: 'gw-mx__dgaps' }, el('p', { class: 'gw-mx__dkicker', text: 'Gaps, caveats & open questions' }), el('p', { text: d.gaps })) : null,
     ids.length ? el('p', { class: 'gw-mx__dlinks' },
       el('a', { class: 'gw-btn gw-btn--quiet', href: `findings.html?ids=${ids.join(',')}`, text: `Open the ${ids.length} cited finding${ids.length > 1 ? 's' : ''} →` })) : null,
     !ids.length && cell.sources ? el('p', { class: 'gw-mx__dsrc', text: cell.sources }) : null,
@@ -87,7 +88,7 @@ async function init() {
     ...levels.map((l) => el('span', { class: `gw-mx__key gw-mx--r${l.rank}`, role: 'listitem' }, ladder(l.rank, levels.length), l.label)));
 
   const panel = el('div', { class: 'gw-mx__panel', 'aria-live': 'polite' },
-    el('p', { class: 'gw-mx__hint', text: 'Select any cell to see how that benefit is quantified, the caveats, and the evidence behind the rating.' }));
+    el('p', { class: 'gw-mx__hint', text: 'Select any cell to see how that benefit is quantified and the evidence behind the rating.' }));
 
   const table = el('table', { class: 'gw-mx__table' });
   table.append(el('caption', { class: 'gw-visually-hidden', text: 'How each MLRP co-benefit is quantified in the literature and in each grantee subbasin' }));
@@ -122,7 +123,7 @@ async function init() {
           panel.replaceChildren(detail(b, c, cell, levels));
           if (!booting && window.innerWidth < 900) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         },
-      }, ladder(rank, levels.length), el('span', { class: 'gw-mx__state', text: level?.label || '—' }));
+      }, ladder(rank, levels.length));
       row.append(el('td', { class: `gw-mx__cell${c.kind === 'literature' ? ' gw-mx__col--lit' : ''}` }, btn));
     }
     tbody.append(row);

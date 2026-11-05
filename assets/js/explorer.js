@@ -111,8 +111,49 @@ class UrlState {
 
 /* --- filter controls ---------------------------------------------------- */
 
-function checkboxGroup({ legend, name, options, state, onChange, labelKey = 'label' }) {
+/**
+ * Single-choice dropdown for long option lists (e.g. Section). State stays a
+ * Set so URLs and chips work the same as for checkboxes. With `dependsOn`,
+ * the options narrow to those whose `parents` include a selected value of
+ * the parent filter (e.g. only the sections of the selected chapter).
+ */
+function selectGroup({ legend, name, options, state, onChange, dependsOn }) {
   const fieldset = el('fieldset', { class: 'gw-fieldset' });
+  fieldset.append(el('legend', { text: legend }));
+  const id = `${name}-select`;
+  const select = el('select', {
+    id, class: 'gw-select gw-select--block', 'aria-label': legend,
+    onchange: (e) => {
+      state[name].clear();
+      if (e.target.value) state[name].add(e.target.value);
+      onChange();
+    },
+  });
+  const refresh = () => {
+    const parents = dependsOn ? state[dependsOn] : null;
+    const visible = parents && parents.size
+      ? options.filter((o) => (o.parents || []).some((p) => parents.has(p)))
+      : options;
+    // Drop a selection the narrowed list no longer offers.
+    for (const v of [...state[name]]) {
+      if (!visible.some((o) => String(o.value) === v)) state[name].delete(v);
+    }
+    const current = [...state[name]][0] || '';
+    select.replaceChildren(
+      el('option', { value: '', text: `All ${legend.toLowerCase()}s` }),
+      ...visible.map((o) => el('option', {
+        value: o.value, text: o.label ?? o.value, selected: String(o.value) === current || null,
+      })),
+    );
+  };
+  refresh();
+  fieldset.append(select);
+  fieldset.refresh = refresh;
+  return fieldset;
+}
+
+function checkboxGroup({ legend, name, options, state, onChange, labelKey = 'label', hideCounts = false }) {
+  const fieldset = el('fieldset', { class: `gw-fieldset gw-fieldset--${name}` });
   fieldset.append(el('legend', { text: legend }));
   const selected = state[name];
 
@@ -132,7 +173,7 @@ function checkboxGroup({ legend, name, options, state, onChange, labelKey = 'lab
     const label = el('label', { class: 'gw-check', for: id },
       input,
       el('span', { text: opt[labelKey] ?? opt.value }),
-      el('span', { class: 'gw-check__count', text: String(opt.count ?? '') })
+      hideCounts ? null : el('span', { class: 'gw-check__count', text: String(opt.count ?? '') })
     );
     label.dataset.optionValue = opt.value;
     fieldset.append(label);
@@ -333,7 +374,22 @@ export function createExplorer(config) {
   }
 
   function renderFilters() {
-    const onChange = () => { visible = pageSize; commit(); };
+    const dependents = [];
+    const onChange = () => {
+      // A parent change (e.g. Chapter) narrows any dependent dropdown first,
+      // so a stale Section selection never filters the results.
+      dependents.forEach((d) => d.refresh());
+      visible = pageSize;
+      commit();
+    };
+    const group = (f) => {
+      if (f.control === 'select') {
+        const node = selectGroup({ legend: f.legend, name: f.param, options: f.options, state, onChange, dependsOn: f.dependsOn });
+        dependents.push(node);
+        return node;
+      }
+      return checkboxGroup({ legend: f.legend, name: f.param, options: f.options, state, onChange, hideCounts: f.hideCounts });
+    };
     const primary = filters.filter((f) => !f.advanced && !f.hidden);
     const advanced = filters.filter((f) => f.advanced);
 
@@ -346,14 +402,14 @@ export function createExplorer(config) {
         el('legend', { text: config.searchLabel || 'Search' }),
         searchInput
       ),
-      ...primary.map((f) => checkboxGroup({ legend: f.legend, name: f.param, options: f.options, state, onChange })),
+      ...primary.map(group),
     ];
     // Less commonly needed filters stay out of the way until asked for, so
     // the panel doesn't eat the viewport before a single result is visible.
     if (advanced.length) {
       panelChildren.push(el('details', { class: 'gw-filters__more' },
         el('summary', { text: 'More filters' }),
-        ...advanced.map((f) => checkboxGroup({ legend: f.legend, name: f.param, options: f.options, state, onChange }))
+        ...advanced.map(group)
       ));
     }
     filtersPanel.replaceChildren(...panelChildren);
@@ -404,7 +460,7 @@ export async function loadData(path, root) {
   } catch (err) {
     root.replaceChildren(el('div', { class: 'gw-empty' },
       el('strong', { text: 'Could not load the evidence data' }),
-      el('p', { text: `Failed to fetch ${path}. If you are viewing this page from the local filesystem, serve it over HTTP instead — run "quarto preview", or "python3 -m http.server" from the _site directory.` })
+      el('p', { text: `Failed to fetch ${path}. If you are viewing this page from the local filesystem, serve it over HTTP instead. Run "quarto preview", or "python3 -m http.server" from the _site directory.` })
     ));
     console.error(err);
     return null;

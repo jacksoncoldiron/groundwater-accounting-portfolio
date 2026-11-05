@@ -16,6 +16,7 @@ page-layout: custom
 
 <div class="gw-dataset-switch" role="tablist" aria-label="Evidence collection">
   <button type="button" role="tab" data-db="policy" aria-selected="true">Policy &amp; Planning Findings</button>
+  <button type="button" role="tab" data-db="meetings" aria-selected="false">WaterOne Board Meetings</button>
   <button type="button" role="tab" data-db="literature" aria-selected="false">Literature Review</button>
 </div>
 
@@ -23,10 +24,10 @@ page-layout: custom
   <details class="gw-about">
     <summary>About these findings</summary>
     <div class="gw-about__body">
-      <p><strong>Positive finding</strong> — the reviewed documents describe or measure this.</p>
-      <p><strong>Not found in reviewed documents</strong> — the analyst searched and did not find this. Not a finding that the practice doesn't exist.</p>
-      <p><strong>Ambiguous</strong> — the reviewed documents are unclear or internally inconsistent.</p>
-      <p>Findings are numbered by row ID in the coding workbook (<code>F-165</code> and so on). Source links are published only where the workbook supplies a URL. Quote verification has three states: verified, unverified, and not applicable (the documented state for an absence finding).</p>
+      <p><strong>Positive finding.</strong> The reviewed documents describe or measure this.</p>
+      <p><strong>Not found in reviewed documents.</strong> The analyst searched and did not find this. It is not a finding that the practice doesn't exist.</p>
+      <p><strong>Ambiguous.</strong> The reviewed documents are unclear or internally inconsistent.</p>
+      <p>Source links appear only where the coding workbook supplies a URL. Quote verification has three states: verified, unverified, and not applicable. Not applicable is the documented state for an absence finding.</p>
     </div>
   </details>
 
@@ -42,11 +43,28 @@ page-layout: custom
   </noscript>
 </div>
 
+<div id="panel-meetings" class="gw-dataset-panel" hidden>
+  <section class="gw-planned-stream" aria-labelledby="meetings-title">
+    <span class="gw-planned-stream__status">In progress · not yet reviewed</span>
+    <h2 id="meetings-title">GSA board meeting findings</h2>
+    <p>This collection will hold findings from GSA board meetings. Recordings, transcripts and meeting records are hosted on WaterOne. The meeting review has not started yet. No meeting evidence is included anywhere on this site, and no count, chart or conclusion depends on it.</p>
+    <p>When the review is complete, each meeting finding will record:</p>
+    <ul>
+      <li>the subbasin, GSA, meeting date and agenda item;</li>
+      <li>the speaker and their role, where attributable;</li>
+      <li>a verbatim transcript excerpt with its timestamp;</li>
+      <li>links to the recording, transcript or minutes, where supplied;</li>
+      <li>related policy and planning findings.</li>
+    </ul>
+    <p>Meeting evidence records what was said in a meeting. It is not an adopted plan or rule, and it will stay labelled that way in every filter and citation.</p>
+  </section>
+</div>
+
 <div id="panel-literature-db" class="gw-dataset-panel" hidden>
   <details class="gw-about">
     <summary>About this literature</summary>
     <div class="gw-about__body">
-      <p>Papers indexed by the method each demonstrates, drawn from three review areas with different schemas — a field a sheet never collected reads as such, not as an absence.</p>
+      <p>Papers indexed by the method each demonstrates. They come from three review areas with different schemas. A field a sheet never collected reads as such, not as an absence.</p>
       <p>One paper reviewed under two areas appears once, with both associations preserved.</p>
     </div>
   </details>
