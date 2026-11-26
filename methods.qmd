@@ -17,7 +17,7 @@ page-layout: custom
 
 ```{=html}
 <div class="gw-tabs" role="tablist" aria-label="Methods sections">
-  <button class="gw-tab" role="tab" id="tab-methods"     aria-controls="panel-methods"     aria-selected="true">Methods</button>
+  <button class="gw-tab" role="tab" id="tab-overview"    aria-controls="panel-overview"    aria-selected="true">Overview</button>
   <button class="gw-tab" role="tab" id="tab-streams"     aria-controls="panel-streams"     aria-selected="false">Evidence streams</button>
   <button class="gw-tab" role="tab" id="tab-limitations" aria-controls="panel-limitations" aria-selected="false">Limitations</button>
   <button class="gw-tab" role="tab" id="tab-ai"          aria-controls="panel-ai"          aria-selected="false">Use of AI</button>
@@ -30,79 +30,99 @@ page-layout: custom
 
 <!-- ===================================================================== -->
 
-::: {#panel-methods .gw-tabpanel role="tabpanel" aria-labelledby="tab-methods" tabindex="0"}
+::: {#panel-overview .gw-tabpanel role="tabpanel" aria-labelledby="tab-overview" tabindex="0"}
 ::: {.gw-page .gw-section .gw-section--tight}
-::: gw-prose
 
-### The research question
+```{=html}
+<div class="gw-prose">
+  <h3>How the analysis was done</h3>
+  <p class="gw-wf-lede">The analysis ran in four phases. A literature review shaped the questions.
+  A review of policy and planning documents answered them for each of the
+  {{< var active_basins_word >}} subbasins. The cross-basin synthesis and gaps were then
+  written from those findings. A fourth phase put the same questions to GSA board meetings.</p>
+</div>
 
-How do local agencies account for interconnected water systems, track water
-under land use alternatives, and involve communities?
+<figure class="gw-figure gw-wf" aria-labelledby="wf-caption">
+  <p id="wf-summary" class="gw-visually-hidden">
+    Workflow diagram in four phases. Phase 1, literature review: topic clusters and
+    search prompts, a Consensus search for the top papers in each cluster, AI summaries
+    under set guidelines, then two outputs, the Literature Review spreadsheet and the
+    Consolidation of Findings and Key Gaps, which fed the question outline in phase 2.
+    Phase 2, policy and planning review: subbasins selected, documents collected and
+    screened, the Question Outline, AI extraction one chapter at a time, then the output,
+    the Key Findings spreadsheet, which fed phases 3 and 4. Phase 3, synthesis and gaps:
+    an AI first draft of the Cross-Basin Synthesis, the analyst's rewrite with team
+    feedback, gaps developed from the synthesis, each claim corroborated with a source
+    quote, and short WaterOne paragraphs added from phase 4. Phase 4, WaterOne meeting
+    analysis: scoping, an analysis package built from the question outline and findings,
+    the WaterOne run with second-reviewer checks, and the WaterOne output, which fed phase 3.
+  </p>
 
-Under SGMA an agency must define what unsustainable looks like, measure whether
-it is happening, and act when it is. This analysis asks a narrower question of
-each step: **which number actually becomes the quantity a decision is made on?**
-It also asks what happens to the more sophisticated numbers that do not.
+  <div class="gw-wf__phases" role="list" aria-describedby="wf-summary">
 
-### Why these subbasins
+    <div class="gw-wf__phase gw-wf__phase--lit" role="listitem">
+      <h4 class="gw-wf__head"><span class="gw-wf__num">1</span>Literature review</h4>
+      <ol class="gw-wf__steps">
+        <li class="gw-wf__step">Ten topic clusters, each with keywords and a search prompt</li>
+        <li class="gw-wf__step">Consensus search for the top five to seven papers per cluster, saved in Zotero</li>
+        <li class="gw-wf__step">Claude summarizes each paper under set guidelines, drawing only on methods, results and discussion</li>
+        <li class="gw-wf__step gw-wf__step--out"><span class="gw-wf__tag">Output</span><strong>Literature Review spreadsheet</strong>: quotes checked, notes added, takeaways written</li>
+        <li class="gw-wf__step gw-wf__step--out"><span class="gw-wf__tag">Output</span><strong>Consolidation of Findings</strong> and <strong>Key Gaps</strong>, reviewed by the EDF team
+          <span class="gw-wf__link gw-wf__link--to">Shapes the Question Outline in phase 2</span></li>
+      </ol>
+    </div>
 
-{{< var basin_list >}} were selected for contrast rather than representativeness. They span the Sacramento Valley, the San Joaquin Valley and the Central Coast. They also differ in plan structure:
+    <div class="gw-wf__phase gw-wf__phase--docs" role="listitem">
+      <h4 class="gw-wf__head"><span class="gw-wf__num">2</span>Policy and planning review</h4>
+      <ol class="gw-wf__steps">
+        <li class="gw-wf__step">{{< var active_basins_word_cap >}} subbasins selected</li>
+        <li class="gw-wf__step">Plans, annual reports, rules and MLRP files collected, then inventoried and screened</li>
+        <li class="gw-wf__step"><span class="gw-wf__link gw-wf__link--from">From phase 1</span><strong>Question Outline</strong>: ISW, land repurposing, community</li>
+        <li class="gw-wf__step">Claude extracts answers one chapter pass at a time, into notes</li>
+        <li class="gw-wf__step gw-wf__step--out"><span class="gw-wf__tag">Output</span><strong>Key Findings spreadsheet</strong>: quotes checked, absences logged
+          <span class="gw-wf__link gw-wf__link--to">Feeds phases 3 and 4</span></li>
+      </ol>
+    </div>
 
-- one joint GSP (Merced, Turlock, Colusa);
-- three GSPs under a coordination agreement (Kaweah);
-- one GSP adopted by partner agencies (Salinas Valley);
-- a single GSA (Yolo).
+    <div class="gw-wf__phase gw-wf__phase--syn" role="listitem">
+      <h4 class="gw-wf__head"><span class="gw-wf__num">3</span>Synthesis and gaps</h4>
+      <ol class="gw-wf__steps">
+        <li class="gw-wf__step"><span class="gw-wf__link gw-wf__link--from">From phase 2</span>Claude drafts the <strong>Cross-Basin Synthesis</strong>, chapter by chapter</li>
+        <li class="gw-wf__step gw-wf__step--out"><span class="gw-wf__tag">Output</span>The analyst rewrites it with EDF team feedback and discussion</li>
+        <li class="gw-wf__step">Gaps developed from the synthesis and findings</li>
+        <li class="gw-wf__step gw-wf__step--out"><span class="gw-wf__tag">Output</span>Each claim corroborated with a source quote in <strong>Gaps References</strong></li>
+        <li class="gw-wf__step gw-wf__step--out"><span class="gw-wf__tag">Output</span><span class="gw-wf__link gw-wf__link--from">From phase 4</span>Short WaterOne paragraphs added to 27 synthesis sections</li>
+      </ol>
+    </div>
 
-Four are covered by a Department of Conservation MLRP block grant. Colusa and Yolo are not. These differences are what make the comparison informative.
+    <div class="gw-wf__phase gw-wf__phase--meet" role="listitem">
+      <h4 class="gw-wf__head"><span class="gw-wf__num">4</span>WaterOne meeting analysis</h4>
+      <ol class="gw-wf__steps">
+        <li class="gw-wf__step">Scoping: which accounting topics surface in GSA board meetings?</li>
+        <li class="gw-wf__step"><span class="gw-wf__link gw-wf__link--from">From phase 2</span>Package: 62 questions, case-study findings and accuracy rules</li>
+        <li class="gw-wf__step">WaterOne runs it on 1,318 meetings, with second-reviewer checks</li>
+        <li class="gw-wf__step gw-wf__step--out"><span class="gw-wf__tag">Output</span><strong>WaterOne output</strong>: {{< var meetings_total >}} findings rows, a coverage table and a run report
+          <span class="gw-wf__link gw-wf__link--to">Feeds the synthesis in phase 3</span></li>
+      </ol>
+    </div>
 
-### Document collection and desktop review
+  </div>
 
-For each subbasin the review assembled the adopted Groundwater Sustainability
-Plan and any amendments, the most recent periodic evaluation and annual report,
-GSA rules and regulations, land repurposing program instruments, technical
-memoranda and ISW studies, relevant GSP appendices, agency correspondence, and
-public comment letters.
+  <figcaption id="wf-caption" class="gw-caption">
+    <span class="gw-wf__legend"><span class="gw-wf__tag">Output</span> marks a product of the phase.</span>
+    Adapted from the workflow diagram in the methods document. The coded findings
+    and literature are searchable on this site in the
+    <a href="findings.html">Findings Explorer</a>, alongside the
+    <a href="findings.html?db=literature">literature database</a>.
+  </figcaption>
+</figure>
 
-### Literature review
+<p class="gw-wf__doc">
+  <a class="gw-btn" href="downloads/Desktop_Analysis_Methods.pdf">Read the full methods document (PDF) &rarr;</a>
+  <span class="gw-wf__docnote">Search prompts, extraction guidelines, document inventory, spreadsheet structure, the WaterOne run and the full question outline.</span>
+</p>
+```
 
-{{< var literature_total >}} papers were reviewed across three topical areas:
-groundwater accounting methods, land-use alternatives, and community
-considerations. Each was assessed for the **method it demonstrates**, not for
-its conclusions. That means what it measured, at what scale, using what data,
-and whether an operational crediting or accounting program was involved.
-
-### Coding and classification
-
-Each finding was recorded with its subbasin, agency, document, chapter,
-section, and the specific question it answers, together with a verbatim
-quotation and the section or page it came from. Findings were classified as
-**positive**, **absence**, or **ambiguous**, and rated for relevance to a
-groundwater accounting platform and to DWR recommendations.
-
-Extraction was AI-assisted. The analyst then checked quotations against the source documents for every subbasin, and {{< var quotes_verified >}} are marked verified. The analyst wrote the synthesis and key findings from the coded findings. The **Use of AI** tab explains each step.
-
-### Cross-basin comparison
-
-The same outline of chapters, sections and questions was put to each subbasin's document set. The cross-basin synthesis then works topic by topic. It covers what the literature says, what each subbasin's documents say (with document and page citations), a comparison across subbasins, and the gap the topic surfaces. The chapter pages present that synthesis directly. The key findings distil it.
-
-**No maturity score, traffic light, or ranking is assigned anywhere on this
-site.** There is one ordinal scale: the measurement states in the land
-repurposing matrix. It describes how far quantification reaches for a benefit,
-as rated by the analyst. It does not describe how good a program is.
-
-### How to read an absence
-
-The most important distinction in this analysis is between *not found in the
-reviewed documents* and *does not exist*. An absence finding records the first.
-It can arise for at least four reasons, and the site keeps them apart:
-
-- the practice is genuinely absent from a document set that is otherwise complete;
-- the relevant document was not available to review;
-- the program exists but has not yet produced results;
-- the question was never coded for that basin. This is a statement about the
-  analysis, not about the basin.
-
-:::
 :::
 :::
 
@@ -142,6 +162,18 @@ are included for context and are not part of the cross-basin analysis.
 ::: gw-prose
 
 ### What this analysis cannot support
+
+#### How to read an absence
+
+The most important distinction in this analysis is between *not found in the
+reviewed documents* and *does not exist*. An absence finding records the first.
+It can arise for at least four reasons, and the site keeps them apart:
+
+- the practice is genuinely absent from a document set that is otherwise complete;
+- the relevant document was not available to review;
+- the program exists but has not yet produced results;
+- the question was never coded for that basin. This is a statement about the
+  analysis, not about the basin.
 
 #### The document sets are not equally complete
 
@@ -193,31 +225,51 @@ as a limitation rather than smoothed over.
 
 ### How AI was used in this project
 
-AI tools supported three parts of this project: extracting findings from
-documents, building the website, and drafting site copy. The analytical
-judgments were made by the analyst. This tab describes where AI was used and
-how its output was checked.
+AI tools supported most stages of this project: the literature review, finding
+extraction, first drafts of the synthesis, building the website and drafting
+site copy. The analyst reviewed and edited each output and made the analytical
+judgments. This tab describes where AI was used and how its output was checked.
+
+#### Literature review
+
+Papers for each topic cluster were found with Consensus, an AI search tool for
+research papers. Claude summarized each paper under set guidelines, drawing
+only on its methods, results and discussion. The analyst reviewed each summary,
+checked its quotes and entered the results in the literature spreadsheet.
 
 #### Finding extraction
 
-A language model was given the question outline and each subbasin's documents.
-It was instructed to answer each question with a direct quotation and a
-citation to the document and section or page. This produced the first draft
-of the coded findings.
+Claude was given the question outline and each subbasin's documents. It
+answered each question with a direct quotation and a citation to the document
+and page, one chapter at a time. It logged each finding as a row and matched
+each quote against the cited page. Where a document conflicted with itself,
+could not be read as text, or a quote was uncertain, it flagged the row for the
+analyst instead of resolving it.
 
 #### Verification by the analyst
 
-The analyst checked quotations against the source documents for every
-subbasin. {{< var quotes_verified >}} of {{< var findings_total >}} findings
-are marked verified. A verified quotation is accurate to its source. Whether
-it fully answers the question it is attached to was reviewed, but is not
-guaranteed for every row.
+{{< var quotes_verified >}} of {{< var findings_total >}} findings are marked
+verified, meaning the quote was checked against its source. The analyst also
+checked a portion of the quotes in each subbasin for relevance and accuracy,
+but not every row. A verified quotation is accurate to its source. It may still
+only partly answer the question it is attached to.
 
 #### Synthesis and conclusions
 
-The cross-basin synthesis, the key findings, and the implications for the
-Groundwater Accounting Platform and DWR were written by the analyst from the
-coded findings.
+Claude wrote the first draft of the cross-basin synthesis from the coded
+findings, one chapter at a time. The analyst then heavily edited and rewrote
+it, using the literature review and feedback from the EDF team. The analyst
+developed the gaps and key findings and checked each claim against a source
+quote. Claude helped refine the ideas and edit the wording. The short WaterOne
+paragraphs in the synthesis were drafted by Claude from WaterOne's findings,
+then edited and checked by the analyst.
+
+#### Board meeting analysis
+
+The board meeting findings were produced by the WaterOne team. Their analysts
+used WaterOne's AI meeting summaries to find relevant agenda items, then read
+the transcripts, minutes and packets. All but one finding rests on a passage
+read in context. AI summaries are never quoted as anyone's words.
 
 #### Building this website
 
@@ -255,8 +307,10 @@ quotation on the site is copied exactly from the coding workbooks or the WaterOn
 
 This site is an independent portfolio adaptation of a landscape analysis
 conducted for the California Department of Water Resources Groundwater
-Accounting project. The underlying cross-basin synthesis and the coded findings
-database are the author's own work within that project.
+Accounting project. The author led the analysis within that project. The coded
+findings were extracted with AI assistance and checked by the author. The
+cross-basin synthesis was drafted with AI and then rewritten by the author,
+with feedback from the EDF team. The Use of AI tab gives the details.
 
 The work covered:
 

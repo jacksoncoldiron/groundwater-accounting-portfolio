@@ -83,6 +83,8 @@ def build_comparison_frame(findings: list[dict], basin_registry: dict) -> dict:
     for f in findings:
         if not f.get("subsection") or not f.get("section"):
             continue
+        if f["basin_id"] not in basin_ids:
+            continue  # statewide-scope rows are context, not a comparison column
         key = (f["chapter"], f["section"], f["subsection"])
         grouped[key][f["basin_id"]].append(f)
         meta.setdefault(key, {

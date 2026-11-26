@@ -118,6 +118,7 @@ basins:
     name: Salinas Valley — 180/400-Foot Aquifer Subbasin
     short_name: Salinas Valley
     workbook_value: Salinas Valley
+    synthesis_labels: [Salinas]     # extra paragraph labels the synthesis .docx uses (D-35)
     status: active
     include_in_analysis: true
     region: Central Coast
@@ -280,6 +281,24 @@ basins:
       key_characteristic_source_ref: "Synthesis §1.2"
 
 # ---------------------------------------------------------------------------
+# Statewide scopes (D-36). Findings coded to a statewide program rather than a
+# subbasin, e.g. Department of Conservation MLRP documents. Their rows are
+# published in the Findings Explorer under their own Subbasin filter option,
+# but a statewide scope is NOT an analyzed subbasin: it never counts toward
+# "subbasins analyzed", never gets a basin card, map shape or comparison
+# column, and never appears in cross-basin conclusions.
+# ---------------------------------------------------------------------------
+statewide_scopes:
+  - id: statewide
+    slug: statewide
+    name: Statewide (Department of Conservation MLRP)
+    short_name: Statewide
+    workbook_value: Cross-basin     # exact `Subbasin` string in the findings workbook
+    description: >-
+      Findings from statewide Department of Conservation MLRP documents that
+      apply to every grantee rather than to one subbasin.
+
+# ---------------------------------------------------------------------------
 # GSA display names for codes that appear in the workbook but are not a GSA.
 # Used so the explorer can label these honestly rather than as agencies.
 # ---------------------------------------------------------------------------
@@ -295,6 +314,12 @@ gsa_labels:
     kind: other
     description: >-
       The finding is attributed to an organization that is not a GSA.
+  DOC:
+    label: Department of Conservation
+    kind: other
+    description: >-
+      The finding comes from a statewide Department of Conservation MLRP
+      document rather than a GSA document.
   COMMENTER:
     label: Public commenter
     kind: other

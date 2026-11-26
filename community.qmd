@@ -1,6 +1,6 @@
 ---
 pagetitle: "Community"
-description: "Representative, procedural and distributional equity in groundwater governance, compared across six California subbasins."
+description: "Here we move beyond the intricacies of groundwater accounting and examine how people are involved in water management and relevant data is incorporated to consider the perspectives and needs of the broader community."
 page-layout: custom
 ---
 
@@ -16,23 +16,26 @@ page-layout: custom
 ```
 {{< include _partials/chapter-icon-community.html >}}
 ```{=html}
-<h1 class="gw-chapter-title">Who is represented, who can participate, and who bears the consequences?</h1>
+<h1 class="gw-chapter-title">What data is needed, how is that data used, and in what ways is that work communicated to communities?</h1>
 </div>
 ```
 
 :::: gw-chapter-intro
 ::: gw-chapter-intro__body
 ::: gw-prose
-These are three different questions, and a groundwater agency can answer
-them independently of one another. Treating community equity as a single
-variable hides exactly the differences that matter for how an accounting
-platform should be designed.
+Each question has its own answer in the documents. The data needed is mostly
+domestic well records, and those records have gaps. All six basins use them to
+test groundwater thresholds against well depths, by different methods.
+Communication runs through Spanish-language materials and other products and
+programs, which vary by basin.
 
-Across the {{< var active_basins_word >}} subbasins, representative and
+The page also asks three equity questions: who is represented, who can
+participate, and who bears the consequences. Across the
+{{< var active_basins_word >}} subbasins, representative and
 procedural equity vary independently. Distributional equity asks which
-residents bear dewatering risk. It is the least reported, but not for want of
-data. Every basin holds the well-completion records, published thresholds
-and community boundaries the analysis would need.
+residents bear dewatering risk. It is the least reported. Every basin holds the well-completion records, published thresholds
+and community boundaries for that analysis, though the well records have gaps
+in location and construction.
 :::
 :::
 
@@ -69,7 +72,7 @@ and community boundaries the analysis would need.
 
 ::: {.gw-page .gw-section .gw-section--tight .gw-cta}
 ```{=html}
-<p>Every claim on this page traces to coded findings with direct quotes and document locations.</p>
+<p>Claims on this page trace to coded findings and the cross-basin synthesis, with direct quotes and document locations.</p>
 <a class="gw-btn" href="findings.html?chapter=3.%20Community%20Considerations">Explore the {{< var community_findings >}} community findings &rarr;</a>
 ```
 :::

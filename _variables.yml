@@ -1,19 +1,19 @@
-absence_findings: '226'
+absence_findings: '240'
 active_basins: '6'
 active_basins_word: six
 active_basins_word_cap: Six
 active_stream_list: Policy & Planning Documents and Academic Literature and GSA Board
   Meetings
 active_streams: '3'
-ambiguous_findings: '54'
+ambiguous_findings: '60'
 basin_list: Merced, East Turlock, Salinas Valley, Kaweah, Colusa and Yolo
-build_date: '2026-11-05'
-community_findings: '243'
-comparison_questions_all_basins: '0'
-comparison_questions_multi_basin: '57'
-comparison_questions_total: '402'
-documents_total: '69'
-findings_total: '687'
+build_date: '2026-11-25'
+community_findings: '276'
+comparison_questions_all_basins: '3'
+comparison_questions_multi_basin: '81'
+comparison_questions_total: '408'
+documents_total: '80'
+findings_total: '802'
 isw_findings: '211'
 literature_total: '61'
 literature_with_doi: '52'
@@ -21,11 +21,11 @@ meetings_case_study: '477'
 meetings_count: '795'
 meetings_subbasins: '59'
 meetings_total: 1,844
-mlrp_findings: '233'
+mlrp_findings: '315'
 planned_basin_list: ''
 planned_basins: '0'
-positive_findings: '407'
-quotes_verified: '519'
+positive_findings: '502'
+quotes_verified: '620'
 report_url: REPORT_DOWNLOAD_URL
 sections_total: '41'
 tools_checked: '9'

@@ -21,6 +21,7 @@ from common import (
     BuildReport,
     active_basins,
     basin_by_workbook_value,
+    statewide_scopes,
     build_search_text,
     clean,
     clean_multiline,
@@ -161,6 +162,7 @@ def ingest(report: BuildReport, basin_registry: dict, section_titles: dict | Non
     overrides = _link_overrides(report)
     by_workbook = basin_by_workbook_value(basin_registry)
     allowed = {b["id"] for b in active_basins(basin_registry)}
+    allowed |= {s["id"] for s in statewide_scopes(basin_registry)}
 
     raw = read_sheet(path, FINDINGS_SHEET)
     report.note(f"Findings sheet: {len(raw)} non-empty rows")
@@ -232,6 +234,7 @@ def ingest(report: BuildReport, basin_registry: dict, section_titles: dict | Non
             "basin_id": basin["id"],
             "basin_name": basin["name"],
             "basin_short_name": basin["short_name"],
+            "scope": "statewide" if basin.get("kind") == "statewide" else "subbasin",
             "subbasin": basin_value,          # original workbook string
             "gsa": clean(row.get("GSA")),
 
@@ -373,6 +376,18 @@ def _facets(records: list[dict], basin_registry: dict) -> dict:
             "full_name": b["name"],
             "count": count,
         })
+    # Statewide scopes come after the subbasins, flagged so the UI can label
+    # them as context rather than as an analyzed subbasin.
+    for sc in statewide_scopes(basin_registry):
+        count = sum(1 for r in records if r["basin_id"] == sc["id"])
+        if count:
+            basins.append({
+                "value": sc["id"],
+                "label": sc["short_name"],
+                "full_name": sc["name"],
+                "count": count,
+                "scope": "statewide",
+            })
 
     return {
         "chapters": chapters,

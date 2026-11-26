@@ -58,12 +58,17 @@ def _read_markdown(path) -> str:
     return out.stdout
 
 
-def _match_basin(label: str, basins: list[dict]) -> dict | None:
+def _match_basin(label: str, basins: list[dict]) -> tuple[dict, str] | None:
     # Labels look like "Merced.", "East Turlock.", "Merced Model: MercedWRM."
+    # A basin may also list extra labels the synthesis uses ("Salinas:") under
+    # `synthesis_labels` in config/basins.yml. Longest name wins, and the name
+    # must end at a word boundary so "Salinas" never swallows "Salinas Valley".
     norm = label.lower()
-    for b in sorted(basins, key=lambda b: -len(b["short_name"])):
-        if norm.startswith(b["short_name"].lower()):
-            return b
+    names = [(n, b) for b in basins
+             for n in [b["short_name"], *(b.get("synthesis_labels") or [])]]
+    for name, b in sorted(names, key=lambda nb: -len(nb[0])):
+        if re.match(re.escape(name.lower()) + r"(?![a-z])", norm):
+            return b, name
     return None
 
 
@@ -133,11 +138,12 @@ def ingest(report: BuildReport, basin_registry: dict) -> dict:
         elif lower == "gaps":
             section["gaps"] = body
         else:
-            basin = _match_basin(label, basins)
-            if basin:
+            match = _match_basin(label, basins)
+            if match:
+                basin, matched_name = match
                 # Keep a sub-label ("Model: MercedWRM") where the synthesis
                 # used one, separately from the paragraph.
-                rest = label[len(basin["short_name"]):].strip(" :.")
+                rest = label[len(matched_name):].strip(" :.")
                 section["basins"][basin["id"]] = {
                     "label": rest or None,
                     "text": body,

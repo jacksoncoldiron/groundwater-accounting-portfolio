@@ -189,9 +189,16 @@ def planned_basins(registry: dict) -> list[dict]:
     )
 
 
+def statewide_scopes(registry: dict) -> list[dict]:
+    """Statewide scopes (e.g. DOC MLRP documents): published, never counted as basins."""
+    return [dict(s, kind="statewide") for s in registry.get("statewide_scopes") or []]
+
+
 def basin_by_workbook_value(registry: dict) -> dict[str, dict]:
-    """Map the exact `Subbasin` string used in the workbook to its basin block."""
-    return {normalize_key(b["workbook_value"]): b for b in registry["basins"]}
+    """Map the exact `Subbasin` string used in the workbook to its basin or scope block."""
+    out = {normalize_key(b["workbook_value"]): b for b in registry["basins"]}
+    out.update({normalize_key(s["workbook_value"]): s for s in statewide_scopes(registry)})
+    return out
 
 
 def active_streams(registry: dict) -> list[dict]:

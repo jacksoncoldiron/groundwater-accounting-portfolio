@@ -1954,3 +1954,107 @@ i.is-river { height: 0 !important; border-width: 2px 0 0 !important; border-colo
 .gw-band--blue .gw-metric { background: var(--surface); }
 .gw-band--blue .gw-metric:hover { background: var(--isw-wash); }
 .gw-band--blue .gw-metric[aria-pressed="true"] { background: var(--wash-blue-strong); }
+
+/* ==========================================================================
+   Methods workflow  (methods.qmd, Overview tab)
+   --------------------------------------------------------------------------
+   Four phases as columns (two on tablets, one on phones). Each step is a
+   node on a thin vertical rail. Outputs carry a heavier slate rule AND an
+   "Output" tag, so the distinction never depends on colour alone. Links
+   between phases are written out ("From phase 2") rather than drawn, so they
+   survive every layout.
+   ========================================================================== */
+.gw-wf-lede { font-size: 1.02rem !important; max-width: 70ch; }
+.gw-wf { margin: 1.5rem 0 0; }
+.gw-wf__phases {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  counter-reset: none;
+}
+.gw-wf__phase {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-top: 3px solid var(--wf-accent, var(--isw));
+  border-radius: 6px;
+  padding: 1rem .9rem 1.1rem;
+  display: flex; flex-direction: column;
+}
+.gw-wf__phase--lit  { --wf-accent: var(--sage); }
+.gw-wf__phase--docs { --wf-accent: var(--mlrp); }
+.gw-wf__phase--syn  { --wf-accent: var(--isw); }
+.gw-wf__phase--meet { --wf-accent: var(--community); }
+
+.gw-wf__head {
+  display: flex; align-items: baseline; gap: .55rem;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: 1.12rem !important; line-height: 1.2;
+  color: var(--ink-strong);
+  margin: 0 0 .9rem !important; padding-bottom: .7rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+.gw-wf__num {
+  font-family: var(--font-display); font-size: 1.9rem; line-height: .9;
+  color: var(--wf-accent); font-weight: 400;
+}
+
+.gw-wf__steps { list-style: none; margin: 0; padding: 0; position: relative; }
+.gw-wf__step {
+  position: relative;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: .6rem .7rem;
+  font-size: .86rem !important; line-height: 1.42 !important;
+  color: var(--ink);
+  margin: 0 0 1.1rem !important;
+}
+.gw-wf__step:last-child { margin-bottom: 0 !important; }
+/* the connector between steps */
+.gw-wf__step:not(:last-child)::after {
+  content: ""; position: absolute; left: 50%; bottom: -1.1rem;
+  width: 1px; height: 1.1rem; background: var(--ink-muted); opacity: .55;
+}
+.gw-wf__step:not(:last-child)::before {
+  content: ""; position: absolute; left: calc(50% - 4px); bottom: -1.1rem;
+  width: 0; height: 0;
+  border-left: 4px solid transparent; border-right: 4px solid transparent;
+  border-top: 5px solid var(--ink-muted); opacity: .75;
+}
+.gw-wf__step strong { color: var(--ink-strong); font-weight: 700; }
+.gw-wf__step--out {
+  background: var(--surface);
+  border-color: var(--isw);
+  box-shadow: inset 3px 0 0 var(--isw);
+}
+
+.gw-wf__tag {
+  display: inline-block; vertical-align: .1em;
+  font: 700 .6rem/1 var(--font-mono); letter-spacing: .12em; text-transform: uppercase;
+  color: var(--isw-text); border: 1px solid var(--isw); border-radius: 3px;
+  padding: .2rem .3rem; margin-right: .4rem;
+}
+.gw-wf__step .gw-wf__tag { display: table; margin: 0 0 .35rem; }
+
+.gw-wf__link {
+  display: block;
+  font: 600 .7rem/1.3 var(--font-body); letter-spacing: .02em;
+  color: var(--ink-muted);
+}
+.gw-wf__link--from { margin-bottom: .3rem; }
+.gw-wf__link--from::before { content: "\2197\00a0"; color: var(--isw); }
+.gw-wf__link--to { margin-top: .45rem; padding-top: .4rem; border-top: 1px dashed var(--border); }
+.gw-wf__link--to::before { content: "\2192\00a0"; color: var(--isw); }
+
+.gw-wf .gw-caption { margin-top: 1rem; max-width: 80ch; font-size: .85rem; }
+.gw-wf__legend { display: block; margin-bottom: .3rem; }
+
+.gw-wf__doc { margin: 1.5rem 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; }
+.gw-wf__docnote { font-size: .86rem; color: var(--ink-muted); max-width: 60ch; }
+
+@media (max-width: 1100px) {
+  .gw-wf__phases { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .gw-wf__phases { grid-template-columns: minmax(0, 1fr); }
+}

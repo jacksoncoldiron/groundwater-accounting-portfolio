@@ -324,3 +324,51 @@ was rewritten):
   were not asked". Review wording.
 - Use of AI tab: does not yet describe how the meeting findings were coded
   (one record is typed `ai_summary`).
+
+---
+
+## 2026-11-25 — Community key findings replaced
+
+The six Community key findings in `config/key_gaps.yml` are new analyst-supplied
+text (see decisions D-34). This supersedes "Community findings are unchanged" in
+the 2026-10-28 entry above. Retired from the page: the dry-well "help arrives
+after the well fails" finding (3.3.1, cf. N-20), the board-seat finding (3.1.3,
+cf. N-15 to N-17) and the water-quality constituents finding (3.3.2). Those
+claims now live only in the cross-basin comparison section.
+
+New scope-sensitive claims, all triggered by **new basin** or **new documents**:
+
+| # | Claim | Finding | Source topic |
+|---|---|---|---|
+| N-24 | All six basins compare well depths with groundwater thresholds ("Every basin" in the title) | comm-domestic-wells | §3.1.4 |
+| N-25 | The analyses checked do not report results separately for disadvantaged communities | comm-domestic-wells | §3.1.4 (cf. N-16) |
+| N-26 | Spanish-language access appears in most basins; Yolo's reviewed documents do not describe agency translation | comm-language | §3.2 |
+| N-27 | Salinas Valley planned a Water Leadership Institute for early 2026 | comm-facing-info | §3.3.4, **time-sensitive** |
+| N-28 | The documents searched do not direct residents to the Drinking Water Tool or CalEnviroScreen | comm-facing-info | §3.3.4 (narrower than N-21) |
+| N-29 | Yolo's project table has a DAC column without a definition found | comm-benefit-unit | §3.1.2 |
+
+Also re-check against meeting evidence (WaterOne) before publishing, as for the
+other key findings.
+
+## 2026-11-25 — Statewide rows, Methods Overview
+
+- Findings total is now 802, including 13 statewide DOC rows that are not a
+  subbasin. Any copy that reads "N findings across the six subbasins" is now
+  slightly off; current copy uses "coded findings" without that scope. Check
+  before adding such a sentence.
+- MLRP finding count (315) includes the statewide rows.
+- N-30 (methods Overview, needs analyst review): the diagram says Claude drafted the
+  synthesis and the analyst rewrote it, and that Claude summarized each paper
+  and extracted answers. The **Use of AI** tab still says AI supported
+  "extracting findings ..., building the website, and drafting site copy",
+  that the synthesis "was written by the analyst", and that the analyst
+  "checked quotations ... for every subbasin". The methods document says the
+  analyst checked "a portion of the quotes for each subbasin". These texts
+  now disagree. Resolved 2026-11-25 (D-39).
+- N-31: Limitations does not yet mention the WaterOne data limits (coverage
+  from mid-2025, missing GGA/MIUGSA/TIWD meetings, 68% medium or low
+  confidence) given in the methods document.
+- N-32: the Community H1 now asks about data needs, use and communication.
+  The intro paragraph under it still opens "These are three different
+  questions" and goes on about representative, procedural and distributional
+  equity, which matched the old H1. Resolved same day: paragraph rewritten (Option A).
